@@ -121,7 +121,9 @@
           "color": "#a08058"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/kuh.m4a"
+      }
     },
     {
       "id": "schwein",
@@ -214,7 +216,9 @@
           "color": "#757e4c"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/schwein.m4a"
+      }
     },
     {
       "id": "schaf",
@@ -307,7 +311,9 @@
           "color": "#878c63"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/schaf.m4a"
+      }
     },
     {
       "id": "huhn",
@@ -400,7 +406,9 @@
           "color": "#926d5c"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/huhn.m4a"
+      }
     },
     {
       "id": "pferd",
@@ -489,7 +497,9 @@
           "color": "#83765b"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/pferd.m4a"
+      }
     },
     {
       "id": "ziege",
@@ -574,7 +584,9 @@
           "color": "#797e6e"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/ziege.m4a"
+      }
     },
     {
       "id": "ente",
@@ -667,7 +679,9 @@
           "color": "#9d9691"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/ente.m4a"
+      }
     },
     {
       "id": "gans",
@@ -756,7 +770,9 @@
           "color": "#9d9f80"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/gans.m4a"
+      }
     },
     {
       "id": "kaninchen",
@@ -938,7 +954,9 @@
           "color": "#879b5b"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/esel.m4a"
+      }
     },
     {
       "id": "hund",
@@ -1027,7 +1045,9 @@
           "color": "#988d82"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/hund.m4a"
+      }
     },
     {
       "id": "katze",
@@ -1116,7 +1136,9 @@
           "color": "#b0aaa7"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/katze.m4a"
+      }
     },
     {
       "id": "elefant",
@@ -1209,7 +1231,9 @@
           "color": "#525552"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/elefant.m4a"
+      }
     },
     {
       "id": "giraffe",
@@ -1391,7 +1415,9 @@
           "color": "#796645"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/loewe.m4a"
+      }
     },
     {
       "id": "zebra",
@@ -1484,7 +1510,9 @@
           "color": "#9ba16c"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/zebra.m4a"
+      }
     },
     {
       "id": "nashorn",
@@ -1937,7 +1965,9 @@
           "color": "#b89f86"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/kamel.m4a"
+      }
     },
     {
       "id": "flamingo",
@@ -2030,7 +2060,9 @@
           "color": "#797060"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/flamingo.m4a"
+      }
     },
     {
       "id": "erdmaennchen",
@@ -2123,7 +2155,9 @@
           "color": "#cec2a8"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/erdmaennchen.m4a"
+      }
     },
     {
       "id": "pinguin",
@@ -2212,7 +2246,9 @@
           "color": "#5e5553"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/pinguin.m4a"
+      }
     },
     {
       "id": "panda",
@@ -2394,7 +2430,9 @@
           "color": "#657756"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/tiger.m4a"
+      }
     },
     {
       "id": "orang-utan",
@@ -2479,7 +2517,9 @@
           "color": "#6f7350"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/orang-utan.m4a"
+      }
     },
     {
       "id": "tukan",
@@ -2572,7 +2612,9 @@
           "color": "#8891c5"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/tukan.m4a"
+      }
     },
     {
       "id": "chamaeleon",
@@ -2754,7 +2796,9 @@
           "color": "#151609"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/frosch.m4a"
+      }
     },
     {
       "id": "gorilla",
@@ -2940,7 +2984,9 @@
           "color": "#78787b"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/schimpanse.m4a"
+      }
     },
     {
       "id": "ara",
@@ -3029,7 +3075,9 @@
           "color": "#928751"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/ara.m4a"
+      }
     },
     {
       "id": "faultier",
@@ -3211,7 +3259,9 @@
           "color": "#636f5d"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/jaguar.m4a"
+      }
     },
     {
       "id": "krokodil",
@@ -3579,7 +3629,9 @@
           "color": "#c5c1c1"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/delfin.m4a"
+      }
     },
     {
       "id": "meeresschildkroete",
@@ -3854,7 +3906,9 @@
           "color": "#527da0"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/buckelwal.m4a"
+      }
     },
     {
       "id": "walhai",
@@ -4032,7 +4086,9 @@
           "color": "#949390"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/seehund.m4a"
+      }
     },
     {
       "id": "orca",
@@ -4121,7 +4177,9 @@
           "color": "#7b7d81"
         }
       ],
-      "sound": null
+      "sound": {
+        "src": "/sounds/orca.m4a"
+      }
     },
     {
       "id": "seepferdchen",
