@@ -24,7 +24,7 @@ const HEX_COLOR = /^#[0-9a-fA-F]{6}$/;
 const COMMONS_FILE = /^File:[^|#[\]{}<>]+\.(?:jpe?g|png|tiff?|webp)$/i;
 const COMMONS_AUDIO = /^File:[^|#[\]{}<>]+\.(?:ogg|oga|opus|wav|flac|mp3|webm)$/i;
 const OPENVERSE = /^openverse:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
-const INATURALIST = /^inaturalist:\d+$/;
+const INATURALIST = /^inaturalist:\d+\/\d+$/;
 const ARTICLES = new Set(["der", "die", "das"]);
 const VOICE_KINDS = new Set(["sound", "quiet"]);
 
@@ -216,7 +216,7 @@ function validatePhotos(photos: unknown, path: string, owner: string, ctx: Anima
     if (typeof file !== "string" || !isPhotoRef(file)) {
       report(
         `${photoPath}.file`,
-        "erwartet „File:….jpg“, „openverse:<uuid>“ oder „inaturalist:<id>“",
+        "erwartet „File:….jpg“, „openverse:<uuid>“ oder „inaturalist:<beobachtung>/<foto>“",
       );
       return;
     }

@@ -67,3 +67,17 @@ export function stripHtml(value: string): string {
     .replace(/\s+/g, " ")
     .trim();
 }
+
+/**
+ * Canonical deed URL for an allowlisted license name as returned by
+ * checkLicense ("CC BY-SA 3.0 de", "CC0", "Public Domain"). Used when the
+ * source gives no license URL.
+ */
+export function licenseUrl(name: string): string | undefined {
+  if (name === "CC0") return "https://creativecommons.org/publicdomain/zero/1.0/";
+  if (name === "Public Domain") return "https://creativecommons.org/publicdomain/mark/1.0/";
+  const match = /^CC (BY(?:-SA)?) (\d\.\d)(?: ([a-z]{2,}))?$/.exec(name);
+  if (!match) return undefined;
+  const [, kind = "", version = "", port] = match;
+  return `https://creativecommons.org/licenses/${kind.toLowerCase()}/${version}/${port ? `${port}/` : ""}`;
+}

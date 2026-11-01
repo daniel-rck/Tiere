@@ -112,8 +112,8 @@ describe("validateContent", () => {
       animal({ id: "schwein", photos: [photo(1)] }),
     ]);
     expect(messages(data)).toEqual([
-      "animals.kuh.photos[1].file: erwartet „File:….jpg“, „openverse:<uuid>“ oder „inaturalist:<id>“",
-      "animals.kuh.photos[2].file: erwartet „File:….jpg“, „openverse:<uuid>“ oder „inaturalist:<id>“",
+      "animals.kuh.photos[1].file: erwartet „File:….jpg“, „openverse:<uuid>“ oder „inaturalist:<beobachtung>/<foto>“",
+      "animals.kuh.photos[2].file: erwartet „File:….jpg“, „openverse:<uuid>“ oder „inaturalist:<beobachtung>/<foto>“",
       "animals.schwein.photos[0].file: Foto ist schon bei „kuh“ eingetragen",
     ]);
   });
@@ -190,7 +190,8 @@ describe("isPhotoRef", () => {
     ["File:Clownfisk.JPG", true],
     ["File:Red-eyed Tree Frog.png", true],
     ["openverse:0a1b2c3d-4e5f-6789-abcd-ef0123456789", true],
-    ["inaturalist:18676210", true],
+    ["inaturalist:12867185/18676210", true],
+    ["inaturalist:18676210", false],
     ["File:Cow.svg", false],
     ["Cow.jpg", false],
     ["inaturalist:abc", false],

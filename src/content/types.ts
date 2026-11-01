@@ -17,7 +17,7 @@ export type World = {
 
 /**
  * A selected photo: a Commons file title ("File:Cow in meadow.jpg"),
- * "openverse:<uuid>" or "inaturalist:<photo id>" (spec 5.1).
+ * "openverse:<uuid>" or "inaturalist:<observation id>/<photo id>" (spec 5.1).
  */
 export type PhotoRef = { file: string };
 

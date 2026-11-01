@@ -30,6 +30,30 @@ export function openverseLicense(license: string, version?: string | null): stri
   return version ? `cc-${code}-${version}` : `cc-${code}`;
 }
 
+function toExtraPhoto(image: OpenverseImage): ExtraPhoto | undefined {
+  if (!image.url || !image.thumbnail || !image.foreign_landing_url) return undefined;
+  return {
+    id: `openverse:${image.id}`,
+    name: `${image.title || "Ohne Titel"} (${image.source ?? image.provider ?? "Openverse"})`,
+    pageUrl: image.foreign_landing_url,
+    url: image.url,
+    thumbUrl: image.thumbnail,
+    width: image.width ?? 0,
+    height: image.height ?? 0,
+    license: openverseLicense(image.license, image.license_version),
+    author: image.creator || "",
+  };
+}
+
+/** Looks up one image by its Openverse id, for the build. */
+export async function fetchOpenversePhoto(id: string): Promise<ExtraPhoto> {
+  const response = await throttledFetch(`${API}${encodeURIComponent(id)}/`, 4);
+  if (!response.ok) throw new Error(`Openverse ${response.status} für ${id}`);
+  const extra = toExtraPhoto((await response.json()) as OpenverseImage);
+  if (!extra) throw new Error(`Openverse: Bild ${id} ohne URL oder Quellseite`);
+  return extra;
+}
+
 export async function searchOpenverse(query: string, limit: number): Promise<ExtraPhoto[]> {
   const params = new URLSearchParams({
     q: query,
@@ -45,18 +69,8 @@ export async function searchOpenverse(query: string, limit: number): Promise<Ext
   const photos: ExtraPhoto[] = [];
   for (const image of body.results ?? []) {
     if (image.mature || (image.provider ?? "").includes("wikimedia")) continue;
-    if (!image.url || !image.thumbnail || !image.foreign_landing_url) continue;
-    photos.push({
-      id: `openverse:${image.id}`,
-      name: `${image.title || "Ohne Titel"} (${image.source ?? image.provider ?? "Openverse"})`,
-      pageUrl: image.foreign_landing_url,
-      url: image.url,
-      thumbUrl: image.thumbnail,
-      width: image.width ?? 0,
-      height: image.height ?? 0,
-      license: openverseLicense(image.license, image.license_version),
-      author: image.creator || "unbekannt",
-    });
+    const extra = toExtraPhoto(image);
+    if (extra) photos.push({ ...extra, author: extra.author || "unbekannt" });
   }
   return photos;
 }

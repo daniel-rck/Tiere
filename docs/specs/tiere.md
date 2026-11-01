@@ -75,7 +75,7 @@ type Animal = {
   voice: { kind: "sound"; text: string } | { kind: "quiet"; text: string };
   facts: [string, string];  // kurz, kindgerecht, sachlich richtig
   photos: { file: string }[];   // Reihenfolge = Anzeige. Commons-Dateititel ("File:Cow in meadow.jpg")
-                                // oder "openverse:<uuid>" bzw. "inaturalist:<photo id>" (§5.1)
+                                // oder "openverse:<uuid>" bzw. "inaturalist:<observation id>/<photo id>" (§5.1)
   soundFile: string | null;     // Commons-Dateititel der Tonaufnahme
 };
 
@@ -226,9 +226,11 @@ public/photos/, public/sounds/  generierte Medien (committet)
 ## 10. Entscheidungslog
 - Medien von Wikimedia Commons: Lizenz und Autor sind maschinenlesbar, kein API-Key nötig.
 - _2026-11-01_ — Openverse und iNaturalist als Zusatzquellen (Wunsch von Daniel), ohne API-Key,
-  gleiche Allowlist. In `animals.json` als `openverse:<uuid>` bzw. `inaturalist:<photo id>`, damit
-  das Datenmodell bei `{ file: string }` bleibt. Openverse liefert die Lizenz aus den Metadaten der
-  Ursprungsseite; vor dem Build an der Quelle gegenprüfen.
+  gleiche Allowlist. In `animals.json` als `openverse:<uuid>` bzw.
+  `inaturalist:<observation id>/<photo id>`, damit das Datenmodell bei `{ file: string }` bleibt.
+  Die iNaturalist-API kennt keine Abfrage nach Foto-ID, der Build holt Lizenz und Autor über die
+  Beobachtung. Openverse liefert die Lizenz aus den Metadaten der Ursprungsseite; vor dem Build an
+  der Quelle gegenprüfen.
 - Medien werden zur Build-Zeit geladen und committet, nicht zur Laufzeit: offline, deterministisch,
   kindersicher kuratiert.
 - Nur WebP statt AVIF + Fallback: überall unterstützt, eine Pipeline weniger.
@@ -261,6 +263,12 @@ public/photos/, public/sounds/  generierte Medien (committet)
   sind Fehler, stille Tiere haben keinen Laut.
 - _2026-11-01_ — Leerer `[previews]`-Block in `wrangler.toml` (Seam): Workers Builds deployt
   PR-Branches mit `wrangler preview`, das ohne den Block abbricht.
+- _2026-11-01_ — `photos:build` lädt die Originale seriell mit 4 s Pause und wartet bei 429 die
+  `Retry-After`-Zeit bzw. exponentiell bis 10 min ab (Wikimedia-Robot-Policy). Von Commons
+  gerenderte Vorschaubilder werden nicht genutzt: deren Erzeugung drosselt Wikimedia am stärksten.
+  Credits und Download-URLs liegen zwischen zwei Läufen in `.cache/` (`--refresh` fragt neu).
+- _2026-11-01_ — Ein Tier ohne gebautes Foto (nur solange `photos:build` unvollständig ist) wird in
+  der Welt ausgelassen statt leer gezeigt; `content:check --strict` verhindert das im Release.
 - _2026-11-01_ — Spec bleibt Deutsch (web-base empfiehlt Englisch für `docs/specs/`), wie beim
   Malbuch.
 

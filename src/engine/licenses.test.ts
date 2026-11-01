@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { checkLicense, stripHtml } from "./licenses.ts";
+import { checkLicense, licenseUrl, stripHtml } from "./licenses.ts";
 
 describe("checkLicense", () => {
   it.each([
@@ -43,5 +43,21 @@ describe("stripHtml", () => {
     expect(
       stripHtml('<a href="//commons.wikimedia.org/wiki/User:X">X&amp;Y</a>&nbsp; <b>Z</b>'),
     ).toBe("X&Y Z");
+  });
+});
+
+describe("licenseUrl", () => {
+  it.each([
+    ["CC0", "https://creativecommons.org/publicdomain/zero/1.0/"],
+    ["Public Domain", "https://creativecommons.org/publicdomain/mark/1.0/"],
+    ["CC BY 2.0", "https://creativecommons.org/licenses/by/2.0/"],
+    ["CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/"],
+    ["CC BY-SA 3.0 de", "https://creativecommons.org/licenses/by-sa/3.0/de/"],
+  ])("%s → %s", (name, url) => {
+    expect(licenseUrl(name)).toBe(url);
+  });
+
+  it("knows nothing else", () => {
+    expect(licenseUrl("GFDL")).toBeUndefined();
   });
 });
