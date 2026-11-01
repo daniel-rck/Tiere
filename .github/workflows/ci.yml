@@ -1,0 +1,17 @@
+name: CI
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  # Lint, typecheck, test, build.
+  ci:
+    uses: daniel-rck/web-base/.github/workflows/web-app-ci.yml@v0.6.0
+
+  # Owned web-base files unchanged; strict: Tiere is on the full core.
+  web-base-check:
+    uses: daniel-rck/web-base/.github/workflows/web-base-check.yml@v0.6.0
+    with:
+      strict: true

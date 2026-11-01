@@ -1,33 +1,82 @@
 {
   "name": "tiere",
-  "version": "0.1.0",
   "private": true,
+  "version": "0.0.0",
   "type": "module",
+  "description": "Echte Tierfotos für Kinder ab 2: tippen, Name und Tierlaut hören – offline.",
+  "keywords": [
+    "pwa",
+    "privacy",
+    "offline",
+    "react",
+    "vite",
+    "typescript",
+    "kids",
+    "animals"
+  ],
+  "author": "daniel-rck",
+  "license": "MIT",
+  "homepage": "https://tiere.daniel-rck.workers.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daniel-rck/Tiere.git"
+  },
+  "bugs": {
+    "url": "https://github.com/daniel-rck/Tiere/issues"
+  },
+  "packageManager": "bun@1.4.2",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "check": "biome check . && tsc --noEmit && bun test",
-    "format": "biome check --write .",
+    "lint": "oxlint && oxfmt --check",
+    "format": "oxfmt",
+    "typecheck": "tsc -b --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "bun run lint && bun run typecheck && bun run test",
     "content:check": "bun scripts/validate-content.ts",
     "photos:candidates": "bun scripts/photos-candidates.ts",
     "photos:build": "bun scripts/photos-build.ts",
     "sounds:candidates": "bun scripts/sounds-candidates.ts",
-    "sounds:build": "bun scripts/sounds-build.ts"
-  },
-  "dependencies": {
-    "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "sounds:build": "bun scripts/sounds-build.ts",
+    "worker:dev": "wrangler dev",
+    "worker:deploy": "wrangler deploy"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.6.4",
-    "@types/bun": "^1.4.4",
+    "@cloudflare/workers-types": "^5.20260930.2",
+    "@tailwindcss/vite": "^4.3.3",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "@types/node": "^26.6.3",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "@vitejs/plugin-react": "^6.1.2",
+    "@vitejs/plugin-react": "^6.1.1",
+    "fake-indexeddb": "^6.2.5",
+    "jsdom": "^30.1.1",
+    "oxfmt": "^0.71.0",
+    "oxlint": "^1.86.0",
     "sharp": "^0.35.5",
-    "typescript": "^7.0.2",
-    "vite": "^8.3.5",
-    "vite-plugin-pwa": "^2.0.0"
+    "tailwindcss": "^4.3.3",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.1",
+    "vite-plugin-pwa": "^2.0.0",
+    "vitest": "^5.0.3",
+    "workbox-precaching": "^7.4.1",
+    "workbox-routing": "^7.4.1",
+    "workbox-window": "^7.4.1",
+    "wrangler": "^4.145.0"
+  },
+  "dependencies": {
+    "idb": "^8.0.3",
+    "lucide-react": "^1.49.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router-dom": "^7.18.4"
+  },
+  "webBase": {
+    "version": "0.6.0"
   }
 }

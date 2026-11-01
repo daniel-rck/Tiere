@@ -40,10 +40,7 @@
         "kind": "sound",
         "text": "Muuuh!"
       },
-      "facts": [
-        "Eine Kuh frisst am Tag bis zu 70 Kilo Gras.",
-        "Ihr Magen hat vier Teile."
-      ],
+      "facts": ["Eine Kuh frisst am Tag bis zu 70 Kilo Gras.", "Ihr Magen hat vier Teile."],
       "photos": [],
       "soundFile": null
     },
@@ -125,10 +122,7 @@
         "kind": "sound",
         "text": "Mäh!"
       },
-      "facts": [
-        "Ziegen sind tolle Kletterer.",
-        "Ihre Pupillen sehen aus wie kleine Rechtecke."
-      ],
+      "facts": ["Ziegen sind tolle Kletterer.", "Ihre Pupillen sehen aus wie kleine Rechtecke."],
       "photos": [],
       "soundFile": null
     },
@@ -346,10 +340,7 @@
         "kind": "quiet",
         "text": "Psst, Kraken sind ganz leise."
       },
-      "facts": [
-        "Ein Krake hat acht Arme.",
-        "Er hat drei Herzen und blaues Blut."
-      ],
+      "facts": ["Ein Krake hat acht Arme.", "Er hat drei Herzen und blaues Blut."],
       "photos": [],
       "soundFile": null
     },

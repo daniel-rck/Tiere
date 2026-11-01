@@ -144,6 +144,9 @@ spielt trotzdem. Ablauf beim Tippen: laufende Ausgabe abbrechen → Name spreche
 
 ## 6. Architektur
 
+Tiere ist mit `web-base init` entstanden (Stempel `webBase.version` in `package.json`) und folgt
+deren Konventionen (`web-base/docs/specs/07-conventions.md`), wie das Malbuch.
+
 ```
 content/animals.json            Quelle der Inhalte
 scripts/
@@ -154,20 +157,31 @@ scripts/
   sounds-candidates.ts / sounds-build.ts
   validate-content.ts           Schema- und Regelprüfung (--strict)
 src/
-  main.tsx, App.tsx             Ebenen-Stack (Start/Welt/Vollbild/Eltern) statt Router
+  main.tsx, App.tsx             Einstieg; App ist ein nacktes <Outlet />, darin der Ebenen-Stack
+                                (Start/Welt/Vollbild/Eltern)
   content/                      Typen, catalog.generated.json, Zugriffsfunktionen
-  lib/                          DOM-frei, getestet: gestures.ts, zoom.ts, gate.ts, sizes.ts,
+  engine/                       DOM-frei, getestet: gestures.ts, zoom.ts, gate.ts, sizes.ts,
                                 validate.ts
   platform/                     speech.ts, audio.ts, storage.ts, history.ts
-  screens/                      Home, World, Viewer, ParentGate, Settings, Credits
-  styles/                       tokens.css (Hell/Dunkel), app.css
+  features/                     home/, world/, viewer/, parents/ (ParentGate, Settings, Credits)
+  lib/                          web-base: ui/, db/, pwa/, routing/, router.tsx, routes.ts
+  lib/ui/theme.css              Seam: App-Tokens (Hell/Dunkel, Weltfarben)
+  sw/index.ts                   Service Worker (Seam): Precache-Regeln aus §7
+worker/                         Cloudflare Worker (web-base), liefert nur die Assets aus
 public/photos/, public/sounds/  generierte Medien (committet)
 ```
 
-- React 19 + Vite, `vite-plugin-pwa`. Kein State-Management-Framework, kein Router.
-- Navigation: eigener Ebenen-Stack mit `history.pushState`, damit die Zurück-Taste funktioniert.
+- React 19 + Vite 8 + TypeScript 7 + Tailwind 4, Bun; oxlint + oxfmt, Vitest (jsdom).
+- `vite-plugin-pwa` mit `injectManifest` und `registerType: "prompt"` (`src/sw/`).
+- Kein State-Management-Framework. react-router mit **einer** Route.
+- Navigation: eigener Ebenen-Stack in der einen Route, auf der History von react-router, damit die
+  Zurück-Taste funktioniert.
+- Die web-base-Shell (`AppShell`, `AppNav`, `PageHeader`, `ThemeToggle`, `UpdatePrompt`, …) ist
+  nur für `web-base check --strict` installiert und wird nicht importiert: sie zeigt Text.
+  Dateien, die web-base als *owned* führt, werden nicht geändert; eigene Tokens nur im Seam
+  `src/lib/ui/theme.css`.
 - Gesten über Pointer Events; die Klassifizierung (Tap, Doppeltipp, Wisch, Pinch) ist eine reine
-  Funktion in `lib/gestures.ts`.
+  Funktion in `engine/gestures.ts`.
 
 ## 7. PWA und Offline
 - Precache: App-Shell, alle 640er und 1280er Fotos, alle Laute. 1920er per Runtime-Cache
@@ -210,16 +224,25 @@ public/photos/, public/sounds/  generierte Medien (committet)
 - Vollbild immer `contain` mit Blur-Hintergrund statt `cover`: kein abgeschnittener Kopf oder
   Schwanz.
 - Namen in v1 per Web Speech API, aufgenommene Namen sind ein offener Punkt.
-- Biome statt Oxlint/Oxfmt: privates Projekt, gleiche Konventionen wie das Malbuch.
-- Kein Router: Ebenen-Stack reicht und macht die Zurück-Taste vorhersagbar.
-- Biome prüft keine Markdown-Dateien (`!**/*.md`): Spec, Plan und Befehle sind handgepflegte Texte,
-  der neue Markdown-Formatter von Biome 2.6 würde sie umformatieren.
-- JSON wird von Biome immer aufgeklappt formatiert (`json.formatter.expand: "always"`), damit
-  `content/animals.json` einheitlich bleibt und zur Ausgabe von `JSON.stringify(…, null, 2)` passt.
-- `bunx biome migrate` hat `"recommended": true` fälschlich in `"preset": "none"` übersetzt; von
-  Hand auf `"preset": "recommended"` korrigiert.
+- _2026-11-01_ — Auf web-base 0.6.0 aufgesetzt (`web-base init`, wie das Malbuch): oxlint + oxfmt
+  statt Biome, Vitest statt `bun test`, `injectManifest` mit Prompt, Tailwind 4, Cloudflare Worker
+  nur für die Assets. Ersetzt „Biome statt Oxlint/Oxfmt“.
+- _2026-11-01_ — react-router mit einer Route (web-base verlangt den Router), die Ebenen bleiben
+  ein eigener Stack darin: macht die Zurück-Taste vorhersagbar und ein Neuladen landet immer auf
+  dem Start. Ersetzt „Kein Router“.
+- _2026-11-01_ — Reine Logik in `src/engine/` statt `src/lib/`, weil `src/lib/` web-base gehört.
+- _2026-11-01_ — Kein `UpdatePrompt` und keine Shell der Basis: beides zeigt Text (Kriterium 5).
+  Der Update-Hinweis kommt in Phase 8 ohne Text (`useAppUpdate`).
+- _2026-11-01_ — Gate `bun run check` = `lint` + `typecheck` + `test`; dazu `build` und
+  `web-base check --strict` (beides auch in CI). JSON formatiert oxfmt (Prettier-Stil).
+- _2026-11-01_ — Spec bleibt Deutsch (web-base empfiehlt Englisch für `docs/specs/`), wie beim
+  Malbuch.
 
 ## 11. Offene Punkte
+- Akzentfarbe: Das Farbrad der Flotte ist voll (web-base `04-layout-system.md`). Tiere nutzt
+  vorerst den Template-Standard 355 (wie das Malbuch); sichtbar ist er nur auf den
+  web-base-Fehlerseiten und als `theme_color`. Eigener Slot braucht eine Regeländerung in web-base.
+- Tiere in web-base `08-app-migrations.md` eintragen (Flotte, Abweichungen wie beim Malbuch).
 - Namen selbst aufnehmen statt Systemstimme.
 - Quiz im Entdecker-Modus („Wo ist der Elefant?“).
 - Weitere Welten (Wald, Haustiere, Arktis).
