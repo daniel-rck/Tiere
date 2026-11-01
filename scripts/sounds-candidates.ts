@@ -11,48 +11,52 @@ import { join } from "node:path";
 import content from "../content/animals.json" with { type: "json" };
 import { checkLicense, stripHtml } from "../src/engine/licenses.ts";
 import { apiGet, commonsAudio, download, extensionOf } from "./commons.ts";
+import { soundJunk, soundScore } from "./sound-filter.ts";
 import { processSound } from "./sounds.ts";
 
 const ROOT = ".cache/sounds";
 const MAX = 8;
 
-/** English names: most recordings on Commons are titled in English or Latin. */
-const ENGLISH: Record<string, string> = {
-  kuh: "cow moo",
-  schwein: "pig grunt",
-  schaf: "sheep bleat",
-  huhn: "chicken hen",
-  pferd: "horse neigh",
-  ziege: "goat bleat",
-  ente: "duck quack",
-  gans: "goose",
-  esel: "donkey bray",
-  hund: "dog bark",
-  katze: "cat meow",
-  elefant: "elephant trumpet",
-  loewe: "lion roar",
-  zebra: "zebra",
-  nashorn: "rhinoceros",
-  nilpferd: "hippopotamus",
-  eisbaer: "polar bear",
-  kamel: "camel",
-  flamingo: "flamingo",
-  erdmaennchen: "meerkat",
-  pinguin: "penguin",
-  tiger: "tiger roar",
-  "orang-utan": "orangutan",
-  tukan: "toucan",
-  frosch: "tree frog",
-  gorilla: "gorilla",
-  schimpanse: "chimpanzee",
-  ara: "macaw",
-  jaguar: "jaguar",
-  schlange: "snake hiss",
-  clownfisch: "clownfish",
-  delfin: "dolphin whistle",
-  buckelwal: "humpback whale song",
-  seehund: "harbor seal",
-  orca: "orca call",
+/**
+ * English search terms (most recordings on Commons are titled in English or by
+ * the Latin name). The first is also matched against titles for ranking.
+ */
+const ENGLISH: Record<string, string[]> = {
+  kuh: ["cow", "cow moo"],
+  schwein: ["pig", "pig grunt", "pig oink"],
+  schaf: ["sheep", "sheep bleat"],
+  huhn: ["hen", "chicken clucking", "hen cackle"],
+  pferd: ["horse", "horse neigh", "horse whinny"],
+  ziege: ["goat", "goat bleat", "goat bleating"],
+  ente: ["duck", "duck quack", "mallard call"],
+  gans: ["goose", "goose honk", "greylag goose call"],
+  esel: ["donkey", "donkey bray", "donkey braying"],
+  hund: ["dog", "dog bark", "dog barking"],
+  katze: ["cat", "cat meow"],
+  elefant: ["elephant", "elephant trumpet", "elephant trumpeting"],
+  loewe: ["lion", "lion roar", "lion roaring"],
+  zebra: ["zebra", "zebra call", "zebra bray"],
+  nashorn: ["rhinoceros", "rhino sound", "rhinoceros vocalization"],
+  nilpferd: ["hippopotamus", "hippo grunt", "hippopotamus sound"],
+  eisbaer: ["polar bear", "polar bear growl", "polar bear sound"],
+  kamel: ["camel", "camel grunt", "camel sound", "dromedary sound"],
+  flamingo: ["flamingo", "flamingo call"],
+  erdmaennchen: ["meerkat", "meerkat call", "meerkat alarm"],
+  pinguin: ["penguin", "penguin call", "penguin colony"],
+  tiger: ["tiger", "tiger roar", "tiger growl"],
+  "orang-utan": ["orangutan", "orangutan call", "orangutan long call"],
+  tukan: ["toucan", "toucan call"],
+  frosch: ["tree frog", "tree frog call", "frog croak"],
+  gorilla: ["gorilla", "gorilla vocalization", "gorilla grunt", "gorilla chest beat"],
+  schimpanse: ["chimpanzee", "chimpanzee pant hoot", "chimpanzee call"],
+  ara: ["macaw", "macaw call", "scarlet macaw"],
+  jaguar: ["jaguar", "jaguar roar", "jaguar saw"],
+  schlange: ["snake", "snake hiss", "rattlesnake rattle"],
+  clownfisch: ["clownfish", "clownfish sound", "anemonefish sound"],
+  delfin: ["dolphin", "dolphin whistle", "dolphin clicks", "bottlenose dolphin sound"],
+  buckelwal: ["humpback whale", "humpback whale song"],
+  seehund: ["harbor seal", "harbour seal vocalization", "seal sound", "grey seal call"],
+  orca: ["killer whale", "orca call", "killer whale call"],
 };
 
 type AudioInfo = {
@@ -87,7 +91,7 @@ async function search(query: string): Promise<AudioInfo[]> {
     action: "query",
     generator: "search",
     gsrnamespace: "6",
-    gsrlimit: "20",
+    gsrlimit: "30",
     gsrsearch: `${query} filetype:audio`,
     prop: "imageinfo",
     iiprop: "url|size|mime|extmetadata",
@@ -133,16 +137,31 @@ async function candidatesFor(animal: (typeof content.animals)[number]): Promise<
     console.log(`${animal.id}: stilles Tier, keine Suche`);
     return;
   }
+  const english = ENGLISH[animal.id] ?? [];
+  const terms = [animal.latin, english[0] ?? animal.name, animal.name];
   const seen = new Set<string>();
-  const found: AudioInfo[] = [];
-  for (const query of [ENGLISH[animal.id], animal.latin, animal.name].filter(Boolean)) {
-    for (const page of await search(query as string)) {
-      if (!seen.has(page.title)) {
-        seen.add(page.title);
-        found.push(page);
-      }
+  const ranked: { page: AudioInfo; score: number; order: number }[] = [];
+  for (const query of [`"${animal.latin}"`, ...english, animal.name]) {
+    for (const page of await search(query)) {
+      if (seen.has(page.title)) continue;
+      seen.add(page.title);
+      const description = stripHtml(
+        page.imageinfo?.[0]?.extmetadata?.ImageDescription?.value ?? "",
+      );
+      const junk = soundJunk(page.title, description);
+      if (junk) continue;
+      ranked.push({
+        page,
+        score: soundScore(page.title, description, terms),
+        order: ranked.length,
+      });
     }
   }
+  // Best match first; equal scores keep the search order.
+  const found = ranked
+    .filter((entry) => entry.score > 0)
+    .toSorted((a, b) => b.score - a.score || a.order - b.order)
+    .map((entry) => entry.page);
   const dir = join(ROOT, animal.id);
   await mkdir(dir, { recursive: true });
   const candidates: SoundCandidate[] = [];
@@ -153,7 +172,7 @@ async function candidatesFor(animal: (typeof content.animals)[number]): Promise<
     const meta = info.extmetadata ?? {};
     const license = checkLicense(meta.LicenseShortName?.value, meta.License?.value);
     if (!license.ok) continue;
-    if (info.size > 40_000_000) continue;
+    if (info.size > 15_000_000) continue;
     const n = candidates.length + 1;
     const source = commonsAudio(info.url, info.mime);
     const hash = createHash("sha1").update(source).digest("hex").slice(0, 16);
