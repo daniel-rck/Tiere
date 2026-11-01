@@ -1,0 +1,52 @@
+name: Photos
+
+# Builds the selected photos (photos:build) on a GitHub runner and commits the
+# result to the branch. For when Wikimedia rate-limits the machine that would
+# otherwise run the build. Runs when the selection or the build script changes,
+# or by hand.
+on:
+  workflow_dispatch:
+  push:
+    branches-ignore: [main]
+    paths:
+      - content/animals.json
+      - scripts/photos-build.ts
+      - .github/workflows/photos.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: photos-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: package.json
+      - run: bun install --frozen-lockfile
+      # Keep what was built even if some downloads failed; fail the job at the end.
+      - id: build
+        run: bun run photos:build
+        continue-on-error: true
+      - run: bun run content:check
+      - name: Commit photos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/photos src/content/catalog.generated.json src/content/credits.generated.json
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+          else
+            git commit -m "chore(content): build photos"
+            git push
+          fi
+      - if: steps.build.outcome == 'failure'
+        run: |
+          echo "photos:build did not finish; run the workflow again."
+          exit 1

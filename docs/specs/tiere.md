@@ -338,6 +338,11 @@ Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
 - _2026-11-01_ — App-Icon: Pfotenabdruck auf Meerblau (`bun run icons`), keine Figur.
 - _2026-11-01_ — Spec bleibt Deutsch (web-base empfiehlt Englisch für `docs/specs/`), wie beim
   Malbuch.
+- _2026-11-01_ — Foto-Build auch auf GitHub Actions (`.github/workflows/photos.yml`): Wikimedia
+  hat die Cloud-IP der Agent-Umgebung über Stunden mit 429 gesperrt. Der Workflow läuft bei
+  Änderungen an Auswahl oder Build-Skript (nicht auf `main`) oder von Hand und committet Fotos
+  und beide `*.generated.json` auf den Branch. Die Vorschaubilder der Auswahlseite (330 px)
+  taugen nicht als Ersatz.
 
 ## 11. Offene Punkte
 - Akzentfarbe: Das Farbrad der Flotte ist voll (web-base `04-layout-system.md`). Tiere nutzt
