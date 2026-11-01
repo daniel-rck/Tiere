@@ -11,7 +11,7 @@ import { join } from "node:path";
 import data from "../content/animals.json" with { type: "json" };
 import type { Catalog, ContentFile, Credit, CreditsFile } from "../src/content/types.ts";
 import { checkLicense, licenseUrl, stripHtml } from "../src/engine/licenses.ts";
-import { download, fileInfo } from "./commons.ts";
+import { download, fileInfo, commonsAudio, extensionOf } from "./commons.ts";
 import { processSound } from "./sounds.ts";
 
 const content = data as unknown as ContentFile;
@@ -63,13 +63,13 @@ async function main(): Promise<void> {
       problems.push(`${file}: Lizenz-URL fehlt`);
       continue;
     }
-    const ext = info.url.split(".").pop() ?? "ogg";
-    const hash = createHash("sha1").update(info.url).digest("hex").slice(0, 16);
-    const original = join(ORIGINALS, `${hash}.${ext}`);
+    const source = commonsAudio(info.url, info.mime);
+    const hash = createHash("sha1").update(source).digest("hex").slice(0, 16);
+    const original = join(ORIGINALS, `${hash}.${extensionOf(source)}`);
     const label = `[${i + 1}/${selected.length}] ${animal.id}`;
     if (!existsSync(original)) {
       console.log(`${label}: lade ${file}`);
-      await download(info.url, original);
+      await download(source, original);
     }
     const out = join(OUT, `${animal.id}.m4a`);
     if (!existsSync(out) || built[animal.id] !== info.url) {

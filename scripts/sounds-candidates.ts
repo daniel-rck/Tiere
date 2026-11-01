@@ -10,7 +10,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import content from "../content/animals.json" with { type: "json" };
 import { checkLicense, stripHtml } from "../src/engine/licenses.ts";
-import { apiGet, download } from "./commons.ts";
+import { apiGet, commonsAudio, download, extensionOf } from "./commons.ts";
 import { processSound } from "./sounds.ts";
 
 const ROOT = ".cache/sounds";
@@ -155,10 +155,17 @@ async function candidatesFor(animal: (typeof content.animals)[number]): Promise<
     if (!license.ok) continue;
     if (info.size > 40_000_000) continue;
     const n = candidates.length + 1;
-    const ext = info.url.split(".").pop() ?? "ogg";
-    const hash = createHash("sha1").update(info.url).digest("hex").slice(0, 16);
-    const original = join(".cache/sound-originals", `${hash}.${ext}`);
-    if (!existsSync(original)) await download(info.url, original);
+    const source = commonsAudio(info.url, info.mime);
+    const hash = createHash("sha1").update(source).digest("hex").slice(0, 16);
+    const original = join(".cache/sound-originals", `${hash}.${extensionOf(source)}`);
+    if (!existsSync(original)) {
+      try {
+        await download(source, original);
+      } catch (error) {
+        console.warn(`${animal.id}: ${page.title} nicht geladen (${(error as Error).message})`);
+        continue;
+      }
+    }
     const preview = join(dir, `${String(n).padStart(2, "0")}.m4a`);
     try {
       processSound(original, preview);

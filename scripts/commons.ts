@@ -121,6 +121,24 @@ export function commonsThumb(originalUrl: string, width: number): string {
   return url.href;
 }
 
+/**
+ * URL to download a Commons audio file from: the MP3 transcode Commons keeps
+ * for non-MP3 audio (originals are rejected like images), else the file itself.
+ */
+export function commonsAudio(originalUrl: string, mime: string): string {
+  const url = new URL(originalUrl);
+  url.search = "";
+  const match = /^\/wikipedia\/commons\/(\w\/\w\w)\/([^/]+)$/.exec(url.pathname);
+  if (mime === "audio/mpeg" || !match) return url.href;
+  const [, hash, name] = match;
+  url.pathname = `/wikipedia/commons/transcoded/${hash}/${name}/${name}.mp3`;
+  return url.href;
+}
+
+/** File extension of a URL's path, lower case. */
+export const extensionOf = (url: string): string =>
+  /\.(\w+)$/.exec(new URL(url).pathname)?.[1]?.toLowerCase() ?? "bin";
+
 type ExtValue = { value?: string };
 
 export type CommonsFile = {

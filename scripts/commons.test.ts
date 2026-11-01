@@ -1,5 +1,20 @@
 import { describe, expect, it } from "vitest";
-import { commonsThumb } from "./commons.ts";
+import { commonsAudio, commonsThumb, extensionOf } from "./commons.ts";
+
+describe("commonsAudio", () => {
+  const ogg = "https://upload.wikimedia.org/wikipedia/commons/3/3b/Cow_moo.ogg?utm_source=x";
+  it("points non-MP3 audio at the MP3 transcode", () => {
+    expect(commonsAudio(ogg, "application/ogg")).toBe(
+      "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/3b/Cow_moo.ogg/Cow_moo.ogg.mp3",
+    );
+    expect(extensionOf(commonsAudio(ogg, "audio/wav"))).toBe("mp3");
+  });
+
+  it("keeps MP3 files", () => {
+    const mp3 = "https://upload.wikimedia.org/wikipedia/commons/3/3b/Cow.mp3";
+    expect(commonsAudio(mp3, "audio/mpeg")).toBe(mp3);
+  });
+});
 
 const ORIGINAL =
   "https://upload.wikimedia.org/wikipedia/commons/f/f4/Ch%C3%A8vre_%2810%29.jpg?utm_source=commons.wikimedia.org";
