@@ -1,0 +1,13 @@
+# Bumps the pinned web-base workflow refs (and any action) as reviewable PRs,
+# for releases at least seven days old.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: chore
+      include: scope

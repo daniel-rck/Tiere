@@ -1,0 +1,1519 @@
+{
+  "worlds": [
+    {
+      "id": "bauernhof",
+      "name": "Bauernhof",
+      "emoji": "🐄",
+      "color": "#F3C13A",
+      "ink": "#3E2900"
+    },
+    {
+      "id": "zoo",
+      "name": "Zoo",
+      "emoji": "🦒",
+      "color": "#EE8A45",
+      "ink": "#3A1704"
+    },
+    {
+      "id": "dschungel",
+      "name": "Dschungel",
+      "emoji": "🐒",
+      "color": "#2E8B57",
+      "ink": "#FFFFFF"
+    },
+    {
+      "id": "meer",
+      "name": "Meer",
+      "emoji": "🐠",
+      "color": "#1E6FB8",
+      "ink": "#FFFFFF"
+    }
+  ],
+  "animals": [
+    {
+      "id": "kuh",
+      "world": "bauernhof",
+      "name": "Kuh",
+      "article": "die",
+      "latin": "Bos taurus",
+      "voice": {
+        "kind": "sound",
+        "text": "Muuuh!"
+      },
+      "facts": ["Eine Kuh frisst am Tag bis zu 70 Kilo Gras.", "Ihr Magen hat vier Teile."],
+      "photos": [
+        {
+          "file": "File:Cow (Fleckvieh breed) Oeschinensee Slaunger 2009-07-07.jpg"
+        },
+        {
+          "file": "File:Rinder Ebsdorfergrund 1.jpg"
+        },
+        {
+          "file": "File:Flumserberg (Schweiz), Liegende Kuh -- 2011 -- 1526.jpg"
+        },
+        {
+          "file": "File:Cow on Pupers.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "schwein",
+      "world": "bauernhof",
+      "name": "Schwein",
+      "article": "das",
+      "latin": "Sus scrofa domesticus",
+      "voice": {
+        "kind": "sound",
+        "text": "Grunz grunz!"
+      },
+      "facts": [
+        "Schweine haben eine super Nase. Sie finden damit sogar Trüffel unter der Erde.",
+        "Sie wälzen sich im Schlamm, weil sie nicht schwitzen können."
+      ],
+      "photos": [
+        {
+          "file": "File:Pig farm Vampula 9.jpg"
+        },
+        {
+          "file": "File:Contre-jour photograph of a standing piglet at sunset with colorful sky in Don Det Laos.jpg"
+        },
+        {
+          "file": "File:Standing piglet at golden hour in Don Det Laos.jpg"
+        },
+        {
+          "file": "File:Pigs in the Altai Mountains. Village Ortolyk.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "schaf",
+      "world": "bauernhof",
+      "name": "Schaf",
+      "article": "das",
+      "latin": "Ovis aries",
+      "voice": {
+        "kind": "sound",
+        "text": "Bäh!"
+      },
+      "facts": [
+        "Schafe haben dicke Wolle. Die wird einmal im Jahr geschoren.",
+        "Schafe können sich viele Gesichter merken."
+      ],
+      "photos": [
+        {
+          "file": "File:20200502 Owca na pastwisku pod Lasem Wolskim w Krakowie 1517 1657.jpg"
+        },
+        {
+          "file": "File:06 Ewe with her two lambs in Wester Ross by Romaniviatores.jpg"
+        },
+        {
+          "file": "File:Stubai - Tiroler Bergschaf -BT- 01.jpg"
+        },
+        {
+          "file": "File:20240704 Regentenwiese 01.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "huhn",
+      "world": "bauernhof",
+      "name": "Huhn",
+      "article": "das",
+      "latin": "Gallus gallus domesticus",
+      "voice": {
+        "kind": "sound",
+        "text": "Gack gack!"
+      },
+      "facts": [
+        "Ein Huhn kann fast jeden Tag ein Ei legen.",
+        "Hühner baden gern im Sand, um sauber zu bleiben."
+      ],
+      "photos": [
+        {
+          "file": "File:Chicken on the grounds of Melville Castle.jpg"
+        },
+        {
+          "file": "File:Feder 004 2023 04 24.jpg"
+        },
+        {
+          "file": "File:Hen with chicks, Raisen district, MP, India.jpg"
+        },
+        {
+          "file": "File:Rooster portrait, France.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "pferd",
+      "world": "bauernhof",
+      "name": "Pferd",
+      "article": "das",
+      "latin": "Equus ferus caballus",
+      "voice": {
+        "kind": "sound",
+        "text": "Wiiiehiehie!"
+      },
+      "facts": [
+        "Pferde können im Stehen schlafen.",
+        "Ein Fohlen kann schon kurz nach der Geburt laufen."
+      ],
+      "photos": [
+        {
+          "file": "File:Biandintz eta zaldiak - modified2.jpg"
+        },
+        {
+          "file": "File:IcelandicHorseInWinter.jpg"
+        },
+        {
+          "file": "File:Haflinger Fohlen 01.jpg"
+        },
+        {
+          "file": "File:Galtür - Pferdekopf 01.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "ziege",
+      "world": "bauernhof",
+      "name": "Ziege",
+      "article": "die",
+      "latin": "Capra hircus",
+      "voice": {
+        "kind": "sound",
+        "text": "Mäh!"
+      },
+      "facts": ["Ziegen sind tolle Kletterer.", "Ihre Pupillen sehen aus wie kleine Rechtecke."],
+      "photos": [
+        {
+          "file": "File:A white irish goat.jpg"
+        },
+        {
+          "file": "File:Baby Goat in Margarita Island, Venezuela.jpg"
+        },
+        {
+          "file": "File:Capra aegagrus hircus in isla Margarita.jpg"
+        },
+        {
+          "file": "File:Chèvre (10).jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "ente",
+      "world": "bauernhof",
+      "name": "Ente",
+      "article": "die",
+      "latin": "Anas platyrhynchos domesticus",
+      "voice": {
+        "kind": "sound",
+        "text": "Quak quak!"
+      },
+      "facts": [
+        "Enten fetten ihre Federn ein, damit kein Wasser durchkommt.",
+        "Entenküken laufen ihrer Mutter in einer Reihe hinterher."
+      ],
+      "photos": [
+        {
+          "file": "File:Anas platyrhynchos domesticus Palo Alto May 2011 003.jpg"
+        },
+        {
+          "file": "File:Domesticated mallard drakes in Nami Island.jpg"
+        },
+        {
+          "file": "File:Anas platyrhynchos domesticus Palo Alto May 2011 004.jpg"
+        },
+        {
+          "file": "File:Domestic duck waving its wings at golden hour in a pond in Don Det Laos.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "gans",
+      "world": "bauernhof",
+      "name": "Gans",
+      "article": "die",
+      "latin": "Anser anser domesticus",
+      "voice": {
+        "kind": "sound",
+        "text": "Schnatter schnatter!"
+      },
+      "facts": [
+        "Gänse passen gut auf und schnattern laut, wenn Fremde kommen.",
+        "Junge Gänse heißen Gössel."
+      ],
+      "photos": [
+        {
+          "file": "File:Domestic Goose.jpg"
+        },
+        {
+          "file": "File:Takaragaike Park Kyoto04bs4200.jpg"
+        },
+        {
+          "file": "File:Domesticated goose head, Chaguaramal, Venezuela.jpg"
+        },
+        {
+          "file": "File:Domestic goose in Dagestan 2.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "kaninchen",
+      "world": "bauernhof",
+      "name": "Kaninchen",
+      "article": "das",
+      "latin": "Oryctolagus cuniculus",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Kaninchen sind ganz leise."
+      },
+      "facts": [
+        "Kaninchen können ihre langen Ohren in verschiedene Richtungen drehen.",
+        "Ihre Zähne wachsen ihr ganzes Leben lang."
+      ],
+      "photos": [
+        {
+          "file": "File:Oryctolagus cuniculus Tasmania 2.jpg"
+        },
+        {
+          "file": "File:Conejo común (Oryctolagus cuniculus), Tierpark Hellabrunn, Múnich, Alemania, 2012-06-17, DD 01.JPG"
+        },
+        {
+          "file": "File:Heimtier 004 2023 08 26.jpg"
+        },
+        {
+          "file": "File:Oryctolagus cuniculus Rcdo.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "esel",
+      "world": "bauernhof",
+      "name": "Esel",
+      "article": "der",
+      "latin": "Equus asinus",
+      "voice": {
+        "kind": "sound",
+        "text": "I-aah!"
+      },
+      "facts": [
+        "Esel sind sehr trittsicher und können schwere Lasten tragen.",
+        "Mit ihren langen Ohren hören sie sehr gut."
+      ],
+      "photos": [
+        {
+          "file": "File:Jielbeaumadier ane des pyrenees vda 2010.jpeg"
+        },
+        {
+          "file": "File:Equus asinus Kadzidłowo 001.jpg"
+        },
+        {
+          "file": "File:Ânes à Bréziers, Hautes-Alpes 01.jpg"
+        },
+        {
+          "file": "File:Equus asinus Kadzidłowo 002.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "hund",
+      "world": "bauernhof",
+      "name": "Hund",
+      "article": "der",
+      "latin": "Canis lupus familiaris",
+      "voice": {
+        "kind": "sound",
+        "text": "Wau wau!"
+      },
+      "facts": [
+        "Hunde riechen viel, viel besser als Menschen.",
+        "Wenn ein Hund mit dem Schwanz wedelt, ist er oft aufgeregt oder freut sich."
+      ],
+      "photos": [
+        {
+          "file": "File:Labrador Retriever snow.jpg"
+        },
+        {
+          "file": "File:Callie the golden retriever puppy.jpg"
+        },
+        {
+          "file": "File:Pies nierasowy, 20201003 0930 4295.jpg"
+        },
+        {
+          "file": "File:Teckel à poil dur - 20150430 14h47 (10136).jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "katze",
+      "world": "bauernhof",
+      "name": "Katze",
+      "article": "die",
+      "latin": "Felis catus",
+      "voice": {
+        "kind": "sound",
+        "text": "Miau!"
+      },
+      "facts": [
+        "Katzen schnurren oft, wenn sie sich wohlfühlen.",
+        "Mit ihren Schnurrhaaren ertasten sie Dinge auch im Dunkeln."
+      ],
+      "photos": [
+        {
+          "file": "File:Cat November 2010-1a.jpg"
+        },
+        {
+          "file": "File:Six weeks old cat (aka).jpg"
+        },
+        {
+          "file": "File:Tabby cat with blue eyes-3336579.jpg"
+        },
+        {
+          "file": "File:Tabby cats of Ōizumi Ryokuchi Park, January 2019 - 8816.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "elefant",
+      "world": "zoo",
+      "name": "Elefant",
+      "article": "der",
+      "latin": "Loxodonta africana",
+      "voice": {
+        "kind": "sound",
+        "text": "Törööö!"
+      },
+      "facts": [
+        "Der Afrikanische Elefant ist das größte Tier an Land.",
+        "Mit dem Rüssel kann er riechen, trinken und Dinge greifen."
+      ],
+      "photos": [
+        {
+          "file": "File:Elefante africano de sabana (Loxodonta africana), parque nacional de Amboseli, Kenia, 2024-05-22, DD 07.jpg"
+        },
+        {
+          "file": "File:African bush elephants (Loxodonta africana) female with six-week-old baby.jpg"
+        },
+        {
+          "file": "File:African bush elephant (Loxodonta africana) baby 6 weeks.jpg"
+        },
+        {
+          "file": "File:African bush elephant (Loxodonta africana) drinking Kruger.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "giraffe",
+      "world": "zoo",
+      "name": "Giraffe",
+      "article": "die",
+      "latin": "Giraffa camelopardalis",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Giraffen sind fast immer ganz leise."
+      },
+      "facts": [
+        "Giraffen sind die höchsten Tiere der Welt.",
+        "Ihre Zunge ist ungefähr 45 Zentimeter lang."
+      ],
+      "photos": [
+        {
+          "file": "File:042 Masai giraffe in the Serengeti National Park Photo by Giles Laurent.jpg"
+        },
+        {
+          "file": "File:184 Angolan giraffe licking its nose in Etosha National Park Photo by Giles Laurent.jpg"
+        },
+        {
+          "file": "File:076 Baby Angolan giraffes running in Etosha National Park Photo by Giles Laurent.jpg"
+        },
+        {
+          "file": "File:Giraffa camelopardalis angolensis.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "loewe",
+      "world": "zoo",
+      "name": "Löwe",
+      "article": "der",
+      "latin": "Panthera leo",
+      "voice": {
+        "kind": "sound",
+        "text": "Roaaar!"
+      },
+      "facts": [
+        "Löwen leben in Familiengruppen, die man Rudel nennt.",
+        "Löwen schlafen bis zu 20 Stunden am Tag."
+      ],
+      "photos": [
+        {
+          "file": "File:Lion d'Afrique.jpg"
+        },
+        {
+          "file": "File:Okonjima Lioness.jpg"
+        },
+        {
+          "file": "File:011 The lion king Tryggve in the Serengeti National Park Photo by Giles Laurent.jpg"
+        },
+        {
+          "file": "File:Lions Family Portrait Masai Mara.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "zebra",
+      "world": "zoo",
+      "name": "Zebra",
+      "article": "das",
+      "latin": "Equus quagga",
+      "voice": {
+        "kind": "sound",
+        "text": "Ih-ah!"
+      },
+      "facts": [
+        "Jedes Zebra hat sein eigenes Streifenmuster.",
+        "Zebras leben in großen Herden in Afrika."
+      ],
+      "photos": [
+        {
+          "file": "File:Equus quagga burchellii - Etosha, 2014.jpg"
+        },
+        {
+          "file": "File:Zebra Family Luangwa Zambia Jul23 A7C 05903.jpg"
+        },
+        {
+          "file": "File:Plains Zebra Left 2019-07-25.jpg"
+        },
+        {
+          "file": "File:Cebras comunes (Equus quagga), parque nacional de Tarangire, Tanzania, 2024-05-25, DD 90.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "nashorn",
+      "world": "zoo",
+      "name": "Nashorn",
+      "article": "das",
+      "latin": "Ceratotherium simum",
+      "voice": {
+        "kind": "sound",
+        "text": "Schnaub!"
+      },
+      "facts": [
+        "Das Breitmaulnashorn frisst fast den ganzen Tag Gras.",
+        "Sein Horn ist aus demselben Stoff wie unsere Fingernägel."
+      ],
+      "photos": [
+        {
+          "file": "File:075 White rhinoceros mother and her newborn baby in the Kalahari Desert of Namibia Photo by Giles Laurent.jpg"
+        },
+        {
+          "file": "File:166 White rhinoceros in Otjozondjupa Region Photo by Giles Laurent.jpg"
+        },
+        {
+          "file": "File:White Rhinoceros Alert 2019-07-27.jpg"
+        },
+        {
+          "file": "File:At Knowsley Safari Park 2006 127.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "nilpferd",
+      "world": "zoo",
+      "name": "Nilpferd",
+      "article": "das",
+      "latin": "Hippopotamus amphibius",
+      "voice": {
+        "kind": "sound",
+        "text": "Grunz!"
+      },
+      "facts": [
+        "Nilpferde liegen tagsüber im Wasser und fressen nachts an Land Gras.",
+        "Unter Wasser können sie Nase und Ohren verschließen."
+      ],
+      "photos": [
+        {
+          "file": "File:Hipopótamo (Hippopotamus amphibius), parque nacional de Chobe, Botsuana, 2018-07-28, DD 82.jpg"
+        },
+        {
+          "file": "File:Hippopotamus in Chobe National Park 03.jpg"
+        },
+        {
+          "file": "File:Hippo (Hippopotamus amphibius) head in water.jpg"
+        },
+        {
+          "file": "File:Hippopotamus amphibius im Kölner Zoo -20140321-RM-125057.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "kaenguru",
+      "world": "zoo",
+      "name": "Känguru",
+      "article": "das",
+      "latin": "Osphranter rufus",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Kängurus sind meistens ganz leise."
+      },
+      "facts": [
+        "Kängurus hüpfen mit ihren starken Hinterbeinen.",
+        "Das Junge wächst im Beutel der Mutter auf."
+      ],
+      "photos": [
+        {
+          "file": "File:Red Kangaroos at Sturt National Park NSW.jpg"
+        },
+        {
+          "file": "File:Osphranter rufus - Tierpark Hagenbeck 01.jpg"
+        },
+        {
+          "file": "File:Fighting Words (115758693).jpeg"
+        },
+        {
+          "file": "File:Fauna de Australia30.JPG"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "eisbaer",
+      "world": "zoo",
+      "name": "Eisbär",
+      "article": "der",
+      "latin": "Ursus maritimus",
+      "voice": {
+        "kind": "sound",
+        "text": "Brumm!"
+      },
+      "facts": [
+        "Unter seinem weißen Fell hat der Eisbär schwarze Haut.",
+        "Eisbären sind sehr gute Schwimmer."
+      ],
+      "photos": [
+        {
+          "file": "File:Polar Bear AdF.jpg"
+        },
+        {
+          "file": "File:Female polar bear (Ursus maritimus) with cub, Svalbard.jpg"
+        },
+        {
+          "file": "File:NOR-2016-Svalbard-Sjuøyane-Phippsøya-Polar bear (Ursus maritimus) 20.jpg"
+        },
+        {
+          "file": "File:Ursus maritimus - Tierpark Hagenbeck 01.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "kamel",
+      "world": "zoo",
+      "name": "Kamel",
+      "article": "das",
+      "latin": "Camelus bactrianus",
+      "voice": {
+        "kind": "sound",
+        "text": "Bröööh!"
+      },
+      "facts": [
+        "Dieses Kamel heißt Trampeltier und hat zwei Höcker.",
+        "In den Höckern speichert es Fett, kein Wasser."
+      ],
+      "photos": [
+        {
+          "file": "File:Алтын-Эмель, верблюды (4).jpg"
+        },
+        {
+          "file": "File:Camel Farm in Mongolia 05.jpg"
+        },
+        {
+          "file": "File:A little white camel 03.jpg"
+        },
+        {
+          "file": "File:Camel Farm in Mongolia 02.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "flamingo",
+      "world": "zoo",
+      "name": "Flamingo",
+      "article": "der",
+      "latin": "Phoenicopterus roseus",
+      "voice": {
+        "kind": "sound",
+        "text": "Gak gak!"
+      },
+      "facts": [
+        "Flamingos sind rosa, weil ihr Futter rosa Farbstoffe enthält.",
+        "Sie stehen oft lange auf nur einem Bein."
+      ],
+      "photos": [
+        {
+          "file": "File:Flamenco común (Phoenicopterus roseus), Walvis Bay, Namibia, 2018-08-05, DD 30.jpg"
+        },
+        {
+          "file": "File:Phoenicopterus roseus Luc Viatour.jpg"
+        },
+        {
+          "file": "File:001 Greater flamingo in flight in the Camargue Photo by Giles Laurent.jpg"
+        },
+        {
+          "file": "File:Greater flamingos (Phoenicopterus roseus) Bahrain.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "erdmaennchen",
+      "world": "zoo",
+      "name": "Erdmännchen",
+      "article": "das",
+      "latin": "Suricata suricatta",
+      "voice": {
+        "kind": "sound",
+        "text": "Piep piep!"
+      },
+      "facts": [
+        "Ein Erdmännchen hält Wache und warnt die anderen mit einem Ruf.",
+        "Erdmännchen leben in großen Familien in Höhlen unter der Erde."
+      ],
+      "photos": [
+        {
+          "file": "File:Meerkat (Suricata suricatta) with 3 young.jpg"
+        },
+        {
+          "file": "File:Baby Meerkats.jpg"
+        },
+        {
+          "file": "File:Meerkat (Suricata suricatta) Tswalu.jpg"
+        },
+        {
+          "file": "File:Animales bioparc-valencia-2012 (13).JPG"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "pinguin",
+      "world": "zoo",
+      "name": "Pinguin",
+      "article": "der",
+      "latin": "Spheniscus humboldti",
+      "voice": {
+        "kind": "sound",
+        "text": "I-ah, i-ah!"
+      },
+      "facts": [
+        "Pinguine können nicht fliegen, aber sehr schnell schwimmen.",
+        "Humboldtpinguine leben an der Küste von Südamerika."
+      ],
+      "photos": [
+        {
+          "file": "File:HumboldtPenguins.jpg"
+        },
+        {
+          "file": "File:Humboldt Penguin (Spheniscus humboldti) in Chester Zoo, Cheshire, England - 24-06-2015.jpg"
+        },
+        {
+          "file": "File:Teaksu Kim 2017 (Unsplash).jpg"
+        },
+        {
+          "file": "File:Day trip from Puerto Varas to Isla Grande de Chiloe - a visit and boat trip to Pinguinera Isloto de Punihuil on the open Ocean - Peruvian (Humboldt) Penguin (Spheniscus humboldt), mostly ? - (25185182305).jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "panda",
+      "world": "zoo",
+      "name": "Panda",
+      "article": "der",
+      "latin": "Ailuropoda melanoleuca",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, der Panda kaut gerade Bambus."
+      },
+      "facts": [
+        "Pandas fressen fast nur Bambus, viele Stunden am Tag.",
+        "Ein Panda-Baby ist bei der Geburt ungefähr so schwer wie ein Apfel."
+      ],
+      "photos": [
+        {
+          "file": "File:Ailuropoda melanoleuca Zhen Zhen 220518e.jpg"
+        },
+        {
+          "file": "File:A Happy Panda.jpg"
+        },
+        {
+          "file": "File:Bao Bao Eating Bamboo 8 - 16746246518.jpg"
+        },
+        {
+          "file": "File:Zooparc de Beauval - Panda - 2016 - 012.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "tiger",
+      "world": "dschungel",
+      "name": "Tiger",
+      "article": "der",
+      "latin": "Panthera tigris",
+      "voice": {
+        "kind": "sound",
+        "text": "Grrrr!"
+      },
+      "facts": [
+        "Tiger sind die größten Raubkatzen der Welt.",
+        "Anders als die meisten Katzen schwimmen Tiger sehr gern."
+      ],
+      "photos": [
+        {
+          "file": "File:Bengal tiger in Sanjay Dubri Tiger Reserve December 2024 by Tisha Mukherjee 11.jpg"
+        },
+        {
+          "file": "File:Sibirischer tiger de edit02.jpg"
+        },
+        {
+          "file": "File:Panthera tigris altaica 13 - Buffalo Zoo.jpg"
+        },
+        {
+          "file": "File:Panthera tigris altaica in Lodz Zoo 2.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "orang-utan",
+      "world": "dschungel",
+      "name": "Orang-Utan",
+      "article": "der",
+      "latin": "Pongo pygmaeus",
+      "voice": {
+        "kind": "sound",
+        "text": "Uh uh!"
+      },
+      "facts": [
+        "Orang-Utan bedeutet „Waldmensch“.",
+        "Jeden Abend bauen sie sich ein neues Schlafnest hoch oben im Baum."
+      ],
+      "photos": [
+        {
+          "file": "File:Orangutan -Zoologischer Garten Berlin-8a.jpg"
+        },
+        {
+          "file": "File:Bornean orangutan (Pongo pygmaeus), Tanjung Putting National Park 02.jpg"
+        },
+        {
+          "file": "File:Bornean Orangutan DSCN0685.jpg"
+        },
+        {
+          "file": "File:Orang Utan, Semenggok Forest Reserve, Sarawak, Borneo, Malaysia.JPG"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "tukan",
+      "world": "dschungel",
+      "name": "Tukan",
+      "article": "der",
+      "latin": "Ramphastos toco",
+      "voice": {
+        "kind": "sound",
+        "text": "Krrrk!"
+      },
+      "facts": [
+        "Sein Schnabel ist riesig, aber ganz leicht. Innen ist er fast hohl wie ein Schwamm.",
+        "Tukane leben in Südamerika."
+      ],
+      "photos": [
+        {
+          "file": "File:Toco Toucan (Ramphastos toco) - 48153967707.jpg"
+        },
+        {
+          "file": "File:Toco toucan (Ramphastos toco) close-up.jpg"
+        },
+        {
+          "file": "File:090 Toco toucan in Encontro das Águas State Park Photo by Giles Laurent.jpg"
+        },
+        {
+          "file": "File:Tucano em voo.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "chamaeleon",
+      "world": "dschungel",
+      "name": "Chamäleon",
+      "article": "das",
+      "latin": "Furcifer pardalis",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Chamäleons sind ganz leise."
+      },
+      "facts": [
+        "Ein Chamäleon kann seine Farbe ändern.",
+        "Seine Augen kann es in verschiedene Richtungen drehen."
+      ],
+      "photos": [
+        {
+          "file": "File:Panther chameleon (Furcifer pardalis) male Montagne d’Ambre 2.jpg"
+        },
+        {
+          "file": "File:Panther chameleon (Furcifer pardalis) male Nosy Be.jpg"
+        },
+        {
+          "file": "File:Furcifer pardalis 188585670.jpg"
+        },
+        {
+          "file": "File:20110721 Berkenhof Zoo (0055).jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "frosch",
+      "world": "dschungel",
+      "name": "Frosch",
+      "article": "der",
+      "latin": "Agalychnis callidryas",
+      "voice": {
+        "kind": "sound",
+        "text": "Quak quak!"
+      },
+      "facts": [
+        "Der Rotaugenlaubfrosch hat leuchtend rote Augen. Damit erschreckt er Feinde.",
+        "Tagsüber schläft er unter einem Blatt."
+      ],
+      "photos": [
+        {
+          "file": "File:Red eyed tree frog edit2.jpg"
+        },
+        {
+          "file": "File:Red-eyed tree frog Belize 01.jpg"
+        },
+        {
+          "file": "File:Red-eyed Leaf Frog (Agalychnis callidryas) (9591371871).jpg"
+        },
+        {
+          "file": "File:Red-eyed Tree Frog (Agalychnis callidryas) 1.png"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "gorilla",
+      "world": "dschungel",
+      "name": "Gorilla",
+      "article": "der",
+      "latin": "Gorilla gorilla",
+      "voice": {
+        "kind": "sound",
+        "text": "Uh uh!"
+      },
+      "facts": [
+        "Gorillas trommeln sich auf die Brust, um zu zeigen, wie stark sie sind.",
+        "Sie fressen vor allem Blätter, Stängel und Früchte."
+      ],
+      "photos": [
+        {
+          "file": "File:Male Gorilla gorilla gorilla Apenheul 2023 02.jpg"
+        },
+        {
+          "file": "File:Gorila de montaña (Gorilla beringei beringei), parque nacional de la Selva Impenetrable de Bwindi, Uganda, 2024-02-02, DD 37.jpg"
+        },
+        {
+          "file": "File:N'Tami, Western Gorilla.jpg"
+        },
+        {
+          "file": "File:Mountain gorilla (Gorilla beringei beringei) 2-year-old a.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "schimpanse",
+      "world": "dschungel",
+      "name": "Schimpanse",
+      "article": "der",
+      "latin": "Pan troglodytes",
+      "voice": {
+        "kind": "sound",
+        "text": "Uh-uh-ah-ah!"
+      },
+      "facts": [
+        "Schimpansen angeln mit Stöckchen nach Termiten.",
+        "Sie leben in Gruppen und umarmen sich, um sich zu trösten."
+      ],
+      "photos": [
+        {
+          "file": "File:015 Chimpanzee at Kibale forest National Park Photo by Giles Laurent.jpg"
+        },
+        {
+          "file": "File:Schimpanse, Pan troglodytes 1.JPG"
+        },
+        {
+          "file": "File:016 Alpha male chimpanzee walking at Kibale forest National Park Photo by Giles Laurent.jpg"
+        },
+        {
+          "file": "File:Chimpanzees eat nuts.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "ara",
+      "world": "dschungel",
+      "name": "Ara",
+      "article": "der",
+      "latin": "Ara macao",
+      "voice": {
+        "kind": "sound",
+        "text": "Kraah!"
+      },
+      "facts": [
+        "Mit seinem kräftigen Schnabel knackt der Ara harte Nüsse.",
+        "Aras bleiben oft ein Leben lang mit demselben Partner zusammen."
+      ],
+      "photos": [
+        {
+          "file": "File:Ara macao qtl1.jpg"
+        },
+        {
+          "file": "File:Scarlet Macaws at Uvita Beach, Costa Rica 03.jpg"
+        },
+        {
+          "file": "File:Ara macao 411126012.jpg"
+        },
+        {
+          "file": "File:Ara-Zoo-Muenster-2013-02.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "faultier",
+      "world": "dschungel",
+      "name": "Faultier",
+      "article": "das",
+      "latin": "Bradypus variegatus",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, das Faultier schläft gerade."
+      },
+      "facts": [
+        "Faultiere bewegen sich ganz langsam und hängen kopfüber in den Bäumen.",
+        "In ihrem Fell wachsen manchmal winzige grüne Algen."
+      ],
+      "photos": [
+        {
+          "file": "File:Bradypus.jpg"
+        },
+        {
+          "file": "File:Costa Rican Three-Toed Sloth.jpg"
+        },
+        {
+          "file": "File:Bicho-preguiça 2.jpg"
+        },
+        {
+          "file": "File:Bicho-preguiça 3.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "jaguar",
+      "world": "dschungel",
+      "name": "Jaguar",
+      "article": "der",
+      "latin": "Panthera onca",
+      "voice": {
+        "kind": "sound",
+        "text": "Grrr!"
+      },
+      "facts": ["Der Jaguar ist die größte Katze in Amerika.", "Jaguare schwimmen gern und gut."],
+      "photos": [
+        {
+          "file": "File:Jaguar head shot-edit2.jpg"
+        },
+        {
+          "file": "File:015 Jaguar walking in Encontro das Águas State Park Photo by Giles Laurent.jpg"
+        },
+        {
+          "file": "File:013 Jaguar leaving the river in Encontro das Águas State Park Photo by Giles Laurent.jpg"
+        },
+        {
+          "file": "File:113 Jaguar in Encontro das Águas State Park Photo by Giles Laurent.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "krokodil",
+      "world": "dschungel",
+      "name": "Krokodil",
+      "article": "das",
+      "latin": "Crocodylus niloticus",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, das Krokodil liegt ganz still auf der Lauer."
+      },
+      "facts": [
+        "Im Wasser schauen oft nur seine Augen und die Nase heraus.",
+        "Krokodilmütter tragen ihre Babys vorsichtig im Maul."
+      ],
+      "photos": [
+        {
+          "file": "File:Cocodrilo del Nilo (Crocodylus niloticus), reserva natural Masái Mara, Kenia, 2024-05-20, DD 71.jpg"
+        },
+        {
+          "file": "File:Chobe Land Safari, Kasane (20260520-P1075972).jpg"
+        },
+        {
+          "file": "File:Cocodrilo del Nilo (Crocodylus niloticus), reserva natural Masái Mara, Kenia, 2024-05-20, DD 70.jpg"
+        },
+        {
+          "file": "File:Nile Crocodile Kafue River Bank Zambia Jul23 A7C 05542.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "schlange",
+      "world": "dschungel",
+      "name": "Schlange",
+      "article": "die",
+      "latin": "Morelia viridis",
+      "voice": {
+        "kind": "sound",
+        "text": "Ssssss!"
+      },
+      "facts": [
+        "Der Grüne Baumpython wickelt sich zum Ausruhen um einen Ast.",
+        "Schlangen riechen mit ihrer Zunge."
+      ],
+      "photos": [
+        {
+          "file": "File:A Green Tree Python.jpg"
+        },
+        {
+          "file": "File:Boomslang (443113819).jpg"
+        },
+        {
+          "file": "File:Green Tree Python juvenile A22I6572.jpg"
+        },
+        {
+          "file": "File:Morelia-viridis-1.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "clownfisch",
+      "world": "meer",
+      "name": "Clownfisch",
+      "article": "der",
+      "latin": "Amphiprion ocellaris",
+      "voice": {
+        "kind": "sound",
+        "text": "Blubb blubb!"
+      },
+      "facts": [
+        "Clownfische wohnen in Seeanemonen.",
+        "Die Nesseln der Anemone schützen sie vor Feinden."
+      ],
+      "photos": [
+        {
+          "file": "File:Amphiprion ocellaris (Clown anemonefish) by Nick Hobgood.jpg"
+        },
+        {
+          "file": "File:Amphiprion ocellaris 497890888.jpg"
+        },
+        {
+          "file": "File:Amphiprion ocellaris at Gilli Banta.JPG"
+        },
+        {
+          "file": "File:Clownfisk.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "delfin",
+      "world": "meer",
+      "name": "Delfin",
+      "article": "der",
+      "latin": "Tursiops truncatus",
+      "voice": {
+        "kind": "sound",
+        "text": "Kiki-kiki!"
+      },
+      "facts": [
+        "Delfine atmen Luft und schwimmen dafür nach oben.",
+        "Sie rufen sich mit Pfiffen gegenseitig beim Namen."
+      ],
+      "photos": [
+        {
+          "file": "File:Tursiops Truncatus.JPG"
+        },
+        {
+          "file": "File:Tursiops truncatus 178353051.jpg"
+        },
+        {
+          "file": "File:Tursiops truncatus 01.jpg"
+        },
+        {
+          "file": "File:010 Atlantic bottlenose dolphin jumping at Pelican point Photo by Giles Laurent.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "meeresschildkroete",
+      "world": "meer",
+      "name": "Meeresschildkröte",
+      "article": "die",
+      "latin": "Chelonia mydas",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Schildkröten sind ganz leise."
+      },
+      "facts": [
+        "Sie legen ihre Eier am Strand in den Sand.",
+        "Beim Schlafen können sie stundenlang unter Wasser bleiben."
+      ],
+      "photos": [
+        {
+          "file": "File:Green turtle swimming in Kona May 2010.jpg"
+        },
+        {
+          "file": "File:Underwater portrait of green turtle.jpg"
+        },
+        {
+          "file": "File:Chelonia mydas is going for the air edit.jpg"
+        },
+        {
+          "file": "File:Green turtle baby.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "krake",
+      "world": "meer",
+      "name": "Krake",
+      "article": "der",
+      "latin": "Octopus vulgaris",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Kraken sind ganz leise."
+      },
+      "facts": ["Ein Krake hat acht Arme.", "Er hat drei Herzen und blaues Blut."],
+      "photos": [
+        {
+          "file": "File:Octopus2.jpg"
+        },
+        {
+          "file": "File:Pulpo común (Octopus vulgaris), Parque natural de la Arrábida, Portugal, 2020-07-21, DD 33.jpg"
+        },
+        {
+          "file": "File:Pulpo común (Octopus vulgaris), Parque natural de la Arrábida, Portugal, 2020-07-21, DD 35.jpg"
+        },
+        {
+          "file": "File:Poulpe commun (Octopus vulgaris) (Ifremer 00618-73030 - 28929).jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "buckelwal",
+      "world": "meer",
+      "name": "Buckelwal",
+      "article": "der",
+      "latin": "Megaptera novaeangliae",
+      "voice": {
+        "kind": "sound",
+        "text": "Uuuuuuh!"
+      },
+      "facts": [
+        "Buckelwale singen lange Lieder unter Wasser.",
+        "Ein Buckelwal ist ungefähr so lang wie ein Bus."
+      ],
+      "photos": [
+        {
+          "file": "File:Humpback whale (Megaptera novaeangliae) with calf Moorea 2.jpg"
+        },
+        {
+          "file": "File:Humpback whale (Megaptera novaeangliae) calf Moorea 2.jpg"
+        },
+        {
+          "file": "File:Baleine à bosse et son baleineau 2.jpg"
+        },
+        {
+          "file": "File:031 Humpback whale lobtailing Photo by Giles Laurent.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "walhai",
+      "world": "meer",
+      "name": "Walhai",
+      "article": "der",
+      "latin": "Rhincodon typus",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Walhaie sind ganz leise."
+      },
+      "facts": [
+        "Der Walhai ist der größte Fisch der Welt.",
+        "Er frisst winzig kleine Tierchen, das Plankton."
+      ],
+      "photos": [
+        {
+          "file": "File:Rhincodon typus fgbnms.jpg"
+        },
+        {
+          "file": "File:Whale shark Georgia aquarium.jpg"
+        },
+        {
+          "file": "File:Requin baleine ningaloo reef.JPG"
+        },
+        {
+          "file": "File:Whaleshark3.JPG"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "seehund",
+      "world": "meer",
+      "name": "Seehund",
+      "article": "der",
+      "latin": "Phoca vitulina",
+      "voice": {
+        "kind": "sound",
+        "text": "Ööööh!"
+      },
+      "facts": [
+        "Junge Seehunde heißen Heuler, weil sie nach ihrer Mutter rufen.",
+        "Beim Tauchen verschließen Seehunde ihre Nasenlöcher."
+      ],
+      "photos": [
+        {
+          "file": "File:Seehund auf Norderney 04 Nationalpark Niedersächsisches Wattenmeer.jpg"
+        },
+        {
+          "file": "File:020 Wild harbor seal at Jökulsárlón (Iceland) Photo by Giles Laurent.jpg"
+        },
+        {
+          "file": "File:Common seal (Phoca vitulina).jpg"
+        },
+        {
+          "file": "File:Grey Seal on seaweed, Iceland.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "orca",
+      "world": "meer",
+      "name": "Orca",
+      "article": "der",
+      "latin": "Orcinus orca",
+      "voice": {
+        "kind": "sound",
+        "text": "Iiiiih!"
+      },
+      "facts": [
+        "Orcas leben in Familien und rufen sich mit Pfiffen und Klicks.",
+        "Ein Orca ist eigentlich ein sehr großer Delfin."
+      ],
+      "photos": [
+        {
+          "file": "inaturalist:63098779"
+        },
+        {
+          "file": "File:Orcinus orca 282691010.jpg"
+        },
+        {
+          "file": "File:Orcinus orca (8620157648).jpg"
+        },
+        {
+          "file": "inaturalist:106098329"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "seepferdchen",
+      "world": "meer",
+      "name": "Seepferdchen",
+      "article": "das",
+      "latin": "Hippocampus guttulatus",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Seepferdchen sind ganz leise."
+      },
+      "facts": [
+        "Beim Seepferdchen bekommt der Vater die Babys.",
+        "Mit seinem Schwanz hält es sich an Pflanzen fest."
+      ],
+      "photos": [
+        {
+          "file": "File:Muséum d'histoire naturelle de Bordeaux 64.jpg"
+        },
+        {
+          "file": "File:Black Sea fauna Seahorse.JPG"
+        },
+        {
+          "file": "File:Hippocampus hippocampus (on Ascophyllum nodosum).jpg"
+        },
+        {
+          "file": "File:Hippocampus guttulatus - 9570910445.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "qualle",
+      "world": "meer",
+      "name": "Qualle",
+      "article": "die",
+      "latin": "Aurelia aurita",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Quallen sind ganz leise."
+      },
+      "facts": ["Quallen haben kein Gehirn und kein Herz.", "Sie bestehen fast ganz aus Wasser."],
+      "photos": [
+        {
+          "file": "File:Moon jellyfish at Gota Sagher.JPG"
+        },
+        {
+          "file": "File:Aurelia aurita 2.jpg"
+        },
+        {
+          "file": "File:Aurelia aurita (Cnidaria) Luc Viatour (cropped).jpg"
+        },
+        {
+          "file": "File:Aurelia-aurita-3.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "seestern",
+      "world": "meer",
+      "name": "Seestern",
+      "article": "der",
+      "latin": "Asterias rubens",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Seesterne sind ganz leise."
+      },
+      "facts": [
+        "Ein Seestern hat meistens fünf Arme.",
+        "Verliert er einen Arm, wächst er wieder nach."
+      ],
+      "photos": [
+        {
+          "file": "File:Asterias rubens 311930010.jpg"
+        },
+        {
+          "file": "File:Asterias rubens 247485837.jpg"
+        },
+        {
+          "file": "File:Etoile de mer attaquant un oursin de sable (Ifremer 00571-68276 - 32543).jpg"
+        },
+        {
+          "file": "File:Asterias rubens 310297920.jpg"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "krabbe",
+      "world": "meer",
+      "name": "Krabbe",
+      "article": "die",
+      "latin": "Carcinus maenas",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Krabben sind ganz leise."
+      },
+      "facts": [
+        "Krabben laufen am liebsten seitwärts.",
+        "Ihr harter Panzer schützt sie wie eine Rüstung."
+      ],
+      "photos": [
+        {
+          "file": "File:Gemeine Strandkrabbe auf Sylt 01.jpg"
+        },
+        {
+          "file": "inaturalist:18676210"
+        },
+        {
+          "file": "File:Gemeine Strandkrabbe auf Sylt 02.jpg"
+        },
+        {
+          "file": "inaturalist:51158473"
+        }
+      ],
+      "soundFile": null
+    },
+    {
+      "id": "mantarochen",
+      "world": "meer",
+      "name": "Mantarochen",
+      "article": "der",
+      "latin": "Mobula birostris",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Mantarochen sind ganz leise."
+      },
+      "facts": [
+        "Mantarochen gleiten durchs Wasser, als würden sie fliegen.",
+        "Sie können bis zu sieben Meter breit werden."
+      ],
+      "photos": [
+        {
+          "file": "File:Manta melanistic.jpg"
+        },
+        {
+          "file": "File:2015 01 Koh Lanta 27 entering cleaning station (16422545698).jpg"
+        },
+        {
+          "file": "File:Giant Manta AdF.jpg"
+        },
+        {
+          "file": "File:Mobula birostris 180008568.jpg"
+        }
+      ],
+      "soundFile": null
+    }
+  ]
+}

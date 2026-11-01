@@ -1,0 +1,9 @@
+node_modules/
+dist/
+dev-dist/
+.wrangler/
+*.tsbuildinfo
+*.log
+.DS_Store
+.cache/
+*.local
