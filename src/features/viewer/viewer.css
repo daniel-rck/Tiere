@@ -112,6 +112,18 @@
   top: calc(env(safe-area-inset-top, 0px) + 12px);
   right: 12px;
 }
+/* The sound button: the toddler's main control, big and within thumb reach. */
+.viewer-sound {
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
+  left: 50%;
+  width: 84px;
+  height: 84px;
+  margin-left: -42px;
+}
+.viewer-sound svg {
+  width: 42px;
+  height: 42px;
+}
 .viewer-prev,
 .viewer-next {
   top: 50%;

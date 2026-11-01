@@ -4,8 +4,8 @@ Status: lebend. Änderungen an Features und Akzeptanzkriterien nur nach Rückfra
 
 ## 1. Ziel
 
-Kinder schauen sich große, echte Tierfotos an, sortiert nach Welten. Tippen auf das Foto sagt den
-Namen und spielt den Tierlaut. Für Kleinkinder ab 2 funktioniert alles ohne Lesen. Ältere Kinder
+Kinder schauen sich große, echte Tierfotos an, sortiert nach Welten. Ein Knopf spielt den Tierlaut,
+ein zweiter sagt den Namen. Für Kleinkinder ab 2 funktioniert alles ohne Lesen. Ältere Kinder
 (ab ca. 5) bekommen im Entdecker-Modus Namen zum Lesen, Fakten und Zoom.
 
 **Nicht-Ziele:** Accounts, Cloud-Sync, Tracking, Werbung, In-App-Käufe, Spielmechanik mit Druck
@@ -15,7 +15,7 @@ Namen und spielt den Tierlaut. Für Kleinkinder ab 2 funktioniert alles ohne Les
 
 | Modus | Alter | Verhalten |
 |---|---|---|
-| Kleinkind (Standard) | ab 2 | Nur Fotos, keine Texte nötig. Tippen = Laut, Lautsprecher-Knopf = Name. Wischen = nächstes Tier. Kein Zoom. |
+| Kleinkind (Standard) | ab 2 | Nur Fotos, keine Texte nötig. Laut-Knopf = Tierlaut, Lautsprecher-Knopf = Name. Wischen = nächstes Tier. Kein Zoom. |
 | Entdecker | ab 5 | Name mit Artikel lesbar, 2 Fakten pro Tier, „Vorlesen“, Pinch- und Doppeltipp-Zoom. |
 
 Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechselt.
@@ -38,9 +38,11 @@ Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechsel
 ### 3.3 Vollbild (Kern der App)
 - Foto füllt den Bildschirm mit `object-fit: contain`, **nie beschnitten**. Dahinter dasselbe Foto in
   640 px, stark weichgezeichnet und abgedunkelt, damit keine Balken entstehen.
-- Beim Öffnen und bei jedem Tierwechsel: Tierlaut abspielen, Sprechblase mit dem Lautwort zeigen
-  (stille Tiere: 🤫). Gesprochen wird dabei nichts.
-- Tippen: kleine „Boing“-Animation, Laut erneut.
+- Beim Öffnen und bei jedem Tierwechsel: Sprechblase mit dem Lautwort zeigen (stille Tiere: 🤫).
+  Abgespielt oder gesprochen wird dabei nichts; ein laufender Laut oder Name verstummt.
+- Tippen: kleine „Boing“-Animation und Sprechblase, kein Ton.
+- Laut-Knopf unten in der Mitte (≥ 64 px, Noten-Symbol): spielt den Tierlaut, mit Boing und
+  Sprechblase. Nur so spielt die App einen Tierlaut. Tiere ohne Aufnahme haben keinen Laut-Knopf.
 - Lautsprecher-Knopf oben rechts (≥ 64 px): sagt den Namen mit Artikel, nie das Lautwort. Nur so
   spricht die App einen Namen.
 - Wischen links/rechts oder große Pfeil-Buttons: nächstes/vorheriges Tier der Welt, zyklisch.
@@ -54,7 +56,7 @@ Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechsel
 
 ### 3.4 Eltern-Bereich
 - Sperre: Additionsaufgabe zweistellig + zweistellig, 4 Antwort-Buttons. Falsch → neue Aufgabe.
-- Einstellungen: Modus (Kleinkind ab 2 / Entdecker ab 5), Namen-Knopf an/aus, Tierlaute an/aus.
+- Einstellungen: Modus (Kleinkind ab 2 / Entdecker ab 5), Namen-Knopf an/aus, Laut-Knopf an/aus.
 - Credits: alle Fotos und Laute mit Autor, Lizenz und Quelle. Nur hier sind Links nach außen erlaubt.
 
 ## 4. Inhalte
@@ -151,7 +153,7 @@ passende Aufnahme oder mit `voice.kind = "quiet"` bekommen keinen Laut.
 Version 1 spricht Namen und Fakten mit der Web Speech API (`de-DE`, bevorzugt eine deutsche
 Systemstimme, Rate 0.9, Pitch 1.1), aber nur auf Knopfdruck: Lautsprecher-Knopf im Vollbild
 (Name) und „Vorlesen“ im Entdecker-Panel. Kein deutsches Voice verfügbar → der Knopf bleibt stumm.
-Beim Tippen auf das Foto: laufende Ausgabe abbrechen → Laut abspielen. Jede Ausgabe startet aus
+Jeder Knopf bricht die laufende Ausgabe ab, bevor er seine startet. Jede Ausgabe startet aus
 einer Nutzergeste (iOS).
 
 ## 6. Architektur
@@ -213,8 +215,8 @@ public/photos/, public/sounds/  generierte Medien (committet)
 ## 9. Akzeptanzkriterien
 1. Ein 2-jähriges Kind kommt ohne Hilfe von Start → Welt → Vollbild → zurück, ohne Text zu lesen.
 2. Im Vollbild ist kein Foto beschnitten, auf Hoch- und Querformat, Handy und Tablet.
-3. Tippen auf das Foto spielt den Laut, der Lautsprecher-Knopf sagt den Namen; schnelles
-   Mehrfachtippen überlagert keine Ausgaben.
+3. Der Laut-Knopf spielt den Laut, der Lautsprecher-Knopf sagt den Namen; sonst gibt die App
+   keinen Ton aus. Schnelles Mehrfachtippen überlagert keine Ausgaben.
 4. Wischen links/rechts wechselt zyklisch das Tier, hoch/runter das Foto desselben Tiers.
 5. Im Kleinkind-Modus gibt es keinen sichtbaren Text außer Weltnamen auf dem Start-Bildschirm.
 6. Der Modus lässt sich nur über langes Drücken plus richtige Aufgabe wechseln und bleibt nach
@@ -339,6 +341,11 @@ Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
   spricht nichts mehr von selbst, weder Weltnamen noch Tiernamen. Den Namen sagt ein
   Lautsprecher-Knopf oben rechts im Vollbild; die Einstellung „Stimme“ heißt jetzt „Namen-Knopf“
   und blendet ihn aus. Öffnen, Wechseln und Tippen spielen nur den Laut.
+- _2026-11-01_ — Auf Daniels Wunsch (§1, 2, 3.3, 3.4, 5.6, Kriterium 3 geändert): Auch der
+  Tierlaut kommt nur noch auf Knopfdruck. Ein Laut-Knopf unten in der Mitte (84 px, Noten-Symbol)
+  spielt ihn; Öffnen, Wechseln und Tippen aufs Foto bleiben stumm, Tippen zeigt nur Boing und
+  Sprechblase. Tierwechsel bricht einen laufenden Laut ab. Ohne Aufnahme oder mit „Tierlaute aus“
+  fehlt der Knopf, statt stumm zu bleiben.
 - _2026-11-01_ — Laut-Auswahl (Mensch-Gate, Daniel): 29 Tiere mit Commons-Aufnahme, 6 ohne
   (Clownfisch, Eisbär, Gorilla, Nashorn, Nilpferd, Schlange: auf Commons nichts Brauchbares).
   Seehund klingt nach einem Neuseeland-Seebären (Daniels Wahl). Fehlt auf der Commons-Seite das

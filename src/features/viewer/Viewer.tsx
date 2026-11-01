@@ -16,8 +16,8 @@ import {
   type Zoom,
 } from "../../engine/zoom.ts";
 import type { Settings } from "../../platform/storage.ts";
-import { BackIcon, NextIcon, PrevIcon, SpeakerIcon } from "../shared/icons.tsx";
-import { announce, readAloud, sayName } from "./announce.ts";
+import { BackIcon, NextIcon, NoteIcon, PrevIcon, SpeakerIcon } from "../shared/icons.tsx";
+import { playAnimalSound, readAloud, sayName, silence } from "./announce.ts";
 
 type Props = {
   animals: CatalogAnimal[];
@@ -126,12 +126,12 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
 
   const showAnimal = (step: number) => {
     const target = cycle(index, step, animals.length);
-    const next = animals[target];
     resetView();
     setPhotoIndex(0);
     setSlide(step > 0 ? "left" : "right");
     setBubble((n) => n + 1);
-    if (next) announce(next, settings);
+    // The previous animal's sound or name must not run on into the next one.
+    silence();
     onChange(target);
   };
 
@@ -155,10 +155,15 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
     );
   };
 
-  const speakAgain = () => {
+  /** Tapping the photo: a visual answer only, the sound comes from its button. */
+  const poke = () => {
     boing();
     setBubble((n) => n + 1);
-    announce(animal, settings);
+  };
+
+  const playSoundAgain = () => {
+    poke();
+    playAnimalSound(animal);
   };
 
   /** Relative to the stage centre, where the zoom transform has its origin. */
@@ -172,7 +177,7 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
 
   const onTap = (at: Point) => {
     if (!explorer) {
-      speakAgain();
+      poke();
       return;
     }
     // Explorer: wait whether a second tap makes it a double tap (zoom).
@@ -188,7 +193,7 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
     const zoomedNow = isZoomed(zoom);
     tapTimer.current = setTimeout(() => {
       lastTap.current = undefined;
-      if (!zoomedNow) speakAgain();
+      if (!zoomedNow) poke();
     }, DOUBLE_TAP_WAIT);
   };
 
@@ -335,6 +340,16 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
         >
           <BackIcon />
         </button>
+        {settings.sounds && animal.sound && (
+          <button
+            type="button"
+            className="viewer-button viewer-sound"
+            aria-label={`Tierlaut abspielen: ${animal.name}`}
+            onClick={playSoundAgain}
+          >
+            <NoteIcon />
+          </button>
+        )}
         {settings.voice && (
           <button
             type="button"
