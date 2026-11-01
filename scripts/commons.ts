@@ -36,14 +36,22 @@ async function throttledFetch(url: string): Promise<Response> {
   }
 }
 
+// API errors that mean "try again later" rather than "your request is wrong".
+const TRANSIENT_ERRORS = new Set(["maxlag", "ratelimited", "cirrussearch-too-busy-error"]);
+
 /** GET on the MediaWiki API with JSON format v2. */
 export async function apiGet<T>(params: Record<string, string>): Promise<T> {
   const query = new URLSearchParams({ format: "json", formatversion: "2", maxlag: "5", ...params });
-  const response = await throttledFetch(`${API}?${query}`);
-  if (!response.ok) throw new Error(`Commons API ${response.status}: ${await response.text()}`);
-  const body = (await response.json()) as T & { error?: { code: string; info: string } };
-  if (body.error) throw new Error(`Commons API error ${body.error.code}: ${body.error.info}`);
-  return body;
+  for (let attempt = 1; ; attempt++) {
+    const response = await throttledFetch(`${API}?${query}`);
+    if (!response.ok) throw new Error(`Commons API ${response.status}: ${await response.text()}`);
+    const body = (await response.json()) as T & { error?: { code: string; info: string } };
+    if (!body.error) return body;
+    if (!TRANSIENT_ERRORS.has(body.error.code) || attempt >= MAX_ATTEMPTS) {
+      throw new Error(`Commons API error ${body.error.code}: ${body.error.info}`);
+    }
+    await sleep(10_000 + Math.random() * 5000);
+  }
 }
 
 /** Downloads a file (original or thumbnail) to `dest`. */
