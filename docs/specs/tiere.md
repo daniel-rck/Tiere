@@ -292,6 +292,13 @@ public/photos/, public/sounds/  generierte Medien (committet)
 - _2026-11-01_ — Zoom (`engine/zoom.ts`): Transformation um die Bühnenmitte, das Foto kann nur so
   weit verschoben werden, wie es die Bühne noch füllt. Im Entdecker-Modus wartet ein einzelner
   Tipp 300 ms auf einen möglichen Doppeltipp, im Kleinkind-Modus reagiert er sofort.
+- _2026-11-01_ — Tierlaute: `sounds:candidates` sucht auf Commons nach englischem Namen (Liste im
+  Skript, die meisten Aufnahmen sind englisch betitelt), `latin` und deutschem Namen, behält bis zu
+  8 und legt je eine fertig bearbeitete 4-s-Hörprobe ab. Verarbeitung: erst Lautheit auf −16 LUFS
+  (sonst gilt eine leise Aufnahme als Stille), dann Stille am Anfang weg, 4 s, Fades, mono.
+- _2026-11-01_ — Ein `<audio>`-Element für alle Laute: Ein neuer Tipp stoppt den laufenden Laut
+  (Kriterium 3). Bei Stimme an wird es im Tipp-Handler stumm entsperrt, weil der Laut erst nach dem
+  Namen kommt (iOS). Mit Aufnahme sagt die Stimme nur den Namen, ohne Aufnahme Name und Lautwort.
 - _2026-11-01_ — Spec bleibt Deutsch (web-base empfiehlt Englisch für `docs/specs/`), wie beim
   Malbuch.
 
