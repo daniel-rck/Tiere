@@ -20,3 +20,8 @@ export function announce(animal: CatalogAnimal, settings: Settings): void {
 export function silence(): void {
   cancelSpeech();
 }
+
+/** "Vorlesen" in the explorer panel: an explicit wish, so it speaks even with the voice off. */
+export function readAloud(text: string): void {
+  say(text);
+}

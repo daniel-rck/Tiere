@@ -1,0 +1,135 @@
+import "./parents.css";
+import { useEffect, useRef, useState } from "react";
+import { isCorrect, makeQuestion, type Question } from "../../engine/gate.ts";
+import { type Settings, writeSettings } from "../../platform/storage.ts";
+import { Credits } from "./Credits.tsx";
+
+type Props = { settings: Settings; onClose: () => void };
+
+type Step = "question" | "settings" | "credits";
+
+/** Spec 3.4: gate, then settings and credits. */
+export function ParentsArea({ settings, onClose }: Props) {
+  const [step, setStep] = useState<Step>("question");
+  const [question, setQuestion] = useState<Question>(() => makeQuestion());
+  const [wrong, setWrong] = useState(false);
+  const sheet = useRef<HTMLDivElement>(null);
+  const focusedStep = useRef<Step | undefined>(undefined);
+
+  // Each step starts with the focus on its first control.
+  useEffect(() => {
+    if (focusedStep.current === step) return;
+    focusedStep.current = step;
+    sheet.current?.querySelector<HTMLElement>("button, a")?.focus({ preventScroll: true });
+  }, [step]);
+
+  const answer = (choice: number) => {
+    if (isCorrect(question, choice)) {
+      setStep("settings");
+    } else {
+      setWrong(true);
+      setQuestion(makeQuestion());
+    }
+  };
+
+  return (
+    // oxlint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions -- the backdrop closes like "Abbrechen"; Escape is handled globally
+    <div
+      className="modal"
+      onClick={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <div
+        ref={sheet}
+        className={step === "credits" ? "sheet sheet-wide" : "sheet"}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="parents-title"
+      >
+        {step === "question" && (
+          <>
+            <h2 id="parents-title">Nur für Eltern</h2>
+            <p>
+              {wrong
+                ? "Nicht richtig. Hier ist eine neue Aufgabe."
+                : "Löse die Aufgabe, um die Einstellungen zu öffnen."}
+            </p>
+            <p className="sum" aria-live="polite">
+              {question.a} + {question.b} = ?
+            </p>
+            <div className="answers">
+              {question.options.map((option) => (
+                <button key={option} type="button" onClick={() => answer(option)}>
+                  {option}
+                </button>
+              ))}
+            </div>
+            <button type="button" className="ghost" onClick={onClose}>
+              Abbrechen
+            </button>
+          </>
+        )}
+
+        {step === "settings" && (
+          <>
+            <h2 id="parents-title">Einstellungen</h2>
+            <p>Für welches Alter soll die App sein?</p>
+            <div className="choices">
+              <button
+                type="button"
+                aria-pressed={settings.mode === "kid"}
+                onClick={() => writeSettings({ mode: "kid" })}
+              >
+                <b>Kleinkind (ab 2)</b>
+                <span>Große Fotos, Tiername und Tierlaut. Kein Text.</span>
+              </button>
+              <button
+                type="button"
+                aria-pressed={settings.mode === "explorer"}
+                onClick={() => writeSettings({ mode: "explorer" })}
+              >
+                <b>Entdecker (ab 5)</b>
+                <span>Namen zum Lesen, Fakten zum Vorlesen, Zoom mit zwei Fingern.</span>
+              </button>
+            </div>
+            <div className="choices">
+              <button
+                type="button"
+                aria-pressed={settings.voice}
+                onClick={() => writeSettings({ voice: !settings.voice })}
+              >
+                <b>Stimme {settings.voice ? "an" : "aus"}</b>
+                <span>Sagt den Namen des Tiers. Die Stimme kommt vom Gerät.</span>
+              </button>
+              <button
+                type="button"
+                aria-pressed={settings.sounds}
+                onClick={() => writeSettings({ sounds: !settings.sounds })}
+              >
+                <b>Tierlaute {settings.sounds ? "an" : "aus"}</b>
+                <span>Spielt nach dem Namen den Laut des Tiers.</span>
+              </button>
+            </div>
+            <button type="button" className="ghost" onClick={() => setStep("credits")}>
+              Bildnachweise
+            </button>
+            <button type="button" className="done" onClick={onClose}>
+              Fertig
+            </button>
+          </>
+        )}
+
+        {step === "credits" && (
+          <>
+            <h2 id="parents-title">Bildnachweise</h2>
+            <Credits />
+            <button type="button" className="done" onClick={() => setStep("settings")}>
+              Zurück
+            </button>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}

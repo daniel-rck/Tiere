@@ -3,6 +3,8 @@ import { animalsOf, findWorld } from "../../content/catalog.ts";
 import { useLayers } from "../../platform/history.ts";
 import { say } from "../../platform/speech.ts";
 import { useSettings } from "../../platform/storage.ts";
+import { GearButton } from "../parents/GearButton.tsx";
+import { ParentsArea } from "../parents/ParentsArea.tsx";
 import { announce, silence } from "../viewer/announce.ts";
 import { Viewer } from "../viewer/Viewer.tsx";
 import { WorldScreen } from "../world/WorldScreen.tsx";
@@ -19,6 +21,7 @@ export function HomePage() {
   const world = worldLayer ? findWorld(worldLayer.world) : undefined;
   const animals = world ? animalsOf(world.id) : [];
   const viewer = layers.find((layer) => layer.kind === "viewer");
+  const parents = layers.some((layer) => layer.kind === "parents");
 
   // Escape closes the top layer, like the device's back button (spec 3.3).
   useEffect(() => {
@@ -52,6 +55,7 @@ export function HomePage() {
       ) : (
         <StartScreen
           mode={settings.mode}
+          controls={<GearButton onOpen={() => open({ kind: "parents" })} />}
           onOpenWorld={(next) => {
             // Spec 3.1: in the toddler mode the tile says its world's name.
             if (settings.mode === "kid" && settings.voice) say(next.name);
@@ -70,6 +74,7 @@ export function HomePage() {
           }}
         />
       )}
+      {parents && <ParentsArea settings={settings} onClose={back} />}
     </div>
   );
 }

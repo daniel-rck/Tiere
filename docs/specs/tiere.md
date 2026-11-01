@@ -284,6 +284,14 @@ public/photos/, public/sounds/  generierte Medien (committet)
 - _2026-11-01_ — Sprach-Fallback (5.6) wartet mindestens 2 s, bei langen Texten 90 ms je Zeichen,
   damit der Laut nicht in den Namen fällt. Name und Laut starten direkt im Tipp-Handler, nicht in
   einem Effekt (iOS verlangt eine Nutzergeste).
+- _2026-11-01_ — Eltern-Sperre: Summanden 12–59 und 11–…, Summe bleibt zweistellig; falsche
+  Antworten sind ±1 und ±10 (typische Rechenfehler). Mit der Tastatur (Enter/Leertaste auf dem
+  Zahnrad) geht es direkt zur Aufgabe, die Aufgabe bleibt die Sperre.
+- _2026-11-01_ — „Vorlesen“ spricht auch bei ausgeschalteter Stimme: Es ist ein ausdrücklicher
+  Wunsch. Die Credits stehen hinter „Bildnachweise“ in den Einstellungen.
+- _2026-11-01_ — Zoom (`engine/zoom.ts`): Transformation um die Bühnenmitte, das Foto kann nur so
+  weit verschoben werden, wie es die Bühne noch füllt. Im Entdecker-Modus wartet ein einzelner
+  Tipp 300 ms auf einen möglichen Doppeltipp, im Kleinkind-Modus reagiert er sofort.
 - _2026-11-01_ — Spec bleibt Deutsch (web-base empfiehlt Englisch für `docs/specs/`), wie beim
   Malbuch.
 

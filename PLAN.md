@@ -51,7 +51,7 @@ Standard-Gate ist `bun run check` (oxlint + oxfmt, tsc, Vitest). Vor jedem Push 
 - `platform/speech.ts` nach Spec 5.6 (vorerst nur Name + Lautwort sprechen).
 - **Gate:** `bun run check`; manuell Kriterien 2, 3, 4.
 
-## [ ] Phase 6 – Entdecker-Modus und Eltern-Bereich
+## [x] Phase 6 – Entdecker-Modus und Eltern-Bereich
 - Eltern-Sperre (langes Drücken + Aufgabe), `engine/gate.ts` (rein) mit Tests.
 - Einstellungen, Credits-Seite.
 - Entdecker-Panel, `engine/zoom.ts` (rein, Pinch + Pan + Grenzen) mit Tests, Doppeltipp-Zoom.

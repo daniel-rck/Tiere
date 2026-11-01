@@ -1,0 +1,50 @@
+/* ── Explorer panel (spec 3.3): below the photo, never over it ── */
+.panel {
+  background: #10202e;
+  padding: 14px 20px calc(env(safe-area-inset-bottom, 0px) + 18px);
+  max-height: 45dvh;
+  overflow-y: auto;
+}
+.panel h2 {
+  margin: 0;
+  font-size: clamp(34px, 8vw, 52px);
+  line-height: 1.05;
+  font-weight: 800;
+}
+.panel-article {
+  font-size: 0.5em;
+  font-weight: 600;
+  color: #9db4c6;
+  margin-right: 0.3em;
+}
+.panel ul {
+  margin: 6px 0 0;
+  padding: 0 0 0 1.1em;
+  font-size: clamp(18px, 4.2vw, 21px);
+  line-height: 1.4;
+  max-width: 60ch;
+  font-weight: 600;
+}
+.panel li {
+  margin: 2px 0;
+}
+.read {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  min-height: 64px;
+  background: #fff;
+  color: #10202e;
+  border-radius: 999px;
+  padding: 10px 24px 10px 18px;
+  font-weight: 800;
+  font-size: 20px;
+}
+.read svg {
+  width: 26px;
+  height: 26px;
+}
+.photo-fg.is-zoomed {
+  transition: none;
+}
