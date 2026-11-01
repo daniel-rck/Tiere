@@ -15,3 +15,36 @@
 }
 
 /* App-specific tokens and overrides below (e.g. Pizzateig's warm surfaces). */
+
+/* Tiere: soft sky surfaces from the prototype (docs/reference/prototype.html).
+ * World colours come from content/animals.json and stay the same in both
+ * themes (spec 8). No web font: nothing may load at runtime, so a rounded
+ * system face stands in for the prototype's Baloo 2. */
+:root {
+  --t-bg: #e6f3fa;
+  --t-ink: #17324a;
+  --t-muted: #4f6b82;
+  --t-card: #ffffff;
+  --t-soft: #d3e8f4;
+  --t-font:
+    ui-rounded, "SF Pro Rounded", "Nunito", "Varela Round", "Trebuchet MS", "Segoe UI", system-ui,
+    sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --t-bg: #0e1c28;
+    --t-ink: #e6f1f8;
+    --t-muted: #9db4c6;
+    --t-card: #17293a;
+    --t-soft: #1f364a;
+  }
+}
+
+:root[data-theme="dark"] {
+  --t-bg: #0e1c28;
+  --t-ink: #e6f1f8;
+  --t-muted: #9db4c6;
+  --t-card: #17293a;
+  --t-soft: #1f364a;
+}

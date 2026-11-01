@@ -1,0 +1,191 @@
+/* Viewer (spec 3.3), look from docs/reference/prototype.html. */
+
+.viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  touch-action: none;
+}
+.stage-bg {
+  position: absolute;
+  inset: -60px;
+  width: calc(100% + 120px);
+  height: calc(100% + 120px);
+  object-fit: cover;
+  filter: blur(40px) brightness(0.55) saturate(1.3);
+}
+.photo {
+  position: absolute;
+  inset: 0;
+}
+.photo.is-boing {
+  animation: boing 0.45s ease;
+}
+/* Never cropped (spec 3.3, criterion 2). */
+.photo-fg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+.photo-fg.in-left {
+  animation: in-left 0.28s ease;
+}
+.photo-fg.in-right {
+  animation: in-right 0.28s ease;
+}
+.photo-fg.in-up {
+  animation: in-up 0.28s ease;
+}
+.photo-fg.in-down {
+  animation: in-down 0.28s ease;
+}
+@keyframes in-left {
+  from {
+    transform: translateX(25%);
+    opacity: 0;
+  }
+}
+@keyframes in-right {
+  from {
+    transform: translateX(-25%);
+    opacity: 0;
+  }
+}
+@keyframes in-up {
+  from {
+    transform: translateY(25%);
+    opacity: 0;
+  }
+}
+@keyframes in-down {
+  from {
+    transform: translateY(-25%);
+    opacity: 0;
+  }
+}
+@keyframes boing {
+  30% {
+    transform: scale(1.04);
+  }
+  60% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: none;
+  }
+}
+.viewer-button {
+  position: absolute;
+  z-index: 3;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 0.4);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+.viewer-button svg {
+  width: 34px;
+  height: 34px;
+}
+.viewer-close {
+  top: calc(env(safe-area-inset-top, 0px) + 12px);
+  left: 12px;
+}
+.viewer-name {
+  top: calc(env(safe-area-inset-top, 0px) + 12px);
+  right: 12px;
+}
+.viewer-prev,
+.viewer-next {
+  top: 50%;
+  margin-top: -34px;
+}
+.viewer-prev {
+  left: 10px;
+}
+.viewer-next {
+  right: 10px;
+}
+.bubble {
+  position: absolute;
+  z-index: 3;
+  top: calc(env(safe-area-inset-top, 0px) + 18px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #17324a;
+  font-weight: 800;
+  font-size: clamp(30px, 8vw, 52px);
+  line-height: 1.2;
+  padding: 4px 26px;
+  border-radius: 999px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  animation: pop 1.8s ease forwards;
+}
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10px) scale(0.8);
+  }
+  12% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1.05);
+  }
+  20% {
+    transform: translate(-50%, 0) scale(1);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.dots {
+  position: absolute;
+  z-index: 3;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 60px;
+  pointer-events: none;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.45);
+}
+.dot.is-on {
+  background: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Without its animation the bubble would stay invisible. */
+  .bubble {
+    animation: none;
+    opacity: 1;
+  }
+}

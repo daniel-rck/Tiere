@@ -1,6 +1,6 @@
 // A photo from a source other than Wikimedia Commons, normalized for the
 // candidate pipeline. `id` is what goes into content/animals.json as `file`
-// ("openverse:<uuid>", "inaturalist:<photo id>").
+// ("openverse:<uuid>", "inaturalist:<observation id>/<photo id>").
 export type ExtraPhoto = {
   id: string;
   /** Human-readable title for the contact sheet. */

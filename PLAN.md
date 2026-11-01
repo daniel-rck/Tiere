@@ -12,7 +12,7 @@ Standard-Gate ist `bun run check` (oxlint + oxfmt, tsc, Vitest). Vor jedem Push 
   web-base-Workflows (`strict`), Dependabot.
 - **Gate:** `bun run check`, `bun run build` und `web-base check --strict` grün.
 
-## [ ] Phase 1 – Inhaltsmodell und Validierung
+## [x] Phase 1 – Inhaltsmodell und Validierung
 - Typen aus Spec 4.1 in `src/content/types.ts`.
 - `src/engine/validate.ts` (rein): Schema, eindeutige IDs, Welt-Referenzen, 2 Fakten, Artikel,
   Lizenz-Allowlist, `--strict`-Regeln aus Akzeptanzkriterium 11. Mit Tests.
@@ -20,7 +20,7 @@ Standard-Gate ist `bun run check` (oxlint + oxfmt, tsc, Vitest). Vor jedem Push 
 - **Gate:** `bun run check`, `bun run content:check` grün (nicht strict).
 
 ## [x] Phase 2 – Medienquellen und Kontaktabzug
-- `scripts/commons.ts`, `scripts/licenses.ts` (mit Tests für die Lizenz-Normalisierung; dafür das
+- `scripts/commons.ts`, `src/engine/licenses.ts` (mit Tests für die Lizenz-Normalisierung; dafür das
   Vitest-`include` in `vitest.config.ts` um `scripts/**/*.test.ts` erweitern),
   `scripts/photos-candidates.ts` nach Spec 5.1–5.3; Zusatzquellen in `scripts/sources/`
   (Openverse, iNaturalist) mit `--add`.
@@ -30,28 +30,28 @@ Standard-Gate ist `bun run check` (oxlint + oxfmt, tsc, Vitest). Vor jedem Push 
 - **Gate:** `bun run check` grün. **Mensch-Gate:** Daniel wählt die Fotos aus und trägt sie in
   `content/animals.json` ein. Erst danach abhaken.
 
-## [ ] Phase 3 – Foto-Build
+## [x] Phase 3 – Foto-Build
 - `scripts/photos-build.ts` nach Spec 5.4, idempotent, mit Fortschrittsausgabe.
   Alle drei Quellen (`File:…`, `openverse:…`, `inaturalist:…`): Original und Credit je Quelle holen.
 - Erzeugt `public/photos/…` und `src/content/catalog.generated.json`.
 - `src/engine/sizes.ts` (rein): passende Größe für Viewport × devicePixelRatio, `srcset`-String. Tests.
 - **Gate:** `bun run check`, `bun run content:check --strict` grün.
 
-## [ ] Phase 4 – Start und Welten
+## [x] Phase 4 – Start und Welten
 - App-Tokens (Hell/Dunkel, Weltfarben) im Seam `src/lib/ui/theme.css`, Start-Bildschirm, Welt-Bildschirm, Kacheln mit Farb-Platzhalter.
 - `platform/history.ts`: Ebenen-Stack mit Zurück-Taste, auf der History der einen Route von
   react-router (nicht an ihr vorbei).
 - `platform/storage.ts`: Modus lesen/schreiben mit try/catch.
 - **Gate:** `bun run check`; manuell Akzeptanzkriterium 1 (bis Welt) und 8 prüfen.
 
-## [ ] Phase 5 – Vollbild
+## [x] Phase 5 – Vollbild
 - Viewer nach Spec 3.3 ohne Entdecker-Panel: contain + Blur, Pfeile, Wischen (Tier und Foto),
   Vorladen, Sprechblase, Boing.
 - `engine/gestures.ts` (rein) mit Tests: Tap, Doppeltipp, Wisch-Richtung, Schwellen.
 - `platform/speech.ts` nach Spec 5.6 (vorerst nur Name + Lautwort sprechen).
 - **Gate:** `bun run check`; manuell Kriterien 2, 3, 4.
 
-## [ ] Phase 6 – Entdecker-Modus und Eltern-Bereich
+## [x] Phase 6 – Entdecker-Modus und Eltern-Bereich
 - Eltern-Sperre (langes Drücken + Aufgabe), `engine/gate.ts` (rein) mit Tests.
 - Einstellungen, Credits-Seite.
 - Entdecker-Panel, `engine/zoom.ts` (rein, Pinch + Pan + Grenzen) mit Tests, Doppeltipp-Zoom.
@@ -62,7 +62,7 @@ Standard-Gate ist `bun run check` (oxlint + oxfmt, tsc, Vitest). Vor jedem Push 
 - `platform/audio.ts`: Abspielen nach dem Namen, Abbrechen bei erneutem Tippen.
 - **Gate:** `bun run check`. **Mensch-Gate:** Daniel hört die Auswahl an und gibt sie frei.
 
-## [ ] Phase 8 – PWA, Offline, Feinschliff
+## [x] Phase 8 – PWA, Offline, Feinschliff
 - Service Worker `src/sw/index.ts` (`injectManifest`) nach Spec 7, Manifest, Icon
   (`public/icon-192.png`, `icon-512.png`, `icon-maskable.png`), Update-Hinweis ohne Text
   (`useAppUpdate`, wie Malbuch).

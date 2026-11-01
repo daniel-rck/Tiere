@@ -6,7 +6,7 @@ import { dirname } from "node:path";
 import pkg from "../package.json" with { type: "json" };
 
 const API = "https://commons.wikimedia.org/w/api.php";
-export const USER_AGENT = `tiere-app/${pkg.version} (github.com/daniel-rck)`;
+export const USER_AGENT = `tiere-app/${pkg.version} (https://github.com/daniel-rck/Tiere)`;
 
 const MIN_GAP_MS = 1500;
 const MAX_ATTEMPTS = 40;
@@ -37,8 +37,13 @@ export async function throttledFetch(url: string, maxAttempts = MAX_ATTEMPTS): P
     if (attempt >= maxAttempts) {
       throw new Error(`Giving up after ${attempt} attempts (${response?.status}) ${url}`);
     }
-    const retryAfter = Number(response?.headers.get("retry-after"));
-    const backoff = Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : 5000;
+    // Back off exponentially (5 s, 10 s, 20 s … up to 5 min): Wikimedia
+    // throttles a whole client when it keeps asking during a 429.
+    const retryAfter = Number(response?.headers.get("retry-after")) * 1000 || 0;
+    const backoff = Math.max(retryAfter, Math.min(300_000, 5000 * 2 ** (attempt - 1)));
+    if (response?.status === 429 && attempt % 3 === 0) {
+      console.warn(`  429: warte ${Math.round(backoff / 1000)} s`);
+    }
     await response?.body?.cancel();
     await sleep(backoff + Math.random() * 2000);
   }
@@ -62,13 +67,77 @@ export async function apiGet<T>(params: Record<string, string>): Promise<T> {
   }
 }
 
-/** Downloads a file (original or thumbnail) to `dest`. */
+/** Pause between media downloads: upload.wikimedia.org limits clients strictly. */
+const DOWNLOAD_GAP_MS = 4000;
+let lastDownload = 0;
+
+/**
+ * Downloads a file (original or thumbnail) to `dest`, one at a time with a
+ * pause. A 429 from the media servers backs off exponentially (30 s, 1 min,
+ * 2 min … up to 10 min) instead of hammering them.
+ */
 export async function download(url: string, dest: string): Promise<void> {
-  const response = await throttledFetch(url);
-  if (!response.ok) throw new Error(`Download ${response.status}: ${url}`);
+  let response: Response | undefined;
+  for (let attempt = 0; attempt < 8; attempt++) {
+    const wait = lastDownload + DOWNLOAD_GAP_MS - Date.now();
+    if (wait > 0) await sleep(wait);
+    lastDownload = Date.now();
+    response = await fetch(url, {
+      headers: { "User-Agent": USER_AGENT },
+      signal: AbortSignal.timeout(120_000),
+    }).catch(() => undefined);
+    if (response?.ok) break;
+    if (response && response.status !== 429 && response.status < 500) break;
+    await response?.body?.cancel();
+    const retryAfter = Number(response?.headers.get("retry-after")) * 1000 || 0;
+    const backoff = Math.max(retryAfter, Math.min(600_000, 30_000 * 2 ** attempt));
+    console.warn(`  ${response?.status ?? "Netzfehler"}: warte ${Math.round(backoff / 1000)} s`);
+    await sleep(backoff);
+  }
+  if (!response?.ok) throw new Error(`Download ${response?.status}: ${url}`);
   await mkdir(dirname(dest), { recursive: true });
   await writeFile(dest, new Uint8Array(await response.arrayBuffer()));
 }
+
+/**
+ * Thumbnail widths upload.wikimedia.org serves to scripts; originals and other
+ * widths are rejected with 429 (https://www.mediawiki.org/wiki/Common_thumbnail_sizes).
+ */
+export const THUMB_STEPS = [960, 1280, 1920] as const;
+
+/**
+ * URL of the largest standard thumbnail narrower than the original, at most
+ * 1920 px (the widest size the app uses). Falls back to the original when it
+ * is no wider than the smallest step.
+ */
+export function commonsThumb(originalUrl: string, width: number): string {
+  const url = new URL(originalUrl);
+  url.search = "";
+  const step = THUMB_STEPS.findLast((candidate) => candidate < width);
+  const match = /^\/wikipedia\/commons\/(\w\/\w\w)\/([^/]+)$/.exec(url.pathname);
+  if (!step || !match) return url.href;
+  const [, hash, name] = match;
+  url.pathname = `/wikipedia/commons/thumb/${hash}/${name}/${step}px-${name}`;
+  return url.href;
+}
+
+/**
+ * URL to download a Commons audio file from: the MP3 transcode Commons keeps
+ * for non-MP3 audio (originals are rejected like images), else the file itself.
+ */
+export function commonsAudio(originalUrl: string, mime: string): string {
+  const url = new URL(originalUrl);
+  url.search = "";
+  const match = /^\/wikipedia\/commons\/(\w\/\w\w)\/([^/]+)$/.exec(url.pathname);
+  if (mime === "audio/mpeg" || !match) return url.href;
+  const [, hash, name] = match;
+  url.pathname = `/wikipedia/commons/transcoded/${hash}/${name}/${name}.mp3`;
+  return url.href;
+}
+
+/** File extension of a URL's path, lower case. */
+export const extensionOf = (url: string): string =>
+  /\.(\w+)$/.exec(new URL(url).pathname)?.[1]?.toLowerCase() ?? "bin";
 
 type ExtValue = { value?: string };
 
@@ -139,4 +208,64 @@ export async function searchFiles(
     });
   }
   return files;
+}
+
+type InfoResponse = {
+  query?: {
+    pages?: {
+      title: string;
+      missing?: boolean;
+      imageinfo?: {
+        url: string;
+        descriptionurl: string;
+        thumburl?: string;
+        width: number;
+        height: number;
+        mime: string;
+        extmetadata?: Record<string, ExtValue>;
+      }[];
+    }[];
+    normalized?: { from: string; to: string }[];
+  };
+};
+
+/**
+ * Image info for known file titles ("File:…"), 50 per request. Keys are the
+ * given titles; `thumbUrl` is a copy scaled to `thumbWidth` (or the original
+ * when it is narrower).
+ */
+export async function fileInfo(
+  titles: string[],
+  thumbWidth?: number,
+): Promise<Map<string, CommonsFile>> {
+  const result = new Map<string, CommonsFile>();
+  for (let i = 0; i < titles.length; i += 50) {
+    const batch = titles.slice(i, i + 50);
+    const body = await apiGet<InfoResponse>({
+      action: "query",
+      titles: batch.join("|"),
+      prop: "imageinfo",
+      iiprop: "url|size|mime|extmetadata",
+      ...(thumbWidth ? { iiurlwidth: String(thumbWidth) } : {}),
+      iiextmetadatafilter: "LicenseShortName|License|LicenseUrl|Artist|Credit",
+      iiextmetadatalanguage: "de",
+    });
+    const original = new Map(batch.map((title) => [title, title]));
+    for (const { from, to } of body.query?.normalized ?? []) original.set(to, from);
+    for (const page of body.query?.pages ?? []) {
+      const info = page.imageinfo?.[0];
+      if (page.missing || !info) continue;
+      result.set(original.get(page.title) ?? page.title, {
+        title: page.title,
+        pageUrl: info.descriptionurl,
+        url: info.url,
+        thumbUrl: info.thumburl ?? info.url,
+        width: info.width,
+        height: info.height,
+        mime: info.mime,
+        extmetadata: info.extmetadata ?? {},
+      });
+    }
+  }
+  return result;
 }

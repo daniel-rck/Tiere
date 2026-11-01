@@ -15,7 +15,7 @@ Namen und spielt den Tierlaut. Für Kleinkinder ab 2 funktioniert alles ohne Les
 
 | Modus | Alter | Verhalten |
 |---|---|---|
-| Kleinkind (Standard) | ab 2 | Nur Fotos, keine Texte nötig. Tippen = Name + Laut. Wischen = nächstes Tier. Kein Zoom. |
+| Kleinkind (Standard) | ab 2 | Nur Fotos, keine Texte nötig. Tippen = Laut, Lautsprecher-Knopf = Name. Wischen = nächstes Tier. Kein Zoom. |
 | Entdecker | ab 5 | Name mit Artikel lesbar, 2 Fakten pro Tier, „Vorlesen“, Pinch- und Doppeltipp-Zoom. |
 
 Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechselt.
@@ -24,7 +24,7 @@ Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechsel
 
 ### 3.1 Start
 - 4 Welt-Kacheln im 2×2-Raster, im Querformat ab 16:10 als 1×4. Kachel = Weltfarbe, großes Emoji,
-  Weltname. Kleinkind-Modus: Tippen sagt den Weltnamen.
+  Weltname. Tippen öffnet die Welt, gesprochen wird nichts.
 - Zahnrad oben rechts öffnet den Eltern-Bereich nur per **1,5 s langem Drücken** mit sichtbarem
   Fortschrittsring. Kurzes Tippen zeigt den Hinweis „Für die Eltern-Einstellungen das Zahnrad lange
   drücken“.
@@ -38,9 +38,11 @@ Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechsel
 ### 3.3 Vollbild (Kern der App)
 - Foto füllt den Bildschirm mit `object-fit: contain`, **nie beschnitten**. Dahinter dasselbe Foto in
   640 px, stark weichgezeichnet und abgedunkelt, damit keine Balken entstehen.
-- Beim Öffnen und bei jedem Tierwechsel: Name sprechen, dann Tierlaut abspielen, Sprechblase mit
-  dem Lautwort zeigen (stille Tiere: 🤫 und der „quiet“-Text wird gesprochen).
-- Tippen: kleine „Boing“-Animation, Name + Laut erneut.
+- Beim Öffnen und bei jedem Tierwechsel: Tierlaut abspielen, Sprechblase mit dem Lautwort zeigen
+  (stille Tiere: 🤫). Gesprochen wird dabei nichts.
+- Tippen: kleine „Boing“-Animation, Laut erneut.
+- Lautsprecher-Knopf oben rechts (≥ 64 px): sagt den Namen mit Artikel, nie das Lautwort. Nur so
+  spricht die App einen Namen.
 - Wischen links/rechts oder große Pfeil-Buttons: nächstes/vorheriges Tier der Welt, zyklisch.
 - Mehrere Fotos pro Tier: Wischen nach oben/unten wechselt das Foto desselben Tiers (Punkte-Indikator
   am rechten Rand). Links/rechts bleibt immer „anderes Tier“.
@@ -52,7 +54,7 @@ Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechsel
 
 ### 3.4 Eltern-Bereich
 - Sperre: Additionsaufgabe zweistellig + zweistellig, 4 Antwort-Buttons. Falsch → neue Aufgabe.
-- Einstellungen: Modus (Kleinkind ab 2 / Entdecker ab 5), Stimme an/aus, Tierlaute an/aus.
+- Einstellungen: Modus (Kleinkind ab 2 / Entdecker ab 5), Namen-Knopf an/aus, Tierlaute an/aus.
 - Credits: alle Fotos und Laute mit Autor, Lizenz und Quelle. Nur hier sind Links nach außen erlaubt.
 
 ## 4. Inhalte
@@ -75,7 +77,7 @@ type Animal = {
   voice: { kind: "sound"; text: string } | { kind: "quiet"; text: string };
   facts: [string, string];  // kurz, kindgerecht, sachlich richtig
   photos: { file: string }[];   // Reihenfolge = Anzeige. Commons-Dateititel ("File:Cow in meadow.jpg")
-                                // oder "openverse:<uuid>" bzw. "inaturalist:<photo id>" (§5.1)
+                                // oder "openverse:<uuid>" bzw. "inaturalist:<observation id>/<photo id>" (§5.1)
   soundFile: string | null;     // Commons-Dateititel der Tonaufnahme
 };
 
@@ -84,8 +86,10 @@ type CatalogPhoto = {
   sizes: { w: number; src: string }[];  // aufsteigend, z. B. 640/1280/1920
   width: number; height: number;        // Original-Seitenverhältnis
   color: string;                        // Durchschnittsfarbe für Platzhalter
-  credit: Credit;
 };
+
+// src/content/credits.generated.json (eigene Datei, siehe Entscheidungslog)
+type CreditsFile = { animals: { id: string; photos: Credit[]; sound: Credit | null }[] };
 type Credit = { author: string; license: string; licenseUrl: string; sourceUrl: string };
 ```
 
@@ -145,9 +149,10 @@ passende Aufnahme oder mit `voice.kind = "quiet"` bekommen keinen Laut.
 
 ### 5.6 Sprache
 Version 1 spricht Namen und Fakten mit der Web Speech API (`de-DE`, bevorzugt eine deutsche
-Systemstimme, Rate 0.9, Pitch 1.1). Kein deutsches Voice verfügbar → Name wird übersprungen, Laut
-spielt trotzdem. Ablauf beim Tippen: laufende Ausgabe abbrechen → Name sprechen → nach `onend`
-(Fallback-Timeout 2 s) Laut abspielen. Erste Ausgabe immer aus einer Nutzergeste (iOS).
+Systemstimme, Rate 0.9, Pitch 1.1), aber nur auf Knopfdruck: Lautsprecher-Knopf im Vollbild
+(Name) und „Vorlesen“ im Entdecker-Panel. Kein deutsches Voice verfügbar → der Knopf bleibt stumm.
+Beim Tippen auf das Foto: laufende Ausgabe abbrechen → Laut abspielen. Jede Ausgabe startet aus
+einer Nutzergeste (iOS).
 
 ## 6. Architektur
 
@@ -158,7 +163,6 @@ deren Konventionen (`web-base/docs/specs/07-conventions.md`), wie das Malbuch.
 content/animals.json            Quelle der Inhalte
 scripts/
   commons.ts                    API-Client (Suche, imageinfo, extmetadata, Download)
-  licenses.ts                   Allowlist + Normalisierung
   photos-candidates.ts          Kandidaten + Kontaktabzug
   photos-build.ts               Download, sharp, Credits, Katalog
   sounds-candidates.ts / sounds-build.ts
@@ -168,7 +172,8 @@ src/
                                 (Start/Welt/Vollbild/Eltern)
   content/                      Typen, catalog.generated.json, Zugriffsfunktionen
   engine/                       DOM-frei, getestet: gestures.ts, zoom.ts, gate.ts, sizes.ts,
-                                validate.ts
+                                validate.ts, licenses.ts (Allowlist + Normalisierung, auch für
+                                scripts/)
   platform/                     speech.ts, audio.ts, storage.ts, history.ts
   features/                     home/, world/, viewer/, parents/ (ParentGate, Settings, Credits)
   lib/                          web-base: ui/, db/, pwa/, routing/, router.tsx, routes.ts
@@ -208,8 +213,8 @@ public/photos/, public/sounds/  generierte Medien (committet)
 ## 9. Akzeptanzkriterien
 1. Ein 2-jähriges Kind kommt ohne Hilfe von Start → Welt → Vollbild → zurück, ohne Text zu lesen.
 2. Im Vollbild ist kein Foto beschnitten, auf Hoch- und Querformat, Handy und Tablet.
-3. Tippen auf das Foto spricht den Namen und spielt den Laut; schnelles Mehrfachtippen überlagert
-   keine Ausgaben.
+3. Tippen auf das Foto spielt den Laut, der Lautsprecher-Knopf sagt den Namen; schnelles
+   Mehrfachtippen überlagert keine Ausgaben.
 4. Wischen links/rechts wechselt zyklisch das Tier, hoch/runter das Foto desselben Tiers.
 5. Im Kleinkind-Modus gibt es keinen sichtbaren Text außer Weltnamen auf dem Start-Bildschirm.
 6. Der Modus lässt sich nur über langes Drücken plus richtige Aufgabe wechseln und bleibt nach
@@ -223,12 +228,38 @@ public/photos/, public/sounds/  generierte Medien (committet)
     Credit mit Lizenz aus der Allowlist.
 12. Die Credits-Seite listet jedes Foto und jeden Laut.
 
+### 9.1 Stand der Prüfung (2026-11-01, Phase 8)
+Automatisch in Chromium (Playwright, Handy 390 × 844 und Tablet quer 1280 × 800, Produktions-Build
+mit Service Worker) und mit Vitest. Auf echten Geräten (iOS-Stimme, Lautsprecher, Installation)
+prüft Daniel.
+
+| # | Ergebnis |
+|---|---|
+| 1 | ✓ Start → Welt → Vollbild → zurück nur über Kacheln, Pfeile und Zurück-Knopf. |
+| 2 | ✓ `object-fit: contain` auf Hoch- und Querformat, Unschärfe-Hintergrund statt Balken. |
+| 3 | ✓ Jede Ausgabe bricht die laufende ab (eine Sprachausgabe, ein `<audio>`), getestet; Hören am Gerät offen. |
+| 4 | ✓ Wischen links/rechts zyklisch, hoch/runter wechselt das Foto. |
+| 5 | ✓ Sichtbarer Text im Kleinkind-Modus nur Weltnamen; der Zahnrad-Hinweis (3.1) ist die gewollte Ausnahme. |
+| 6 | ✓ Kurzer Tipp → Hinweis, 1,5 s → Aufgabe; falsche Antwort → neue Aufgabe; Modus übersteht Neuladen. |
+| 7 | ✓ Panel unter dem Foto, Doppeltipp-Zoom und Verschieben; gezoomt wechselt Wischen kein Tier. Pinch nur per Unit-Test. |
+| 8 | ✓ Zurück schließt Vollbild, dann Welt; Neuladen landet auf dem Start. |
+| 9 | ✓ Keine Requests an fremde Hosts. |
+| 10 | ✓ Nach dem ersten Laden offline: Start, Welt, Vollbild; nicht gecachte Größen fallen auf 640 px zurück. |
+| 11 | ✓ 50 Tiere, 200 Fotos, alle mit vollständigem Credit (`content:check --strict`). |
+| 12 | ✓ Credits listen jedes gebaute Foto mit Autor, Lizenz und Quelle; Laute kommen mit Phase 7. |
+
+Budgets (§8): JS beim Start rund 115 kB gzip (React, Router, App, Katalog, `workbox-window`), mit
+vollem Katalog geschätzt 118 kB. Precache geschätzt 27 MB bei 200 Fotos. Startzeit und
+Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
+
 ## 10. Entscheidungslog
 - Medien von Wikimedia Commons: Lizenz und Autor sind maschinenlesbar, kein API-Key nötig.
 - _2026-11-01_ — Openverse und iNaturalist als Zusatzquellen (Wunsch von Daniel), ohne API-Key,
-  gleiche Allowlist. In `animals.json` als `openverse:<uuid>` bzw. `inaturalist:<photo id>`, damit
-  das Datenmodell bei `{ file: string }` bleibt. Openverse liefert die Lizenz aus den Metadaten der
-  Ursprungsseite; vor dem Build an der Quelle gegenprüfen.
+  gleiche Allowlist. In `animals.json` als `openverse:<uuid>` bzw.
+  `inaturalist:<observation id>/<photo id>`, damit das Datenmodell bei `{ file: string }` bleibt.
+  Die iNaturalist-API kennt keine Abfrage nach Foto-ID, der Build holt Lizenz und Autor über die
+  Beobachtung. Openverse liefert die Lizenz aus den Metadaten der Ursprungsseite; vor dem Build an
+  der Quelle gegenprüfen.
 - Medien werden zur Build-Zeit geladen und committet, nicht zur Laufzeit: offline, deterministisch,
   kindersicher kuratiert.
 - Nur WebP statt AVIF + Fallback: überall unterstützt, eine Pipeline weniger.
@@ -251,15 +282,94 @@ public/photos/, public/sounds/  generierte Medien (committet)
 - _2026-11-01_ — Foto-Sichtung im Chat: Kandidaten und Vorschläge zusätzlich als Auswahlseite
   (claude.ai-Artifact), Daniels Auswahl wird dort gespeichert und von Claude übernommen. Der
   Kontaktabzug in `.cache/` bleibt für lokale Arbeit.
+- _2026-11-01_ — `licenses.ts` liegt in `src/engine/` statt `scripts/`: der Validator braucht die
+  Allowlist für `--strict`, die Skripte importieren sie von dort.
+- _2026-11-01_ — Katalog-Form festgelegt (`src/content/types.ts`): `{ worlds, animals }`, je Tier die
+  Inhaltsfelder ohne `latin`, `photos: CatalogPhoto[]` in der Reihenfolge von `animals.json` und
+  `sound: { src, credit } | null`. `content:check --strict` prüft daran: 3–6 Fotos, Katalog passt
+  zum Inhalt, vollständiger Credit (Autor, Lizenz aus der Allowlist, https-URLs) für jedes Foto und
+  jeden Laut. Ohne `--strict`: höchstens 6 Fotos, jedes Foto nur bei einem Tier, unbekannte Felder
+  sind Fehler, stille Tiere haben keinen Laut.
+- _2026-11-01_ — Leerer `[previews]`-Block in `wrangler.toml` (Seam): Workers Builds deployt
+  PR-Branches mit `wrangler preview`, das ohne den Block abbricht.
+- _2026-11-01_ — `photos:build` lädt seriell mit 4 s Pause und wartet bei 429 die
+  `Retry-After`-Zeit bzw. exponentiell bis 10 min ab (Wikimedia-Robot-Policy). Credits und
+  Download-URLs liegen zwischen zwei Läufen in `.cache/` (`--refresh` fragt neu).
+- _2026-11-01_ — Abweichung von §5.4: Statt des Originals lädt `photos:build` von Commons das
+  größte Standard-Thumbnail unter der Originalbreite, höchstens 1920 px; Laute kommen als
+  MP3-Transcode von Commons. upload.wikimedia.org beantwortet Skript-Anfragen nach Originalen und
+  Nicht-Standardbreiten mit 429 (mediawiki.org „Common thumbnail sizes“). Folge: 27 der 200 Fotos
+  haben weniger als 1920 px als größte Stufe (25 × 1280, je einmal 1536 und 960 px).
+- _2026-11-01_ — Ein Tier ohne gebautes Foto (nur solange `photos:build` unvollständig ist) wird in
+  der Welt ausgelassen statt leer gezeigt; `content:check --strict` verhindert das im Release.
+- _2026-11-01_ — Kleinkind-Modus ohne Text (Kriterium 5 vor 3.2): Auf dem Start ist der Titel
+  „Tiere“ nur für Screenreader da, die Welt-Kopfzeile zeigt das Welt-Emoji statt des Namens. Im
+  Entdecker-Modus erscheinen Titel und Weltname.
+- _2026-11-01_ — Keine Web-Schrift (keine Requests zur Laufzeit): eine runde Systemschrift
+  (`ui-rounded`, Nunito, …) ersetzt Baloo 2 aus dem Prototyp.
+- _2026-11-01_ — Ebenen-Stack: Jede geöffnete Ebene ist ein History-Eintrag mit dem ganzen Stack im
+  State; Tierwechsel im Vollbild ersetzt den obersten Eintrag. Beim Neuladen springt die App per
+  `history.go(-n)` auf den Eintrag zurück, aus dem der Stack gewachsen ist (immer Start).
+- _2026-11-01_ — Einstellungen als ein JSON unter `tiere.settings` (Modus, Stimme, Tierlaute).
+- _2026-11-01_ — Gesten (`engine/gestures.ts`): Tipp < 12 px und < 500 ms; Wisch ab 60 px oder
+  ab 30 px mit mindestens 0,5 px/ms; Diagonalen (Achsen innerhalb 1,2×) zählen nicht;
+  Doppeltipp innerhalb 300 ms und 40 px.
+- _2026-11-01_ — Sprach-Fallback (5.6) wartet mindestens 2 s, bei langen Texten 90 ms je Zeichen,
+  damit der Laut nicht in den Namen fällt. Name und Laut starten direkt im Tipp-Handler, nicht in
+  einem Effekt (iOS verlangt eine Nutzergeste).
+- _2026-11-01_ — Eltern-Sperre: Summanden 12–59 und 11–…, Summe bleibt zweistellig; falsche
+  Antworten sind ±1 und ±10 (typische Rechenfehler). Mit der Tastatur (Enter/Leertaste auf dem
+  Zahnrad) geht es direkt zur Aufgabe, die Aufgabe bleibt die Sperre.
+- _2026-11-01_ — „Vorlesen“ spricht auch bei ausgeschalteter Stimme: Es ist ein ausdrücklicher
+  Wunsch. Die Credits stehen hinter „Bildnachweise“ in den Einstellungen.
+- _2026-11-01_ — Zoom (`engine/zoom.ts`): Transformation um die Bühnenmitte, das Foto kann nur so
+  weit verschoben werden, wie es die Bühne noch füllt. Im Entdecker-Modus wartet ein einzelner
+  Tipp 300 ms auf einen möglichen Doppeltipp, im Kleinkind-Modus reagiert er sofort.
+- _2026-11-01_ — Tierlaute: `sounds:candidates` sucht auf Commons nach englischem Namen (Liste im
+  Skript, die meisten Aufnahmen sind englisch betitelt), `latin` und deutschem Namen, behält bis zu
+  8 und legt je eine fertig bearbeitete 4-s-Hörprobe ab. Verarbeitung: erst Lautheit auf −16 LUFS
+  (sonst gilt eine leise Aufnahme als Stille), dann Stille am Anfang weg, 4 s, Fades, mono.
+- _2026-11-01_ — Ein `<audio>`-Element für alle Laute: Ein neuer Tipp stoppt den laufenden Laut
+  (Kriterium 3). Bei Stimme an wird es im Tipp-Handler stumm entsperrt, weil der Laut erst nach dem
+  Namen kommt (iOS). Die Stimme sagt nur den Namen.
+- _2026-11-01_ — Auf Daniels Wunsch (§3.3 geändert): Die synthetische Stimme spricht nie das
+  Lautwort („Muuuh!“) oder den „quiet“-Text, auch nicht bei Tieren ohne Aufnahme; das klang
+  peinlich. Das Lautwort steht nur in der Sprechblase, den Laut liefert allein die Aufnahme.
+- _2026-11-01_ — Auf Daniels Wunsch (§2, 3.1, 3.3, 3.4, 5.6, Kriterium 3 geändert): Die App
+  spricht nichts mehr von selbst, weder Weltnamen noch Tiernamen. Den Namen sagt ein
+  Lautsprecher-Knopf oben rechts im Vollbild; die Einstellung „Stimme“ heißt jetzt „Namen-Knopf“
+  und blendet ihn aus. Öffnen, Wechseln und Tippen spielen nur den Laut.
+- _2026-11-01_ — Laut-Auswahl (Mensch-Gate, Daniel): 29 Tiere mit Commons-Aufnahme, 6 ohne
+  (Clownfisch, Eisbär, Gorilla, Nashorn, Nilpferd, Schlange: auf Commons nichts Brauchbares).
+  Seehund klingt nach einem Neuseeland-Seebären (Daniels Wahl). Fehlt auf der Commons-Seite das
+  Autorenfeld, trägt `sounds:build` den von Hand geprüften Urheber nach (`AUTHORS`), z. B. den
+  U.S. National Park Service beim Orca-Ruf.
+- _2026-11-01_ — Precache (§7, offener Punkt erledigt): Gemessen sind im Schnitt 62 KB je 640er
+  und 227 KB je 1280er. Alle 640er und 1280er wären rund 58 MB, über dem Budget von 40 MB. Darum
+  liegen alle 640er, das 1280er des ersten Fotos je Tier und alle Laute im Precache (rund 27 MB);
+  die übrigen Größen kommen über den Runtime-Cache (CacheFirst). Offline und noch nicht im Cache
+  liefert der Service Worker das 640er desselben Fotos, die App bleibt im Flugmodus vollständig.
+- _2026-11-01_ — Bildnachweise in eigener Datei `credits.generated.json`, geladen erst mit den
+  Credits (Lazy-Chunk): Im Katalog hätten sie das Start-Bundle über 120 kB gzip geschoben (§8).
+  `CatalogPhoto` hat deshalb kein `credit`-Feld, `content:check --strict` prüft beide Dateien.
+- _2026-11-01_ — Update-Hinweis ohne Text: Wartet eine neue Version, erscheint auf dem Start neben
+  dem Zahnrad ein Neu-laden-Symbol (`useAppUpdate`); Tippen lädt die neue Version.
+- _2026-11-01_ — App-Icon: Pfotenabdruck auf Meerblau (`bun run icons`), keine Figur.
 - _2026-11-01_ — Spec bleibt Deutsch (web-base empfiehlt Englisch für `docs/specs/`), wie beim
   Malbuch.
+- _2026-11-01_ — Medien-Build auch auf GitHub Actions: Wikimedia hat die Cloud-IP der
+  Agent-Umgebung über Stunden mit 429 gesperrt. `.github/workflows/media.yml` läuft bei
+  Änderungen an Auswahl oder Build-Skripten (nicht auf `main`) oder von Hand, baut Fotos und
+  Laute und committet sie samt beiden `*.generated.json` auf den Branch.
+  `sound-candidates.yml` sucht die Laut-Kandidaten und legt sie als Workflow-Artefakt ab. Die
+  Vorschaubilder der Foto-Auswahlseite (330 px) taugen nicht als Ersatz für die Originale.
 
 ## 11. Offene Punkte
 - Akzentfarbe: Das Farbrad der Flotte ist voll (web-base `04-layout-system.md`). Tiere nutzt
   vorerst den Template-Standard 355 (wie das Malbuch); sichtbar ist er nur auf den
   web-base-Fehlerseiten und als `theme_color`. Eigener Slot braucht eine Regeländerung in web-base.
-- Precache-Budget (§7, ≤ 40 MB) bei 50 Tieren: rund 200 Fotos × (640 + 1280 px) liegt nahe an der
-  Grenze. In Phase 3 messen; sonst 1280er nur für die ersten Fotos je Tier vorab cachen.
+- `[previews]` gehört ins `wrangler.toml`-Template von web-base, damit neue Apps Preview-Builds
+  ohne Nacharbeit bekommen.
 - Tiere in web-base `08-app-migrations.md` eintragen (Flotte, Abweichungen wie beim Malbuch).
 - Namen selbst aufnehmen statt Systemstimme.
 - Quiz im Entdecker-Modus („Wo ist der Elefant?“).

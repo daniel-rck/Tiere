@@ -1,6 +1,8 @@
 // iNaturalist (inaturalist.org): research-grade observations with community-
 // verified species, annotated as alive. Only photos under CC0, CC BY or CC BY-SA; iNaturalist's CC
-// licenses are version 4.0. One photo per observation for variety.
+// licenses are version 4.0. One photo per observation for variety. A photo is referenced as
+// "inaturalist:<observation id>/<photo id>": the API has no lookup by photo id, so the build
+// fetches the observation to get license and author.
 import { throttledFetch } from "../commons.ts";
 import type { ExtraPhoto } from "./types.ts";
 
@@ -37,6 +39,36 @@ export async function findTaxon(latin: string): Promise<Taxon | undefined> {
   return exact ?? body.results[0];
 }
 
+function toExtraPhoto(observation: Observation, photo: Photo): ExtraPhoto | undefined {
+  if (!photo.license_code || !photo.original_dimensions) return undefined;
+  return {
+    id: `inaturalist:${observation.id}/${photo.id}`,
+    name: `Beobachtung ${observation.id} (iNaturalist)`,
+    pageUrl: `https://www.inaturalist.org/photos/${photo.id}`,
+    url: photo.url.replace("/square.", "/original."),
+    thumbUrl: photo.url.replace("/square.", "/medium."),
+    width: photo.original_dimensions.width,
+    height: photo.original_dimensions.height,
+    license: inaturalistLicense(photo.license_code),
+    author: observation.user.name || observation.user.login,
+  };
+}
+
+/** Looks up one photo of an observation, for the build. */
+export async function fetchInaturalistPhoto(
+  observationId: number,
+  photoId: number,
+): Promise<ExtraPhoto> {
+  const body = await getJson<{ results: Observation[] }>(`/observations/${observationId}`, {});
+  const observation = body.results[0];
+  const photo = observation?.photos.find((p) => p.id === photoId);
+  const extra = observation && photo ? toExtraPhoto(observation, photo) : undefined;
+  if (!extra) {
+    throw new Error(`iNaturalist: Foto ${photoId} in Beobachtung ${observationId} nicht gefunden`);
+  }
+  return extra;
+}
+
 export async function searchInaturalist(taxonId: number, limit: number): Promise<ExtraPhoto[]> {
   const body = await getJson<{ results: Observation[] }>("/observations", {
     taxon_id: String(taxonId),
@@ -55,18 +87,8 @@ export async function searchInaturalist(taxonId: number, limit: number): Promise
     const photo = observation.photos.find(
       (p) => p.license_code && ["cc0", "cc-by", "cc-by-sa"].includes(p.license_code),
     );
-    if (!photo?.license_code || !photo.original_dimensions) continue;
-    photos.push({
-      id: `inaturalist:${photo.id}`,
-      name: `Beobachtung ${observation.id} (iNaturalist)`,
-      pageUrl: `https://www.inaturalist.org/photos/${photo.id}`,
-      url: photo.url.replace("/square.", "/original."),
-      thumbUrl: photo.url.replace("/square.", "/medium."),
-      width: photo.original_dimensions.width,
-      height: photo.original_dimensions.height,
-      license: inaturalistLicense(photo.license_code),
-      author: observation.user.name || observation.user.login,
-    });
+    const extra = photo ? toExtraPhoto(observation, photo) : undefined;
+    if (extra) photos.push(extra);
   }
   return photos;
 }

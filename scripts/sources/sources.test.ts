@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { checkLicense } from "../licenses.ts";
+import { checkLicense } from "../../src/engine/licenses.ts";
 import { inaturalistLicense } from "./inaturalist.ts";
 import { openverseLicense } from "./openverse.ts";
 
