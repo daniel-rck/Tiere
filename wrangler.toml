@@ -23,3 +23,7 @@ not_found_handling = "single-page-application"
 # route (OAuth callback, download link) — and accept that trade-off.
 
 # R2/KV bindings: see the sync template's docs/sync.md.
+
+# Workers Builds runs `wrangler preview` for pull-request branches, which needs
+# this block (it may stay empty). Production deploys from main ignore it.
+[previews]

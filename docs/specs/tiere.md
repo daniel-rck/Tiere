@@ -259,6 +259,8 @@ public/photos/, public/sounds/  generierte Medien (committet)
   zum Inhalt, vollständiger Credit (Autor, Lizenz aus der Allowlist, https-URLs) für jedes Foto und
   jeden Laut. Ohne `--strict`: höchstens 6 Fotos, jedes Foto nur bei einem Tier, unbekannte Felder
   sind Fehler, stille Tiere haben keinen Laut.
+- _2026-11-01_ — Leerer `[previews]`-Block in `wrangler.toml` (Seam): Workers Builds deployt
+  PR-Branches mit `wrangler preview`, das ohne den Block abbricht.
 - _2026-11-01_ — Spec bleibt Deutsch (web-base empfiehlt Englisch für `docs/specs/`), wie beim
   Malbuch.
 
@@ -268,6 +270,8 @@ public/photos/, public/sounds/  generierte Medien (committet)
   web-base-Fehlerseiten und als `theme_color`. Eigener Slot braucht eine Regeländerung in web-base.
 - Precache-Budget (§7, ≤ 40 MB) bei 50 Tieren: rund 200 Fotos × (640 + 1280 px) liegt nahe an der
   Grenze. In Phase 3 messen; sonst 1280er nur für die ersten Fotos je Tier vorab cachen.
+- `[previews]` gehört ins `wrangler.toml`-Template von web-base, damit neue Apps Preview-Builds
+  ohne Nacharbeit bekommen.
 - Tiere in web-base `08-app-migrations.md` eintragen (Flotte, Abweichungen wie beim Malbuch).
 - Namen selbst aufnehmen statt Systemstimme.
 - Quiz im Entdecker-Modus („Wo ist der Elefant?“).
