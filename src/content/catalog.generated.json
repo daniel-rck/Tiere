@@ -425,15 +425,11 @@
             {
               "w": 1280,
               "src": "/photos/pferd/1-1280.webp"
-            },
-            {
-              "w": 1850,
-              "src": "/photos/pferd/1-1850.webp"
             }
           ],
-          "width": 1850,
-          "height": 1282,
-          "color": "#8d9792"
+          "width": 1280,
+          "height": 887,
+          "color": "#8d9793"
         },
         {
           "sizes": [
@@ -516,13 +512,13 @@
               "src": "/photos/ziege/1-640.webp"
             },
             {
-              "w": 1280,
-              "src": "/photos/ziege/1-1280.webp"
+              "w": 960,
+              "src": "/photos/ziege/1-960.webp"
             }
           ],
-          "width": 1280,
-          "height": 1920,
-          "color": "#4c4724"
+          "width": 960,
+          "height": 1440,
+          "color": "#4c4825"
         },
         {
           "sizes": [
@@ -561,6 +557,21 @@
           "width": 1920,
           "height": 1195,
           "color": "#929381"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/ziege/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/ziege/4-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 1991,
+          "color": "#797e6e"
         }
       ],
       "sound": null
@@ -578,7 +589,84 @@
         "Enten fetten ihre Federn ein, damit kein Wasser durchkommt.",
         "Entenküken laufen ihrer Mutter in einer Reihe hinterher."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/ente/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/ente/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/ente/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1536,
+          "color": "#4f657f"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/ente/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/ente/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/ente/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#9f8a7e"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/ente/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/ente/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/ente/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#4a4944"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/ente/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/ente/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/ente/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1920,
+          "color": "#9d9691"
+        }
+      ],
       "sound": null
     },
     {
@@ -594,7 +682,80 @@
         "Gänse passen gut auf und schnattern laut, wenn Fremde kommen.",
         "Junge Gänse heißen Gössel."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/gans/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/gans/1-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 1693,
+          "color": "#5f574a"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/gans/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/gans/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/gans/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#8e8f91"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/gans/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/gans/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/gans/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1275,
+          "color": "#62644c"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/gans/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/gans/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/gans/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2880,
+          "color": "#9d9f80"
+        }
+      ],
       "sound": null
     },
     {
@@ -610,7 +771,80 @@
         "Kaninchen können ihre langen Ohren in verschiedene Richtungen drehen.",
         "Ihre Zähne wachsen ihr ganzes Leben lang."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/kaninchen/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/kaninchen/1-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 1600,
+          "color": "#9d966a"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/kaninchen/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/kaninchen/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/kaninchen/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1800,
+          "color": "#6f675a"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/kaninchen/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/kaninchen/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/kaninchen/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1571,
+          "color": "#8f8470"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/kaninchen/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/kaninchen/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/kaninchen/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2378,
+          "color": "#6b6952"
+        }
+      ],
       "sound": null
     },
     {
@@ -626,7 +860,84 @@
         "Esel sind sehr trittsicher und können schwere Lasten tragen.",
         "Mit ihren langen Ohren hören sie sehr gut."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/esel/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/esel/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/esel/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#939390"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/esel/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/esel/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/esel/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1285,
+          "color": "#66624e"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/esel/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/esel/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/esel/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2560,
+          "color": "#77746b"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/esel/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/esel/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/esel/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1239,
+          "color": "#879b5b"
+        }
+      ],
       "sound": null
     },
     {
@@ -642,7 +953,80 @@
         "Hunde riechen viel, viel besser als Menschen.",
         "Wenn ein Hund mit dem Schwanz wedelt, ist er oft aufgeregt oder freut sich."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/hund/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/hund/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/hund/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1645,
+          "color": "#a29c99"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/hund/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/hund/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/hund/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#7e7860"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/hund/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/hund/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/hund/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1281,
+          "color": "#507549"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/hund/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/hund/4-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 1920,
+          "color": "#988d82"
+        }
+      ],
       "sound": null
     },
     {
@@ -658,7 +1042,80 @@
         "Katzen schnurren oft, wenn sie sich wohlfühlen.",
         "Mit ihren Schnurrhaaren ertasten sie Dinge auch im Dunkeln."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/katze/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/katze/1-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 1709,
+          "color": "#a29b97"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/katze/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/katze/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/katze/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#97938c"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/katze/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/katze/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/katze/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2306,
+          "color": "#917b69"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/katze/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/katze/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/katze/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1176,
+          "color": "#b0aaa7"
+        }
+      ],
       "sound": null
     },
     {
@@ -674,7 +1131,84 @@
         "Der Afrikanische Elefant ist das größte Tier an Land.",
         "Mit dem Rüssel kann er riechen, trinken und Dinge greifen."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/elefant/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/elefant/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/elefant/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1920,
+          "color": "#828362"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/elefant/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/elefant/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/elefant/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#68694f"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/elefant/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/elefant/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/elefant/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#92856c"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/elefant/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/elefant/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/elefant/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#525552"
+        }
+      ],
       "sound": null
     },
     {
@@ -690,7 +1224,84 @@
         "Giraffen sind die höchsten Tiere der Welt.",
         "Ihre Zunge ist ungefähr 45 Zentimeter lang."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/giraffe/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/giraffe/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/giraffe/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#c4ab82"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/giraffe/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/giraffe/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/giraffe/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#a8a8b3"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/giraffe/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/giraffe/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/giraffe/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#917a60"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/giraffe/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/giraffe/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/giraffe/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2560,
+          "color": "#768887"
+        }
+      ],
       "sound": null
     },
     {
@@ -706,7 +1317,80 @@
         "Löwen leben in Familiengruppen, die man Rudel nennt.",
         "Löwen schlafen bis zu 20 Stunden am Tag."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/loewe/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/loewe/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/loewe/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2093,
+          "color": "#866c48"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/loewe/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/loewe/2-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 1116,
+          "color": "#766644"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/loewe/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/loewe/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/loewe/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2400,
+          "color": "#aa875d"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/loewe/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/loewe/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/loewe/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#796645"
+        }
+      ],
       "sound": null
     },
     {
@@ -722,7 +1406,84 @@
         "Jedes Zebra hat sein eigenes Streifenmuster.",
         "Zebras leben in großen Herden in Afrika."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/zebra/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/zebra/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/zebra/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#636760"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/zebra/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/zebra/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/zebra/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1920,
+          "color": "#878372"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/zebra/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/zebra/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/zebra/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2880,
+          "color": "#a2a19d"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/zebra/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/zebra/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/zebra/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#9ba16c"
+        }
+      ],
       "sound": null
     },
     {
@@ -738,7 +1499,80 @@
         "Das Breitmaulnashorn frisst fast den ganzen Tag Gras.",
         "Sein Horn ist aus demselben Stoff wie unsere Fingernägel."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/nashorn/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/nashorn/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/nashorn/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#9c7c6a"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/nashorn/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/nashorn/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/nashorn/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#a88d67"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/nashorn/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/nashorn/3-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 1920,
+          "color": "#a08d6a"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/nashorn/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/nashorn/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/nashorn/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1389,
+          "color": "#60702b"
+        }
+      ],
       "sound": null
     },
     {
@@ -754,7 +1588,84 @@
         "Nilpferde liegen tagsüber im Wasser und fressen nachts an Land Gras.",
         "Unter Wasser können sie Nase und Ohren verschließen."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/nilpferd/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/nilpferd/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/nilpferd/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1169,
+          "color": "#a19385"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/nilpferd/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/nilpferd/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/nilpferd/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#93997d"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/nilpferd/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/nilpferd/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/nilpferd/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1920,
+          "color": "#62624b"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/nilpferd/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/nilpferd/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/nilpferd/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1442,
+          "color": "#514b40"
+        }
+      ],
       "sound": null
     },
     {
@@ -770,7 +1681,84 @@
         "Kängurus hüpfen mit ihren starken Hinterbeinen.",
         "Das Junge wächst im Beutel der Mutter auf."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/kaenguru/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/kaenguru/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/kaenguru/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#6e6254"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/kaenguru/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/kaenguru/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/kaenguru/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2048,
+          "color": "#403726"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/kaenguru/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/kaenguru/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/kaenguru/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1271,
+          "color": "#9bb167"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/kaenguru/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/kaenguru/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/kaenguru/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#694c39"
+        }
+      ],
       "sound": null
     },
     {
@@ -786,7 +1774,80 @@
         "Unter seinem weißen Fell hat der Eisbär schwarze Haut.",
         "Eisbären sind sehr gute Schwimmer."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/eisbaer/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/eisbaer/1-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 853,
+          "color": "#b7b9bb"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/eisbaer/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/eisbaer/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/eisbaer/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1080,
+          "color": "#9d9d9f"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/eisbaer/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/eisbaer/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/eisbaer/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1079,
+          "color": "#bdc3c8"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/eisbaer/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/eisbaer/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/eisbaer/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1499,
+          "color": "#9d917e"
+        }
+      ],
       "sound": null
     },
     {
@@ -802,7 +1863,80 @@
         "Dieses Kamel heißt Trampeltier und hat zwei Höcker.",
         "In den Höckern speichert es Fett, kein Wasser."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/kamel/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/kamel/1-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 1280,
+          "color": "#a48e76"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/kamel/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/kamel/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/kamel/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1542,
+          "color": "#b79f89"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/kamel/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/kamel/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/kamel/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1750,
+          "color": "#aba69c"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/kamel/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/kamel/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/kamel/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1388,
+          "color": "#b89f86"
+        }
+      ],
       "sound": null
     },
     {
@@ -818,7 +1952,84 @@
         "Flamingos sind rosa, weil ihr Futter rosa Farbstoffe enthält.",
         "Sie stehen oft lange auf nur einem Bein."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/flamingo/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/flamingo/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/flamingo/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#516a80"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/flamingo/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/flamingo/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/flamingo/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1920,
+          "color": "#6e7b48"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/flamingo/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/flamingo/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/flamingo/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#938a80"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/flamingo/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/flamingo/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/flamingo/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#797060"
+        }
+      ],
       "sound": null
     },
     {
@@ -834,7 +2045,84 @@
         "Ein Erdmännchen hält Wache und warnt die anderen mit einem Ruf.",
         "Erdmännchen leben in großen Familien in Höhlen unter der Erde."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/erdmaennchen/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/erdmaennchen/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/erdmaennchen/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1920,
+          "color": "#c4895c"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/erdmaennchen/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/erdmaennchen/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/erdmaennchen/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#827163"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/erdmaennchen/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/erdmaennchen/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/erdmaennchen/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1582,
+          "color": "#855329"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/erdmaennchen/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/erdmaennchen/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/erdmaennchen/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1396,
+          "color": "#cec2a8"
+        }
+      ],
       "sound": null
     },
     {
@@ -850,7 +2138,80 @@
         "Pinguine können nicht fliegen, aber sehr schnell schwimmen.",
         "Humboldtpinguine leben an der Küste von Südamerika."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/pinguin/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/pinguin/1-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 1600,
+          "color": "#5c5b5c"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/pinguin/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/pinguin/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/pinguin/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2539,
+          "color": "#989285"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/pinguin/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/pinguin/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/pinguin/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1275,
+          "color": "#3c6463"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/pinguin/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/pinguin/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/pinguin/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#5e5553"
+        }
+      ],
       "sound": null
     },
     {
@@ -866,7 +2227,84 @@
         "Pandas fressen fast nur Bambus, viele Stunden am Tag.",
         "Ein Panda-Baby ist bei der Geburt ungefähr so schwer wie ein Apfel."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/panda/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/panda/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/panda/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1778,
+          "color": "#7a8162"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/panda/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/panda/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/panda/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#5c6457"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/panda/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/panda/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/panda/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1275,
+          "color": "#878462"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/panda/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/panda/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/panda/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#726440"
+        }
+      ],
       "sound": null
     },
     {
@@ -882,7 +2320,80 @@
         "Tiger sind die größten Raubkatzen der Welt.",
         "Anders als die meisten Katzen schwimmen Tiger sehr gern."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/tiger/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/tiger/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/tiger/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#7a6948"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/tiger/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/tiger/2-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 960,
+          "color": "#6b5933"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/tiger/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/tiger/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/tiger/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1301,
+          "color": "#c4bbb6"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/tiger/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/tiger/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/tiger/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2560,
+          "color": "#657756"
+        }
+      ],
       "sound": null
     },
     {
@@ -898,7 +2409,76 @@
         "Orang-Utan bedeutet „Waldmensch“.",
         "Jeden Abend bauen sie sich ein neues Schlafnest hoch oben im Baum."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/orang-utan/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/orang-utan/1-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 1520,
+          "color": "#626041"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/orang-utan/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/orang-utan/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/orang-utan/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#675e2f"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/orang-utan/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/orang-utan/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/orang-utan/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#794b2b"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/orang-utan/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/orang-utan/4-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 1849,
+          "color": "#6f7350"
+        }
+      ],
       "sound": null
     },
     {
@@ -914,7 +2494,84 @@
         "Sein Schnabel ist riesig, aber ganz leicht. Innen ist er fast hohl wie ein Schwamm.",
         "Tukane leben in Südamerika."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/tukan/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/tukan/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/tukan/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1230,
+          "color": "#6c6c51"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/tukan/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/tukan/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/tukan/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1130,
+          "color": "#5b564f"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/tukan/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/tukan/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/tukan/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#7e7b51"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/tukan/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/tukan/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/tukan/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1214,
+          "color": "#8891c5"
+        }
+      ],
       "sound": null
     },
     {
@@ -930,7 +2587,80 @@
         "Ein Chamäleon kann seine Farbe ändern.",
         "Seine Augen kann es in verschiedene Richtungen drehen."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/chamaeleon/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/chamaeleon/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/chamaeleon/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1801,
+          "color": "#544e31"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/chamaeleon/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/chamaeleon/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/chamaeleon/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#232d1c"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/chamaeleon/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/chamaeleon/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/chamaeleon/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1272,
+          "color": "#1d2612"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/chamaeleon/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/chamaeleon/4-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 960,
+          "color": "#573b23"
+        }
+      ],
       "sound": null
     },
     {
@@ -946,7 +2676,84 @@
         "Der Rotaugenlaubfrosch hat leuchtend rote Augen. Damit erschreckt er Feinde.",
         "Tagsüber schläft er unter einem Blatt."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/frosch/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/frosch/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/frosch/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#5a6d29"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/frosch/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/frosch/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/frosch/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#1f200a"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/frosch/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/frosch/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/frosch/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2891,
+          "color": "#4e7826"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/frosch/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/frosch/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/frosch/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1532,
+          "color": "#151609"
+        }
+      ],
       "sound": null
     },
     {
@@ -962,7 +2769,84 @@
         "Gorillas trommeln sich auf die Brust, um zu zeigen, wie stark sie sind.",
         "Sie fressen vor allem Blätter, Stängel und Früchte."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/gorilla/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/gorilla/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/gorilla/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1683,
+          "color": "#72895d"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/gorilla/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/gorilla/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/gorilla/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2880,
+          "color": "#4d5a44"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/gorilla/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/gorilla/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/gorilla/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1398,
+          "color": "#5c5753"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/gorilla/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/gorilla/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/gorilla/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#6a6956"
+        }
+      ],
       "sound": null
     },
     {
@@ -978,7 +2862,84 @@
         "Schimpansen angeln mit Stöckchen nach Termiten.",
         "Sie leben in Gruppen und umarmen sich, um sich zu trösten."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/schimpanse/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/schimpanse/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/schimpanse/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2880,
+          "color": "#737c5f"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/schimpanse/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/schimpanse/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/schimpanse/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2559,
+          "color": "#8b939c"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/schimpanse/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/schimpanse/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/schimpanse/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2400,
+          "color": "#647050"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/schimpanse/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/schimpanse/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/schimpanse/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#78787b"
+        }
+      ],
       "sound": null
     },
     {
@@ -994,7 +2955,80 @@
         "Mit seinem kräftigen Schnabel knackt der Ara harte Nüsse.",
         "Aras bleiben oft ein Leben lang mit demselben Partner zusammen."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/ara/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/ara/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/ara/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2981,
+          "color": "#94795c"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/ara/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/ara/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/ara/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1281,
+          "color": "#415123"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/ara/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/ara/3-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 1707,
+          "color": "#9a9b76"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/ara/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/ara/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/ara/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1335,
+          "color": "#928751"
+        }
+      ],
       "sound": null
     },
     {
@@ -1010,7 +3044,80 @@
         "Faultiere bewegen sich ganz langsam und hängen kopfüber in den Bäumen.",
         "In ihrem Fell wachsen manchmal winzige grüne Algen."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/faultier/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/faultier/1-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 1707,
+          "color": "#848367"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/faultier/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/faultier/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/faultier/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#5d633f"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/faultier/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/faultier/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/faultier/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2560,
+          "color": "#626b5c"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/faultier/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/faultier/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/faultier/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#697362"
+        }
+      ],
       "sound": null
     },
     {
@@ -1026,7 +3133,84 @@
         "Der Jaguar ist die größte Katze in Amerika.",
         "Jaguare schwimmen gern und gut."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/jaguar/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/jaguar/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/jaguar/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1568,
+          "color": "#735f40"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/jaguar/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/jaguar/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/jaguar/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#7b7b3e"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/jaguar/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/jaguar/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/jaguar/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#aea7a2"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/jaguar/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/jaguar/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/jaguar/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#636f5d"
+        }
+      ],
       "sound": null
     },
     {
@@ -1042,7 +3226,84 @@
         "Im Wasser schauen oft nur seine Augen und die Nase heraus.",
         "Krokodilmütter tragen ihre Babys vorsichtig im Maul."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/krokodil/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/krokodil/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/krokodil/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#a48a6e"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/krokodil/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/krokodil/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/krokodil/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1278,
+          "color": "#72808b"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/krokodil/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/krokodil/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/krokodil/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#9f8469"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/krokodil/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/krokodil/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/krokodil/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1200,
+          "color": "#726c5f"
+        }
+      ],
       "sound": null
     },
     {
@@ -1058,7 +3319,80 @@
         "Der Grüne Baumpython wickelt sich zum Ausruhen um einen Ast.",
         "Schlangen riechen mit ihrer Zunge."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/schlange/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/schlange/1-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 853,
+          "color": "#5d4d31"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/schlange/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/schlange/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/schlange/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#869331"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/schlange/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/schlange/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/schlange/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#3d3215"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/schlange/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/schlange/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/schlange/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#69875b"
+        }
+      ],
       "sound": null
     },
     {
@@ -1074,7 +3408,84 @@
         "Clownfische wohnen in Seeanemonen.",
         "Die Nesseln der Anemone schützen sie vor Feinden."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/clownfisch/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/clownfisch/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/clownfisch/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1308,
+          "color": "#513719"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/clownfisch/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/clownfisch/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/clownfisch/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1920,
+          "color": "#605942"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/clownfisch/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/clownfisch/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/clownfisch/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2559,
+          "color": "#4fa362"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/clownfisch/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/clownfisch/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/clownfisch/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#8f715c"
+        }
+      ],
       "sound": null
     },
     {
@@ -1090,7 +3501,84 @@
         "Delfine atmen Luft und schwimmen dafür nach oben.",
         "Sie rufen sich mit Pfiffen gegenseitig beim Namen."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/delfin/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/delfin/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/delfin/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1278,
+          "color": "#4d6c6f"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/delfin/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/delfin/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/delfin/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1320,
+          "color": "#9ea6a9"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/delfin/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/delfin/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/delfin/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1277,
+          "color": "#58696f"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/delfin/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/delfin/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/delfin/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#c5c1c1"
+        }
+      ],
       "sound": null
     },
     {
@@ -1106,7 +3594,80 @@
         "Sie legen ihre Eier am Strand in den Sand.",
         "Beim Schlafen können sie stundenlang unter Wasser bleiben."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/meeresschildkroete/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/meeresschildkroete/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/meeresschildkroete/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#23867e"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/meeresschildkroete/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/meeresschildkroete/2-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 1209,
+          "color": "#398f7c"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/meeresschildkroete/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/meeresschildkroete/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/meeresschildkroete/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#3b899b"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/meeresschildkroete/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/meeresschildkroete/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/meeresschildkroete/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1372,
+          "color": "#9b9587"
+        }
+      ],
       "sound": null
     },
     {
@@ -1122,7 +3683,84 @@
         "Ein Krake hat acht Arme.",
         "Er hat drei Herzen und blaues Blut."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/krake/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/krake/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/krake/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1461,
+          "color": "#747d68"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/krake/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/krake/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/krake/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1920,
+          "color": "#7c6f4b"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/krake/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/krake/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/krake/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1920,
+          "color": "#49483d"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/krake/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/krake/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/krake/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2880,
+          "color": "#48846c"
+        }
+      ],
       "sound": null
     },
     {
@@ -1138,7 +3776,84 @@
         "Buckelwale singen lange Lieder unter Wasser.",
         "Ein Buckelwal ist ungefähr so lang wie ein Bus."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/buckelwal/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/buckelwal/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/buckelwal/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1140,
+          "color": "#5a79a8"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/buckelwal/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/buckelwal/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/buckelwal/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#4d6aa3"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/buckelwal/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/buckelwal/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/buckelwal/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1294,
+          "color": "#6c8faa"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/buckelwal/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/buckelwal/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/buckelwal/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#527da0"
+        }
+      ],
       "sound": null
     },
     {
@@ -1154,7 +3869,80 @@
         "Der Walhai ist der größte Fisch der Welt.",
         "Er frisst winzig kleine Tierchen, das Plankton."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/walhai/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/walhai/1-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 853,
+          "color": "#1d6799"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/walhai/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/walhai/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/walhai/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 885,
+          "color": "#46bbd4"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/walhai/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/walhai/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/walhai/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#30506f"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/walhai/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/walhai/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/walhai/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#0180b1"
+        }
+      ],
       "sound": null
     },
     {
@@ -1170,7 +3958,80 @@
         "Junge Seehunde heißen Heuler, weil sie nach ihrer Mutter rufen.",
         "Beim Tauchen verschließen Seehunde ihre Nasenlöcher."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/seehund/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/seehund/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/seehund/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1177,
+          "color": "#959ba1"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/seehund/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/seehund/2-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 1600,
+          "color": "#96b4d1"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/seehund/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/seehund/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/seehund/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#788a9c"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/seehund/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/seehund/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/seehund/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#949390"
+        }
+      ],
       "sound": null
     },
     {
@@ -1186,7 +4047,80 @@
         "Orcas leben in Familien und rufen sich mit Pfiffen und Klicks.",
         "Ein Orca ist eigentlich ein sehr großer Delfin."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/orca/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/orca/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/orca/1-1920.webp"
+            }
+          ],
+          "width": 2048,
+          "height": 1536,
+          "color": "#2e5777"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/orca/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/orca/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/orca/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#aaacb0"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/orca/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/orca/3-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 854,
+          "color": "#527097"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/orca/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/orca/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/orca/4-1920.webp"
+            }
+          ],
+          "width": 2048,
+          "height": 1153,
+          "color": "#7b7d81"
+        }
+      ],
       "sound": null
     },
     {
@@ -1202,7 +4136,80 @@
         "Beim Seepferdchen bekommt der Vater die Babys.",
         "Mit seinem Schwanz hält es sich an Pflanzen fest."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/seepferdchen/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/seepferdchen/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/seepferdchen/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2880,
+          "color": "#7f797a"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/seepferdchen/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/seepferdchen/2-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 801,
+          "color": "#73e2d9"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/seepferdchen/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/seepferdchen/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/seepferdchen/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 2561,
+          "color": "#3a3317"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/seepferdchen/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/seepferdchen/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/seepferdchen/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1280,
+          "color": "#5e604d"
+        }
+      ],
       "sound": null
     },
     {
@@ -1218,7 +4225,80 @@
         "Quallen haben kein Gehirn und kein Herz.",
         "Sie bestehen fast ganz aus Wasser."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/qualle/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/qualle/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/qualle/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#174a76"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/qualle/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/qualle/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/qualle/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1920,
+          "color": "#091d3c"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/qualle/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/qualle/3-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 1455,
+          "color": "#35383b"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/qualle/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/qualle/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/qualle/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#0c78fc"
+        }
+      ],
       "sound": null
     },
     {
@@ -1234,7 +4314,80 @@
         "Ein Seestern hat meistens fünf Arme.",
         "Verliert er einen Arm, wächst er wieder nach."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/seestern/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/seestern/1-1280.webp"
+            }
+          ],
+          "width": 1280,
+          "height": 1280,
+          "color": "#8e7c72"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/seestern/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/seestern/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/seestern/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1837,
+          "color": "#887c3b"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/seestern/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/seestern/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/seestern/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1285,
+          "color": "#9c9477"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/seestern/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/seestern/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/seestern/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#a68b63"
+        }
+      ],
       "sound": null
     },
     {
@@ -1250,7 +4403,84 @@
         "Krabben laufen am liebsten seitwärts.",
         "Ihr harter Panzer schützt sie wie eine Rüstung."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/krabbe/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/krabbe/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/krabbe/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1079,
+          "color": "#b6ad9e"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/krabbe/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/krabbe/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/krabbe/2-1920.webp"
+            }
+          ],
+          "width": 1935,
+          "height": 1557,
+          "color": "#ab9c70"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/krabbe/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/krabbe/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/krabbe/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1079,
+          "color": "#a39886"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/krabbe/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/krabbe/4-1280.webp"
+            },
+            {
+              "w": 1536,
+              "src": "/photos/krabbe/4-1536.webp"
+            }
+          ],
+          "width": 1536,
+          "height": 2048,
+          "color": "#706d67"
+        }
+      ],
       "sound": null
     },
     {
@@ -1266,7 +4496,84 @@
         "Mantarochen gleiten durchs Wasser, als würden sie fliegen.",
         "Sie können bis zu sieben Meter breit werden."
       ],
-      "photos": [],
+      "photos": [
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/mantarochen/1-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/mantarochen/1-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/mantarochen/1-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#1284a9"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/mantarochen/2-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/mantarochen/2-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/mantarochen/2-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1440,
+          "color": "#2e80a6"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/mantarochen/3-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/mantarochen/3-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/mantarochen/3-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1272,
+          "color": "#254488"
+        },
+        {
+          "sizes": [
+            {
+              "w": 640,
+              "src": "/photos/mantarochen/4-640.webp"
+            },
+            {
+              "w": 1280,
+              "src": "/photos/mantarochen/4-1280.webp"
+            },
+            {
+              "w": 1920,
+              "src": "/photos/mantarochen/4-1920.webp"
+            }
+          ],
+          "width": 1920,
+          "height": 1222,
+          "color": "#195685"
+        }
+      ],
       "sound": null
     }
   ]

@@ -170,228 +170,1334 @@
           "license": "CC0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Capra_aegagrus_hircus_in_isla_Margarita.jpg"
+        },
+        {
+          "author": "Gzen92",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ch%C3%A8vre_(10).jpg"
         }
       ],
       "sound": null
     },
     {
       "id": "ente",
-      "photos": [],
+      "photos": [
+        {
+          "author": "King of Hearts",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anas_platyrhynchos_domesticus_Palo_Alto_May_2011_003.jpg"
+        },
+        {
+          "author": "Drcbrothephotographer",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domesticated_mallard_drakes_in_Nami_Island.jpg"
+        },
+        {
+          "author": "King of Hearts",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anas_platyrhynchos_domesticus_Palo_Alto_May_2011_004.jpg"
+        },
+        {
+          "author": "Basile Morin",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domestic_duck_waving_its_wings_at_golden_hour_in_a_pond_in_Don_Det_Laos.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "gans",
-      "photos": [],
+      "photos": [
+        {
+          "author": "JJ Harrison",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domestic_Goose.jpg"
+        },
+        {
+          "author": "663highland",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Takaragaike_Park_Kyoto04bs4200.jpg"
+        },
+        {
+          "author": "Wilfredor",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domesticated_goose_head,_Chaguaramal,_Venezuela.jpg"
+        },
+        {
+          "author": "Горбунова М.С.",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domestic_goose_in_Dagestan_2.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "kaninchen",
-      "photos": [],
+      "photos": [
+        {
+          "author": "JJ Harrison ( https://www.jjharrison.com.au/ )",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oryctolagus_cuniculus_Tasmania_2.jpg"
+        },
+        {
+          "author": "Diego Delso",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Conejo_com%C3%BAn_(Oryctolagus_cuniculus),_Tierpark_Hellabrunn,_M%C3%BAnich,_Alemania,_2012-06-17,_DD_01.JPG"
+        },
+        {
+          "author": "Friedrich Haag",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Heimtier_004_2023_08_26.jpg"
+        },
+        {
+          "author": "JM Ligero Loarte",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oryctolagus_cuniculus_Rcdo.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "esel",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Jiel Beaumadier",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jielbeaumadier_ane_des_pyrenees_vda_2010.jpeg"
+        },
+        {
+          "author": "Lilly M",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Equus_asinus_Kadzid%C5%82owo_001.jpg"
+        },
+        {
+          "author": "Yann Forget",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%C3%82nes_%C3%A0_Br%C3%A9ziers,_Hautes-Alpes_01.jpg"
+        },
+        {
+          "author": "Lilly M",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Equus_asinus_Kadzid%C5%82owo_002.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "hund",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Original author Hand , edit by Pharaoh Hound",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Labrador_Retriever_snow.jpg"
+        },
+        {
+          "author": "MichaelMcPhee",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Callie_the_golden_retriever_puppy.jpg"
+        },
+        {
+          "author": "Jakub Hałun",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pies_nierasowy,_20201003_0930_4295.jpg"
+        },
+        {
+          "author": "Ein weiteres Bild von mir: Dieses Foto wurde von Medium69 (William Crochot) erstellt und unter nachfolgend aufgeführter Lizenz veröffentlicht. Das Bild kann frei verwendet werden solange der Urheber (William Crochot), die Quelle (Wikimedia Commons) und die Lizenz (CC-BY-SA 4.0) in erkennbarem Zusammenhang mit dem Bild genannt wird. Bitte lade an dieser Stelle keine auch nur minimal veränderte Fassung ohne Rücksprache mit dem Urheber hoch. Der Urheber möchte Korrekturen nur an der ihm vorliegenden unkomprimierten Quelle vornehmen. So ist gewährleistet, dass die Änderungen erhalten bleiben und dass keine unnötigen Kompressionsartefakte entstehen. Wenn du meinst, dass Änderungen erforderlich sein sollten, informiere bitte den Urheber oder lade eine Bearbeitung als neues Bild unter neuem Namen und unter Verwendung der Vorlage Derivat bzw. der Vorlage Extrakt hoch.",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Teckel_%C3%A0_poil_dur_-_20150430_14h47_(10136).jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "katze",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Alvesgaspar",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cat_November_2010-1a.jpg"
+        },
+        {
+          "author": "André Karwath aka Aka",
+          "license": "CC BY-SA 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Six_weeks_old_cat_(aka).jpg"
+        },
+        {
+          "author": "AdinaVoicu",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tabby_cat_with_blue_eyes-3336579.jpg"
+        },
+        {
+          "author": "Laitche",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tabby_cats_of_%C5%8Cizumi_Ryokuchi_Park,_January_2019_-_8816.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "elefant",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Diego Delso",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elefante_africano_de_sabana_(Loxodonta_africana),_parque_nacional_de_Amboseli,_Kenia,_2024-05-22,_DD_07.jpg"
+        },
+        {
+          "author": "Charles J. Sharp",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:African_bush_elephants_(Loxodonta_africana)_female_with_six-week-old_baby.jpg"
+        },
+        {
+          "author": "Charles J. Sharp",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:African_bush_elephant_(Loxodonta_africana)_baby_6_weeks.jpg"
+        },
+        {
+          "author": "Charles J. Sharp",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:African_bush_elephant_(Loxodonta_africana)_drinking_Kruger.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "giraffe",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Giles Laurent",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:042_Masai_giraffe_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg"
+        },
+        {
+          "author": "Giles Laurent",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:184_Angolan_giraffe_licking_its_nose_in_Etosha_National_Park_Photo_by_Giles_Laurent.jpg"
+        },
+        {
+          "author": "Giles Laurent",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:076_Baby_Angolan_giraffes_running_in_Etosha_National_Park_Photo_by_Giles_Laurent.jpg"
+        },
+        {
+          "author": "Hans Hillewaert",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giraffa_camelopardalis_angolensis.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "loewe",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Clément Bardot",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lion_d%27Afrique.jpg"
+        },
+        {
+          "author": "Falense",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Okonjima_Lioness.jpg"
+        },
+        {
+          "author": "Giles Laurent",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:011_The_lion_king_Tryggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg"
+        },
+        {
+          "author": "Benh LIEU SONG",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lions_Family_Portrait_Masai_Mara.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "zebra",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Yathin S Krishnappa",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Equus_quagga_burchellii_-_Etosha,_2014.jpg"
+        },
+        {
+          "author": "This Photo was taken by Timothy A. Gonsalves . Feel free to use my photos, but please mention me as the author. I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk page , for my information. Please contact me before commercial use. Bitte lade an dieser Stelle keine auch nur minimal veränderte Fassung ohne Rücksprache mit dem Urheber hoch. Der Urheber möchte Korrekturen nur an der ihm vorliegenden unkomprimierten Quelle vornehmen. So ist gewährleistet, dass die Änderungen erhalten bleiben und dass keine unnötigen Kompressionsartefakte entstehen. Wenn du meinst, dass Änderungen erforderlich sein sollten, informiere bitte den Urheber oder lade eine Bearbeitung als neues Bild unter neuem Namen und unter Verwendung der Vorlage Derivat bzw. der Vorlage Extrakt hoch.",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zebra_Family_Luangwa_Zambia_Jul23_A7C_05903.jpg"
+        },
+        {
+          "author": "Axel Tschentscher",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plains_Zebra_Left_2019-07-25.jpg"
+        },
+        {
+          "author": "Diego Delso",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cebras_comunes_(Equus_quagga),_parque_nacional_de_Tarangire,_Tanzania,_2024-05-25,_DD_90.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "nashorn",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Giles Laurent",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:075_White_rhinoceros_mother_and_her_newborn_baby_in_the_Kalahari_Desert_of_Namibia_Photo_by_Giles_Laurent.jpg"
+        },
+        {
+          "author": "Giles Laurent",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:166_White_rhinoceros_in_Otjozondjupa_Region_Photo_by_Giles_Laurent.jpg"
+        },
+        {
+          "author": "Axel Tschentscher",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:White_Rhinoceros_Alert_2019-07-27.jpg"
+        },
+        {
+          "author": "Photograph by Mike Peel ( www.mikepeel.net ).",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:At_Knowsley_Safari_Park_2006_127.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "nilpferd",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Diego Delso",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hipop%C3%B3tamo_(Hippopotamus_amphibius),_parque_nacional_de_Chobe,_Botsuana,_2018-07-28,_DD_82.jpg"
+        },
+        {
+          "author": "Bernard Gagnon",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hippopotamus_in_Chobe_National_Park_03.jpg"
+        },
+        {
+          "author": "Charles J. Sharp",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hippo_(Hippopotamus_amphibius)_head_in_water.jpg"
+        },
+        {
+          "author": "Ermell",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hippopotamus_amphibius_im_K%C3%B6lner_Zoo_-20140321-RM-125057.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "kaenguru",
-      "photos": [],
+      "photos": [
+        {
+          "author": "PotMart186",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red_Kangaroos_at_Sturt_National_Park_NSW.jpg"
+        },
+        {
+          "author": "H. Zell",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Osphranter_rufus_-_Tierpark_Hagenbeck_01.jpg"
+        },
+        {
+          "author": "Geoff Kass",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fighting_Words_(115758693).jpeg"
+        },
+        {
+          "author": "Diego Delso",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fauna_de_Australia30.JPG"
+        }
+      ],
       "sound": null
     },
     {
       "id": "eisbaer",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Arturo de Frias Marques",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Polar_Bear_AdF.jpg"
+        },
+        {
+          "author": "AWeith",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Female_polar_bear_(Ursus_maritimus)_with_cub,_Svalbard.jpg"
+        },
+        {
+          "author": "Godot13",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:NOR-2016-Svalbard-Sju%C3%B8yane-Phipps%C3%B8ya-Polar_bear_(Ursus_maritimus)_20.jpg"
+        },
+        {
+          "author": "H. Zell",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ursus_maritimus_-_Tierpark_Hagenbeck_01.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "kamel",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Nikolai Bulykin",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%90%D0%BB%D1%82%D1%8B%D0%BD-%D0%AD%D0%BC%D0%B5%D0%BB%D1%8C,_%D0%B2%D0%B5%D1%80%D0%B1%D0%BB%D1%8E%D0%B4%D1%8B_(4).jpg"
+        },
+        {
+          "author": "Alexandr frolov",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Camel_Farm_in_Mongolia_05.jpg"
+        },
+        {
+          "author": "Alexandr frolov",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_little_white_camel_03.jpg"
+        },
+        {
+          "author": "Alexandr frolov",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Camel_Farm_in_Mongolia_02.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "flamingo",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Diego Delso",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flamenco_com%C3%BAn_(Phoenicopterus_roseus),_Walvis_Bay,_Namibia,_2018-08-05,_DD_30.jpg"
+        },
+        {
+          "author": "Luc Viatour",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Phoenicopterus_roseus_Luc_Viatour.jpg"
+        },
+        {
+          "author": "Giles Laurent",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:001_Greater_flamingo_in_flight_in_the_Camargue_Photo_by_Giles_Laurent.jpg"
+        },
+        {
+          "author": "Charles J. Sharp",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Greater_flamingos_(Phoenicopterus_roseus)_Bahrain.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "erdmaennchen",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Charles J. Sharp",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Meerkat_(Suricata_suricatta)_with_3_young.jpg"
+        },
+        {
+          "author": "Francis C. Franklin",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Baby_Meerkats.jpg"
+        },
+        {
+          "author": "Charles J. Sharp",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Meerkat_(Suricata_suricatta)_Tswalu.jpg"
+        },
+        {
+          "author": "Alberto-g-rovi",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Animales_bioparc-valencia-2012_(13).JPG"
+        }
+      ],
       "sound": null
     },
     {
       "id": "pinguin",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Polinova",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:HumboldtPenguins.jpg"
+        },
+        {
+          "author": "Cmao20",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Humboldt_Penguin_(Spheniscus_humboldti)_in_Chester_Zoo,_Cheshire,_England_-_24-06-2015.jpg"
+        },
+        {
+          "author": "Teaksu Kim rsvmffn",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Teaksu_Kim_2017_(Unsplash).jpg"
+        },
+        {
+          "author": "Murray Foubister",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Day_trip_from_Puerto_Varas_to_Isla_Grande_de_Chiloe_-_a_visit_and_boat_trip_to_Pinguinera_Isloto_de_Punihuil_on_the_open_Ocean_-_Peruvian_(Humboldt)_Penguin_(Spheniscus_humboldt),_mostly_%3F_-_(25185182305).jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "panda",
-      "photos": [],
+      "photos": [
+        {
+          "author": "江戸村のとくぞう",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ailuropoda_melanoleuca_Zhen_Zhen_220518e.jpg"
+        },
+        {
+          "author": "Ashley98lee",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_Happy_Panda.jpg"
+        },
+        {
+          "author": "Amaury Laporte",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bao_Bao_Eating_Bamboo_8_-_16746246518.jpg"
+        },
+        {
+          "author": "Thesupermat",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zooparc_de_Beauval_-_Panda_-_2016_-_012.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "tiger",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Tisha Mukherjee",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bengal_tiger_in_Sanjay_Dubri_Tiger_Reserve_December_2024_by_Tisha_Mukherjee_11.jpg"
+        },
+        {
+          "author": "S. Taheri , edited by Fir0002",
+          "license": "CC BY-SA 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sibirischer_tiger_de_edit02.jpg"
+        },
+        {
+          "author": "Dave Pape",
+          "license": "Public Domain",
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panthera_tigris_altaica_13_-_Buffalo_Zoo.jpg"
+        },
+        {
+          "author": "Chrumps",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panthera_tigris_altaica_in_Lodz_Zoo_2.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "orang-utan",
-      "photos": [],
+      "photos": [
+        {
+          "author": "David Arvidsson",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Orangutan_-Zoologischer_Garten_Berlin-8a.jpg"
+        },
+        {
+          "author": "Thomas Fuhrmann",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bornean_orangutan_(Pongo_pygmaeus),_Tanjung_Putting_National_Park_02.jpg"
+        },
+        {
+          "author": "Rohitjahnavi",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bornean_Orangutan_DSCN0685.jpg"
+        },
+        {
+          "author": "Eleifert",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Orang_Utan,_Semenggok_Forest_Reserve,_Sarawak,_Borneo,_Malaysia.JPG"
+        }
+      ],
       "sound": null
     },
     {
       "id": "tukan",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Bernard DUPONT",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toco_Toucan_(Ramphastos_toco)_-_48153967707.jpg"
+        },
+        {
+          "author": "AntanO",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toco_toucan_(Ramphastos_toco)_close-up.jpg"
+        },
+        {
+          "author": "Giles Laurent",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:090_Toco_toucan_in_Encontro_das_%C3%81guas_State_Park_Photo_by_Giles_Laurent.jpg"
+        },
+        {
+          "author": "Qwuito",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tucano_em_voo.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "chamaeleon",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Charles J. Sharp",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panther_chameleon_(Furcifer_pardalis)_male_Montagne_d%E2%80%99Ambre_2.jpg"
+        },
+        {
+          "author": "Charles J. Sharp",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panther_chameleon_(Furcifer_pardalis)_male_Nosy_Be.jpg"
+        },
+        {
+          "author": "Marius Burger",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Furcifer_pardalis_188585670.jpg"
+        },
+        {
+          "author": "Donar Reiskoffer",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:20110721_Berkenhof_Zoo_(0055).jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "frosch",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Careyjamesbalboa (Carey James Balboa)",
+          "license": "Public Domain",
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red_eyed_tree_frog_edit2.jpg"
+        },
+        {
+          "author": "Nosferattus",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red-eyed_tree_frog_Belize_01.jpg"
+        },
+        {
+          "author": "Pavel Kirillov from St.Petersburg, Russia",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red-eyed_Leaf_Frog_(Agalychnis_callidryas)_(9591371871).jpg"
+        },
+        {
+          "author": "Red-eyed Tree Frog (Agalychnis callidryas) 3.jpg : Geoff Gallice from Gainesville, FL, USA derivative work: B kimmel",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red-eyed_Tree_Frog_(Agalychnis_callidryas)_1.png"
+        }
+      ],
       "sound": null
     },
     {
       "id": "gorilla",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Tuxyso",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Male_Gorilla_gorilla_gorilla_Apenheul_2023_02.jpg"
+        },
+        {
+          "author": "Diego Delso",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gorila_de_monta%C3%B1a_(Gorilla_beringei_beringei),_parque_nacional_de_la_Selva_Impenetrable_de_Bwindi,_Uganda,_2024-02-02,_DD_37.jpg"
+        },
+        {
+          "author": "Clément Bardot",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:N%27Tami,_Western_Gorilla.jpg"
+        },
+        {
+          "author": "Charles J. Sharp",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mountain_gorilla_(Gorilla_beringei_beringei)_2-year-old_a.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "schimpanse",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Giles Laurent",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:015_Chimpanzee_at_Kibale_forest_National_Park_Photo_by_Giles_Laurent.jpg"
+        },
+        {
+          "author": "böhringer friedrich",
+          "license": "CC BY-SA 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Schimpanse,_Pan_troglodytes_1.JPG"
+        },
+        {
+          "author": "Giles Laurent",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:016_Alpha_male_chimpanzee_walking_at_Kibale_forest_National_Park_Photo_by_Giles_Laurent.jpg"
+        },
+        {
+          "author": "Herusutimbul",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chimpanzees_eat_nuts.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "ara",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Quartl",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ara_macao_qtl1.jpg"
+        },
+        {
+          "author": "Satdeep Gill",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Scarlet_Macaws_at_Uvita_Beach,_Costa_Rica_03.jpg"
+        },
+        {
+          "author": "cello caruso-turiello",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ara_macao_411126012.jpg"
+        },
+        {
+          "author": "Tuxyso",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ara-Zoo-Muenster-2013-02.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "faultier",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Stefan Laube ( Tauchgurke )",
+          "license": "Public Domain",
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bradypus.jpg"
+        },
+        {
+          "author": "Urak-Tou",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Costa_Rican_Three-Toed_Sloth.jpg"
+        },
+        {
+          "author": "Daniella Maraschiello",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bicho-pregui%C3%A7a_2.jpg"
+        },
+        {
+          "author": "Daniella Maraschiello",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bicho-pregui%C3%A7a_3.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "jaguar",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Cburnett in der Wikipedia auf Englisch",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jaguar_head_shot-edit2.jpg"
+        },
+        {
+          "author": "Giles Laurent",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:015_Jaguar_walking_in_Encontro_das_%C3%81guas_State_Park_Photo_by_Giles_Laurent.jpg"
+        },
+        {
+          "author": "Giles Laurent",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:013_Jaguar_leaving_the_river_in_Encontro_das_%C3%81guas_State_Park_Photo_by_Giles_Laurent.jpg"
+        },
+        {
+          "author": "Giles Laurent",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:113_Jaguar_in_Encontro_das_%C3%81guas_State_Park_Photo_by_Giles_Laurent.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "krokodil",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Diego Delso",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cocodrilo_del_Nilo_(Crocodylus_niloticus),_reserva_natural_Mas%C3%A1i_Mara,_Kenia,_2024-05-20,_DD_71.jpg"
+        },
+        {
+          "author": "Matti Blume",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chobe_Land_Safari,_Kasane_(20260520-P1075972).jpg"
+        },
+        {
+          "author": "Diego Delso",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cocodrilo_del_Nilo_(Crocodylus_niloticus),_reserva_natural_Mas%C3%A1i_Mara,_Kenia,_2024-05-20,_DD_70.jpg"
+        },
+        {
+          "author": "This Photo was taken by Timothy A. Gonsalves . Feel free to use my photos, but please mention me as the author. I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk page , for my information. Please contact me before commercial use. Bitte lade an dieser Stelle keine auch nur minimal veränderte Fassung ohne Rücksprache mit dem Urheber hoch. Der Urheber möchte Korrekturen nur an der ihm vorliegenden unkomprimierten Quelle vornehmen. So ist gewährleistet, dass die Änderungen erhalten bleiben und dass keine unnötigen Kompressionsartefakte entstehen. Wenn du meinst, dass Änderungen erforderlich sein sollten, informiere bitte den Urheber oder lade eine Bearbeitung als neues Bild unter neuem Namen und unter Verwendung der Vorlage Derivat bzw. der Vorlage Extrakt hoch.",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nile_Crocodile_Kafue_River_Bank_Zambia_Jul23_A7C_05542.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "schlange",
-      "photos": [],
+      "photos": [
+        {
+          "author": "safaritravelplus",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_Green_Tree_Python.jpg"
+        },
+        {
+          "author": "frank wouters from antwerpen, belgium , België , Belgique",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boomslang_(443113819).jpg"
+        },
+        {
+          "author": "JJ Harrison",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Green_Tree_Python_juvenile_A22I6572.jpg"
+        },
+        {
+          "author": "MartinThoma",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Morelia-viridis-1.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "clownfisch",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Nick Hobgood",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amphiprion_ocellaris_(Clown_anemonefish)_by_Nick_Hobgood.jpg"
+        },
+        {
+          "author": "Pierre Pericard",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amphiprion_ocellaris_497890888.jpg"
+        },
+        {
+          "author": "Alexander Vasenin",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amphiprion_ocellaris_at_Gilli_Banta.JPG"
+        },
+        {
+          "author": "Esquilo",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clownfisk.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "delfin",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Cloudette-90",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tursiops_Truncatus.JPG"
+        },
+        {
+          "author": "JUAN ROMERO",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tursiops_truncatus_178353051.jpg"
+        },
+        {
+          "author": "NASA",
+          "license": "Public Domain",
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tursiops_truncatus_01.jpg"
+        },
+        {
+          "author": "Giles Laurent",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:010_Atlantic_bottlenose_dolphin_jumping_at_Pelican_point_Photo_by_Giles_Laurent.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "meeresschildkroete",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Brocken Inaglory",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Green_turtle_swimming_in_Kona_May_2010.jpg"
+        },
+        {
+          "author": "Brocken Inaglory",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Underwater_portrait_of_green_turtle.jpg"
+        },
+        {
+          "author": "Brocken Inaglory",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chelonia_mydas_is_going_for_the_air_edit.jpg"
+        },
+        {
+          "author": "Mohdalsaleh",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Green_turtle_baby.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "krake",
-      "photos": [],
+      "photos": [
+        {
+          "author": "albert kok",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Octopus2.jpg"
+        },
+        {
+          "author": "Diego Delso",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pulpo_com%C3%BAn_(Octopus_vulgaris),_Parque_natural_de_la_Arr%C3%A1bida,_Portugal,_2020-07-21,_DD_33.jpg"
+        },
+        {
+          "author": "Diego Delso",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pulpo_com%C3%BAn_(Octopus_vulgaris),_Parque_natural_de_la_Arr%C3%A1bida,_Portugal,_2020-07-21,_DD_35.jpg"
+        },
+        {
+          "author": "Matthias Huber",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Poulpe_commun_(Octopus_vulgaris)_(Ifremer_00618-73030_-_28929).jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "buckelwal",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Charles J. Sharp",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Humpback_whale_(Megaptera_novaeangliae)_with_calf_Moorea_2.jpg"
+        },
+        {
+          "author": "Charles J. Sharp",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Humpback_whale_(Megaptera_novaeangliae)_calf_Moorea_2.jpg"
+        },
+        {
+          "author": "Jérémie Silvestro (If you can improve this photo development, ask me the RAW .)",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Baleine_%C3%A0_bosse_et_son_baleineau_2.jpg"
+        },
+        {
+          "author": "Giles Laurent",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:031_Humpback_whale_lobtailing_Photo_by_Giles_Laurent.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "walhai",
-      "photos": [],
+      "photos": [
+        {
+          "author": "FGBNMS/Eckert",
+          "license": "Public Domain",
+          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rhincodon_typus_fgbnms.jpg"
+        },
+        {
+          "author": "User:Zac Wolf (original), en:User:Stefan (cropping)",
+          "license": "CC BY-SA 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Whale_shark_Georgia_aquarium.jpg"
+        },
+        {
+          "author": "Chewb62",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Requin_baleine_ningaloo_reef.JPG"
+        },
+        {
+          "author": "Schützenhofer Christoph",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Whaleshark3.JPG"
+        }
+      ],
       "sound": null
     },
     {
       "id": "seehund",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Jürgen Hamann",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seehund_auf_Norderney_04_Nationalpark_Nieders%C3%A4chsisches_Wattenmeer.jpg"
+        },
+        {
+          "author": "Giles Laurent",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:020_Wild_harbor_seal_at_J%C3%B6kuls%C3%A1rl%C3%B3n_(Iceland)_Photo_by_Giles_Laurent.jpg"
+        },
+        {
+          "author": "Charles J. Sharp",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Common_seal_(Phoca_vitulina).jpg"
+        },
+        {
+          "author": "Waitblock Dieses Bild wurde digital nachbearbeitet . Folgende Änderungen wurden vorgenommen: Removed seaweed in background .",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grey_Seal_on_seaweed,_Iceland.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "orca",
-      "photos": [],
+      "photos": [
+        {
+          "author": "William Stephens",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.inaturalist.org/photos/63098779"
+        },
+        {
+          "author": "steve b",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Orcinus_orca_282691010.jpg"
+        },
+        {
+          "author": "Maarten Visser from Capelle aan den IJssel, Nederland",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Orcinus_orca_(8620157648).jpg"
+        },
+        {
+          "author": "Stephanie Dolrenry",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "sourceUrl": "https://www.inaturalist.org/photos/106098329"
+        }
+      ],
       "sound": null
     },
     {
       "id": "seepferdchen",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Tylwyth Eldar",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9um_d%27histoire_naturelle_de_Bordeaux_64.jpg"
+        },
+        {
+          "author": "Florin DUMITRESCU",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Black_Sea_fauna_Seahorse.JPG"
+        },
+        {
+          "author": "Hans Hillewaert",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hippocampus_hippocampus_(on_Ascophyllum_nodosum).jpg"
+        },
+        {
+          "author": "Carlos Fernandez-Cid, carloscies",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hippocampus_guttulatus_-_9570910445.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "qualle",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Alexander Vasenin",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Moon_jellyfish_at_Gota_Sagher.JPG"
+        },
+        {
+          "author": "Hans Hillewaert",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aurelia_aurita_2.jpg"
+        },
+        {
+          "author": "Luc Viatour",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aurelia_aurita_(Cnidaria)_Luc_Viatour_(cropped).jpg"
+        },
+        {
+          "author": "MartinThoma",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aurelia-aurita-3.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "seestern",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Drew T",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Asterias_rubens_311930010.jpg"
+        },
+        {
+          "author": "Micha Baum",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Asterias_rubens_247485837.jpg"
+        },
+        {
+          "author": "Olivier Dugornay",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Etoile_de_mer_attaquant_un_oursin_de_sable_(Ifremer_00571-68276_-_32543).jpg"
+        },
+        {
+          "author": "Yves Bas",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Asterias_rubens_310297920.jpg"
+        }
+      ],
       "sound": null
     },
     {
       "id": "krabbe",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Jürgen Hamann",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gemeine_Strandkrabbe_auf_Sylt_01.jpg"
+        },
+        {
+          "author": "Céline",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.inaturalist.org/photos/18676210"
+        },
+        {
+          "author": "Jürgen Hamann",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gemeine_Strandkrabbe_auf_Sylt_02.jpg"
+        },
+        {
+          "author": "Alan Kneidel",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.inaturalist.org/photos/51158473"
+        }
+      ],
       "sound": null
     },
     {
       "id": "mantarochen",
-      "photos": [],
+      "photos": [
+        {
+          "author": "Stevelaycock21",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manta_melanistic.jpg"
+        },
+        {
+          "author": "Lakshmi Sawitri",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2015_01_Koh_Lanta_27_entering_cleaning_station_(16422545698).jpg"
+        },
+        {
+          "author": "Arturo de Frias Marques",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giant_Manta_AdF.jpg"
+        },
+        {
+          "author": "ecovore",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mobula_birostris_180008568.jpg"
+        }
+      ],
       "sound": null
     }
   ]
