@@ -1,5 +1,5 @@
 // iNaturalist (inaturalist.org): research-grade observations with community-
-// verified species. Only photos under CC0, CC BY or CC BY-SA; iNaturalist's CC
+// verified species, annotated as alive. Only photos under CC0, CC BY or CC BY-SA; iNaturalist's CC
 // licenses are version 4.0. One photo per observation for variety.
 import { throttledFetch } from "../commons.ts";
 import type { ExtraPhoto } from "./types.ts";
@@ -44,6 +44,10 @@ export async function searchInaturalist(taxonId: number, limit: number): Promise
     quality_grade: "research",
     photos: "true",
     order_by: "votes",
+    // Annotation "Alive or Dead" = Alive. iNaturalist also records bones and
+    // carcasses as evidence; unannotated observations are left out on purpose.
+    term_id: "17",
+    term_value_id: "18",
     per_page: String(Math.min(limit * 3, 100)),
   });
   const photos: ExtraPhoto[] = [];
