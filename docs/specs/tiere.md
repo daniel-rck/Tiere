@@ -339,6 +339,11 @@ Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
   spricht nichts mehr von selbst, weder Weltnamen noch Tiernamen. Den Namen sagt ein
   Lautsprecher-Knopf oben rechts im Vollbild; die Einstellung „Stimme“ heißt jetzt „Namen-Knopf“
   und blendet ihn aus. Öffnen, Wechseln und Tippen spielen nur den Laut.
+- _2026-11-01_ — Laut-Auswahl (Mensch-Gate, Daniel): 29 Tiere mit Commons-Aufnahme, 6 ohne
+  (Clownfisch, Eisbär, Gorilla, Nashorn, Nilpferd, Schlange: auf Commons nichts Brauchbares).
+  Seehund klingt nach einem Neuseeland-Seebären (Daniels Wahl). Fehlt auf der Commons-Seite das
+  Autorenfeld, trägt `sounds:build` den von Hand geprüften Urheber nach (`AUTHORS`), z. B. den
+  U.S. National Park Service beim Orca-Ruf.
 - _2026-11-01_ — Precache (§7, offener Punkt erledigt): Gemessen sind im Schnitt 62 KB je 640er
   und 227 KB je 1280er. Alle 640er und 1280er wären rund 58 MB, über dem Budget von 40 MB. Darum
   liegen alle 640er, das 1280er des ersten Fotos je Tier und alle Laute im Precache (rund 27 MB);

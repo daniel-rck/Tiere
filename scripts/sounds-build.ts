@@ -22,6 +22,16 @@ const CREDITS = "src/content/credits.generated.json";
 /** Which original each built file came from, so a new selection is rebuilt. */
 const BUILT = ".cache/sounds-build.json";
 
+/**
+ * Authors for selected files whose Commons page names the source but has no
+ * Artist field. Each entry is checked by hand against the file page.
+ */
+const AUTHORS: Record<string, string> = {
+  // Page: "Calls and echolocation of fish-eating killer whales in Southern
+  // Alaska", source nps.gov/glba acoustics, licence PD US NPS.
+  "File:Killer whale.ogg": "U.S. National Park Service, Glacier Bay National Park",
+};
+
 async function main(): Promise<void> {
   if (!existsSync(CATALOG)) throw new Error(`${CATALOG} fehlt: erst bun run photos:build`);
   const catalog = JSON.parse(await readFile(CATALOG, "utf8")) as Catalog;
@@ -48,7 +58,7 @@ async function main(): Promise<void> {
     }
     const meta = info.extmetadata;
     const license = checkLicense(meta.LicenseShortName?.value, meta.License?.value);
-    const author = stripHtml(meta.Artist?.value ?? "");
+    const author = stripHtml(meta.Artist?.value ?? "") || AUTHORS[file] || "";
     if (!license.ok) {
       problems.push(`${file}: Lizenz „${license.name}“ ${license.reason}`);
       continue;
