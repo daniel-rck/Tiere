@@ -1,5 +1,6 @@
 // `bun run photos:build` (spec 5.4): fetches every selected photo once into
-// `.cache/originals/` (idempotent), writes WebP at 640/1280/1920 px width
+// `.cache/originals/` (idempotent; from Commons the largest standard thumbnail
+// up to 1920 px, since upload.wikimedia.org rejects scripts asking for originals), writes WebP at 640/1280/1920 px width
 // (quality 80, never upscaled, no metadata) to `public/photos/<animal>/<n>-<w>.webp`
 // and the catalog `src/content/catalog.generated.json` with sizes and average
 // colour, plus `src/content/credits.generated.json`. Aborts with a list of
@@ -24,7 +25,7 @@ import type {
   CreditsFile,
 } from "../src/content/types.ts";
 import { checkLicense, licenseUrl, stripHtml } from "../src/engine/licenses.ts";
-import { download, fileInfo } from "./commons.ts";
+import { commonsThumb, download, fileInfo } from "./commons.ts";
 import { fetchInaturalistPhoto } from "./sources/inaturalist.ts";
 import { fetchOpenversePhoto } from "./sources/openverse.ts";
 
@@ -83,8 +84,7 @@ async function resolveSources(files: string[]): Promise<Map<string, Source>> {
       meta.LicenseUrl?.value,
       info.pageUrl,
     );
-    // The original: thumbnails Commons has to render first are throttled hard.
-    if (result) sources.set(file, { url: info.url, credit: result });
+    if (result) sources.set(file, { url: commonsThumb(info.url, info.width), credit: result });
   }
   for (const file of files.filter((f) => !f.startsWith("File:"))) {
     console.log(`Metadaten: ${file}`);
@@ -135,7 +135,8 @@ async function readJson<T>(path: string): Promise<T | undefined> {
 }
 
 /** Credits and download URLs from earlier runs; `--refresh` asks the sources again. */
-const SOURCES = ".cache/photo-sources.json";
+// v2: Commons sources point at standard thumbnails instead of originals.
+const SOURCES = ".cache/photo-sources-v2.json";
 
 async function cachedSources(files: string[]): Promise<Map<string, Source>> {
   const refresh = process.argv.includes("--refresh");

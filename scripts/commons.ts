@@ -6,7 +6,7 @@ import { dirname } from "node:path";
 import pkg from "../package.json" with { type: "json" };
 
 const API = "https://commons.wikimedia.org/w/api.php";
-export const USER_AGENT = `tiere-app/${pkg.version} (github.com/daniel-rck)`;
+export const USER_AGENT = `tiere-app/${pkg.version} (https://github.com/daniel-rck/Tiere)`;
 
 const MIN_GAP_MS = 1500;
 const MAX_ATTEMPTS = 40;
@@ -97,6 +97,28 @@ export async function download(url: string, dest: string): Promise<void> {
   if (!response?.ok) throw new Error(`Download ${response?.status}: ${url}`);
   await mkdir(dirname(dest), { recursive: true });
   await writeFile(dest, new Uint8Array(await response.arrayBuffer()));
+}
+
+/**
+ * Thumbnail widths upload.wikimedia.org serves to scripts; originals and other
+ * widths are rejected with 429 (https://www.mediawiki.org/wiki/Common_thumbnail_sizes).
+ */
+export const THUMB_STEPS = [960, 1280, 1920] as const;
+
+/**
+ * URL of the largest standard thumbnail narrower than the original, at most
+ * 1920 px (the widest size the app uses). Falls back to the original when it
+ * is no wider than the smallest step.
+ */
+export function commonsThumb(originalUrl: string, width: number): string {
+  const url = new URL(originalUrl);
+  url.search = "";
+  const step = THUMB_STEPS.findLast((candidate) => candidate < width);
+  const match = /^\/wikipedia\/commons\/(\w\/\w\w)\/([^/]+)$/.exec(url.pathname);
+  if (!step || !match) return url.href;
+  const [, hash, name] = match;
+  url.pathname = `/wikipedia/commons/thumb/${hash}/${name}/${step}px-${name}`;
+  return url.href;
 }
 
 type ExtValue = { value?: string };
