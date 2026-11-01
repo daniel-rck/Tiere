@@ -74,7 +74,8 @@ type Animal = {
   latin: string;            // für die Commons-Suche
   voice: { kind: "sound"; text: string } | { kind: "quiet"; text: string };
   facts: [string, string];  // kurz, kindgerecht, sachlich richtig
-  photos: { file: string }[];   // Commons-Dateititel, z. B. "File:Cow in meadow.jpg"; Reihenfolge = Anzeige
+  photos: { file: string }[];   // Reihenfolge = Anzeige. Commons-Dateititel ("File:Cow in meadow.jpg")
+                                // oder "openverse:<uuid>" bzw. "inaturalist:<photo id>" (§5.1)
   soundFile: string | null;     // Commons-Dateititel der Tonaufnahme
 };
 
@@ -94,13 +95,17 @@ vorhanden.
 
 ## 5. Medien-Pipeline (nur Build-Zeit)
 
-### 5.1 Quelle und Lizenzen
-Einzige Quelle ist **Wikimedia Commons** über die MediaWiki-API (`commons.wikimedia.org/w/api.php`)
-mit eigenem `User-Agent` (`tiere-app/<version> (github.com/daniel-rck)`), Requests seriell mit
-kleiner Pause.
+### 5.1 Quellen und Lizenzen
+Hauptquelle ist **Wikimedia Commons** über die MediaWiki-API (`commons.wikimedia.org/w/api.php`).
+Für Tiere, bei denen Commons wenig Brauchbares liefert, kommen zwei Zusatzquellen dazu:
+**Openverse** (`api.openverse.org`, CC-Bilder u. a. von Flickr; Commons-Treffer dort werden
+übersprungen) und **iNaturalist** (`api.inaturalist.org`, nur bestätigte Beobachtungen der Art,
+eine Aufnahme pro Beobachtung). Alle mit eigenem `User-Agent`
+(`tiere-app/<version> (github.com/daniel-rck)`), Requests seriell mit kleiner Pause.
 
-Lizenz-Allowlist (aus `extmetadata.LicenseShortName` bzw. `License`): CC0, Public Domain (PD-*),
-CC BY 2.0–4.0, CC BY-SA 2.0–4.0. Alles andere (NC, ND, GFDL-only, unklar) wird verworfen.
+Lizenz-Allowlist (gilt für alle Quellen; bei Commons aus `extmetadata.LicenseShortName` bzw.
+`License`): CC0, Public Domain (PD-*, PDM), CC BY 2.0–4.0, CC BY-SA 2.0–4.0. Alles andere (NC, ND,
+GFDL-only, unklar) wird verworfen. iNaturalist-Lizenzen sind Version 4.0.
 
 ### 5.2 Foto-Kriterien
 **Kinderschutz (hart, im Zweifel raus):** keine toten, verletzten oder kranken Tiere, kein Blut,
@@ -116,7 +121,8 @@ Umgebung; deutliche Gitter oder Scheiben im Vordergrund raus. Pro Tier verschied
 ### 5.3 Kuratierung (Mensch-Gate)
 1. `photos:candidates <id>` sucht in dieser Reihenfolge: Featured pictures, Quality images, Valued
    images, danach allgemeine Dateisuche nach `latin` und deutschem/englischem Namen. Filter:
-   Lizenz-Allowlist, Bitmap, Mindestgröße.
+   Lizenz-Allowlist, Bitmap, Mindestgröße. `photos:candidates <id> --add` hängt bis zu 10 Kandidaten
+   je Zusatzquelle an (Nummerierung läuft weiter, Vorschläge bleiben).
 2. Ergebnis: bis zu 30 Kandidaten als Vorschaubilder in `.cache/candidates/<id>/` und ein
    Kontaktabzug `.cache/candidates/<id>.html` (Bild, Titel, Lizenz, Autor, Größe, Checkbox).
 3. Claude sichtet die Vorschaubilder gegen 5.2, markiert bis zu 4 Vorschläge vor und begründet
@@ -218,7 +224,11 @@ public/photos/, public/sounds/  generierte Medien (committet)
 12. Die Credits-Seite listet jedes Foto und jeden Laut.
 
 ## 10. Entscheidungslog
-- Medien nur von Wikimedia Commons: Lizenz und Autor sind maschinenlesbar, kein API-Key nötig.
+- Medien von Wikimedia Commons: Lizenz und Autor sind maschinenlesbar, kein API-Key nötig.
+- _2026-11-01_ — Openverse und iNaturalist als Zusatzquellen (Wunsch von Daniel), ohne API-Key,
+  gleiche Allowlist. In `animals.json` als `openverse:<uuid>` bzw. `inaturalist:<photo id>`, damit
+  das Datenmodell bei `{ file: string }` bleibt. Openverse liefert die Lizenz aus den Metadaten der
+  Ursprungsseite; vor dem Build an der Quelle gegenprüfen.
 - Medien werden zur Build-Zeit geladen und committet, nicht zur Laufzeit: offline, deterministisch,
   kindersicher kuratiert.
 - Nur WebP statt AVIF + Fallback: überall unterstützt, eine Pipeline weniger.

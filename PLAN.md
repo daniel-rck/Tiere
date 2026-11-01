@@ -19,10 +19,11 @@ Standard-Gate ist `bun run check` (oxlint + oxfmt, tsc, Vitest). Vor jedem Push 
 - `scripts/validate-content.ts` als CLI darum.
 - **Gate:** `bun run check`, `bun run content:check` grün (nicht strict).
 
-## [ ] Phase 2 – Commons-Client und Kontaktabzug
+## [ ] Phase 2 – Medienquellen und Kontaktabzug
 - `scripts/commons.ts`, `scripts/licenses.ts` (mit Tests für die Lizenz-Normalisierung; dafür das
   Vitest-`include` in `vitest.config.ts` um `scripts/**/*.test.ts` erweitern),
-  `scripts/photos-candidates.ts` nach Spec 5.1–5.3.
+  `scripts/photos-candidates.ts` nach Spec 5.1–5.3; Zusatzquellen in `scripts/sources/`
+  (Openverse, iNaturalist) mit `--add`.
 - Kontaktabzug: einfache statische HTML-Seite, Checkbox pro Kandidat, vormarkierte Vorschläge,
   Ausschlussgründe, Button „Auswahl kopieren“.
 - Für **alle 50 Tiere** Kandidaten erzeugen und nach `/fotos`-Vorgehen sichten und vormarkieren.
@@ -31,6 +32,7 @@ Standard-Gate ist `bun run check` (oxlint + oxfmt, tsc, Vitest). Vor jedem Push 
 
 ## [ ] Phase 3 – Foto-Build
 - `scripts/photos-build.ts` nach Spec 5.4, idempotent, mit Fortschrittsausgabe.
+  Alle drei Quellen (`File:…`, `openverse:…`, `inaturalist:…`): Original und Credit je Quelle holen.
 - Erzeugt `public/photos/…` und `src/content/catalog.generated.json`.
 - `src/engine/sizes.ts` (rein): passende Größe für Viewport × devicePixelRatio, `srcset`-String. Tests.
 - **Gate:** `bun run check`, `bun run content:check --strict` grün.

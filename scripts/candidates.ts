@@ -1,11 +1,17 @@
 // Data model and pure helpers for photo candidates (spec 5.3). The CLI in
 // photos-candidates.ts fetches; this file decides and renders.
+import type { ExtraSource } from "./sources/types.ts";
 
 export type Tier = "featured" | "quality" | "valued" | "search";
 
 export type Candidate = {
   n: number;
+  /** The identifier that goes into animals.json: a Commons file title, or "<source>:<id>". */
   title: string;
+  /** Where the photo comes from; absent means Wikimedia Commons. */
+  source?: ExtraSource;
+  /** Display title for photos outside Commons. */
+  name?: string;
   pageUrl: string;
   url: string;
   /** Thumbnail path relative to `.cache/candidates/`. */
@@ -31,6 +37,17 @@ export type CandidateFile = {
   /** Files dropped before download, with the reason (license, size, title). */
   skipped: { title: string; reason: string }[];
 };
+
+export const SOURCE_LABEL: Record<ExtraSource | "commons", string> = {
+  commons: "Commons",
+  openverse: "Openverse",
+  inaturalist: "iNaturalist",
+};
+
+/** "Commons · Qualitätsbild", "iNaturalist" … */
+export function originLabel(c: Pick<Candidate, "source" | "tier">): string {
+  return c.source ? SOURCE_LABEL[c.source] : `${SOURCE_LABEL.commons} · ${TIER_LABEL[c.tier]}`;
+}
 
 export const TIER_LABEL: Record<Tier, string> = {
   featured: "Exzellent",
@@ -87,8 +104,8 @@ export function renderContactSheet(data: CandidateFile): string {
       );
       return `<label class="${classes.trim()}" data-proposed="${c.proposed}" data-rank="${c.rank ?? 99}" data-file="${escapeHtml(c.title)}">
   <img src="${escapeHtml(c.thumb)}" alt="" loading="lazy" />
-  <span class="row"><input type="checkbox"${c.proposed ? " checked" : ""} /> <b>#${c.n}</b> ${TIER_LABEL[c.tier]}</span>
-  <span class="meta"><a href="${escapeHtml(c.pageUrl)}" target="_blank" rel="noreferrer">${escapeHtml(c.title.replace(/^File:/, ""))}</a></span>
+  <span class="row"><input type="checkbox"${c.proposed ? " checked" : ""} /> <b>#${c.n}</b> ${originLabel(c)}</span>
+  <span class="meta"><a href="${escapeHtml(c.pageUrl)}" target="_blank" rel="noreferrer">${escapeHtml(c.name ?? c.title.replace(/^File:/, ""))}</a></span>
   <span class="meta">${escapeHtml(c.license)} · ${escapeHtml(c.author)} · ${c.width}×${c.height}</span>
   ${c.note ? `<span class="note">${escapeHtml(c.note)}</span>` : ""}
 </label>`;

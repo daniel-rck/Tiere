@@ -40,6 +40,7 @@ bun run build                   # Production-Build inkl. PWA
 bunx github:daniel-rck/web-base#v0.6.0 check --strict   # web-base-Dateien unverändert?
 bun run content:check           # Inhalte validieren (--strict verlangt Fotos für jedes Tier)
 bun run photos:candidates <id>  # Commons-Kandidaten suchen → Kontaktabzug in .cache/
+bun run photos:candidates <id> --add   # + Openverse und iNaturalist anhängen
 bun run photos:build            # ausgewählte Fotos laden, skalieren, Credits erzeugen
 bun run sounds:candidates <id>  # Commons-Tierlaute suchen
 bun run sounds:build            # ausgewählte Laute laden, schneiden, nach .m4a wandeln
@@ -50,7 +51,8 @@ bun run sounds:build            # ausgewählte Laute laden, schneiden, nach .m4a
 - Keine Accounts, kein Tracking, keine Analytics, keine Werbung, keine Links nach außen
   (Ausnahme: Credits-Seite hinter der Eltern-Sperre).
 - **Keine Netzwerk-Requests zur Laufzeit.** Alles, was die App zeigt oder abspielt, liegt im Build.
-  Wikimedia Commons wird ausschließlich von `scripts/` zur Build-Zeit angesprochen.
+  Medienquellen (Wikimedia Commons, Openverse, iNaturalist) werden ausschließlich von `scripts/`
+  zur Build-Zeit angesprochen.
 - Nur Medien mit Lizenz aus der Allowlist der Spec, jedes mit vollständigem Credit.
 - Jedes Foto erfüllt die Kinderschutz-Kriterien der Spec. Im Zweifel raus.
 - Fotos im Vollbild werden nie beschnitten (`object-fit: contain` + unscharfer Hintergrund).

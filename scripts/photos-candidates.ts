@@ -7,6 +7,9 @@
 // overview `<id>.grid.jpg` for the eye check.
 // `--render` only re-renders sheet and grid from the existing JSON (after the
 // proposals and exclusion reasons were filled in).
+// `--add [openverse,inaturalist]` appends up to 10 candidates per extra source
+// to an existing JSON (numbering continues, proposals stay), for animals where
+// Commons yields little that is usable.
 import { existsSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
@@ -16,6 +19,7 @@ import {
   type Candidate,
   type CandidateFile,
   MAX_CANDIDATES,
+  MIN_LONG_EDGE,
   renderContactSheet,
   sizeReason,
   type Tier,
@@ -23,9 +27,14 @@ import {
 } from "./candidates.ts";
 import { type CommonsFile, download, searchFiles } from "./commons.ts";
 import { checkLicense, stripHtml } from "./licenses.ts";
+import { findTaxon, searchInaturalist } from "./sources/inaturalist.ts";
+import { searchOpenverse } from "./sources/openverse.ts";
+import type { ExtraPhoto, ExtraSource } from "./sources/types.ts";
 
 const ROOT = ".cache/candidates";
 const THUMB_WIDTH = 330;
+const EXTRA_PER_SOURCE = 10;
+const EXTRA_SOURCES: ExtraSource[] = ["openverse", "inaturalist"];
 
 type Animal = (typeof content.animals)[number];
 
@@ -100,6 +109,82 @@ async function collect(animal: Animal): Promise<CandidateFile> {
   };
 }
 
+function extraToCandidate(
+  photo: ExtraPhoto,
+  source: ExtraSource,
+  n: number,
+  id: string,
+): Candidate | string {
+  if (Math.max(photo.width, photo.height) < MIN_LONG_EDGE) {
+    return `zu klein (${photo.width}×${photo.height})`;
+  }
+  const title = titleReason(photo.name);
+  if (title) return title;
+  const license = checkLicense(undefined, photo.license);
+  if (!license.ok) return `Lizenz: ${license.name} (${license.reason})`;
+  return {
+    n,
+    title: photo.id,
+    source,
+    name: photo.name,
+    pageUrl: photo.pageUrl,
+    url: photo.url,
+    thumb: `${id}/${String(n).padStart(2, "0")}.jpg`,
+    width: photo.width,
+    height: photo.height,
+    license: license.name,
+    author: photo.author,
+    tier: "search",
+    proposed: false,
+  };
+}
+
+async function fetchExtra(animal: Animal, source: ExtraSource): Promise<ExtraPhoto[]> {
+  if (source === "openverse") return searchOpenverse(animal.latin, 20);
+  const taxon = await findTaxon(animal.latin);
+  if (!taxon) return [];
+  console.log(`  iNaturalist-Taxon ${taxon.id} ${taxon.name}`);
+  return searchInaturalist(taxon.id, EXTRA_PER_SOURCE);
+}
+
+/** Appends candidates from other sources to an existing candidate file. */
+async function addExtra(data: CandidateFile, animal: Animal, sources: ExtraSource[]) {
+  const seen = new Set(data.candidates.map((c) => c.title));
+  for (const source of sources) {
+    let photos: ExtraPhoto[];
+    try {
+      photos = await fetchExtra(animal, source);
+    } catch (error) {
+      console.warn(`  ${source}: übersprungen (${(error as Error).message})`);
+      continue;
+    }
+    let added = 0;
+    for (const photo of photos) {
+      if (added >= EXTRA_PER_SOURCE || seen.has(photo.id)) continue;
+      seen.add(photo.id);
+      const n = Math.max(0, ...data.candidates.map((c) => c.n)) + 1;
+      const result = extraToCandidate(photo, source, n, animal.id);
+      if (typeof result === "string") {
+        data.skipped.push({ title: `${photo.name} [${photo.id}]`, reason: result });
+        continue;
+      }
+      const dest = join(ROOT, result.thumb);
+      try {
+        if (!existsSync(dest)) await download(photo.thumbUrl, dest);
+      } catch (error) {
+        data.skipped.push({
+          title: photo.id,
+          reason: `Vorschau fehlt (${(error as Error).message})`,
+        });
+        continue;
+      }
+      data.candidates.push(result);
+      added++;
+    }
+    console.log(`  ${source.padEnd(11)} ${photos.length} Treffer, ${added} neu`);
+  }
+}
+
 /** A numbered grid of all thumbnails, for looking at one animal at a glance. */
 async function renderGrid(data: CandidateFile): Promise<void> {
   const tile = 300;
@@ -129,11 +214,24 @@ async function renderGrid(data: CandidateFile): Promise<void> {
 async function main() {
   const args = process.argv.slice(2);
   const renderOnly = args.includes("--render");
+  const addIndex = args.indexOf("--add");
+  const addValue = args[addIndex + 1];
+  const addSources: ExtraSource[] =
+    addIndex < 0
+      ? []
+      : addValue && !addValue.startsWith("--") && !content.animals.some((a) => a.id === addValue)
+        ? (addValue.split(",") as ExtraSource[])
+        : EXTRA_SOURCES;
+  for (const source of addSources) {
+    if (!EXTRA_SOURCES.includes(source)) throw new Error(`Unbekannte Quelle: ${source}`);
+  }
   const ids = args.includes("--all")
     ? content.animals.map((a) => a.id)
-    : args.filter((a) => !a.startsWith("--"));
+    : args.filter((a) => content.animals.some((animal) => animal.id === a));
   if (ids.length === 0) {
-    console.error("Aufruf: bun run photos:candidates <tier-id> … | --all [--render]");
+    console.error(
+      "Aufruf: bun run photos:candidates <tier-id> … | --all [--render | --add [openverse,inaturalist]]",
+    );
     process.exit(2);
   }
   await mkdir(ROOT, { recursive: true });
@@ -144,6 +242,11 @@ async function main() {
     let data: CandidateFile;
     if (renderOnly) {
       data = JSON.parse(await readFile(jsonPath, "utf8")) as CandidateFile;
+    } else if (addSources.length) {
+      console.log(`${animal.name} (${animal.latin}) + ${addSources.join(", ")}`);
+      data = JSON.parse(await readFile(jsonPath, "utf8")) as CandidateFile;
+      await addExtra(data, animal, addSources);
+      await writeFile(jsonPath, `${JSON.stringify(data, null, 2)}\n`);
     } else {
       console.log(`${animal.name} (${animal.latin})`);
       data = await collect(animal);

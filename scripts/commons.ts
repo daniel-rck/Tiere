@@ -14,20 +14,28 @@ let lastRequest = 0;
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-async function throttledFetch(url: string): Promise<Response> {
+/**
+ * GET with the shared pause between requests, a 90 s timeout, and patient
+ * retries on 429/5xx and network errors (honouring Retry-After). Used for all
+ * build-time media sources, not only Commons.
+ */
+export async function throttledFetch(url: string, maxAttempts = MAX_ATTEMPTS): Promise<Response> {
   for (let attempt = 1; ; attempt++) {
     const wait = lastRequest + MIN_GAP_MS - Date.now();
     if (wait > 0) await sleep(wait);
     lastRequest = Date.now();
     let response: Response | undefined;
     try {
-      response = await fetch(url, { headers: { "User-Agent": USER_AGENT } });
+      response = await fetch(url, {
+        headers: { "User-Agent": USER_AGENT },
+        signal: AbortSignal.timeout(90_000),
+      });
     } catch (error) {
-      if (attempt >= MAX_ATTEMPTS) throw error;
+      if (attempt >= maxAttempts) throw error;
     }
     if (response && response.status !== 429 && response.status < 500) return response;
-    if (attempt >= MAX_ATTEMPTS) {
-      throw new Error(`Commons: giving up after ${attempt} attempts (${response?.status}) ${url}`);
+    if (attempt >= maxAttempts) {
+      throw new Error(`Giving up after ${attempt} attempts (${response?.status}) ${url}`);
     }
     const retryAfter = Number(response?.headers.get("retry-after"));
     const backoff = Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : 5000;
