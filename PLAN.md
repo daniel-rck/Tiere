@@ -57,7 +57,7 @@ Standard-Gate ist `bun run check` (oxlint + oxfmt, tsc, Vitest). Vor jedem Push 
 - Entdecker-Panel, `engine/zoom.ts` (rein, Pinch + Pan + Grenzen) mit Tests, Doppeltipp-Zoom.
 - **Gate:** `bun run check`; manuell Kriterien 5, 6, 7, 12.
 
-## [ ] Phase 7 – Tierlaute
+## [x] Phase 7 – Tierlaute
 - `sounds-candidates.ts`, `sounds-build.ts` nach Spec 5.5, Sichtung wie bei Fotos.
 - `platform/audio.ts`: Abspielen nach dem Namen, Abbrechen bei erneutem Tippen.
 - **Gate:** `bun run check`. **Mensch-Gate:** Daniel hört die Auswahl an und gibt sie frei.
