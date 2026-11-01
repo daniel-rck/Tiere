@@ -212,6 +212,12 @@ public/photos/, public/sounds/  generierte Medien (committet)
 - Namen in v1 per Web Speech API, aufgenommene Namen sind ein offener Punkt.
 - Biome statt Oxlint/Oxfmt: privates Projekt, gleiche Konventionen wie das Malbuch.
 - Kein Router: Ebenen-Stack reicht und macht die Zurück-Taste vorhersagbar.
+- Biome prüft keine Markdown-Dateien (`!**/*.md`): Spec, Plan und Befehle sind handgepflegte Texte,
+  der neue Markdown-Formatter von Biome 2.6 würde sie umformatieren.
+- JSON wird von Biome immer aufgeklappt formatiert (`json.formatter.expand: "always"`), damit
+  `content/animals.json` einheitlich bleibt und zur Ausgabe von `JSON.stringify(…, null, 2)` passt.
+- `bunx biome migrate` hat `"recommended": true` fälschlich in `"preset": "none"` übersetzt; von
+  Hand auf `"preset": "recommended"` korrigiert.
 
 ## 11. Offene Punkte
 - Namen selbst aufnehmen statt Systemstimme.

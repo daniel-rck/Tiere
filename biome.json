@@ -1,6 +1,14 @@
 {
   "files": {
-    "includes": ["**", "!**/dist", "!**/.cache", "!**/public", "!**/docs/reference", "!**/*.generated.json"]
+    "includes": [
+      "**",
+      "!**/dist",
+      "!**/.cache",
+      "!**/public",
+      "!**/docs/reference",
+      "!**/*.generated.json",
+      "!**/*.md"
+    ]
   },
   "formatter": {
     "enabled": true,
@@ -17,6 +25,13 @@
   },
   "linter": {
     "enabled": true,
-    "rules": { "recommended": true }
+    "rules": {
+      "preset": "recommended"
+    }
+  },
+  "json": {
+    "formatter": {
+      "expand": "always"
+    }
   }
 }

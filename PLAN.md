@@ -3,7 +3,7 @@
 Jede Phase endet mit ihrem Gate. Erst wenn es grün ist: abhaken, committen, stoppen.
 Standard-Gate ist `bun run check` (Biome + tsc + bun test).
 
-## [ ] Phase 0 – Gerüst
+## [x] Phase 0 – Gerüst
 - `bun add react react-dom` und `bun add -d vite @vitejs/plugin-react vite-plugin-pwa typescript
   @types/react @types/react-dom @types/bun @biomejs/biome sharp`, jeweils aktuelle stabile Versionen.
 - Vite + React 19 einrichten, `index.html`, leeres `App.tsx` mit Platzhalter „Tiere“.
