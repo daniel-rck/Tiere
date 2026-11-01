@@ -1,0 +1,18 @@
+{
+  "name": "tiere",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "check": "biome check . && tsc --noEmit && bun test",
+    "format": "biome check --write .",
+    "content:check": "bun scripts/validate-content.ts",
+    "photos:candidates": "bun scripts/photos-candidates.ts",
+    "photos:build": "bun scripts/photos-build.ts",
+    "sounds:candidates": "bun scripts/sounds-candidates.ts",
+    "sounds:build": "bun scripts/sounds-build.ts"
+  }
+}

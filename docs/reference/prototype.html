@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Tiere</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E6F3FA; --ink:#17324A; --muted:#4F6B82; --card:#FFFFFF; --soft:#D3E8F4;
+  --font:"Baloo 2","Trebuchet MS","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0E1C28;--ink:#E6F1F8;--muted:#9DB4C6;--card:#17293A;--soft:#1F364A;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0E1C28;--ink:#E6F1F8;--muted:#9DB4C6;--card:#17293A;--soft:#1F364A;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html,body{height:100%;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  background:var(--bg);color:var(--ink);font-family:var(--font);
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;
+  overscroll-behavior:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--topbar,var(--bg))}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;padding:0}
+:focus-visible{outline:4px solid var(--ink);outline-offset:3px}
+svg{display:block}
+.screen{display:none;min-height:100%}
+.screen.active{display:flex;flex-direction:column}
+
+/* Startseite */
+.home-head{display:flex;align-items:center;justify-content:space-between;padding:14px 18px 6px}
+.home-head h1{margin:0;font-size:clamp(34px,8vw,52px);font-weight:800;line-height:1}
+.gear{width:52px;height:52px;border-radius:50%;position:relative;display:grid;place-items:center;color:var(--muted);touch-action:none}
+.gear svg{width:28px;height:28px}
+.gear::before{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(var(--ink) calc(var(--p,0) * 360deg),transparent 0);
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 5px),#000 calc(100% - 4px));
+          mask:radial-gradient(farthest-side,transparent calc(100% - 5px),#000 calc(100% - 4px));
+}
+.worlds{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;padding:8px 16px 16px}
+@media (min-aspect-ratio:16/10){.worlds{grid-template-columns:repeat(4,1fr);grid-template-rows:1fr}}
+.world{
+  border-radius:32px;background:var(--c);color:var(--wink);min-height:150px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  box-shadow:inset 0 -10px 0 rgba(0,0,0,.12);transition:transform .12s;
+}
+.world:active{transform:scale(.97)}
+.world .emo{font-size:clamp(64px,17vw,150px);line-height:1.1}
+.world .lbl{font-size:clamp(24px,5.5vw,38px);font-weight:800;line-height:1}
+
+/* Welt-Seite */
+.wbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--c);color:var(--wink);display:flex;align-items:center;gap:14px;padding:10px 14px}
+.round{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.4);display:grid;place-items:center;flex:none}
+.round svg{width:30px;height:30px}
+.wbar h2{margin:0;font-size:clamp(28px,7vw,42px);font-weight:800;line-height:1}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:14px}
+@media (min-width:700px){.grid{grid-template-columns:repeat(3,1fr);gap:16px;padding:18px}}
+@media (min-width:1100px){.grid{grid-template-columns:repeat(4,1fr)}}
+.tile{position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:var(--c);display:grid;place-items:center;transition:transform .12s}
+.tile:active{transform:scale(.97)}
+.tile .ph{font-size:60px;opacity:.6}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s}
+.tile img.ok{opacity:1}
+.tile .name{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 10px;background:linear-gradient(transparent,rgba(0,0,0,.65));color:#fff;font-weight:800;font-size:clamp(20px,4.5vw,26px);text-align:left;line-height:1.1}
+body.kid .tile .name{display:none}
+
+/* Vollbild */
+.viewer{position:fixed;inset:0;z-index:20;background:#000;color:#fff;display:none;flex-direction:column}
+.viewer.open{display:flex}
+.stage{position:relative;flex:1;min-height:0;overflow:hidden;touch-action:none}
+.stage .bg{position:absolute;inset:-60px;width:calc(100% + 120px);height:calc(100% + 120px);object-fit:cover;filter:blur(40px) brightness(.55) saturate(1.3)}
+.photo{position:absolute;inset:0}
+.photo.boing{animation:boing .45s ease}
+.fg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:transform .25s ease}
+.fg.in-r{animation:inR .28s ease}
+.fg.in-l{animation:inL .28s ease}
+@keyframes inR{from{transform:translateX(25%);opacity:0}to{transform:none;opacity:1}}
+@keyframes inL{from{transform:translateX(-25%);opacity:0}to{transform:none;opacity:1}}
+@keyframes boing{30%{transform:scale(1.04)}60%{transform:scale(.98)}100%{transform:none}}
+.vbtn{position:absolute;z-index:3;width:68px;height:68px;border-radius:50%;background:rgba(0,0,0,.4);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);display:grid;place-items:center;color:#fff}
+.vbtn svg{width:34px;height:34px}
+.v-close{top:calc(env(safe-area-inset-top,0px) + 12px);left:12px}
+.v-prev{left:10px;top:50%;margin-top:-34px}
+.v-next{right:10px;top:50%;margin-top:-34px}
+.bubble{position:absolute;z-index:3;top:calc(env(safe-area-inset-top,0px) + 18px);left:50%;transform:translateX(-50%);background:#fff;color:#17324A;font-weight:800;font-size:clamp(30px,8vw,52px);line-height:1.2;padding:4px 26px;border-radius:999px;white-space:nowrap;opacity:0;pointer-events:none}
+.bubble.show{animation:pop 1.8s ease forwards}
+@keyframes pop{0%{opacity:0;transform:translate(-50%,10px) scale(.8)}12%{opacity:1;transform:translate(-50%,0) scale(1.05)}20%{transform:translate(-50%,0) scale(1)}80%{opacity:1}100%{opacity:0}}
+.msg{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;font-size:22px;line-height:1.3}
+.msg[hidden]{display:none}
+.panel{display:none;background:#10202E;padding:14px 20px calc(env(safe-area-inset-bottom,0px) + 18px)}
+body.explorer .panel{display:block}
+.panel h2{margin:0;font-size:clamp(34px,8vw,52px);line-height:1.05;font-weight:800}
+.panel .art{font-size:.5em;font-weight:600;color:#9DB4C6;margin-right:.3em}
+.panel ul{margin:6px 0 0;padding:0 0 0 1.1em;font-size:clamp(18px,4.2vw,21px);line-height:1.4;max-width:60ch;font-weight:600}
+.panel li{margin:2px 0}
+.read{display:inline-flex;align-items:center;gap:10px;margin-top:12px;background:#fff;color:#10202E;border-radius:999px;padding:10px 22px 10px 16px;font-weight:800;font-size:20px}
+.read svg{width:26px;height:26px}
+body.explorer .vbtn.v-close{top:calc(env(safe-area-inset-top,0px) + 12px)}
+
+/* Eltern-Bereich */
+.modal{position:fixed;inset:0;z-index:40;background:rgba(8,18,28,.6);display:none;place-items:center;padding:20px}
+.modal.open{display:grid}
+.sheet{background:var(--card);color:var(--ink);border-radius:26px;padding:24px;width:100%;max-width:440px;-webkit-user-select:text;user-select:text}
+.sheet h3{margin:0 0 4px;font-size:28px;line-height:1.1}
+.sheet p{margin:0 0 16px;color:var(--muted);font-size:17px;line-height:1.45}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.answers button{background:var(--soft);border-radius:18px;padding:14px;font-size:28px;font-weight:800}
+.modes button{display:block;width:100%;text-align:left;background:var(--soft);border-radius:18px;padding:12px 16px;margin-bottom:10px;border:3px solid transparent}
+.modes button[aria-pressed="true"]{border-color:var(--ink)}
+.modes b{display:block;font-size:23px;line-height:1.2}
+.modes span{display:block;font-size:16px;line-height:1.4;color:var(--muted);font-weight:600}
+.credits{font-size:14px!important;margin:6px 0 16px!important}
+.done{width:100%;background:var(--ink);color:var(--card);border-radius:18px;padding:12px;font-size:22px;font-weight:800}
+.ghost{width:100%;margin-top:10px;padding:8px;color:var(--muted);font-size:18px;font-weight:600}
+.toast{position:fixed;z-index:50;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 22px);transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-weight:600;font-size:17px;max-width:calc(100% - 32px);text-align:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.toast.show{opacity:1}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body class="kid">
+
+<section class="screen active" id="home">
+  <header class="home-head">
+    <h1>Tiere</h1>
+    <button class="gear" id="gear" aria-label="Eltern-Einstellungen (lange drücken)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+    </button>
+  </header>
+  <div class="worlds" id="worlds"></div>
+</section>
+
+<section class="screen" id="world">
+  <header class="wbar">
+    <button class="round" id="worldBack" aria-label="Zurück"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 5l-7 7 7 7"/></svg></button>
+    <h2 id="worldTitle"></h2>
+  </header>
+  <div class="grid" id="grid"></div>
+</section>
+
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Tierfoto">
+  <div class="stage" id="stage">
+    <img class="bg" id="bg" alt="">
+    <div class="photo" id="photo"><img class="fg" id="fg" alt=""></div>
+    <div class="msg" id="msg" hidden>Das Foto lädt nicht. Ist das Gerät mit dem Internet verbunden?</div>
+    <div class="bubble" id="bubble"></div>
+    <button class="vbtn v-close" id="vClose" aria-label="Zurück"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 5l-7 7 7 7"/></svg></button>
+    <button class="vbtn v-prev" id="vPrev" aria-label="Vorheriges Tier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="vbtn v-next" id="vNext" aria-label="Nächstes Tier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+  <div class="panel" id="panel">
+    <h2 id="pName"></h2>
+    <ul id="pFacts"></ul>
+    <button class="read" id="pRead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>Vorlesen</button>
+  </div>
+</div>
+
+<div class="modal" id="gate">
+  <div class="sheet" id="sheet"></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const WORLDS = [
+  { id:"hof", name:"Bauernhof", emoji:"🐄", c:"#F3C13A", ink:"#3E2900", animals:[
+    { name:"Kuh", art:"die", wiki:"Cattle", sound:"Muuuh!", facts:["Eine Kuh frisst am Tag bis zu 70 Kilo Gras.","Ihr Magen hat vier Teile."] },
+    { name:"Schwein", art:"das", wiki:"Pig", sound:"Grunz grunz!", facts:["Schweine haben eine super Nase. Sie finden damit sogar Trüffel unter der Erde.","Sie wälzen sich im Schlamm, weil sie nicht schwitzen können."] },
+    { name:"Schaf", art:"das", wiki:"Sheep", sound:"Bäh!", facts:["Schafe haben dicke Wolle. Die wird einmal im Jahr geschoren.","Schafe können sich viele Gesichter merken."] },
+    { name:"Huhn", art:"das", wiki:"Chicken", sound:"Gack gack!", facts:["Ein Huhn kann fast jeden Tag ein Ei legen.","Hühner baden gern im Sand, um sauber zu bleiben."] },
+    { name:"Pferd", art:"das", wiki:"Horse", sound:"Wiiiehiehie!", facts:["Pferde können im Stehen schlafen.","Ein Fohlen kann schon kurz nach der Geburt laufen."] },
+    { name:"Ziege", art:"die", wiki:"Goat", sound:"Mäh!", facts:["Ziegen sind tolle Kletterer.","Ihre Pupillen sehen aus wie kleine Rechtecke."] },
+  ]},
+  { id:"zoo", name:"Zoo", emoji:"🦒", c:"#EE8A45", ink:"#3A1704", animals:[
+    { name:"Elefant", art:"der", wiki:"African_elephant", sound:"Törööö!", facts:["Der Afrikanische Elefant ist das größte Tier an Land.","Mit dem Rüssel kann er riechen, trinken und Dinge greifen."] },
+    { name:"Giraffe", art:"die", wiki:"Giraffe", sound:null, quiet:"Psst, Giraffen sind fast immer ganz leise.", facts:["Giraffen sind die höchsten Tiere der Welt.","Ihre Zunge ist ungefähr 45 Zentimeter lang."] },
+    { name:"Löwe", art:"der", wiki:"Lion", sound:"Roaaar!", facts:["Löwen leben in Familiengruppen, die man Rudel nennt.","Löwen schlafen bis zu 20 Stunden am Tag."] },
+    { name:"Zebra", art:"das", wiki:"Plains_zebra", sound:"Ih-ah!", facts:["Jedes Zebra hat sein eigenes Streifenmuster.","Zebras leben in großen Herden in Afrika."] },
+  ]},
+  { id:"dschungel", name:"Dschungel", emoji:"🐒", c:"#2E8B57", ink:"#FFFFFF", animals:[
+    { name:"Tiger", art:"der", wiki:"Tiger", sound:"Grrrr!", facts:["Tiger sind die größten Raubkatzen der Welt.","Anders als die meisten Katzen schwimmen Tiger sehr gern."] },
+    { name:"Orang-Utan", art:"der", wiki:"Bornean_orangutan", sound:"Uh uh!", facts:["Orang-Utan bedeutet „Waldmensch“.","Jeden Abend bauen sie sich ein neues Schlafnest hoch oben im Baum."] },
+    { name:"Tukan", art:"der", wiki:"Toco_toucan", sound:"Krrrk!", facts:["Sein Schnabel ist riesig, aber ganz leicht. Innen ist er fast hohl wie ein Schwamm.","Tukane leben in Südamerika."] },
+    { name:"Chamäleon", art:"das", wiki:"Panther_chameleon", sound:null, quiet:"Psst, Chamäleons sind ganz leise.", facts:["Ein Chamäleon kann seine Farbe ändern.","Seine Augen kann es in verschiedene Richtungen drehen."] },
+    { name:"Frosch", art:"der", wiki:"Agalychnis_callidryas", sound:"Quak quak!", facts:["Der Rotaugenlaubfrosch hat leuchtend rote Augen. Damit erschreckt er Feinde.","Tagsüber schläft er unter einem Blatt."] },
+  ]},
+  { id:"meer", name:"Meer", emoji:"🐠", c:"#1E6FB8", ink:"#FFFFFF", animals:[
+    { name:"Clownfisch", art:"der", wiki:"Ocellaris_clownfish", sound:"Blubb blubb!", facts:["Clownfische wohnen in Seeanemonen.","Die Nesseln der Anemone schützen sie vor Feinden."] },
+    { name:"Delfin", art:"der", wiki:"Common_bottlenose_dolphin", sound:"Kiki-kiki!", facts:["Delfine atmen Luft und schwimmen dafür nach oben.","Sie rufen sich mit Pfiffen gegenseitig beim Namen."] },
+    { name:"Meeresschildkröte", art:"die", wiki:"Green_sea_turtle", sound:null, quiet:"Psst, Schildkröten sind ganz leise.", facts:["Sie legen ihre Eier am Strand in den Sand.","Beim Schlafen können sie stundenlang unter Wasser bleiben."] },
+    { name:"Krake", art:"der", wiki:"Common_octopus", sound:null, quiet:"Psst, Kraken sind ganz leise.", facts:["Ein Krake hat acht Arme.","Er hat drei Herzen und blaues Blut."] },
+    { name:"Buckelwal", art:"der", wiki:"Humpback_whale", sound:"Uuuuuuh!", facts:["Buckelwale singen lange Lieder unter Wasser.","Ein Buckelwal ist ungefähr so lang wie ein Bus."] },
+  ]},
+];
+
+const $ = id => document.getElementById(id);
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+
+/* ---------- Modus ---------- */
+let mode = "kid";
+try { mode = localStorage.getItem("tiere.mode") || "kid"; } catch {}
+function applyMode() {
+  document.body.classList.toggle("kid", mode === "kid");
+  document.body.classList.toggle("explorer", mode === "explorer");
+}
+function setMode(m) {
+  mode = m; applyMode();
+  try { localStorage.setItem("tiere.mode", m); } catch {}
+}
+applyMode();
+
+/* ---------- Sprache ---------- */
+let voice = null;
+function pickVoice() {
+  const vs = speechSynthesis.getVoices();
+  voice = vs.find(v => v.lang === "de-DE" && /Anna|Petra|Helena|Katja|Google/i.test(v.name))
+       || vs.find(v => (v.lang || "").toLowerCase().startsWith("de")) || null;
+}
+if ("speechSynthesis" in window) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+function say(text) {
+  if (!("speechSynthesis" in window)) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "de-DE"; if (voice) u.voice = voice; u.rate = 0.9; u.pitch = 1.1;
+  speechSynthesis.speak(u);
+}
+const phrase = a => `${cap(a.art)} ${a.name}. ${a.sound || a.quiet}`;
+
+/* ---------- Bilder (Prototyp: Wikipedia-Leitbild je Tier) ---------- */
+const summaries = new Map();
+function getSummary(wiki) {
+  if (!summaries.has(wiki)) {
+    const p = fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wiki)}`)
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(j => ({ orig: j.originalimage, thumb: j.thumbnail }))
+      .catch(e => { summaries.delete(wiki); throw e; });
+    summaries.set(wiki, p);
+  }
+  return summaries.get(wiki);
+}
+function sized(s, w) {
+  const o = s.orig, t = s.thumb;
+  if (!o) return t ? t.source : null;
+  if (o.width <= w) return o.source;
+  if (t && t.source.includes("/thumb/")) return t.source.replace(/\/\d+px-([^/]+)$/, `/${w}px-$1`);
+  return o.source;
+}
+function loadImg(img, s, w) {
+  const src = sized(s, w);
+  if (!src) return false;
+  img.onerror = () => { img.onerror = null; if (s.orig && img.src !== s.orig.source) img.src = s.orig.source; };
+  img.src = src;
+  return true;
+}
+const bigW = () => Math.max(innerWidth, innerHeight) * (devicePixelRatio || 1) > 1400 ? 1920 : 1280;
+
+/* ---------- Navigation (Zurück-Taste des Geräts schließt Ebenen) ---------- */
+const stack = [];
+let canHistory = true;
+function pushLayer(name) {
+  stack.push(name);
+  try { history.pushState({ layer: name }, ""); } catch { canHistory = false; }
+}
+function back() { if (canHistory) history.back(); else popLayer(); }
+addEventListener("popstate", popLayer);
+function popLayer() {
+  const top = stack.pop();
+  if (top === "viewer") closeViewer();
+  else if (top === "world") closeWorld();
+}
+
+/* ---------- Startseite ---------- */
+const worldsEl = $("worlds");
+WORLDS.forEach(w => {
+  const b = document.createElement("button");
+  b.className = "world";
+  b.style.setProperty("--c", w.c); b.style.setProperty("--wink", w.ink);
+  b.setAttribute("aria-label", w.name);
+  b.innerHTML = `<span class="emo" aria-hidden="true">${w.emoji}</span><span class="lbl">${w.name}</span>`;
+  b.onclick = () => openWorld(w);
+  worldsEl.appendChild(b);
+  w.animals.forEach(a => getSummary(a.wiki).catch(() => {}));
+});
+
+/* ---------- Welt ---------- */
+let current = null, idx = 0, lastTile = null;
+function openWorld(w) {
+  current = w;
+  if (mode === "kid") say(w.name);
+  const ws = $("world");
+  ws.style.setProperty("--c", w.c); ws.style.setProperty("--wink", w.ink);
+  document.body.style.setProperty("--topbar", w.c);
+  $("worldTitle").textContent = w.name;
+  const grid = $("grid"); grid.innerHTML = "";
+  w.animals.forEach((a, i) => {
+    const t = document.createElement("button");
+    t.className = "tile"; t.setAttribute("aria-label", a.name);
+    t.innerHTML = `<span class="ph" aria-hidden="true">${w.emoji}</span><img alt=""><span class="name">${a.name}</span>`;
+    const img = t.querySelector("img");
+    img.onload = () => img.classList.add("ok");
+    getSummary(a.wiki).then(s => loadImg(img, s, 500)).catch(() => {});
+    t.onclick = () => { lastTile = t; openViewer(i); };
+    grid.appendChild(t);
+  });
+  $("home").classList.remove("active"); ws.classList.add("active");
+  scrollTo(0, 0);
+  pushLayer("world");
+}
+function closeWorld() {
+  $("world").classList.remove("active"); $("home").classList.add("active");
+  document.body.style.removeProperty("--topbar");
+}
+$("worldBack").onclick = back;
+
+/* ---------- Vollbild ---------- */
+const viewer = $("viewer"), stage = $("stage"), fg = $("fg"), bg = $("bg"), photo = $("photo"), bubble = $("bubble"), msg = $("msg");
+let showToken = 0, zoomed = false;
+
+function openViewer(i) {
+  viewer.classList.add("open");
+  pushLayer("viewer");
+  show(i, 0);
+  $("vClose").focus({ preventScroll: true });
+}
+function closeViewer() {
+  viewer.classList.remove("open");
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  if (lastTile) lastTile.focus({ preventScroll: true });
+}
+
+function show(i, dir) {
+  const list = current.animals;
+  idx = (i + list.length) % list.length;
+  const a = list[idx];
+  const token = ++showToken;
+  zoomed = false;
+  fg.style.transform = ""; fg.style.transformOrigin = "";
+  fg.classList.remove("in-l", "in-r"); void fg.offsetWidth;
+  if (dir && !reduceMotion) fg.classList.add(dir > 0 ? "in-r" : "in-l");
+  fg.removeAttribute("src"); bg.removeAttribute("src"); msg.hidden = true;
+  fg.alt = a.name;
+
+  getSummary(a.wiki).then(s => {
+    if (token !== showToken) return;
+    loadImg(bg, s, 500);
+    if (!loadImg(fg, s, bigW())) msg.hidden = false;
+    [idx + 1, idx - 1].forEach(n => {
+      const b = list[(n + list.length) % list.length];
+      getSummary(b.wiki).then(bs => { const src = sized(bs, bigW()); if (src) new Image().src = src; }).catch(() => {});
+    });
+  }).catch(() => { if (token === showToken) msg.hidden = false; });
+
+  $("pName").innerHTML = `<span class="art">${a.art}</span>${a.name}`;
+  $("pFacts").innerHTML = a.facts.map(f => `<li>${f}</li>`).join("");
+  sound(a);
+}
+
+function sound(a) {
+  bubble.textContent = a.sound || "🤫";
+  bubble.classList.remove("show"); void bubble.offsetWidth; bubble.classList.add("show");
+  say(phrase(a));
+}
+function boing() {
+  if (reduceMotion) return;
+  photo.classList.remove("boing"); void photo.offsetWidth; photo.classList.add("boing");
+}
+
+$("vClose").onclick = back;
+$("vPrev").onclick = () => show(idx - 1, -1);
+$("vNext").onclick = () => show(idx + 1, 1);
+$("pRead").onclick = () => { const a = current.animals[idx]; say(`${cap(a.art)} ${a.name}. ${a.facts.join(" ")}`); };
+
+/* Wischen, Tippen, Doppeltipp-Zoom */
+let p0 = null, lastTap = 0, tapTimer = null;
+stage.addEventListener("pointerdown", e => {
+  if (e.target.closest(".vbtn")) return;
+  p0 = { x: e.clientX, y: e.clientY };
+  stage.setPointerCapture(e.pointerId);
+});
+stage.addEventListener("pointermove", e => {
+  if (!p0 || zoomed) return;
+  const dx = e.clientX - p0.x;
+  if (Math.abs(dx) > 10) { fg.style.transition = "none"; fg.style.transform = `translateX(${dx}px)`; }
+});
+stage.addEventListener("pointerup", e => {
+  if (!p0) return;
+  const dx = e.clientX - p0.x, dy = e.clientY - p0.y;
+  p0 = null; fg.style.transition = "";
+  if (!zoomed && Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) { show(idx + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1); return; }
+  if (!zoomed) fg.style.transform = "";
+  if (Math.abs(dx) < 12 && Math.abs(dy) < 12) tap(e);
+});
+stage.addEventListener("pointercancel", () => { p0 = null; fg.style.transition = ""; if (!zoomed) fg.style.transform = ""; });
+
+function tap(e) {
+  const a = current.animals[idx];
+  if (mode === "kid") { boing(); sound(a); return; }
+  const now = Date.now();
+  if (now - lastTap < 300) {
+    clearTimeout(tapTimer); lastTap = 0;
+    if (!zoomed) {
+      const r = fg.getBoundingClientRect();
+      fg.style.transformOrigin = `${e.clientX - r.left}px ${e.clientY - r.top}px`;
+      fg.style.transform = "scale(2.5)"; zoomed = true;
+    } else { fg.style.transform = ""; zoomed = false; }
+  } else {
+    lastTap = now;
+    tapTimer = setTimeout(() => { if (!zoomed) { boing(); sound(a); } }, 300);
+  }
+}
+
+addEventListener("keydown", e => {
+  if (!viewer.classList.contains("open") || $("gate").classList.contains("open")) return;
+  if (e.key === "ArrowRight") show(idx + 1, 1);
+  else if (e.key === "ArrowLeft") show(idx - 1, -1);
+  else if (e.key === "Escape") back();
+});
+addEventListener("contextmenu", e => e.preventDefault());
+
+/* ---------- Eltern-Sperre ---------- */
+const gear = $("gear"), gate = $("gate"), sheet = $("sheet");
+const HOLD_MS = 1500;
+let holdRaf = null, holdStart = 0;
+function endHold() { cancelAnimationFrame(holdRaf); holdRaf = null; gear.style.setProperty("--p", 0); }
+gear.addEventListener("pointerdown", e => {
+  e.preventDefault();
+  holdStart = performance.now();
+  const tick = t => {
+    const p = Math.min(1, (t - holdStart) / HOLD_MS);
+    gear.style.setProperty("--p", p);
+    if (p >= 1) { endHold(); openGate(); } else holdRaf = requestAnimationFrame(tick);
+  };
+  holdRaf = requestAnimationFrame(tick);
+});
+["pointerup", "pointerleave", "pointercancel"].forEach(ev => gear.addEventListener(ev, () => {
+  const wasShort = holdRaf !== null;
+  endHold();
+  if (ev === "pointerup" && wasShort) toast("Für die Eltern-Einstellungen das Zahnrad lange drücken");
+}));
+gear.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openGate(); } });
+
+function openGate() { gate.classList.add("open"); renderQuestion(); }
+function closeGate() { gate.classList.remove("open"); }
+gate.addEventListener("click", e => { if (e.target === gate) closeGate(); });
+
+function renderQuestion(note) {
+  const a = 12 + Math.floor(Math.random() * 18), b = 11 + Math.floor(Math.random() * 9), r = a + b;
+  const opts = [r, r + 1, r - 10, r + 10].sort(() => Math.random() - 0.5);
+  sheet.innerHTML = `
+    <h3>Nur für Eltern</h3>
+    <p>${note || "Löse die Aufgabe, um die Einstellungen zu öffnen."}</p>
+    <p style="font-size:34px;font-weight:800;color:var(--ink);margin-bottom:14px">${a} + ${b} = ?</p>
+    <div class="answers">${opts.map(o => `<button data-v="${o}">${o}</button>`).join("")}</div>
+    <button class="ghost" id="gCancel">Abbrechen</button>`;
+  sheet.querySelectorAll(".answers button").forEach(btn => btn.onclick = () => {
+    if (+btn.dataset.v === r) renderSettings(); else renderQuestion("Nicht richtig. Hier ist eine neue Aufgabe.");
+  });
+  $("gCancel").onclick = closeGate;
+}
+
+function renderSettings() {
+  sheet.innerHTML = `
+    <h3>Einstellungen</h3>
+    <p>Für welches Alter soll die App sein?</p>
+    <div class="modes">
+      <button data-m="kid" aria-pressed="${mode === "kid"}"><b>Kleinkind (ab 2)</b><span>Große Fotos, Tiername und Tierlaut. Kein Text.</span></button>
+      <button data-m="explorer" aria-pressed="${mode === "explorer"}"><b>Entdecker (ab 5)</b><span>Namen zum Lesen, Fakten zum Vorlesen, Zoom per Doppeltipp.</span></button>
+    </div>
+    <p class="credits">Fotos: Wikipedia und Wikimedia Commons, die Lizenz steht auf der jeweiligen Bildseite. Die Stimme kommt vom Gerät.</p>
+    <button class="done" id="gDone">Fertig</button>`;
+  sheet.querySelectorAll(".modes button").forEach(btn => btn.onclick = () => {
+    setMode(btn.dataset.m);
+    sheet.querySelectorAll(".modes button").forEach(x => x.setAttribute("aria-pressed", x === btn));
+  });
+  $("gDone").onclick = closeGate;
+}
+
+/* ---------- Toast ---------- */
+let toastT = null;
+function toast(t) {
+  const el = $("toast"); el.textContent = t; el.classList.add("show");
+  clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove("show"), 2200);
+}
+</script>
+</body>
+</html>

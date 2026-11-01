@@ -1,0 +1,22 @@
+{
+  "files": {
+    "includes": ["**", "!**/dist", "!**/.cache", "!**/public", "!**/docs/reference", "!**/*.generated.json"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double",
+      "semicolons": "always",
+      "trailingCommas": "all"
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": { "recommended": true }
+  }
+}

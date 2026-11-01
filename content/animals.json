@@ -1,0 +1,374 @@
+{
+  "worlds": [
+    {
+      "id": "bauernhof",
+      "name": "Bauernhof",
+      "emoji": "🐄",
+      "color": "#F3C13A",
+      "ink": "#3E2900"
+    },
+    {
+      "id": "zoo",
+      "name": "Zoo",
+      "emoji": "🦒",
+      "color": "#EE8A45",
+      "ink": "#3A1704"
+    },
+    {
+      "id": "dschungel",
+      "name": "Dschungel",
+      "emoji": "🐒",
+      "color": "#2E8B57",
+      "ink": "#FFFFFF"
+    },
+    {
+      "id": "meer",
+      "name": "Meer",
+      "emoji": "🐠",
+      "color": "#1E6FB8",
+      "ink": "#FFFFFF"
+    }
+  ],
+  "animals": [
+    {
+      "id": "kuh",
+      "world": "bauernhof",
+      "name": "Kuh",
+      "article": "die",
+      "latin": "Bos taurus",
+      "voice": {
+        "kind": "sound",
+        "text": "Muuuh!"
+      },
+      "facts": [
+        "Eine Kuh frisst am Tag bis zu 70 Kilo Gras.",
+        "Ihr Magen hat vier Teile."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "schwein",
+      "world": "bauernhof",
+      "name": "Schwein",
+      "article": "das",
+      "latin": "Sus scrofa domesticus",
+      "voice": {
+        "kind": "sound",
+        "text": "Grunz grunz!"
+      },
+      "facts": [
+        "Schweine haben eine super Nase. Sie finden damit sogar Trüffel unter der Erde.",
+        "Sie wälzen sich im Schlamm, weil sie nicht schwitzen können."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "schaf",
+      "world": "bauernhof",
+      "name": "Schaf",
+      "article": "das",
+      "latin": "Ovis aries",
+      "voice": {
+        "kind": "sound",
+        "text": "Bäh!"
+      },
+      "facts": [
+        "Schafe haben dicke Wolle. Die wird einmal im Jahr geschoren.",
+        "Schafe können sich viele Gesichter merken."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "huhn",
+      "world": "bauernhof",
+      "name": "Huhn",
+      "article": "das",
+      "latin": "Gallus gallus domesticus",
+      "voice": {
+        "kind": "sound",
+        "text": "Gack gack!"
+      },
+      "facts": [
+        "Ein Huhn kann fast jeden Tag ein Ei legen.",
+        "Hühner baden gern im Sand, um sauber zu bleiben."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "pferd",
+      "world": "bauernhof",
+      "name": "Pferd",
+      "article": "das",
+      "latin": "Equus ferus caballus",
+      "voice": {
+        "kind": "sound",
+        "text": "Wiiiehiehie!"
+      },
+      "facts": [
+        "Pferde können im Stehen schlafen.",
+        "Ein Fohlen kann schon kurz nach der Geburt laufen."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "ziege",
+      "world": "bauernhof",
+      "name": "Ziege",
+      "article": "die",
+      "latin": "Capra hircus",
+      "voice": {
+        "kind": "sound",
+        "text": "Mäh!"
+      },
+      "facts": [
+        "Ziegen sind tolle Kletterer.",
+        "Ihre Pupillen sehen aus wie kleine Rechtecke."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "elefant",
+      "world": "zoo",
+      "name": "Elefant",
+      "article": "der",
+      "latin": "Loxodonta africana",
+      "voice": {
+        "kind": "sound",
+        "text": "Törööö!"
+      },
+      "facts": [
+        "Der Afrikanische Elefant ist das größte Tier an Land.",
+        "Mit dem Rüssel kann er riechen, trinken und Dinge greifen."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "giraffe",
+      "world": "zoo",
+      "name": "Giraffe",
+      "article": "die",
+      "latin": "Giraffa camelopardalis",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Giraffen sind fast immer ganz leise."
+      },
+      "facts": [
+        "Giraffen sind die höchsten Tiere der Welt.",
+        "Ihre Zunge ist ungefähr 45 Zentimeter lang."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "loewe",
+      "world": "zoo",
+      "name": "Löwe",
+      "article": "der",
+      "latin": "Panthera leo",
+      "voice": {
+        "kind": "sound",
+        "text": "Roaaar!"
+      },
+      "facts": [
+        "Löwen leben in Familiengruppen, die man Rudel nennt.",
+        "Löwen schlafen bis zu 20 Stunden am Tag."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "zebra",
+      "world": "zoo",
+      "name": "Zebra",
+      "article": "das",
+      "latin": "Equus quagga",
+      "voice": {
+        "kind": "sound",
+        "text": "Ih-ah!"
+      },
+      "facts": [
+        "Jedes Zebra hat sein eigenes Streifenmuster.",
+        "Zebras leben in großen Herden in Afrika."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "tiger",
+      "world": "dschungel",
+      "name": "Tiger",
+      "article": "der",
+      "latin": "Panthera tigris",
+      "voice": {
+        "kind": "sound",
+        "text": "Grrrr!"
+      },
+      "facts": [
+        "Tiger sind die größten Raubkatzen der Welt.",
+        "Anders als die meisten Katzen schwimmen Tiger sehr gern."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "orang-utan",
+      "world": "dschungel",
+      "name": "Orang-Utan",
+      "article": "der",
+      "latin": "Pongo pygmaeus",
+      "voice": {
+        "kind": "sound",
+        "text": "Uh uh!"
+      },
+      "facts": [
+        "Orang-Utan bedeutet „Waldmensch“.",
+        "Jeden Abend bauen sie sich ein neues Schlafnest hoch oben im Baum."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "tukan",
+      "world": "dschungel",
+      "name": "Tukan",
+      "article": "der",
+      "latin": "Ramphastos toco",
+      "voice": {
+        "kind": "sound",
+        "text": "Krrrk!"
+      },
+      "facts": [
+        "Sein Schnabel ist riesig, aber ganz leicht. Innen ist er fast hohl wie ein Schwamm.",
+        "Tukane leben in Südamerika."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "chamaeleon",
+      "world": "dschungel",
+      "name": "Chamäleon",
+      "article": "das",
+      "latin": "Furcifer pardalis",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Chamäleons sind ganz leise."
+      },
+      "facts": [
+        "Ein Chamäleon kann seine Farbe ändern.",
+        "Seine Augen kann es in verschiedene Richtungen drehen."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "frosch",
+      "world": "dschungel",
+      "name": "Frosch",
+      "article": "der",
+      "latin": "Agalychnis callidryas",
+      "voice": {
+        "kind": "sound",
+        "text": "Quak quak!"
+      },
+      "facts": [
+        "Der Rotaugenlaubfrosch hat leuchtend rote Augen. Damit erschreckt er Feinde.",
+        "Tagsüber schläft er unter einem Blatt."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "clownfisch",
+      "world": "meer",
+      "name": "Clownfisch",
+      "article": "der",
+      "latin": "Amphiprion ocellaris",
+      "voice": {
+        "kind": "sound",
+        "text": "Blubb blubb!"
+      },
+      "facts": [
+        "Clownfische wohnen in Seeanemonen.",
+        "Die Nesseln der Anemone schützen sie vor Feinden."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "delfin",
+      "world": "meer",
+      "name": "Delfin",
+      "article": "der",
+      "latin": "Tursiops truncatus",
+      "voice": {
+        "kind": "sound",
+        "text": "Kiki-kiki!"
+      },
+      "facts": [
+        "Delfine atmen Luft und schwimmen dafür nach oben.",
+        "Sie rufen sich mit Pfiffen gegenseitig beim Namen."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "meeresschildkroete",
+      "world": "meer",
+      "name": "Meeresschildkröte",
+      "article": "die",
+      "latin": "Chelonia mydas",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Schildkröten sind ganz leise."
+      },
+      "facts": [
+        "Sie legen ihre Eier am Strand in den Sand.",
+        "Beim Schlafen können sie stundenlang unter Wasser bleiben."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "krake",
+      "world": "meer",
+      "name": "Krake",
+      "article": "der",
+      "latin": "Octopus vulgaris",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Kraken sind ganz leise."
+      },
+      "facts": [
+        "Ein Krake hat acht Arme.",
+        "Er hat drei Herzen und blaues Blut."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "buckelwal",
+      "world": "meer",
+      "name": "Buckelwal",
+      "article": "der",
+      "latin": "Megaptera novaeangliae",
+      "voice": {
+        "kind": "sound",
+        "text": "Uuuuuuh!"
+      },
+      "facts": [
+        "Buckelwale singen lange Lieder unter Wasser.",
+        "Ein Buckelwal ist ungefähr so lang wie ein Bus."
+      ],
+      "photos": [],
+      "soundFile": null
+    }
+  ]
+}
