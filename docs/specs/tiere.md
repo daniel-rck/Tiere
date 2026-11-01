@@ -89,7 +89,8 @@ type Credit = { author: string; license: string; licenseUrl: string; sourceUrl: 
 ```
 
 ### 4.2 Startumfang
-4 Welten, 20 Tiere (siehe `content/animals.json`), je 3–6 Fotos, Tierlaut wo vorhanden.
+4 Welten mit je 12–13 Tieren, zusammen 50 (siehe `content/animals.json`), je 3–6 Fotos, Tierlaut wo
+vorhanden.
 
 ## 5. Medien-Pipeline (nur Build-Zeit)
 
@@ -235,6 +236,11 @@ public/photos/, public/sounds/  generierte Medien (committet)
   Der Update-Hinweis kommt in Phase 8 ohne Text (`useAppUpdate`).
 - _2026-11-01_ — Gate `bun run check` = `lint` + `typecheck` + `test`; dazu `build` und
   `web-base check --strict` (beides auch in CI). JSON formatiert oxfmt (Prettier-Stil).
+- _2026-11-01_ — 50 statt 20 Tiere (Wunsch von Daniel), weiter in 4 Welten: Bauernhof 12, Zoo 13,
+  Dschungel 12, Meer 13.
+- _2026-11-01_ — Foto-Sichtung im Chat: Kandidaten und Vorschläge zusätzlich als Auswahlseite
+  (claude.ai-Artifact), Daniels Auswahl wird dort gespeichert und von Claude übernommen. Der
+  Kontaktabzug in `.cache/` bleibt für lokale Arbeit.
 - _2026-11-01_ — Spec bleibt Deutsch (web-base empfiehlt Englisch für `docs/specs/`), wie beim
   Malbuch.
 
@@ -242,6 +248,8 @@ public/photos/, public/sounds/  generierte Medien (committet)
 - Akzentfarbe: Das Farbrad der Flotte ist voll (web-base `04-layout-system.md`). Tiere nutzt
   vorerst den Template-Standard 355 (wie das Malbuch); sichtbar ist er nur auf den
   web-base-Fehlerseiten und als `theme_color`. Eigener Slot braucht eine Regeländerung in web-base.
+- Precache-Budget (§7, ≤ 40 MB) bei 50 Tieren: rund 200 Fotos × (640 + 1280 px) liegt nahe an der
+  Grenze. In Phase 3 messen; sonst 1280er nur für die ersten Fotos je Tier vorab cachen.
 - Tiere in web-base `08-app-migrations.md` eintragen (Flotte, Abweichungen wie beim Malbuch).
 - Namen selbst aufnehmen statt Systemstimme.
 - Quiz im Entdecker-Modus („Wo ist der Elefant?“).

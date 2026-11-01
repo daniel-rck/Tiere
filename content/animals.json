@@ -127,6 +127,108 @@
       "soundFile": null
     },
     {
+      "id": "ente",
+      "world": "bauernhof",
+      "name": "Ente",
+      "article": "die",
+      "latin": "Anas platyrhynchos domesticus",
+      "voice": {
+        "kind": "sound",
+        "text": "Quak quak!"
+      },
+      "facts": [
+        "Enten fetten ihre Federn ein, damit kein Wasser durchkommt.",
+        "Entenküken laufen ihrer Mutter in einer Reihe hinterher."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "gans",
+      "world": "bauernhof",
+      "name": "Gans",
+      "article": "die",
+      "latin": "Anser anser domesticus",
+      "voice": {
+        "kind": "sound",
+        "text": "Schnatter schnatter!"
+      },
+      "facts": [
+        "Gänse passen gut auf und schnattern laut, wenn Fremde kommen.",
+        "Junge Gänse heißen Gössel."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "kaninchen",
+      "world": "bauernhof",
+      "name": "Kaninchen",
+      "article": "das",
+      "latin": "Oryctolagus cuniculus",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Kaninchen sind ganz leise."
+      },
+      "facts": [
+        "Kaninchen können ihre langen Ohren in verschiedene Richtungen drehen.",
+        "Ihre Zähne wachsen ihr ganzes Leben lang."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "esel",
+      "world": "bauernhof",
+      "name": "Esel",
+      "article": "der",
+      "latin": "Equus asinus",
+      "voice": {
+        "kind": "sound",
+        "text": "I-aah!"
+      },
+      "facts": [
+        "Esel sind sehr trittsicher und können schwere Lasten tragen.",
+        "Mit ihren langen Ohren hören sie sehr gut."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "hund",
+      "world": "bauernhof",
+      "name": "Hund",
+      "article": "der",
+      "latin": "Canis lupus familiaris",
+      "voice": {
+        "kind": "sound",
+        "text": "Wau wau!"
+      },
+      "facts": [
+        "Hunde riechen viel, viel besser als Menschen.",
+        "Wenn ein Hund mit dem Schwanz wedelt, ist er oft aufgeregt oder freut sich."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "katze",
+      "world": "bauernhof",
+      "name": "Katze",
+      "article": "die",
+      "latin": "Felis catus",
+      "voice": {
+        "kind": "sound",
+        "text": "Miau!"
+      },
+      "facts": [
+        "Katzen schnurren oft, wenn sie sich wohlfühlen.",
+        "Mit ihren Schnurrhaaren ertasten sie Dinge auch im Dunkeln."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
       "id": "elefant",
       "world": "zoo",
       "name": "Elefant",
@@ -190,6 +292,159 @@
       "facts": [
         "Jedes Zebra hat sein eigenes Streifenmuster.",
         "Zebras leben in großen Herden in Afrika."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "nashorn",
+      "world": "zoo",
+      "name": "Nashorn",
+      "article": "das",
+      "latin": "Ceratotherium simum",
+      "voice": {
+        "kind": "sound",
+        "text": "Schnaub!"
+      },
+      "facts": [
+        "Das Breitmaulnashorn frisst fast den ganzen Tag Gras.",
+        "Sein Horn ist aus demselben Stoff wie unsere Fingernägel."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "nilpferd",
+      "world": "zoo",
+      "name": "Nilpferd",
+      "article": "das",
+      "latin": "Hippopotamus amphibius",
+      "voice": {
+        "kind": "sound",
+        "text": "Grunz!"
+      },
+      "facts": [
+        "Nilpferde liegen tagsüber im Wasser und fressen nachts an Land Gras.",
+        "Unter Wasser können sie Nase und Ohren verschließen."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "kaenguru",
+      "world": "zoo",
+      "name": "Känguru",
+      "article": "das",
+      "latin": "Osphranter rufus",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Kängurus sind meistens ganz leise."
+      },
+      "facts": [
+        "Kängurus hüpfen mit ihren starken Hinterbeinen.",
+        "Das Junge wächst im Beutel der Mutter auf."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "eisbaer",
+      "world": "zoo",
+      "name": "Eisbär",
+      "article": "der",
+      "latin": "Ursus maritimus",
+      "voice": {
+        "kind": "sound",
+        "text": "Brumm!"
+      },
+      "facts": [
+        "Unter seinem weißen Fell hat der Eisbär schwarze Haut.",
+        "Eisbären sind sehr gute Schwimmer."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "kamel",
+      "world": "zoo",
+      "name": "Kamel",
+      "article": "das",
+      "latin": "Camelus bactrianus",
+      "voice": {
+        "kind": "sound",
+        "text": "Bröööh!"
+      },
+      "facts": [
+        "Dieses Kamel heißt Trampeltier und hat zwei Höcker.",
+        "In den Höckern speichert es Fett, kein Wasser."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "flamingo",
+      "world": "zoo",
+      "name": "Flamingo",
+      "article": "der",
+      "latin": "Phoenicopterus roseus",
+      "voice": {
+        "kind": "sound",
+        "text": "Gak gak!"
+      },
+      "facts": [
+        "Flamingos sind rosa, weil ihr Futter rosa Farbstoffe enthält.",
+        "Sie stehen oft lange auf nur einem Bein."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "erdmaennchen",
+      "world": "zoo",
+      "name": "Erdmännchen",
+      "article": "das",
+      "latin": "Suricata suricatta",
+      "voice": {
+        "kind": "sound",
+        "text": "Piep piep!"
+      },
+      "facts": [
+        "Ein Erdmännchen hält Wache und warnt die anderen mit einem Ruf.",
+        "Erdmännchen leben in großen Familien in Höhlen unter der Erde."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "pinguin",
+      "world": "zoo",
+      "name": "Pinguin",
+      "article": "der",
+      "latin": "Spheniscus humboldti",
+      "voice": {
+        "kind": "sound",
+        "text": "I-ah, i-ah!"
+      },
+      "facts": [
+        "Pinguine können nicht fliegen, aber sehr schnell schwimmen.",
+        "Humboldtpinguine leben an der Küste von Südamerika."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "panda",
+      "world": "zoo",
+      "name": "Panda",
+      "article": "der",
+      "latin": "Ailuropoda melanoleuca",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, der Panda kaut gerade Bambus."
+      },
+      "facts": [
+        "Pandas fressen fast nur Bambus, viele Stunden am Tag.",
+        "Ein Panda-Baby ist bei der Geburt ungefähr so schwer wie ein Apfel."
       ],
       "photos": [],
       "soundFile": null
@@ -280,6 +535,122 @@
       "soundFile": null
     },
     {
+      "id": "gorilla",
+      "world": "dschungel",
+      "name": "Gorilla",
+      "article": "der",
+      "latin": "Gorilla gorilla",
+      "voice": {
+        "kind": "sound",
+        "text": "Uh uh!"
+      },
+      "facts": [
+        "Gorillas trommeln sich auf die Brust, um zu zeigen, wie stark sie sind.",
+        "Sie fressen vor allem Blätter, Stängel und Früchte."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "schimpanse",
+      "world": "dschungel",
+      "name": "Schimpanse",
+      "article": "der",
+      "latin": "Pan troglodytes",
+      "voice": {
+        "kind": "sound",
+        "text": "Uh-uh-ah-ah!"
+      },
+      "facts": [
+        "Schimpansen angeln mit Stöckchen nach Termiten.",
+        "Sie leben in Gruppen und umarmen sich, um sich zu trösten."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "ara",
+      "world": "dschungel",
+      "name": "Ara",
+      "article": "der",
+      "latin": "Ara macao",
+      "voice": {
+        "kind": "sound",
+        "text": "Kraah!"
+      },
+      "facts": [
+        "Mit seinem kräftigen Schnabel knackt der Ara harte Nüsse.",
+        "Aras bleiben oft ein Leben lang mit demselben Partner zusammen."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "faultier",
+      "world": "dschungel",
+      "name": "Faultier",
+      "article": "das",
+      "latin": "Bradypus variegatus",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, das Faultier schläft gerade."
+      },
+      "facts": [
+        "Faultiere bewegen sich ganz langsam und hängen kopfüber in den Bäumen.",
+        "In ihrem Fell wachsen manchmal winzige grüne Algen."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "jaguar",
+      "world": "dschungel",
+      "name": "Jaguar",
+      "article": "der",
+      "latin": "Panthera onca",
+      "voice": {
+        "kind": "sound",
+        "text": "Grrr!"
+      },
+      "facts": ["Der Jaguar ist die größte Katze in Amerika.", "Jaguare schwimmen gern und gut."],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "krokodil",
+      "world": "dschungel",
+      "name": "Krokodil",
+      "article": "das",
+      "latin": "Crocodylus niloticus",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, das Krokodil liegt ganz still auf der Lauer."
+      },
+      "facts": [
+        "Im Wasser schauen oft nur seine Augen und die Nase heraus.",
+        "Krokodilmütter tragen ihre Babys vorsichtig im Maul."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "schlange",
+      "world": "dschungel",
+      "name": "Schlange",
+      "article": "die",
+      "latin": "Morelia viridis",
+      "voice": {
+        "kind": "sound",
+        "text": "Ssssss!"
+      },
+      "facts": [
+        "Der Grüne Baumpython wickelt sich zum Ausruhen um einen Ast.",
+        "Schlangen riechen mit ihrer Zunge."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
       "id": "clownfisch",
       "world": "meer",
       "name": "Clownfisch",
@@ -357,6 +728,139 @@
       "facts": [
         "Buckelwale singen lange Lieder unter Wasser.",
         "Ein Buckelwal ist ungefähr so lang wie ein Bus."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "walhai",
+      "world": "meer",
+      "name": "Walhai",
+      "article": "der",
+      "latin": "Rhincodon typus",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Walhaie sind ganz leise."
+      },
+      "facts": [
+        "Der Walhai ist der größte Fisch der Welt.",
+        "Er frisst winzig kleine Tierchen, das Plankton."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "seehund",
+      "world": "meer",
+      "name": "Seehund",
+      "article": "der",
+      "latin": "Phoca vitulina",
+      "voice": {
+        "kind": "sound",
+        "text": "Ööööh!"
+      },
+      "facts": [
+        "Junge Seehunde heißen Heuler, weil sie nach ihrer Mutter rufen.",
+        "Beim Tauchen verschließen Seehunde ihre Nasenlöcher."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "orca",
+      "world": "meer",
+      "name": "Orca",
+      "article": "der",
+      "latin": "Orcinus orca",
+      "voice": {
+        "kind": "sound",
+        "text": "Iiiiih!"
+      },
+      "facts": [
+        "Orcas leben in Familien und rufen sich mit Pfiffen und Klicks.",
+        "Ein Orca ist eigentlich ein sehr großer Delfin."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "seepferdchen",
+      "world": "meer",
+      "name": "Seepferdchen",
+      "article": "das",
+      "latin": "Hippocampus guttulatus",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Seepferdchen sind ganz leise."
+      },
+      "facts": [
+        "Beim Seepferdchen bekommt der Vater die Babys.",
+        "Mit seinem Schwanz hält es sich an Pflanzen fest."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "qualle",
+      "world": "meer",
+      "name": "Qualle",
+      "article": "die",
+      "latin": "Aurelia aurita",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Quallen sind ganz leise."
+      },
+      "facts": ["Quallen haben kein Gehirn und kein Herz.", "Sie bestehen fast ganz aus Wasser."],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "seestern",
+      "world": "meer",
+      "name": "Seestern",
+      "article": "der",
+      "latin": "Asterias rubens",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Seesterne sind ganz leise."
+      },
+      "facts": [
+        "Ein Seestern hat meistens fünf Arme.",
+        "Verliert er einen Arm, wächst er wieder nach."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "krabbe",
+      "world": "meer",
+      "name": "Krabbe",
+      "article": "die",
+      "latin": "Carcinus maenas",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Krabben sind ganz leise."
+      },
+      "facts": [
+        "Krabben laufen am liebsten seitwärts.",
+        "Ihr harter Panzer schützt sie wie eine Rüstung."
+      ],
+      "photos": [],
+      "soundFile": null
+    },
+    {
+      "id": "mantarochen",
+      "world": "meer",
+      "name": "Mantarochen",
+      "article": "der",
+      "latin": "Mobula birostris",
+      "voice": {
+        "kind": "quiet",
+        "text": "Psst, Mantarochen sind ganz leise."
+      },
+      "facts": [
+        "Mantarochen gleiten durchs Wasser, als würden sie fliegen.",
+        "Sie können bis zu sieben Meter breit werden."
       ],
       "photos": [],
       "soundFile": null

@@ -25,7 +25,7 @@ Standard-Gate ist `bun run check` (oxlint + oxfmt, tsc, Vitest). Vor jedem Push 
   `scripts/photos-candidates.ts` nach Spec 5.1–5.3.
 - Kontaktabzug: einfache statische HTML-Seite, Checkbox pro Kandidat, vormarkierte Vorschläge,
   Ausschlussgründe, Button „Auswahl kopieren“.
-- Für **alle 20 Tiere** Kandidaten erzeugen und nach `/fotos`-Vorgehen sichten und vormarkieren.
+- Für **alle 50 Tiere** Kandidaten erzeugen und nach `/fotos`-Vorgehen sichten und vormarkieren.
 - **Gate:** `bun run check` grün. **Mensch-Gate:** Daniel wählt die Fotos aus und trägt sie in
   `content/animals.json` ein. Erst danach abhaken.
 
