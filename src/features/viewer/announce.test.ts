@@ -1,7 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { CatalogAnimal } from "../../content/types.ts";
-import type { Settings } from "../../platform/storage.ts";
-import { announce, sayName } from "./announce.ts";
+import { playAnimalSound, sayName } from "./announce.ts";
 
 const speech = vi.hoisted(() => ({
   say: vi.fn<(text: string, onEnd?: () => void) => void>(),
@@ -26,24 +25,25 @@ const cow = {
   sound: null,
 } as CatalogAnimal;
 const withSound = { ...cow, sound: { src: "/sounds/kuh.m4a" } };
-const on: Settings = { mode: "kid", voice: true, sounds: true };
 
-describe("announce", () => {
+describe("playAnimalSound", () => {
   beforeEach(() => vi.clearAllMocks());
 
-  it("never speaks on its own", () => {
-    announce(cow, on);
-    announce(withSound, on);
+  it("never speaks", () => {
+    playAnimalSound(cow);
+    playAnimalSound(withSound);
     expect(speech.say).not.toHaveBeenCalled();
   });
 
-  it("plays the recording right away", () => {
-    announce(withSound, on);
+  it("stops the running output and plays the recording", () => {
+    playAnimalSound(withSound);
+    expect(speech.cancelSpeech).toHaveBeenCalled();
+    expect(audio.stopSound).toHaveBeenCalled();
     expect(audio.playSound).toHaveBeenCalledWith("/sounds/kuh.m4a");
   });
 
-  it("stays silent with the sounds off", () => {
-    announce(withSound, { ...on, sounds: false });
+  it("stays silent without a recording", () => {
+    playAnimalSound(cow);
     expect(audio.playSound).not.toHaveBeenCalled();
   });
 });

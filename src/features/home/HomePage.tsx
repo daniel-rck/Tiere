@@ -6,7 +6,7 @@ import { useSettings } from "../../platform/storage.ts";
 import { GearButton } from "../parents/GearButton.tsx";
 import { ParentsArea } from "../parents/ParentsArea.tsx";
 import { RefreshIcon } from "../shared/icons.tsx";
-import { announce, silence } from "../viewer/announce.ts";
+import { silence } from "../viewer/announce.ts";
 import { Viewer } from "../viewer/Viewer.tsx";
 import { WorldScreen } from "../world/WorldScreen.tsx";
 import { StartScreen } from "./StartScreen.tsx";
@@ -59,9 +59,6 @@ export function HomePage() {
           mode={settings.mode}
           onBack={back}
           onOpenAnimal={(index) => {
-            const animal = animals[index];
-            // Straight from the tap: the first output must come from a user gesture (iOS).
-            if (animal) announce(animal, settings);
             open({ kind: "viewer", world: world.id, animal: index });
           }}
         />

@@ -1,16 +1,16 @@
-// What happens when an animal shows up or is tapped (spec 3.3, 5.6): stop the
-// running output and play the animal's recording. The name is only spoken on
-// the speaker button (Daniel, 2026-11-01). Called straight from the tap or
-// click handler, so the output comes from a user gesture (iOS).
+// Output in the viewer (spec 3.3, 5.6): nothing plays on its own. The sound
+// button plays the recording, the speaker button says the name (Daniel,
+// 2026-11-01). Each starts straight from its click handler, so the output
+// comes from a user gesture (iOS), and each stops whatever is running.
 import { withArticle } from "../../content/catalog.ts";
 import type { CatalogAnimal } from "../../content/types.ts";
 import { playSound, stopSound } from "../../platform/audio.ts";
 import { cancelSpeech, say } from "../../platform/speech.ts";
-import type { Settings } from "../../platform/storage.ts";
 
-export function announce(animal: CatalogAnimal, settings: Settings): void {
+/** The sound button: the animal's recording, nothing else. */
+export function playAnimalSound(animal: CatalogAnimal): void {
   silence();
-  const sound = settings.sounds ? animal.sound?.src : undefined;
+  const sound = animal.sound?.src;
   if (sound) playSound(sound);
 }
 
