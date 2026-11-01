@@ -15,6 +15,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import sharp, { type OverlayOptions } from "sharp";
 import content from "../content/animals.json" with { type: "json" };
+import { checkLicense, stripHtml } from "../src/engine/licenses.ts";
 import {
   type Candidate,
   type CandidateFile,
@@ -26,7 +27,6 @@ import {
   titleReason,
 } from "./candidates.ts";
 import { type CommonsFile, download, searchFiles } from "./commons.ts";
-import { checkLicense, stripHtml } from "./licenses.ts";
 import { findTaxon, searchInaturalist } from "./sources/inaturalist.ts";
 import { searchOpenverse } from "./sources/openverse.ts";
 import type { ExtraPhoto, ExtraSource } from "./sources/types.ts";

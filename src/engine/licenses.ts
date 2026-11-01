@@ -1,4 +1,4 @@
-// License allowlist for media from Wikimedia Commons (spec 5.1): CC0, public
+// License allowlist for all media sources (spec 5.1): CC0, public
 // domain (PD-*), CC BY 2.0–4.0 and CC BY-SA 2.0–4.0, including ported versions
 // such as "CC BY-SA 3.0 de". Everything else (NC, ND, GFDL-only, unclear) is out.
 

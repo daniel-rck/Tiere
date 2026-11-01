@@ -158,7 +158,6 @@ deren Konventionen (`web-base/docs/specs/07-conventions.md`), wie das Malbuch.
 content/animals.json            Quelle der Inhalte
 scripts/
   commons.ts                    API-Client (Suche, imageinfo, extmetadata, Download)
-  licenses.ts                   Allowlist + Normalisierung
   photos-candidates.ts          Kandidaten + Kontaktabzug
   photos-build.ts               Download, sharp, Credits, Katalog
   sounds-candidates.ts / sounds-build.ts
@@ -168,7 +167,8 @@ src/
                                 (Start/Welt/Vollbild/Eltern)
   content/                      Typen, catalog.generated.json, Zugriffsfunktionen
   engine/                       DOM-frei, getestet: gestures.ts, zoom.ts, gate.ts, sizes.ts,
-                                validate.ts
+                                validate.ts, licenses.ts (Allowlist + Normalisierung, auch für
+                                scripts/)
   platform/                     speech.ts, audio.ts, storage.ts, history.ts
   features/                     home/, world/, viewer/, parents/ (ParentGate, Settings, Credits)
   lib/                          web-base: ui/, db/, pwa/, routing/, router.tsx, routes.ts
@@ -251,6 +251,14 @@ public/photos/, public/sounds/  generierte Medien (committet)
 - _2026-11-01_ — Foto-Sichtung im Chat: Kandidaten und Vorschläge zusätzlich als Auswahlseite
   (claude.ai-Artifact), Daniels Auswahl wird dort gespeichert und von Claude übernommen. Der
   Kontaktabzug in `.cache/` bleibt für lokale Arbeit.
+- _2026-11-01_ — `licenses.ts` liegt in `src/engine/` statt `scripts/`: der Validator braucht die
+  Allowlist für `--strict`, die Skripte importieren sie von dort.
+- _2026-11-01_ — Katalog-Form festgelegt (`src/content/types.ts`): `{ worlds, animals }`, je Tier die
+  Inhaltsfelder ohne `latin`, `photos: CatalogPhoto[]` in der Reihenfolge von `animals.json` und
+  `sound: { src, credit } | null`. `content:check --strict` prüft daran: 3–6 Fotos, Katalog passt
+  zum Inhalt, vollständiger Credit (Autor, Lizenz aus der Allowlist, https-URLs) für jedes Foto und
+  jeden Laut. Ohne `--strict`: höchstens 6 Fotos, jedes Foto nur bei einem Tier, unbekannte Felder
+  sind Fehler, stille Tiere haben keinen Laut.
 - _2026-11-01_ — Spec bleibt Deutsch (web-base empfiehlt Englisch für `docs/specs/`), wie beim
   Malbuch.
 

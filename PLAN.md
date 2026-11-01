@@ -12,7 +12,7 @@ Standard-Gate ist `bun run check` (oxlint + oxfmt, tsc, Vitest). Vor jedem Push 
   web-base-Workflows (`strict`), Dependabot.
 - **Gate:** `bun run check`, `bun run build` und `web-base check --strict` grün.
 
-## [ ] Phase 1 – Inhaltsmodell und Validierung
+## [x] Phase 1 – Inhaltsmodell und Validierung
 - Typen aus Spec 4.1 in `src/content/types.ts`.
 - `src/engine/validate.ts` (rein): Schema, eindeutige IDs, Welt-Referenzen, 2 Fakten, Artikel,
   Lizenz-Allowlist, `--strict`-Regeln aus Akzeptanzkriterium 11. Mit Tests.
@@ -20,7 +20,7 @@ Standard-Gate ist `bun run check` (oxlint + oxfmt, tsc, Vitest). Vor jedem Push 
 - **Gate:** `bun run check`, `bun run content:check` grün (nicht strict).
 
 ## [x] Phase 2 – Medienquellen und Kontaktabzug
-- `scripts/commons.ts`, `scripts/licenses.ts` (mit Tests für die Lizenz-Normalisierung; dafür das
+- `scripts/commons.ts`, `src/engine/licenses.ts` (mit Tests für die Lizenz-Normalisierung; dafür das
   Vitest-`include` in `vitest.config.ts` um `scripts/**/*.test.ts` erweitern),
   `scripts/photos-candidates.ts` nach Spec 5.1–5.3; Zusatzquellen in `scripts/sources/`
   (Openverse, iNaturalist) mit `--add`.
