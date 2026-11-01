@@ -30,7 +30,7 @@ Standard-Gate ist `bun run check` (oxlint + oxfmt, tsc, Vitest). Vor jedem Push 
 - **Gate:** `bun run check` grün. **Mensch-Gate:** Daniel wählt die Fotos aus und trägt sie in
   `content/animals.json` ein. Erst danach abhaken.
 
-## [ ] Phase 3 – Foto-Build
+## [x] Phase 3 – Foto-Build
 - `scripts/photos-build.ts` nach Spec 5.4, idempotent, mit Fortschrittsausgabe.
   Alle drei Quellen (`File:…`, `openverse:…`, `inaturalist:…`): Original und Credit je Quelle holen.
 - Erzeugt `public/photos/…` und `src/content/catalog.generated.json`.

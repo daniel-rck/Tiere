@@ -242,7 +242,7 @@ prüft Daniel.
 | 8 | ✓ Zurück schließt Vollbild, dann Welt; Neuladen landet auf dem Start. |
 | 9 | ✓ Keine Requests an fremde Hosts. |
 | 10 | ✓ Nach dem ersten Laden offline: Start, Welt, Vollbild; nicht gecachte Größen fallen auf 640 px zurück. |
-| 11 | ✗ Offen: Wikimedia drosselt die Build-Maschine, erst 23 von 200 Fotos gebaut; Laute noch nicht ausgewählt. |
+| 11 | ✓ 50 Tiere, 200 Fotos, alle mit vollständigem Credit (`content:check --strict`). |
 | 12 | ✓ Credits listen jedes gebaute Foto mit Autor, Lizenz und Quelle; Laute kommen mit Phase 7. |
 
 Budgets (§8): JS beim Start rund 115 kB gzip (React, Router, App, Katalog, `workbox-window`), mit
@@ -289,10 +289,14 @@ Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
   sind Fehler, stille Tiere haben keinen Laut.
 - _2026-11-01_ — Leerer `[previews]`-Block in `wrangler.toml` (Seam): Workers Builds deployt
   PR-Branches mit `wrangler preview`, das ohne den Block abbricht.
-- _2026-11-01_ — `photos:build` lädt die Originale seriell mit 4 s Pause und wartet bei 429 die
-  `Retry-After`-Zeit bzw. exponentiell bis 10 min ab (Wikimedia-Robot-Policy). Von Commons
-  gerenderte Vorschaubilder werden nicht genutzt: deren Erzeugung drosselt Wikimedia am stärksten.
-  Credits und Download-URLs liegen zwischen zwei Läufen in `.cache/` (`--refresh` fragt neu).
+- _2026-11-01_ — `photos:build` lädt seriell mit 4 s Pause und wartet bei 429 die
+  `Retry-After`-Zeit bzw. exponentiell bis 10 min ab (Wikimedia-Robot-Policy). Credits und
+  Download-URLs liegen zwischen zwei Läufen in `.cache/` (`--refresh` fragt neu).
+- _2026-11-01_ — Abweichung von §5.4: Statt des Originals lädt `photos:build` von Commons das
+  größte Standard-Thumbnail unter der Originalbreite, höchstens 1920 px; Laute kommen als
+  MP3-Transcode von Commons. upload.wikimedia.org beantwortet Skript-Anfragen nach Originalen und
+  Nicht-Standardbreiten mit 429 (mediawiki.org „Common thumbnail sizes“). Folge: 27 der 200 Fotos
+  haben weniger als 1920 px als größte Stufe (25 × 1280, je einmal 1536 und 960 px).
 - _2026-11-01_ — Ein Tier ohne gebautes Foto (nur solange `photos:build` unvollständig ist) wird in
   der Welt ausgelassen statt leer gezeigt; `content:check --strict` verhindert das im Release.
 - _2026-11-01_ — Kleinkind-Modus ohne Text (Kriterium 5 vor 3.2): Auf dem Start ist der Titel
