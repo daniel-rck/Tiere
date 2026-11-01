@@ -101,8 +101,10 @@ export function ParentsArea({ settings, onClose }: Props) {
                 aria-pressed={settings.voice}
                 onClick={() => writeSettings({ voice: !settings.voice })}
               >
-                <b>Stimme {settings.voice ? "an" : "aus"}</b>
-                <span>Sagt den Namen des Tiers. Die Stimme kommt vom Gerät.</span>
+                <b>Namen-Knopf {settings.voice ? "an" : "aus"}</b>
+                <span>
+                  Lautsprecher-Knopf im Vollbild, der den Namen sagt. Die Stimme kommt vom Gerät.
+                </span>
               </button>
               <button
                 type="button"
@@ -110,7 +112,7 @@ export function ParentsArea({ settings, onClose }: Props) {
                 onClick={() => writeSettings({ sounds: !settings.sounds })}
               >
                 <b>Tierlaute {settings.sounds ? "an" : "aus"}</b>
-                <span>Spielt nach dem Namen den Laut des Tiers.</span>
+                <span>Spielt beim Öffnen und Antippen den Laut des Tiers.</span>
               </button>
             </div>
             <button type="button" className="ghost" onClick={() => setStep("credits")}>

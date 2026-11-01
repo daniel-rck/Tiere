@@ -15,7 +15,7 @@ Namen und spielt den Tierlaut. Für Kleinkinder ab 2 funktioniert alles ohne Les
 
 | Modus | Alter | Verhalten |
 |---|---|---|
-| Kleinkind (Standard) | ab 2 | Nur Fotos, keine Texte nötig. Tippen = Name + Laut. Wischen = nächstes Tier. Kein Zoom. |
+| Kleinkind (Standard) | ab 2 | Nur Fotos, keine Texte nötig. Tippen = Laut, Lautsprecher-Knopf = Name. Wischen = nächstes Tier. Kein Zoom. |
 | Entdecker | ab 5 | Name mit Artikel lesbar, 2 Fakten pro Tier, „Vorlesen“, Pinch- und Doppeltipp-Zoom. |
 
 Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechselt.
@@ -24,7 +24,7 @@ Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechsel
 
 ### 3.1 Start
 - 4 Welt-Kacheln im 2×2-Raster, im Querformat ab 16:10 als 1×4. Kachel = Weltfarbe, großes Emoji,
-  Weltname. Kleinkind-Modus: Tippen sagt den Weltnamen.
+  Weltname. Tippen öffnet die Welt, gesprochen wird nichts.
 - Zahnrad oben rechts öffnet den Eltern-Bereich nur per **1,5 s langem Drücken** mit sichtbarem
   Fortschrittsring. Kurzes Tippen zeigt den Hinweis „Für die Eltern-Einstellungen das Zahnrad lange
   drücken“.
@@ -38,9 +38,11 @@ Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechsel
 ### 3.3 Vollbild (Kern der App)
 - Foto füllt den Bildschirm mit `object-fit: contain`, **nie beschnitten**. Dahinter dasselbe Foto in
   640 px, stark weichgezeichnet und abgedunkelt, damit keine Balken entstehen.
-- Beim Öffnen und bei jedem Tierwechsel: Name sprechen, dann Tierlaut abspielen, Sprechblase mit
-  dem Lautwort zeigen (stille Tiere: 🤫). Die Stimme spricht nur den Namen, nie das Lautwort.
-- Tippen: kleine „Boing“-Animation, Name + Laut erneut.
+- Beim Öffnen und bei jedem Tierwechsel: Tierlaut abspielen, Sprechblase mit dem Lautwort zeigen
+  (stille Tiere: 🤫). Gesprochen wird dabei nichts.
+- Tippen: kleine „Boing“-Animation, Laut erneut.
+- Lautsprecher-Knopf oben rechts (≥ 64 px): sagt den Namen mit Artikel, nie das Lautwort. Nur so
+  spricht die App einen Namen.
 - Wischen links/rechts oder große Pfeil-Buttons: nächstes/vorheriges Tier der Welt, zyklisch.
 - Mehrere Fotos pro Tier: Wischen nach oben/unten wechselt das Foto desselben Tiers (Punkte-Indikator
   am rechten Rand). Links/rechts bleibt immer „anderes Tier“.
@@ -52,7 +54,7 @@ Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechsel
 
 ### 3.4 Eltern-Bereich
 - Sperre: Additionsaufgabe zweistellig + zweistellig, 4 Antwort-Buttons. Falsch → neue Aufgabe.
-- Einstellungen: Modus (Kleinkind ab 2 / Entdecker ab 5), Stimme an/aus, Tierlaute an/aus.
+- Einstellungen: Modus (Kleinkind ab 2 / Entdecker ab 5), Namen-Knopf an/aus, Tierlaute an/aus.
 - Credits: alle Fotos und Laute mit Autor, Lizenz und Quelle. Nur hier sind Links nach außen erlaubt.
 
 ## 4. Inhalte
@@ -147,9 +149,10 @@ passende Aufnahme oder mit `voice.kind = "quiet"` bekommen keinen Laut.
 
 ### 5.6 Sprache
 Version 1 spricht Namen und Fakten mit der Web Speech API (`de-DE`, bevorzugt eine deutsche
-Systemstimme, Rate 0.9, Pitch 1.1). Kein deutsches Voice verfügbar → Name wird übersprungen, Laut
-spielt trotzdem. Ablauf beim Tippen: laufende Ausgabe abbrechen → Name sprechen → nach `onend`
-(Fallback-Timeout 2 s) Laut abspielen. Erste Ausgabe immer aus einer Nutzergeste (iOS).
+Systemstimme, Rate 0.9, Pitch 1.1), aber nur auf Knopfdruck: Lautsprecher-Knopf im Vollbild
+(Name) und „Vorlesen“ im Entdecker-Panel. Kein deutsches Voice verfügbar → der Knopf bleibt stumm.
+Beim Tippen auf das Foto: laufende Ausgabe abbrechen → Laut abspielen. Jede Ausgabe startet aus
+einer Nutzergeste (iOS).
 
 ## 6. Architektur
 
@@ -210,8 +213,8 @@ public/photos/, public/sounds/  generierte Medien (committet)
 ## 9. Akzeptanzkriterien
 1. Ein 2-jähriges Kind kommt ohne Hilfe von Start → Welt → Vollbild → zurück, ohne Text zu lesen.
 2. Im Vollbild ist kein Foto beschnitten, auf Hoch- und Querformat, Handy und Tablet.
-3. Tippen auf das Foto spricht den Namen und spielt den Laut; schnelles Mehrfachtippen überlagert
-   keine Ausgaben.
+3. Tippen auf das Foto spielt den Laut, der Lautsprecher-Knopf sagt den Namen; schnelles
+   Mehrfachtippen überlagert keine Ausgaben.
 4. Wischen links/rechts wechselt zyklisch das Tier, hoch/runter das Foto desselben Tiers.
 5. Im Kleinkind-Modus gibt es keinen sichtbaren Text außer Weltnamen auf dem Start-Bildschirm.
 6. Der Modus lässt sich nur über langes Drücken plus richtige Aufgabe wechseln und bleibt nach
@@ -332,6 +335,10 @@ Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
 - _2026-11-01_ — Auf Daniels Wunsch (§3.3 geändert): Die synthetische Stimme spricht nie das
   Lautwort („Muuuh!“) oder den „quiet“-Text, auch nicht bei Tieren ohne Aufnahme; das klang
   peinlich. Das Lautwort steht nur in der Sprechblase, den Laut liefert allein die Aufnahme.
+- _2026-11-01_ — Auf Daniels Wunsch (§2, 3.1, 3.3, 3.4, 5.6, Kriterium 3 geändert): Die App
+  spricht nichts mehr von selbst, weder Weltnamen noch Tiernamen. Den Namen sagt ein
+  Lautsprecher-Knopf oben rechts im Vollbild; die Einstellung „Stimme“ heißt jetzt „Namen-Knopf“
+  und blendet ihn aus. Öffnen, Wechseln und Tippen spielen nur den Laut.
 - _2026-11-01_ — Precache (§7, offener Punkt erledigt): Gemessen sind im Schnitt 62 KB je 640er
   und 227 KB je 1280er. Alle 640er und 1280er wären rund 58 MB, über dem Budget von 40 MB. Darum
   liegen alle 640er, das 1280er des ersten Fotos je Tier und alle Laute im Precache (rund 27 MB);

@@ -17,7 +17,7 @@ import {
 } from "../../engine/zoom.ts";
 import type { Settings } from "../../platform/storage.ts";
 import { BackIcon, NextIcon, PrevIcon, SpeakerIcon } from "../shared/icons.tsx";
-import { announce, readAloud } from "./announce.ts";
+import { announce, readAloud, sayName } from "./announce.ts";
 
 type Props = {
   animals: CatalogAnimal[];
@@ -335,6 +335,16 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
         >
           <BackIcon />
         </button>
+        {settings.voice && (
+          <button
+            type="button"
+            className="viewer-button viewer-name"
+            aria-label={`Namen sagen: ${animal.name}`}
+            onClick={() => sayName(animal)}
+          >
+            <SpeakerIcon />
+          </button>
+        )}
         <button
           type="button"
           className="viewer-button viewer-prev"

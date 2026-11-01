@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { animalsOf, findWorld } from "../../content/catalog.ts";
 import { useAppUpdate } from "../../lib/pwa/useAppUpdate.ts";
 import { useLayers } from "../../platform/history.ts";
-import { say } from "../../platform/speech.ts";
 import { useSettings } from "../../platform/storage.ts";
 import { GearButton } from "../parents/GearButton.tsx";
 import { ParentsArea } from "../parents/ParentsArea.tsx";
@@ -85,11 +84,7 @@ export function HomePage() {
               <GearButton onOpen={() => open({ kind: "parents" })} />
             </>
           }
-          onOpenWorld={(next) => {
-            // Spec 3.1: in the toddler mode the tile says its world's name.
-            if (settings.mode === "kid" && settings.voice) say(next.name);
-            open({ kind: "world", world: next.id });
-          }}
+          onOpenWorld={(next) => open({ kind: "world", world: next.id })}
         />
       )}
       {world && viewer?.kind === "viewer" && (
