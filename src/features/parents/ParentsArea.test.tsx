@@ -39,11 +39,12 @@ describe("ParentsArea", () => {
     expect(onClose).toHaveBeenCalled();
   });
 
-  it("lists the credits with links out", () => {
+  it("lists the credits with links out", async () => {
     render(<ParentsArea settings={DEFAULT_SETTINGS} onClose={() => {}} />);
     solve(true);
     fireEvent.click(screen.getByRole("button", { name: "Bildnachweise" }));
-    const links = screen.getAllByRole("link");
+    // The credits load lazily.
+    const links = await screen.findAllByRole("link");
     expect(links.length).toBeGreaterThan(0);
     for (const link of links) {
       expect(link).toHaveAttribute("target", "_blank");

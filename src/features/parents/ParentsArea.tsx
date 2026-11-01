@@ -1,12 +1,14 @@
 import "./parents.css";
-import { useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { isCorrect, makeQuestion, type Question } from "../../engine/gate.ts";
 import { type Settings, writeSettings } from "../../platform/storage.ts";
-import { Credits } from "./Credits.tsx";
 
 type Props = { settings: Settings; onClose: () => void };
 
 type Step = "question" | "settings" | "credits";
+
+// The credits (every author, license and source) load only when asked for.
+const Credits = lazy(async () => ({ default: (await import("./Credits.tsx")).Credits }));
 
 /** Spec 3.4: gate, then settings and credits. */
 export function ParentsArea({ settings, onClose }: Props) {
@@ -123,7 +125,9 @@ export function ParentsArea({ settings, onClose }: Props) {
         {step === "credits" && (
           <>
             <h2 id="parents-title">Bildnachweise</h2>
-            <Credits />
+            <Suspense fallback={<p>Lädt …</p>}>
+              <Credits />
+            </Suspense>
             <button type="button" className="done" onClick={() => setStep("settings")}>
               Zurück
             </button>

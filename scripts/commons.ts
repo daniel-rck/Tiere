@@ -78,7 +78,7 @@ let lastDownload = 0;
  */
 export async function download(url: string, dest: string): Promise<void> {
   let response: Response | undefined;
-  for (let attempt = 0; attempt < 20; attempt++) {
+  for (let attempt = 0; attempt < 8; attempt++) {
     const wait = lastDownload + DOWNLOAD_GAP_MS - Date.now();
     if (wait > 0) await sleep(wait);
     lastDownload = Date.now();

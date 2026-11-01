@@ -1,0 +1,398 @@
+{
+  "animals": [
+    {
+      "id": "kuh",
+      "photos": [
+        {
+          "author": "Kim Hansen",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cow_(Fleckvieh_breed)_Oeschinensee_Slaunger_2009-07-07.jpg"
+        },
+        {
+          "author": "Hydro",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rinder_Ebsdorfergrund_1.jpg"
+        },
+        {
+          "author": "Dietmar Rabich",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flumserberg_(Schweiz),_Liegende_Kuh_--_2011_--_1526.jpg"
+        },
+        {
+          "author": "Nilfanion",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cow_on_Pupers.jpg"
+        }
+      ],
+      "sound": null
+    },
+    {
+      "id": "schwein",
+      "photos": [
+        {
+          "author": "kallerna",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pig_farm_Vampula_9.jpg"
+        },
+        {
+          "author": "Basile Morin",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Contre-jour_photograph_of_a_standing_piglet_at_sunset_with_colorful_sky_in_Don_Det_Laos.jpg"
+        },
+        {
+          "author": "Basile Morin",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Standing_piglet_at_golden_hour_in_Don_Det_Laos.jpg"
+        },
+        {
+          "author": "Alexandr frolov",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pigs_in_the_Altai_Mountains._Village_Ortolyk.jpg"
+        }
+      ],
+      "sound": null
+    },
+    {
+      "id": "schaf",
+      "photos": [
+        {
+          "author": "Jakub Hałun",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:20200502_Owca_na_pastwisku_pod_Lasem_Wolskim_w_Krakowie_1517_1657.jpg"
+        },
+        {
+          "author": "Romaniviatores",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:06_Ewe_with_her_two_lambs_in_Wester_Ross_by_Romaniviatores.jpg"
+        },
+        {
+          "author": "Basotxerri",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stubai_-_Tiroler_Bergschaf_-BT-_01.jpg"
+        },
+        {
+          "author": "Flocci Nivis",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:20240704_Regentenwiese_01.jpg"
+        }
+      ],
+      "sound": null
+    },
+    {
+      "id": "huhn",
+      "photos": [
+        {
+          "author": "Grendelkhan",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chicken_on_the_grounds_of_Melville_Castle.jpg"
+        },
+        {
+          "author": "Friedrich Haag",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Feder_004_2023_04_24.jpg"
+        },
+        {
+          "author": "Yann ( talk )",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hen_with_chicks,_Raisen_district,_MP,_India.jpg"
+        },
+        {
+          "author": "Clément Bardot",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rooster_portrait,_France.jpg"
+        }
+      ],
+      "sound": null
+    },
+    {
+      "id": "pferd",
+      "photos": [
+        {
+          "author": "Mikel Ortega from Errenteria, Basque Country, Spain, with a retouche by Richard Bartz . See the original file here.",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Biandintz_eta_zaldiak_-_modified2.jpg"
+        },
+        {
+          "author": "Andreas Tille",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:IcelandicHorseInWinter.jpg"
+        },
+        {
+          "author": "Böhringer Friedrich",
+          "license": "CC BY-SA 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Haflinger_Fohlen_01.jpg"
+        },
+        {
+          "author": "Basotxerri",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Galt%C3%BCr_-_Pferdekopf_01.jpg"
+        }
+      ],
+      "sound": null
+    },
+    {
+      "id": "ziege",
+      "photos": [
+        {
+          "author": "Michael Palmer",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_white_irish_goat.jpg"
+        },
+        {
+          "author": "Béria Lima de Rodríguez",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Baby_Goat_in_Margarita_Island,_Venezuela.jpg"
+        },
+        {
+          "author": "Wilfredor",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Capra_aegagrus_hircus_in_isla_Margarita.jpg"
+        }
+      ],
+      "sound": null
+    },
+    {
+      "id": "ente",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "gans",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "kaninchen",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "esel",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "hund",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "katze",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "elefant",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "giraffe",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "loewe",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "zebra",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "nashorn",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "nilpferd",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "kaenguru",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "eisbaer",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "kamel",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "flamingo",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "erdmaennchen",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "pinguin",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "panda",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "tiger",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "orang-utan",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "tukan",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "chamaeleon",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "frosch",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "gorilla",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "schimpanse",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "ara",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "faultier",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "jaguar",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "krokodil",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "schlange",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "clownfisch",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "delfin",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "meeresschildkroete",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "krake",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "buckelwal",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "walhai",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "seehund",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "orca",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "seepferdchen",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "qualle",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "seestern",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "krabbe",
+      "photos": [],
+      "sound": null
+    },
+    {
+      "id": "mantarochen",
+      "photos": [],
+      "sound": null
+    }
+  ]
+}

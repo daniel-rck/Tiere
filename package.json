@@ -40,6 +40,7 @@
     "photos:build": "bun scripts/photos-build.ts",
     "sounds:candidates": "bun scripts/sounds-candidates.ts",
     "sounds:build": "bun scripts/sounds-build.ts",
+    "icons": "bun scripts/icons.ts",
     "worker:dev": "wrangler dev",
     "worker:deploy": "wrangler deploy"
   },

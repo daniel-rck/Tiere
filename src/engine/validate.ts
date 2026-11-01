@@ -9,11 +9,13 @@ export type Issue = { path: string; message: string };
 export type ValidateOptions = {
   /**
    * Release rules (criterion 11): every animal has 3–6 photos, and every photo
-   * and sound has a complete credit with an allowlisted license in `catalog`.
+   * and sound has a complete credit with an allowlisted license in `credits`.
    */
   strict?: boolean;
   /** Parsed catalog.generated.json; required when `strict`. */
   catalog?: unknown;
+  /** Parsed credits.generated.json; required when `strict`. */
+  credits?: unknown;
 };
 
 export const MIN_PHOTOS = 3;
@@ -91,7 +93,9 @@ export function validateContent(data: unknown, options: ValidateOptions = {}): I
     if (!animalsPerWorld.has(id)) report(`worlds.${id}`, "Welt hat keine Tiere");
   }
 
-  if (options.strict) validateCatalog(data as ContentFile, options.catalog, report);
+  if (options.strict) {
+    validateCatalog(data as ContentFile, options.catalog, options.credits, report);
+  }
   return issues;
 }
 
@@ -229,61 +233,79 @@ function validatePhotos(photos: unknown, path: string, owner: string, ctx: Anima
   });
 }
 
-/** Strict mode: the catalog matches the content and every credit is complete and allowlisted. */
-function validateCatalog(content: ContentFile, catalog: unknown, report: Report): void {
-  if (!isObject(catalog) || !Array.isArray(catalog.animals)) {
-    report("catalog", "Katalog fehlt oder ist ungültig, erst `bun run photos:build` laufen lassen");
-    return;
-  }
+function byId(list: unknown): Map<string, Json> {
   const entries = new Map<string, Json>();
-  for (const entry of catalog.animals) {
+  if (!Array.isArray(list)) return entries;
+  for (const entry of list) {
     if (isObject(entry) && typeof entry.id === "string") entries.set(entry.id, entry);
   }
+  return entries;
+}
+
+/**
+ * Strict mode: catalog and credits match the content, every photo and sound
+ * has a complete credit with an allowlisted license.
+ */
+function validateCatalog(
+  content: ContentFile,
+  catalog: unknown,
+  credits: unknown,
+  report: Report,
+): void {
+  const missing = "fehlt oder ist ungültig, erst `bun run photos:build` laufen lassen";
+  if (!isObject(catalog) || !Array.isArray(catalog.animals)) {
+    report("catalog", `Katalog ${missing}`);
+    return;
+  }
+  if (!isObject(credits) || !Array.isArray(credits.animals)) {
+    report("credits", `Bildnachweise ${missing}`);
+    return;
+  }
+  const entries = byId(catalog.animals);
+  const creditEntries = byId(credits.animals);
   if (!Array.isArray(content.animals)) return;
   for (const animal of content.animals as unknown[]) {
     if (!isObject(animal) || typeof animal.id !== "string") continue;
     const { id } = animal as Animal;
-    const path = `catalog.${id}`;
     const entry = entries.get(id);
-    if (!entry) {
-      report(path, "Tier fehlt im Katalog");
-      continue;
-    }
+    const creditEntry = creditEntries.get(id);
+    if (!entry) report(`catalog.${id}`, "Tier fehlt im Katalog");
+    if (!creditEntry) report(`credits.${id}`, "Tier fehlt in den Bildnachweisen");
+    if (!entry || !creditEntry) continue;
     const want = Array.isArray(animal.photos) ? animal.photos.length : 0;
     const photos = Array.isArray(entry.photos) ? entry.photos : [];
     if (photos.length !== want) {
-      report(`${path}.photos`, `Katalog hat ${photos.length} Fotos, Inhalt ${want}`);
+      report(`catalog.${id}.photos`, `Katalog hat ${photos.length} Fotos, Inhalt ${want}`);
     }
-    photos.forEach((photo, i) => {
-      validateCredit(isObject(photo) ? photo.credit : undefined, `${path}.photos[${i}]`, report);
-    });
-    const hasSound = typeof animal.soundFile === "string";
-    if (hasSound && !isObject(entry.sound)) {
-      report(`${path}.sound`, "Laut fehlt im Katalog");
-    } else if (isObject(entry.sound)) {
-      validateCredit(entry.sound.credit, `${path}.sound`, report);
+    const photoCredits = Array.isArray(creditEntry.photos) ? creditEntry.photos : [];
+    for (let i = 0; i < want; i++) {
+      validateCredit(photoCredits[i], `credits.${id}.photos[${i}]`, report);
+    }
+    if (typeof animal.soundFile === "string") {
+      if (!isObject(entry.sound)) report(`catalog.${id}.sound`, "Laut fehlt im Katalog");
+      validateCredit(creditEntry.sound, `credits.${id}.sound`, report);
     }
   }
 }
 
 function validateCredit(credit: unknown, path: string, report: Report): void {
   if (!isObject(credit)) {
-    report(`${path}.credit`, "Credit fehlt");
+    report(path, "Credit fehlt");
     return;
   }
-  if (!isText(credit.author)) report(`${path}.credit.author`, "Autor fehlt");
+  if (!isText(credit.author)) report(`${path}.author`, "Autor fehlt");
   for (const key of ["licenseUrl", "sourceUrl"] as const) {
     const value = credit[key];
     if (typeof value !== "string" || !value.startsWith("https://")) {
-      report(`${path}.credit.${key}`, "erwartet eine https-URL");
+      report(`${path}.${key}`, "erwartet eine https-URL");
     }
   }
   if (!isText(credit.license)) {
-    report(`${path}.credit.license`, "Lizenz fehlt");
+    report(`${path}.license`, "Lizenz fehlt");
     return;
   }
   const license = checkLicense(credit.license);
   if (!license.ok) {
-    report(`${path}.credit.license`, `„${credit.license}“: ${license.reason}`);
+    report(`${path}.license`, `„${credit.license}“: ${license.reason}`);
   }
 }

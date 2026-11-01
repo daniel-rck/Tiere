@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import { animalsOf, findWorld } from "../../content/catalog.ts";
+import { useAppUpdate } from "../../lib/pwa/useAppUpdate.ts";
 import { useLayers } from "../../platform/history.ts";
 import { say } from "../../platform/speech.ts";
 import { useSettings } from "../../platform/storage.ts";
 import { GearButton } from "../parents/GearButton.tsx";
 import { ParentsArea } from "../parents/ParentsArea.tsx";
+import { RefreshIcon } from "../shared/icons.tsx";
 import { announce, silence } from "../viewer/announce.ts";
 import { Viewer } from "../viewer/Viewer.tsx";
 import { WorldScreen } from "../world/WorldScreen.tsx";
@@ -17,11 +19,23 @@ import { StartScreen } from "./StartScreen.tsx";
 export function HomePage() {
   const { layers, top, open, replaceTop, back } = useLayers();
   const settings = useSettings();
+  const update = useAppUpdate();
   const worldLayer = layers.find((layer) => layer.kind === "world");
   const world = worldLayer ? findWorld(worldLayer.world) : undefined;
   const animals = world ? animalsOf(world.id) : [];
   const viewer = layers.find((layer) => layer.kind === "viewer");
   const parents = layers.some((layer) => layer.kind === "parents");
+
+  // Spec 8: no context menu (long press on a photo), except in the parents' sheet.
+  useEffect(() => {
+    const onContextMenu = (event: MouseEvent) => {
+      if (!(event.target instanceof Element && event.target.closest(".sheet"))) {
+        event.preventDefault();
+      }
+    };
+    window.addEventListener("contextmenu", onContextMenu);
+    return () => window.removeEventListener("contextmenu", onContextMenu);
+  }, []);
 
   // Escape closes the top layer, like the device's back button (spec 3.3).
   useEffect(() => {
@@ -55,7 +69,22 @@ export function HomePage() {
       ) : (
         <StartScreen
           mode={settings.mode}
-          controls={<GearButton onOpen={() => open({ kind: "parents" })} />}
+          controls={
+            <>
+              {/* A new version waits: an icon, no text (criterion 5). Tapping reloads. */}
+              {update.needRefresh && (
+                <button
+                  type="button"
+                  className="update"
+                  aria-label="Neue Version laden"
+                  onClick={update.reload}
+                >
+                  <RefreshIcon />
+                </button>
+              )}
+              <GearButton onOpen={() => open({ kind: "parents" })} />
+            </>
+          }
           onOpenWorld={(next) => {
             // Spec 3.1: in the toddler mode the tile says its world's name.
             if (settings.mode === "kid" && settings.voice) say(next.name);

@@ -84,8 +84,10 @@ type CatalogPhoto = {
   sizes: { w: number; src: string }[];  // aufsteigend, z. B. 640/1280/1920
   width: number; height: number;        // Original-Seitenverhältnis
   color: string;                        // Durchschnittsfarbe für Platzhalter
-  credit: Credit;
 };
+
+// src/content/credits.generated.json (eigene Datei, siehe Entscheidungslog)
+type CreditsFile = { animals: { id: string; photos: Credit[]; sound: Credit | null }[] };
 type Credit = { author: string; license: string; licenseUrl: string; sourceUrl: string };
 ```
 
@@ -223,6 +225,30 @@ public/photos/, public/sounds/  generierte Medien (committet)
     Credit mit Lizenz aus der Allowlist.
 12. Die Credits-Seite listet jedes Foto und jeden Laut.
 
+### 9.1 Stand der Prüfung (2026-11-01, Phase 8)
+Automatisch in Chromium (Playwright, Handy 390 × 844 und Tablet quer 1280 × 800, Produktions-Build
+mit Service Worker) und mit Vitest. Auf echten Geräten (iOS-Stimme, Lautsprecher, Installation)
+prüft Daniel.
+
+| # | Ergebnis |
+|---|---|
+| 1 | ✓ Start → Welt → Vollbild → zurück nur über Kacheln, Pfeile und Zurück-Knopf. |
+| 2 | ✓ `object-fit: contain` auf Hoch- und Querformat, Unschärfe-Hintergrund statt Balken. |
+| 3 | ✓ Jede Ausgabe bricht die laufende ab (eine Sprachausgabe, ein `<audio>`), getestet; Hören am Gerät offen. |
+| 4 | ✓ Wischen links/rechts zyklisch, hoch/runter wechselt das Foto. |
+| 5 | ✓ Sichtbarer Text im Kleinkind-Modus nur Weltnamen; der Zahnrad-Hinweis (3.1) ist die gewollte Ausnahme. |
+| 6 | ✓ Kurzer Tipp → Hinweis, 1,5 s → Aufgabe; falsche Antwort → neue Aufgabe; Modus übersteht Neuladen. |
+| 7 | ✓ Panel unter dem Foto, Doppeltipp-Zoom und Verschieben; gezoomt wechselt Wischen kein Tier. Pinch nur per Unit-Test. |
+| 8 | ✓ Zurück schließt Vollbild, dann Welt; Neuladen landet auf dem Start. |
+| 9 | ✓ Keine Requests an fremde Hosts. |
+| 10 | ✓ Nach dem ersten Laden offline: Start, Welt, Vollbild; nicht gecachte Größen fallen auf 640 px zurück. |
+| 11 | ✗ Offen: Wikimedia drosselt die Build-Maschine, erst 23 von 200 Fotos gebaut; Laute noch nicht ausgewählt. |
+| 12 | ✓ Credits listen jedes gebaute Foto mit Autor, Lizenz und Quelle; Laute kommen mit Phase 7. |
+
+Budgets (§8): JS beim Start rund 115 kB gzip (React, Router, App, Katalog, `workbox-window`), mit
+vollem Katalog geschätzt 118 kB. Precache geschätzt 27 MB bei 200 Fotos. Startzeit und
+Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
+
 ## 10. Entscheidungslog
 - Medien von Wikimedia Commons: Lizenz und Autor sind maschinenlesbar, kein API-Key nötig.
 - _2026-11-01_ — Openverse und iNaturalist als Zusatzquellen (Wunsch von Daniel), ohne API-Key,
@@ -299,6 +325,17 @@ public/photos/, public/sounds/  generierte Medien (committet)
 - _2026-11-01_ — Ein `<audio>`-Element für alle Laute: Ein neuer Tipp stoppt den laufenden Laut
   (Kriterium 3). Bei Stimme an wird es im Tipp-Handler stumm entsperrt, weil der Laut erst nach dem
   Namen kommt (iOS). Mit Aufnahme sagt die Stimme nur den Namen, ohne Aufnahme Name und Lautwort.
+- _2026-11-01_ — Precache (§7, offener Punkt erledigt): Gemessen sind im Schnitt 62 KB je 640er
+  und 227 KB je 1280er. Alle 640er und 1280er wären rund 58 MB, über dem Budget von 40 MB. Darum
+  liegen alle 640er, das 1280er des ersten Fotos je Tier und alle Laute im Precache (rund 27 MB);
+  die übrigen Größen kommen über den Runtime-Cache (CacheFirst). Offline und noch nicht im Cache
+  liefert der Service Worker das 640er desselben Fotos, die App bleibt im Flugmodus vollständig.
+- _2026-11-01_ — Bildnachweise in eigener Datei `credits.generated.json`, geladen erst mit den
+  Credits (Lazy-Chunk): Im Katalog hätten sie das Start-Bundle über 120 kB gzip geschoben (§8).
+  `CatalogPhoto` hat deshalb kein `credit`-Feld, `content:check --strict` prüft beide Dateien.
+- _2026-11-01_ — Update-Hinweis ohne Text: Wartet eine neue Version, erscheint auf dem Start neben
+  dem Zahnrad ein Neu-laden-Symbol (`useAppUpdate`); Tippen lädt die neue Version.
+- _2026-11-01_ — App-Icon: Pfotenabdruck auf Meerblau (`bun run icons`), keine Figur.
 - _2026-11-01_ — Spec bleibt Deutsch (web-base empfiehlt Englisch für `docs/specs/`), wie beim
   Malbuch.
 
@@ -306,8 +343,6 @@ public/photos/, public/sounds/  generierte Medien (committet)
 - Akzentfarbe: Das Farbrad der Flotte ist voll (web-base `04-layout-system.md`). Tiere nutzt
   vorerst den Template-Standard 355 (wie das Malbuch); sichtbar ist er nur auf den
   web-base-Fehlerseiten und als `theme_color`. Eigener Slot braucht eine Regeländerung in web-base.
-- Precache-Budget (§7, ≤ 40 MB) bei 50 Tieren: rund 200 Fotos × (640 + 1280 px) liegt nahe an der
-  Grenze. In Phase 3 messen; sonst 1280er nur für die ersten Fotos je Tier vorab cachen.
 - `[previews]` gehört ins `wrangler.toml`-Template von web-base, damit neue Apps Preview-Builds
   ohne Nacharbeit bekommen.
 - Tiere in web-base `08-app-migrations.md` eintragen (Flotte, Abweichungen wie beim Malbuch).

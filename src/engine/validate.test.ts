@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import content from "../../content/animals.json" with { type: "json" };
-import type { Animal, Catalog, ContentFile, Credit } from "../content/types.ts";
+import type { Animal, Catalog, ContentFile, Credit, CreditsFile } from "../content/types.ts";
 import { isPhotoRef, validateContent } from "./validate.ts";
 
 const photo = (n: number) => ({ file: `File:Cow ${n}.jpg` });
@@ -35,7 +35,7 @@ const credit = (overrides: Partial<Credit> = {}): Credit => ({
   ...overrides,
 });
 
-function catalogFor(data: ContentFile, photoCredit = credit()): Catalog {
+function catalogFor(data: ContentFile): Catalog {
   return {
     worlds: data.worlds,
     animals: data.animals.map(({ latin: _latin, photos, soundFile: _sound, ...rest }) => ({
@@ -45,12 +45,28 @@ function catalogFor(data: ContentFile, photoCredit = credit()): Catalog {
         width: 4000,
         height: 3000,
         color: "#808080",
-        credit: photoCredit,
       })),
       sound: null,
     })),
   };
 }
+
+function creditsFor(data: ContentFile, photoCredit = credit()): CreditsFile {
+  return {
+    animals: data.animals.map((a) => ({
+      id: a.id,
+      photos: a.photos.map(() => photoCredit),
+      sound: null,
+    })),
+  };
+}
+
+/** Both generated files for `data`, as photos:build writes them. */
+const built = (data: ContentFile, photoCredit?: Credit) => ({
+  strict: true,
+  catalog: catalogFor(data),
+  credits: creditsFor(data, photoCredit),
+});
 
 const messages = (data: unknown, options?: Parameters<typeof validateContent>[1]) =>
   validateContent(data, options).map((issue) => `${issue.path}: ${issue.message}`);
@@ -143,43 +159,50 @@ describe("validateContent", () => {
 describe("validateContent --strict", () => {
   it("passes with a matching catalog", () => {
     const data = file();
-    expect(messages(data, { strict: true, catalog: catalogFor(data) })).toEqual([]);
+    expect(messages(data, built(data))).toEqual([]);
   });
 
-  it("requires a catalog", () => {
+  it("requires catalog and credits", () => {
     expect(messages(file(), { strict: true })).toEqual([
       "catalog: Katalog fehlt oder ist ungültig, erst `bun run photos:build` laufen lassen",
+    ]);
+    const data = file();
+    expect(messages(data, { strict: true, catalog: catalogFor(data) })).toEqual([
+      "credits: Bildnachweise fehlt oder ist ungültig, erst `bun run photos:build` laufen lassen",
     ]);
   });
 
   it("requires at least three photos", () => {
     const data = file([animal({ photos: [photo(1), photo(2)] })]);
-    expect(messages(data, { strict: true, catalog: catalogFor(data) })).toEqual([
+    expect(messages(data, built(data))).toEqual([
       "animals.kuh.photos: mindestens 3 Fotos, gefunden 2",
     ]);
   });
 
   it("requires a complete, allowlisted credit for every photo", () => {
     const data = file();
-    const catalog = catalogFor(data, credit({ author: "", license: "CC BY-NC 4.0" }));
-    expect(messages(data, { strict: true, catalog }).slice(0, 2)).toEqual([
-      "catalog.kuh.photos[0].credit.author: Autor fehlt",
-      "catalog.kuh.photos[0].credit.license: „CC BY-NC 4.0“: NC/ND",
+    const options = built(data, credit({ author: "", license: "CC BY-NC 4.0" }));
+    expect(messages(data, options).slice(0, 2)).toEqual([
+      "credits.kuh.photos[0].author: Autor fehlt",
+      "credits.kuh.photos[0].license: „CC BY-NC 4.0“: NC/ND",
     ]);
   });
 
   it("notices a catalog that is out of date", () => {
     const data = file();
-    const catalog = catalogFor(file([animal({ photos: [photo(1)] })]));
-    expect(messages(data, { strict: true, catalog })).toEqual([
+    const old = built(file([animal({ photos: [photo(1)] })]));
+    expect(messages(data, old)).toEqual([
       "catalog.kuh.photos: Katalog hat 1 Fotos, Inhalt 3",
+      "credits.kuh.photos[1]: Credit fehlt",
+      "credits.kuh.photos[2]: Credit fehlt",
     ]);
   });
 
   it("requires a sound credit when the animal has a sound", () => {
     const data = file([animal({ soundFile: "File:Cow.ogg" })]);
-    expect(messages(data, { strict: true, catalog: catalogFor(data) })).toEqual([
+    expect(messages(data, built(data))).toEqual([
       "catalog.kuh.sound: Laut fehlt im Katalog",
+      "credits.kuh.sound: Credit fehlt",
     ]);
   });
 });

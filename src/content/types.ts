@@ -41,7 +41,9 @@ export type Animal = {
 
 export type ContentFile = { worlds: World[]; animals: Animal[] };
 
-// Generated catalog (src/content/catalog.generated.json).
+// Generated catalog (src/content/catalog.generated.json) and credits
+// (src/content/credits.generated.json). The credits live apart so they load
+// with the parents' area, not with the start screen (JS budget, spec 8).
 
 export type Credit = { author: string; license: string; licenseUrl: string; sourceUrl: string };
 
@@ -53,10 +55,9 @@ export type CatalogPhoto = {
   height: number;
   /** Average colour for the placeholder. */
   color: string;
-  credit: Credit;
 };
 
-export type CatalogSound = { src: string; credit: Credit };
+export type CatalogSound = { src: string };
 
 /** An animal as the app sees it: photos in the order of `Animal.photos`. */
 export type CatalogAnimal = Omit<Animal, "latin" | "photos" | "soundFile"> & {
@@ -65,3 +66,8 @@ export type CatalogAnimal = Omit<Animal, "latin" | "photos" | "soundFile"> & {
 };
 
 export type Catalog = { worlds: World[]; animals: CatalogAnimal[] };
+
+/** Credits per animal, photos in the same order as in the catalog. */
+export type AnimalCredits = { id: string; photos: Credit[]; sound: Credit | null };
+
+export type CreditsFile = { animals: AnimalCredits[] };

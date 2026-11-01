@@ -1,5 +1,9 @@
 import { catalog } from "../../content/catalog.ts";
-import type { Credit } from "../../content/types.ts";
+import data from "../../content/credits.generated.json" with { type: "json" };
+import type { Credit, CreditsFile } from "../../content/types.ts";
+
+// Loaded with the parents' area only (lazy chunk): keeps the start bundle small.
+const credits = new Map((data as CreditsFile).animals.map((entry) => [entry.id, entry]));
 
 function CreditLine({ label, credit }: { label: string; credit: Credit }) {
   return (
@@ -32,21 +36,20 @@ export function Credits() {
           <h3>{world.name}</h3>
           {catalog.animals
             .filter((animal) => animal.world === world.id)
-            .map((animal) => (
-              <div key={animal.id} className="credit-animal">
-                <h4>{animal.name}</h4>
-                <ul>
-                  {animal.photos.map((photo, i) => (
-                    <CreditLine
-                      key={photo.sizes[0]?.src ?? i}
-                      label={`Foto ${i + 1}`}
-                      credit={photo.credit}
-                    />
-                  ))}
-                  {animal.sound && <CreditLine label="Laut" credit={animal.sound.credit} />}
-                </ul>
-              </div>
-            ))}
+            .map((animal) => {
+              const entry = credits.get(animal.id);
+              return (
+                <div key={animal.id} className="credit-animal">
+                  <h4>{animal.name}</h4>
+                  <ul>
+                    {entry?.photos.map((credit, i) => (
+                      <CreditLine key={credit.sourceUrl} label={`Foto ${i + 1}`} credit={credit} />
+                    ))}
+                    {entry?.sound && <CreditLine label="Laut" credit={entry.sound} />}
+                  </ul>
+                </div>
+              );
+            })}
         </section>
       ))}
     </div>

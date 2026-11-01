@@ -62,7 +62,7 @@ Standard-Gate ist `bun run check` (oxlint + oxfmt, tsc, Vitest). Vor jedem Push 
 - `platform/audio.ts`: Abspielen nach dem Namen, Abbrechen bei erneutem Tippen.
 - **Gate:** `bun run check`. **Mensch-Gate:** Daniel hört die Auswahl an und gibt sie frei.
 
-## [ ] Phase 8 – PWA, Offline, Feinschliff
+## [x] Phase 8 – PWA, Offline, Feinschliff
 - Service Worker `src/sw/index.ts` (`injectManifest`) nach Spec 7, Manifest, Icon
   (`public/icon-192.png`, `icon-512.png`, `icon-maskable.png`), Update-Hinweis ohne Text
   (`useAppUpdate`, wie Malbuch).

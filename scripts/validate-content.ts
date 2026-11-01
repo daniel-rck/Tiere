@@ -7,13 +7,18 @@ import { validateContent } from "../src/engine/validate.ts";
 
 const CONTENT = "content/animals.json";
 const CATALOG = "src/content/catalog.generated.json";
+const CREDITS = "src/content/credits.generated.json";
 
 const strict = process.argv.includes("--strict");
 const readJson = (path: string): unknown => JSON.parse(readFileSync(path, "utf8"));
 
 const content = readJson(CONTENT);
-const catalog = strict && existsSync(CATALOG) ? readJson(CATALOG) : undefined;
-const issues = validateContent(content, { strict, catalog });
+const optional = (path: string) => (strict && existsSync(path) ? readJson(path) : undefined);
+const issues = validateContent(content, {
+  strict,
+  catalog: optional(CATALOG),
+  credits: optional(CREDITS),
+});
 
 if (issues.length > 0) {
   for (const issue of issues) console.error(`✗ ${issue.path}: ${issue.message}`);
