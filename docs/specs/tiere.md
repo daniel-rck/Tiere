@@ -278,6 +278,12 @@ public/photos/, public/sounds/  generierte Medien (committet)
   State; Tierwechsel im Vollbild ersetzt den obersten Eintrag. Beim Neuladen springt die App per
   `history.go(-n)` auf den Eintrag zurück, aus dem der Stack gewachsen ist (immer Start).
 - _2026-11-01_ — Einstellungen als ein JSON unter `tiere.settings` (Modus, Stimme, Tierlaute).
+- _2026-11-01_ — Gesten (`engine/gestures.ts`): Tipp < 12 px und < 500 ms; Wisch ab 60 px oder
+  ab 30 px mit mindestens 0,5 px/ms; Diagonalen (Achsen innerhalb 1,2×) zählen nicht;
+  Doppeltipp innerhalb 300 ms und 40 px.
+- _2026-11-01_ — Sprach-Fallback (5.6) wartet mindestens 2 s, bei langen Texten 90 ms je Zeichen,
+  damit der Laut nicht in den Namen fällt. Name und Laut starten direkt im Tipp-Handler, nicht in
+  einem Effekt (iOS verlangt eine Nutzergeste).
 - _2026-11-01_ — Spec bleibt Deutsch (web-base empfiehlt Englisch für `docs/specs/`), wie beim
   Malbuch.
 

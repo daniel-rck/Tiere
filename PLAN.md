@@ -44,7 +44,7 @@ Standard-Gate ist `bun run check` (oxlint + oxfmt, tsc, Vitest). Vor jedem Push 
 - `platform/storage.ts`: Modus lesen/schreiben mit try/catch.
 - **Gate:** `bun run check`; manuell Akzeptanzkriterium 1 (bis Welt) und 8 prüfen.
 
-## [ ] Phase 5 – Vollbild
+## [x] Phase 5 – Vollbild
 - Viewer nach Spec 3.3 ohne Entdecker-Panel: contain + Blur, Pfeile, Wischen (Tier und Foto),
   Vorladen, Sprechblase, Boing.
 - `engine/gestures.ts` (rein) mit Tests: Tap, Doppeltipp, Wisch-Richtung, Schwellen.
