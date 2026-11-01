@@ -28,7 +28,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cow_on_Pupers.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "MichaeltheFox8621",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Single_Cow_Moo.ogg"
+      }
     },
     {
       "id": "schwein",
@@ -58,7 +63,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pigs_in_the_Altai_Mountains._Village_Ortolyk.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "Secretlondon",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mudchute_pig_1.ogg"
+      }
     },
     {
       "id": "schaf",
@@ -88,7 +98,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:20240704_Regentenwiese_01.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "earthcalling",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sheep_bleating.ogg"
+      }
     },
     {
       "id": "huhn",
@@ -118,7 +133,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rooster_portrait,_France.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "alys",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hen_announcing_shes_lain_an_egg.ogg"
+      }
     },
     {
       "id": "pferd",
@@ -148,7 +168,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Galt%C3%BCr_-_Pferdekopf_01.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "Hü .",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wiehern.ogg"
+      }
     },
     {
       "id": "ziege",
@@ -178,7 +203,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ch%C3%A8vre_(10).jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "stephan",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Herd_of_goats_bleating.ogg"
+      }
     },
     {
       "id": "ente",
@@ -208,7 +238,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domestic_duck_waving_its_wings_at_golden_hour_in_a_pond_in_Don_Det_Laos.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "Ganesh Mohan T",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domestic_duck_sound_01.wav"
+      }
     },
     {
       "id": "gans",
@@ -238,7 +273,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domestic_goose_in_Dagestan_2.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "U.S. Fish and Wildlife Service",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Geese_Honking_(loud).ogg"
+      }
     },
     {
       "id": "kaninchen",
@@ -298,7 +338,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Equus_asinus_Kadzid%C5%82owo_002.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "Neumann C, Agil M, Widdig A, Engelhardt A",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Personality-of-Wild-Male-Crested-Macaques-(Macaca-nigra)-pone.0069383.s002.oga"
+      }
     },
     {
       "id": "hund",
@@ -328,7 +373,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Teckel_%C3%A0_poil_dur_-_20150430_14h47_(10136).jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "Amada44",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Barking_of_a_dog.ogg"
+      }
     },
     {
       "id": "katze",
@@ -358,7 +408,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tabby_cats_of_%C5%8Cizumi_Ryokuchi_Park,_January_2019_-_8816.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "Jeanot",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Felis_silvestris_catus.ogg"
+      }
     },
     {
       "id": "elefant",
@@ -388,7 +443,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:African_bush_elephant_(Loxodonta_africana)_drinking_Kruger.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "தகவலுழவன்",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elephant_voice_-_trumpeting.ogg"
+      }
     },
     {
       "id": "giraffe",
@@ -448,7 +508,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lions_Family_Portrait_Masai_Mara.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "த*உழவன்",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lion_raring-sound1TamilNadu178.ogg"
+      }
     },
     {
       "id": "zebra",
@@ -478,7 +543,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cebras_comunes_(Equus_quagga),_parque_nacional_de_Tarangire,_Tanzania,_2024-05-25,_DD_90.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "DiegoC472",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gr%C3%A9vys_zebra_(Sound_Effects).ogg"
+      }
     },
     {
       "id": "nashorn",
@@ -628,7 +698,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Camel_Farm_in_Mongolia_02.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "J.P Longre. S. Mercier. M.Harry. P. Louisons. C. Ferry. G. Muys. K. Lens. B. Picard. V. Sandrilli. H. Van Hoeven. L. Rodriguez. B. Couderc",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cri_du_chameau.ogg"
+      }
     },
     {
       "id": "flamingo",
@@ -658,7 +733,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Greater_flamingos_(Phoenicopterus_roseus)_Bahrain.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "Olaf Oliviero Riemer",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Phoenicopterus_roseus_(Rosaflamingo_-_Greater_Flamingo)_%E2%80%94_Weltvogelpark_Walsrode_2013.ogg"
+      }
     },
     {
       "id": "erdmaennchen",
@@ -688,7 +768,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Animales_bioparc-valencia-2012_(13).JPG"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "Jugrü",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Erdmaennchen.ogg"
+      }
     },
     {
       "id": "pinguin",
@@ -718,7 +803,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Day_trip_from_Puerto_Varas_to_Isla_Grande_de_Chiloe_-_a_visit_and_boat_trip_to_Pinguinera_Isloto_de_Punihuil_on_the_open_Ocean_-_Peruvian_(Humboldt)_Penguin_(Spheniscus_humboldt),_mostly_%3F_-_(25185182305).jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "Benchill",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Little_Penguin_(Eudyptula_minor).ogg"
+      }
     },
     {
       "id": "panda",
@@ -778,7 +868,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panthera_tigris_altaica_in_Lodz_Zoo_2.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "schots",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:439280_schots_angry-tiger.wav"
+      }
     },
     {
       "id": "orang-utan",
@@ -808,7 +903,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Orang_Utan,_Semenggok_Forest_Reserve,_Sarawak,_Borneo,_Malaysia.JPG"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "Wich S, Krützen M, Lameira A, Nater A, Arora N, Bastian M, Meulman E, Morrogh-Bernard H, Atmoko S, Pamungkas J, Perwitasari-Farajallah D, Hardus M, van Noordwijk M, van Schaik C",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Call-Cultures-in-Orang-Utans%3F-pone.0036180.s001.ogg"
+      }
     },
     {
       "id": "tukan",
@@ -838,7 +938,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tucano_em_voo.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "Fabrício Grigolin",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toco_Toucan_call_(Ramphastos_toco).ogg"
+      }
     },
     {
       "id": "chamaeleon",
@@ -898,7 +1003,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red-eyed_Tree_Frog_(Agalychnis_callidryas)_1.png"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "Fredlyfish4",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hyla_chrysoscelis_call.ogg"
+      }
     },
     {
       "id": "gorilla",
@@ -958,7 +1068,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chimpanzees_eat_nuts.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "Schel A, Townsend S, Machanda Z, Zuberbuhler K, Slocombe K",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chimpanzee-Alarm-Call-Production-Meets-Key-Criteria-for-Intentionality-pone.0076674.s006.oga"
+      }
     },
     {
       "id": "ara",
@@ -988,7 +1103,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ara-Zoo-Muenster-2013-02.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "Ganesh Mohan T",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Scarlet_macaw_01.wav"
+      }
     },
     {
       "id": "faultier",
@@ -1048,7 +1168,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:113_Jaguar_in_Encontro_das_%C3%81guas_State_Park_Photo_by_Giles_Laurent.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "About Zoos",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jaguar_saw.flac"
+      }
     },
     {
       "id": "krokodil",
@@ -1168,7 +1293,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:010_Atlantic_bottlenose_dolphin_jumping_at_Pelican_point_Photo_by_Giles_Laurent.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "The user Felix.Blume https://freesound.org/people/felix.blume/",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:161691_felixblume_dolphin-screaming-underwater-in-caribbean-sea-mexico.wav"
+      }
     },
     {
       "id": "meeresschildkroete",
@@ -1258,7 +1388,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:031_Humpback_whale_lobtailing_Photo_by_Giles_Laurent.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "Spyrogumas",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Humpbackwhale2.ogg"
+      }
     },
     {
       "id": "walhai",
@@ -1318,7 +1453,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grey_Seal_on_seaweed,_Iceland.jpg"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "New Zealand Department of Conservation",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arctocephalus_forsteri_-_sound.ogg"
+      }
     },
     {
       "id": "orca",
@@ -1348,7 +1488,12 @@
           "sourceUrl": "https://www.inaturalist.org/photos/106098329"
         }
       ],
-      "sound": null
+      "sound": {
+        "author": "U.S. National Park Service, Glacier Bay National Park",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Killer_whale.ogg"
+      }
     },
     {
       "id": "seepferdchen",

@@ -228,7 +228,7 @@ public/photos/, public/sounds/  generierte Medien (committet)
     Credit mit Lizenz aus der Allowlist.
 12. Die Credits-Seite listet jedes Foto und jeden Laut.
 
-### 9.1 Stand der Prüfung (2026-11-01, Phase 8)
+### 9.1 Stand der Prüfung (2026-11-01, Phase 8, Laute ergänzt nach Phase 7)
 Automatisch in Chromium (Playwright, Handy 390 × 844 und Tablet quer 1280 × 800, Produktions-Build
 mit Service Worker) und mit Vitest. Auf echten Geräten (iOS-Stimme, Lautsprecher, Installation)
 prüft Daniel.
@@ -246,7 +246,7 @@ prüft Daniel.
 | 9 | ✓ Keine Requests an fremde Hosts. |
 | 10 | ✓ Nach dem ersten Laden offline: Start, Welt, Vollbild; nicht gecachte Größen fallen auf 640 px zurück. |
 | 11 | ✓ 50 Tiere, 200 Fotos, alle mit vollständigem Credit (`content:check --strict`). |
-| 12 | ✓ Credits listen jedes gebaute Foto mit Autor, Lizenz und Quelle; Laute kommen mit Phase 7. |
+| 12 | ✓ Credits listen alle 200 Fotos und 29 Laute mit Autor, Lizenz und Quelle. |
 
 Budgets (§8): JS beim Start rund 115 kB gzip (React, Router, App, Katalog, `workbox-window`), mit
 vollem Katalog geschätzt 118 kB. Precache geschätzt 27 MB bei 200 Fotos. Startzeit und
@@ -363,6 +363,8 @@ Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
   Laute und committet sie samt beiden `*.generated.json` auf den Branch.
   `sound-candidates.yml` sucht die Laut-Kandidaten und legt sie als Workflow-Artefakt ab. Die
   Vorschaubilder der Foto-Auswahlseite (330 px) taugen nicht als Ersatz für die Originale.
+  Nach Phase 7 wieder entfernt (Daniel): Die Medien liegen im Repo; eine neue Auswahl baut
+  `photos:build`/`sounds:build` lokal.
 
 ## 11. Offene Punkte
 - Akzentfarbe: Das Farbrad der Flotte ist voll (web-base `04-layout-system.md`). Tiere nutzt
