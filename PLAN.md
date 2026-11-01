@@ -19,7 +19,7 @@ Standard-Gate ist `bun run check` (oxlint + oxfmt, tsc, Vitest). Vor jedem Push 
 - `scripts/validate-content.ts` als CLI darum.
 - **Gate:** `bun run check`, `bun run content:check` grün (nicht strict).
 
-## [ ] Phase 2 – Medienquellen und Kontaktabzug
+## [x] Phase 2 – Medienquellen und Kontaktabzug
 - `scripts/commons.ts`, `scripts/licenses.ts` (mit Tests für die Lizenz-Normalisierung; dafür das
   Vitest-`include` in `vitest.config.ts` um `scripts/**/*.test.ts` erweitern),
   `scripts/photos-candidates.ts` nach Spec 5.1–5.3; Zusatzquellen in `scripts/sources/`
