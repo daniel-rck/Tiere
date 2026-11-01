@@ -55,7 +55,7 @@
           "file": "File:Cow on Pupers.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Single Cow Moo.ogg"
     },
     {
       "id": "schwein",
@@ -85,7 +85,7 @@
           "file": "File:Pigs in the Altai Mountains. Village Ortolyk.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Mudchute pig 1.ogg"
     },
     {
       "id": "schaf",
@@ -115,7 +115,7 @@
           "file": "File:20240704 Regentenwiese 01.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Sheep bleating.ogg"
     },
     {
       "id": "huhn",
@@ -145,7 +145,7 @@
           "file": "File:Rooster portrait, France.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Hen announcing shes lain an egg.ogg"
     },
     {
       "id": "pferd",
@@ -175,7 +175,7 @@
           "file": "File:Galtür - Pferdekopf 01.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Wiehern.ogg"
     },
     {
       "id": "ziege",
@@ -202,7 +202,7 @@
           "file": "File:Chèvre (10).jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Herd of goats bleating.ogg"
     },
     {
       "id": "ente",
@@ -232,7 +232,7 @@
           "file": "File:Domestic duck waving its wings at golden hour in a pond in Don Det Laos.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Domestic duck sound 01.wav"
     },
     {
       "id": "gans",
@@ -262,7 +262,7 @@
           "file": "File:Domestic goose in Dagestan 2.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Geese Honking (loud).ogg"
     },
     {
       "id": "kaninchen",
@@ -322,7 +322,7 @@
           "file": "File:Equus asinus Kadzidłowo 002.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Personality-of-Wild-Male-Crested-Macaques-(Macaca-nigra)-pone.0069383.s002.oga"
     },
     {
       "id": "hund",
@@ -352,7 +352,7 @@
           "file": "File:Teckel à poil dur - 20150430 14h47 (10136).jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Barking of a dog.ogg"
     },
     {
       "id": "katze",
@@ -382,7 +382,7 @@
           "file": "File:Tabby cats of Ōizumi Ryokuchi Park, January 2019 - 8816.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Felis silvestris catus.ogg"
     },
     {
       "id": "elefant",
@@ -412,7 +412,7 @@
           "file": "File:African bush elephant (Loxodonta africana) drinking Kruger.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Elephant voice - trumpeting.ogg"
     },
     {
       "id": "giraffe",
@@ -472,7 +472,7 @@
           "file": "File:Lions Family Portrait Masai Mara.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Lion raring-sound1TamilNadu178.ogg"
     },
     {
       "id": "zebra",
@@ -502,7 +502,7 @@
           "file": "File:Cebras comunes (Equus quagga), parque nacional de Tarangire, Tanzania, 2024-05-25, DD 90.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Grévys zebra (Sound Effects).ogg"
     },
     {
       "id": "nashorn",
@@ -652,7 +652,7 @@
           "file": "File:Camel Farm in Mongolia 02.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Cri du chameau.ogg"
     },
     {
       "id": "flamingo",
@@ -682,7 +682,7 @@
           "file": "File:Greater flamingos (Phoenicopterus roseus) Bahrain.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Phoenicopterus roseus (Rosaflamingo - Greater Flamingo) — Weltvogelpark Walsrode 2013.ogg"
     },
     {
       "id": "erdmaennchen",
@@ -712,7 +712,7 @@
           "file": "File:Animales bioparc-valencia-2012 (13).JPG"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Erdmaennchen.ogg"
     },
     {
       "id": "pinguin",
@@ -742,7 +742,7 @@
           "file": "File:Day trip from Puerto Varas to Isla Grande de Chiloe - a visit and boat trip to Pinguinera Isloto de Punihuil on the open Ocean - Peruvian (Humboldt) Penguin (Spheniscus humboldt), mostly ? - (25185182305).jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Little Penguin (Eudyptula minor).ogg"
     },
     {
       "id": "panda",
@@ -802,7 +802,7 @@
           "file": "File:Panthera tigris altaica in Lodz Zoo 2.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:439280 schots angry-tiger.wav"
     },
     {
       "id": "orang-utan",
@@ -832,7 +832,7 @@
           "file": "File:Orang Utan, Semenggok Forest Reserve, Sarawak, Borneo, Malaysia.JPG"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Call-Cultures-in-Orang-Utans?-pone.0036180.s001.ogg"
     },
     {
       "id": "tukan",
@@ -862,7 +862,7 @@
           "file": "File:Tucano em voo.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Toco Toucan call (Ramphastos toco).ogg"
     },
     {
       "id": "chamaeleon",
@@ -922,7 +922,7 @@
           "file": "File:Red-eyed Tree Frog (Agalychnis callidryas) 1.png"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Hyla chrysoscelis call.ogg"
     },
     {
       "id": "gorilla",
@@ -982,7 +982,7 @@
           "file": "File:Chimpanzees eat nuts.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Chimpanzee-Alarm-Call-Production-Meets-Key-Criteria-for-Intentionality-pone.0076674.s006.oga"
     },
     {
       "id": "ara",
@@ -1012,7 +1012,7 @@
           "file": "File:Ara-Zoo-Muenster-2013-02.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Scarlet macaw 01.wav"
     },
     {
       "id": "faultier",
@@ -1069,7 +1069,7 @@
           "file": "File:113 Jaguar in Encontro das Águas State Park Photo by Giles Laurent.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Jaguar saw.flac"
     },
     {
       "id": "krokodil",
@@ -1189,7 +1189,7 @@
           "file": "File:010 Atlantic bottlenose dolphin jumping at Pelican point Photo by Giles Laurent.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:161691 felixblume dolphin-screaming-underwater-in-caribbean-sea-mexico.wav"
     },
     {
       "id": "meeresschildkroete",
@@ -1276,7 +1276,7 @@
           "file": "File:031 Humpback whale lobtailing Photo by Giles Laurent.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Humpbackwhale2.ogg"
     },
     {
       "id": "walhai",
@@ -1336,7 +1336,7 @@
           "file": "File:Grey Seal on seaweed, Iceland.jpg"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Arctocephalus forsteri - sound.ogg"
     },
     {
       "id": "orca",
@@ -1366,7 +1366,7 @@
           "file": "inaturalist:65874883/106098329"
         }
       ],
-      "soundFile": null
+      "soundFile": "File:Killer whale.ogg"
     },
     {
       "id": "seepferdchen",
