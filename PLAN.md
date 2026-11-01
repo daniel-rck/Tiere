@@ -37,7 +37,7 @@ Standard-Gate ist `bun run check` (oxlint + oxfmt, tsc, Vitest). Vor jedem Push 
 - `src/engine/sizes.ts` (rein): passende Größe für Viewport × devicePixelRatio, `srcset`-String. Tests.
 - **Gate:** `bun run check`, `bun run content:check --strict` grün.
 
-## [ ] Phase 4 – Start und Welten
+## [x] Phase 4 – Start und Welten
 - App-Tokens (Hell/Dunkel, Weltfarben) im Seam `src/lib/ui/theme.css`, Start-Bildschirm, Welt-Bildschirm, Kacheln mit Farb-Platzhalter.
 - `platform/history.ts`: Ebenen-Stack mit Zurück-Taste, auf der History der einen Route von
   react-router (nicht an ihr vorbei).

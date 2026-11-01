@@ -269,6 +269,15 @@ public/photos/, public/sounds/  generierte Medien (committet)
   Credits und Download-URLs liegen zwischen zwei Läufen in `.cache/` (`--refresh` fragt neu).
 - _2026-11-01_ — Ein Tier ohne gebautes Foto (nur solange `photos:build` unvollständig ist) wird in
   der Welt ausgelassen statt leer gezeigt; `content:check --strict` verhindert das im Release.
+- _2026-11-01_ — Kleinkind-Modus ohne Text (Kriterium 5 vor 3.2): Auf dem Start ist der Titel
+  „Tiere“ nur für Screenreader da, die Welt-Kopfzeile zeigt das Welt-Emoji statt des Namens. Im
+  Entdecker-Modus erscheinen Titel und Weltname.
+- _2026-11-01_ — Keine Web-Schrift (keine Requests zur Laufzeit): eine runde Systemschrift
+  (`ui-rounded`, Nunito, …) ersetzt Baloo 2 aus dem Prototyp.
+- _2026-11-01_ — Ebenen-Stack: Jede geöffnete Ebene ist ein History-Eintrag mit dem ganzen Stack im
+  State; Tierwechsel im Vollbild ersetzt den obersten Eintrag. Beim Neuladen springt die App per
+  `history.go(-n)` auf den Eintrag zurück, aus dem der Stack gewachsen ist (immer Start).
+- _2026-11-01_ — Einstellungen als ein JSON unter `tiere.settings` (Modus, Stimme, Tierlaute).
 - _2026-11-01_ — Spec bleibt Deutsch (web-base empfiehlt Englisch für `docs/specs/`), wie beim
   Malbuch.
 
