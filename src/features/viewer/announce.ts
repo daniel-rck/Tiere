@@ -17,10 +17,9 @@ export function announce(animal: CatalogAnimal, settings: Settings): void {
   }
   // The sound starts after the name, outside this gesture: unlock it now.
   if (sound) primeSound(sound);
-  const name = withArticle(animal);
-  // With a recording: name, then the sound. Without one the sound word is
-  // spoken; quiet animals get their "Psst" text.
-  say(sound ? name : `${name}. ${animal.voice.text}`, play);
+  // Only the name: a synthetic voice imitating the call sounds silly (Daniel,
+  // 2026-11-01). The sound word stays in the bubble.
+  say(withArticle(animal), play);
 }
 
 export function silence(): void {

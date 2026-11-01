@@ -39,7 +39,7 @@ Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechsel
 - Foto füllt den Bildschirm mit `object-fit: contain`, **nie beschnitten**. Dahinter dasselbe Foto in
   640 px, stark weichgezeichnet und abgedunkelt, damit keine Balken entstehen.
 - Beim Öffnen und bei jedem Tierwechsel: Name sprechen, dann Tierlaut abspielen, Sprechblase mit
-  dem Lautwort zeigen (stille Tiere: 🤫 und der „quiet“-Text wird gesprochen).
+  dem Lautwort zeigen (stille Tiere: 🤫). Die Stimme spricht nur den Namen, nie das Lautwort.
 - Tippen: kleine „Boing“-Animation, Name + Laut erneut.
 - Wischen links/rechts oder große Pfeil-Buttons: nächstes/vorheriges Tier der Welt, zyklisch.
 - Mehrere Fotos pro Tier: Wischen nach oben/unten wechselt das Foto desselben Tiers (Punkte-Indikator
@@ -328,7 +328,10 @@ Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
   (sonst gilt eine leise Aufnahme als Stille), dann Stille am Anfang weg, 4 s, Fades, mono.
 - _2026-11-01_ — Ein `<audio>`-Element für alle Laute: Ein neuer Tipp stoppt den laufenden Laut
   (Kriterium 3). Bei Stimme an wird es im Tipp-Handler stumm entsperrt, weil der Laut erst nach dem
-  Namen kommt (iOS). Mit Aufnahme sagt die Stimme nur den Namen, ohne Aufnahme Name und Lautwort.
+  Namen kommt (iOS). Die Stimme sagt nur den Namen.
+- _2026-11-01_ — Auf Daniels Wunsch (§3.3 geändert): Die synthetische Stimme spricht nie das
+  Lautwort („Muuuh!“) oder den „quiet“-Text, auch nicht bei Tieren ohne Aufnahme; das klang
+  peinlich. Das Lautwort steht nur in der Sprechblase, den Laut liefert allein die Aufnahme.
 - _2026-11-01_ — Precache (§7, offener Punkt erledigt): Gemessen sind im Schnitt 62 KB je 640er
   und 227 KB je 1280er. Alle 640er und 1280er wären rund 58 MB, über dem Budget von 40 MB. Darum
   liegen alle 640er, das 1280er des ersten Fotos je Tier und alle Laute im Precache (rund 27 MB);
