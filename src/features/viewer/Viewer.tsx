@@ -5,6 +5,7 @@ import { withArticle } from "../../content/catalog.ts";
 import type { CatalogAnimal, CatalogPhoto } from "../../content/types.ts";
 import { classify, cycle, dragAxis, isDoubleTap, type Point } from "../../engine/gestures.ts";
 import { containSize, pickSize } from "../../engine/sizes.ts";
+import { nextSlide } from "../../engine/slideshow.ts";
 import {
   clamp,
   IDENTITY,
@@ -18,6 +19,7 @@ import {
 import type { Settings } from "../../platform/storage.ts";
 import { BackIcon, NextIcon, NoteIcon, PrevIcon, SpeakerIcon } from "../shared/icons.tsx";
 import { playAnimalSound, readAloud, sayName, silence } from "./announce.ts";
+import { useSlideshow } from "./useSlideshow.ts";
 
 type Props = {
   animals: CatalogAnimal[];
@@ -77,8 +79,8 @@ const reducedMotion = () =>
 export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
   const animal = animals[index];
   const explorer = settings.mode === "explorer";
-  const [photoIndex, setPhotoIndex] = useState(0);
-  const [slide, setSlide] = useState<"" | "left" | "right" | "up" | "down">("");
+  // How the current photo came in: from a side (another animal) or faded (slideshow).
+  const [slide, setSlide] = useState<"" | "left" | "right" | "fade">("");
   const [bubble, setBubble] = useState(0);
   const [drag, setDrag] = useState<Vec | null>(null);
   const [zoom, setZoom] = useState<Zoom>(IDENTITY);
@@ -94,7 +96,17 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
   const stage = useStageSize(stageRef);
 
   const photos = useMemo(() => animal?.photos ?? [], [animal]);
-  const photo = photos[Math.min(photoIndex, photos.length - 1)];
+  const zoomed = isZoomed(zoom);
+  // Spec 3.3: the photos of one animal cross-fade on their own.
+  const slideshow = useSlideshow(photos.length, {
+    paused: zoomed || drag !== null,
+    resetKey: animal?.id ?? "",
+    onAdvance: () => setSlide("fade"),
+  });
+  const photoIndex = slideshow.current;
+  const photo = photos[photoIndex];
+  const leaving =
+    slideshow.previous === undefined || reducedMotion() ? undefined : photos[slideshow.previous];
   const content = photo
     ? containSize(photo.width, photo.height, stage.width, stage.height)
     : { width: 0, height: 0 };
@@ -110,7 +122,7 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
     if (stage.width === 0) return;
     const next = animals[cycle(index, 1, animals.length)]?.photos[0];
     const prev = animals[cycle(index, -1, animals.length)]?.photos[0];
-    const nextPhoto = photos[cycle(photoIndex, 1, photos.length)];
+    const nextPhoto = photos[nextSlide(photoIndex, photos.length)];
     for (const candidate of [next, prev, nextPhoto]) {
       if (candidate) preload(bigSrc(candidate, stage));
     }
@@ -127,19 +139,11 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
   const showAnimal = (step: number) => {
     const target = cycle(index, step, animals.length);
     resetView();
-    setPhotoIndex(0);
     setSlide(step > 0 ? "left" : "right");
     setBubble((n) => n + 1);
     // The previous animal's sound or name must not run on into the next one.
     silence();
     onChange(target);
-  };
-
-  const showPhoto = (step: number) => {
-    if (photos.length < 2) return;
-    resetView();
-    setSlide(step > 0 ? "up" : "down");
-    setPhotoIndex((current) => cycle(current, step, photos.length));
   };
 
   const boing = () => {
@@ -234,8 +238,8 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
     const dx = event.clientX - from.x;
     const dy = event.clientY - from.y;
     const axis = dragAxis(dx, dy);
+    // Only sideways: up and down do nothing (spec 3.3).
     if (axis === "x") setDrag({ x: dx, y: 0 });
-    else if (axis === "y" && photos.length > 1) setDrag({ x: 0, y: dy });
   };
 
   const onPointerUp = (event: React.PointerEvent<HTMLDivElement>) => {
@@ -259,8 +263,6 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
     else if (gesture.kind === "swipe" && !panned && !isZoomed(zoom)) {
       if (gesture.direction === "left") showAnimal(1);
       else if (gesture.direction === "right") showAnimal(-1);
-      else if (gesture.direction === "up") showPhoto(1);
-      else showPhoto(-1);
     }
   };
 
@@ -275,8 +277,6 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
   const onKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === "ArrowRight") showAnimal(1);
     else if (event.key === "ArrowLeft") showAnimal(-1);
-    else if (event.key === "ArrowDown") showPhoto(1);
-    else if (event.key === "ArrowUp") showPhoto(-1);
     else return;
     event.preventDefault();
   };
@@ -284,7 +284,7 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
   const background = photo.sizes[0]?.src;
   const src = bigSrc(photo, stage);
   const word = animal.voice.kind === "sound" ? animal.voice.text : "🤫";
-  const zoomed = isZoomed(zoom);
+  const leavingSrc = leaving ? bigSrc(leaving, stage) : undefined;
   const transform = drag
     ? `translate(${drag.x}px, ${drag.y}px)`
     : zoomed
@@ -308,8 +308,33 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerCancel}
       >
-        <img className="stage-bg" src={background} alt="" draggable={false} />
+        {leaving && (
+          <img
+            key={`bg-out-${leaving.sizes[0]?.src}`}
+            className="stage-bg is-leaving"
+            src={leaving.sizes[0]?.src}
+            alt=""
+            draggable={false}
+          />
+        )}
+        <img
+          key={`bg-${background}`}
+          className={`stage-bg ${leaving ? "is-entering" : ""}`}
+          src={background}
+          alt=""
+          draggable={false}
+        />
         <div ref={photoRef} className="photo">
+          {leavingSrc && (
+            <img
+              key={`out-${leavingSrc}`}
+              className="photo-fg is-leaving"
+              src={leavingSrc}
+              alt=""
+              draggable={false}
+              onAnimationEnd={slideshow.fadeDone}
+            />
+          )}
           {src && (
             <img
               key={src}
@@ -324,13 +349,6 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
         <div key={`bubble-${bubble}`} className="bubble" aria-hidden="true">
           {word}
         </div>
-        {photos.length > 1 && (
-          <div className="dots" aria-hidden="true">
-            {photos.map((p, i) => (
-              <span key={p.sizes[0]?.src ?? i} className={i === photoIndex ? "dot is-on" : "dot"} />
-            ))}
-          </div>
-        )}
         <button
           ref={closeRef}
           type="button"
@@ -366,7 +384,9 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
           aria-label="Vorheriges Tier"
           onClick={() => showAnimal(-1)}
         >
-          <PrevIcon />
+          <span className="edge-dot">
+            <PrevIcon />
+          </span>
         </button>
         <button
           type="button"
@@ -374,7 +394,9 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
           aria-label="Nächstes Tier"
           onClick={() => showAnimal(1)}
         >
-          <NextIcon />
+          <span className="edge-dot">
+            <NextIcon />
+          </span>
         </button>
       </div>
       {explorer && (

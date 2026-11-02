@@ -45,14 +45,16 @@ Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechsel
   Sprechblase. Nur so spielt die App einen Tierlaut. Tiere ohne Aufnahme haben keinen Laut-Knopf.
 - Lautsprecher-Knopf oben rechts (≥ 64 px): sagt den Namen mit Artikel, nie das Lautwort. Nur so
   spricht die App einen Namen.
-- Wischen links/rechts oder große Pfeil-Buttons: nächstes/vorheriges Tier der Welt, zyklisch.
-- Mehrere Fotos pro Tier: Wischen nach oben/unten wechselt das Foto desselben Tiers (Punkte-Indikator
-  am rechten Rand). Links/rechts bleibt immer „anderes Tier“.
+- Wischen links/rechts oder kleine Pfeil-Knöpfe ganz am Rand (Trefferfläche ≥ 64 px): nächstes/
+  vorheriges Tier der Welt, zyklisch.
+- Mehrere Fotos pro Tier blenden von selbst langsam ineinander (alle 6 s, 1,5 s Überblenden), ohne
+  Indikator. Gezoomt oder beim Ziehen hält die Diashow an, ein Tierwechsel beginnt beim ersten Foto.
+  Hoch/runter wischen tut nichts: Kinder wischen nur links/rechts und spielen den Laut.
 - Entdecker-Modus: Unter dem Foto (nicht darüber) ein Panel mit Name + Artikel, 2 Fakten und
   „Vorlesen“. Pinch-Zoom 1–4× mit Verschieben, Doppeltipp schaltet 1× ↔ 2,5× an der Tippstelle.
   Solange gezoomt ist, wechselt Wischen nicht das Tier.
 - Gerät-Zurück-Taste und Escape schließen die oberste Ebene (Vollbild → Welt → Start).
-- Nachbarbilder (links, rechts, nächstes Foto) werden vorgeladen.
+- Nachbarbilder (links, rechts, nächstes Foto der Diashow) werden vorgeladen.
 
 ### 3.4 Eltern-Bereich
 - Sperre: Additionsaufgabe zweistellig + zweistellig, 4 Antwort-Buttons. Falsch → neue Aufgabe.
@@ -225,7 +227,7 @@ public/photos/, public/sounds/  generierte Medien (committet)
 2. Im Vollbild ist kein Foto beschnitten, auf Hoch- und Querformat, Handy und Tablet.
 3. Der Laut-Knopf spielt den Laut, der Lautsprecher-Knopf sagt den Namen; sonst gibt die App
    keinen Ton aus. Schnelles Mehrfachtippen überlagert keine Ausgaben.
-4. Wischen links/rechts wechselt zyklisch das Tier, hoch/runter das Foto desselben Tiers.
+4. Wischen links/rechts wechselt zyklisch das Tier; die Fotos eines Tiers wechseln von selbst.
 5. Im Kleinkind-Modus gibt es keinen sichtbaren Text außer Weltnamen auf dem Start-Bildschirm.
 6. Der Modus lässt sich nur über langes Drücken plus richtige Aufgabe wechseln und bleibt nach
    Neustart erhalten.
@@ -248,7 +250,7 @@ prüft Daniel.
 | 1 | ✓ Start → Welt → Vollbild → zurück nur über Kacheln, Pfeile und Zurück-Knopf. |
 | 2 | ✓ `object-fit: contain` auf Hoch- und Querformat, Unschärfe-Hintergrund statt Balken. |
 | 3 | ✓ Jede Ausgabe bricht die laufende ab (eine Sprachausgabe, ein `<audio>`), getestet; Hören am Gerät offen. |
-| 4 | ✓ Wischen links/rechts zyklisch, hoch/runter wechselt das Foto. |
+| 4 | ✓ Wischen links/rechts zyklisch. Diashow statt Hoch/Runter (2026-11-02): Vitest grün, im Browser neu zu prüfen. |
 | 5 | ✓ Sichtbarer Text im Kleinkind-Modus nur Weltnamen; der Zahnrad-Hinweis (3.1) ist die gewollte Ausnahme. |
 | 6 | ✓ Kurzer Tipp → Hinweis, 1,5 s → Aufgabe; falsche Antwort → neue Aufgabe; Modus übersteht Neuladen. |
 | 7 | ✓ Panel unter dem Foto, Doppeltipp-Zoom und Verschieben; gezoomt wechselt Wischen kein Tier. Pinch nur per Unit-Test. |
@@ -389,6 +391,12 @@ Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
 - _2026-11-02_ — Installieren über `useInstallPrompt` aus web-base, nicht über dessen
   `InstallButton` (kleiner als 64 px, Tailwind, eigener Dialog im Dialog). `main.tsx` importiert das
   Modul vorab, weil die Route lazy lädt und ein verpasstes `beforeinstallprompt` nicht wiederkommt.
+- _2026-11-02_ — Diashow im Vollbild statt Hoch/Runter-Wischen und Punkten (Wunsch von Daniel):
+  6 s pro Foto, 1,5 s Überblenden (`engine/slideshow.ts`). Altes und neues Foto blenden beide,
+  samt unscharfem Hintergrund, weil `contain` sonst das alte Foto am Rand stehen lässt. Pause
+  gezoomt, beim Ziehen und bei verborgenem Tab. Mit `prefers-reduced-motion` wechselt das Foto im
+  selben Takt hart statt gar nicht. Pfeile: sichtbar ein Kreis von 40 px am Rand, die Trefferfläche
+  bleibt 64 × 64 px (harte Regel).
 
 ## 11. Offene Punkte
 - Akzentfarbe: Das Farbrad der Flotte ist voll (web-base `04-layout-system.md`). Tiere nutzt
