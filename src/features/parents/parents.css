@@ -175,3 +175,17 @@
 .credits a {
   color: var(--t-ink);
 }
+.sheet .install-help {
+  margin: -2px 4px 12px;
+  color: var(--t-ink);
+  font-size: 16px;
+}
+.sheet .onboarding-step {
+  margin-bottom: 10px;
+  color: var(--t-ink);
+  font-weight: 700;
+}
+.sheet .onboarding-hint {
+  margin: 4px 0 0;
+  font-size: 16px;
+}

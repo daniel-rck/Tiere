@@ -70,3 +70,24 @@ function subscribe(onChange: () => void): () => void {
 export function useSettings(): Settings {
   return useSyncExternalStore(subscribe, readSettings, () => DEFAULT_SETTINGS);
 }
+
+// The parents' onboarding (spec 3.5): shown once per browser session.
+const ONBOARDED_KEY = "tiere.onboarded";
+let onboardedFallback = false;
+
+export function readOnboarded(): boolean {
+  try {
+    return sessionStorage.getItem(ONBOARDED_KEY) === "1" || onboardedFallback;
+  } catch {
+    return onboardedFallback;
+  }
+}
+
+export function writeOnboarded(): void {
+  onboardedFallback = true;
+  try {
+    sessionStorage.setItem(ONBOARDED_KEY, "1");
+  } catch {
+    /* storage unavailable: remembered until the page reloads */
+  }
+}

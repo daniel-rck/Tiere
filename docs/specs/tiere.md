@@ -58,6 +58,14 @@ Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechsel
 - Sperre: Additionsaufgabe zweistellig + zweistellig, 4 Antwort-Buttons. Falsch → neue Aufgabe.
 - Einstellungen: Modus (Kleinkind ab 2 / Entdecker ab 5), Namen-Knopf an/aus, Laut-Knopf an/aus.
 - Credits: alle Fotos und Laute mit Autor, Lizenz und Quelle. Nur hier sind Links nach außen erlaubt.
+- Installieren: Knopf in den Einstellungen, wenn der Browser die Installation anbietet; auf iOS
+  klappt er eine kurze Anleitung auf. Läuft die App installiert, fehlt er.
+
+### 3.5 Onboarding im Browser
+- Läuft die App nicht installiert (Browser-Tab), sitzt ein Elternteil davor. Beim Start erscheint
+  einmal pro Sitzung ein Willkommen: kurze Erklärung, Modus wählen, Installieren (wie 3.4), Hinweis
+  auf das Zahnrad und die Eltern-Sperre. Nur „Los geht's“ schließt es; im selben Tab kommt es auch
+  nach dem Neuladen nicht wieder.
 
 ## 4. Inhalte
 
@@ -372,6 +380,15 @@ Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
   Vorschaubilder der Foto-Auswahlseite (330 px) taugen nicht als Ersatz für die Originale.
   Nach Phase 7 wieder entfernt (Daniel): Die Medien liegen im Repo; eine neue Auswahl baut
   `photos:build`/`sounds:build` lokal.
+- _2026-11-02_ — Onboarding im Browser (Wunsch von Daniel): Ein Start im Browser-Tab gilt als
+  „Elternteil vor dem Gerät“, deshalb zeigt das Onboarding Text, als Ausnahme zu Kriterium 5 (das
+  für die Kinder-Oberfläche gilt). Es ist keine History-Ebene (Zurück und Escape schließen es nicht),
+  der Merker liegt unter `tiere.onboarded` im `sessionStorage`. Installiert heißt
+  `display-mode: standalone` oder `fullscreen` (das Manifest fordert `fullscreen`, der web-base-Hook
+  prüft nur `standalone`) oder `navigator.standalone`.
+- _2026-11-02_ — Installieren über `useInstallPrompt` aus web-base, nicht über dessen
+  `InstallButton` (kleiner als 64 px, Tailwind, eigener Dialog im Dialog). `main.tsx` importiert das
+  Modul vorab, weil die Route lazy lädt und ein verpasstes `beforeinstallprompt` nicht wiederkommt.
 
 ## 11. Offene Punkte
 - Akzentfarbe: Das Farbrad der Flotte ist voll (web-base `04-layout-system.md`). Tiere nutzt

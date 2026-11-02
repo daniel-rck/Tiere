@@ -2,6 +2,10 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import "./index.css";
+// Registers the `beforeinstallprompt` listener before the lazy route loads:
+// a missed event never comes back (spec 3.5).
+// oxlint-disable-next-line import/no-unassigned-import -- imported for its listener
+import "./lib/ui/useInstallPrompt.ts";
 import { router } from "./lib/router.tsx";
 
 const root = document.getElementById("root");
