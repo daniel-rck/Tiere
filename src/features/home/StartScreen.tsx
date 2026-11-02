@@ -9,7 +9,7 @@ type Props = {
   controls?: React.ReactNode;
 };
 
-/** Spec 3.1: four world tiles, 2×2 (1×4 from 16:10 landscape). */
+/** Spec 3.1: four world tiles, always 2×2 like the quadrants of a plane. */
 export function StartScreen({ mode, onOpenWorld, controls }: Props) {
   return (
     <main className="screen start">

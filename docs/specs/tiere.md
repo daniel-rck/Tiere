@@ -23,8 +23,9 @@ Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechsel
 ## 3. Bildschirme
 
 ### 3.1 Start
-- 4 Welt-Kacheln im 2×2-Raster, im Querformat ab 16:10 als 1×4. Kachel = Weltfarbe, großes Emoji,
-  Weltname. Tippen öffnet die Welt, gesprochen wird nichts.
+- 4 Welt-Kacheln immer im 2×2-Raster wie die vier Quadranten eines Koordinatensystems, auch im
+  Querformat. Die Kacheln füllen den Bildschirm ohne Scrollen. Kachel = Weltfarbe, großes Emoji,
+  Weltname; Emoji und Name wachsen mit der Kachel. Tippen öffnet die Welt, gesprochen wird nichts.
 - Zahnrad oben rechts öffnet den Eltern-Bereich nur per **1,5 s langem Drücken** mit sichtbarem
   Fortschrittsring. Kurzes Tippen zeigt den Hinweis „Für die Eltern-Einstellungen das Zahnrad lange
   drücken“.
@@ -397,6 +398,9 @@ Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
   gezoomt, beim Ziehen und bei verborgenem Tab. Mit `prefers-reduced-motion` wechselt das Foto im
   selben Takt hart statt gar nicht. Pfeile: sichtbar ein Kreis von 40 px am Rand, die Trefferfläche
   bleibt 64 × 64 px (harte Regel).
+- _2026-11-02_ — Start immer 2×2 statt 1×4 im breiten Querformat (Wunsch von Daniel). Der Start
+  ist genau einen Bildschirm hoch; Emoji und Name hängen per Container-Query an der Kachel
+  (Emoji `min(65cqw, 40cqh)`, Name `12cqmin`), nicht an `vw`. Die alten `vw`-Werte bleiben als Fallback davor stehen.
 
 ## 11. Offene Punkte
 - Akzentfarbe: Das Farbrad der Flotte ist voll (web-base `04-layout-system.md`). Tiere nutzt

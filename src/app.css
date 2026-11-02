@@ -61,6 +61,12 @@ img {
 }
 
 /* ── Start (spec 3.1) ── */
+/* Exactly one screen, no scrolling: four quadrants fill it. */
+.start {
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+}
 .start-head {
   display: flex;
   align-items: center;
@@ -80,25 +86,26 @@ img {
   gap: 8px;
   margin-left: auto;
 }
+/* Always 2×2, in portrait and landscape (spec 3.1). */
 .worlds {
   flex: 1;
+  min-height: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 14px;
-  padding: 8px 16px 16px;
+  padding: 8px 16px calc(env(safe-area-inset-bottom, 0px) + 16px);
 }
-@media (min-aspect-ratio: 16/10) {
-  .worlds {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-  }
-}
+/* Emoji and name grow with the tile, not with the window (container query units). */
 .world-tile {
+  container-type: size;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
   border-radius: 32px;
+  border-radius: clamp(20px, 9cqmin, 40px);
   background: var(--c);
   color: var(--wink);
-  min-height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,10 +119,12 @@ img {
 }
 .world-emoji {
   font-size: clamp(64px, 17vw, 150px);
+  font-size: min(65cqw, 40cqh);
   line-height: 1.1;
 }
 .world-name {
   font-size: clamp(24px, 5.5vw, 38px);
+  font-size: max(20px, 12cqmin);
   font-weight: 800;
   line-height: 1;
 }
