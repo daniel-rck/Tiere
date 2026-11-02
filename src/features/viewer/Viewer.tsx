@@ -81,7 +81,6 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
   const explorer = settings.mode === "explorer";
   // How the current photo came in: from a side (another animal) or faded (slideshow).
   const [slide, setSlide] = useState<"" | "left" | "right" | "fade">("");
-  const [bubble, setBubble] = useState(0);
   const [drag, setDrag] = useState<Vec | null>(null);
   const [zoom, setZoom] = useState<Zoom>(IDENTITY);
   const stageRef = useRef<HTMLDivElement>(null);
@@ -140,7 +139,6 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
     const target = cycle(index, step, animals.length);
     resetView();
     setSlide(step > 0 ? "left" : "right");
-    setBubble((n) => n + 1);
     // The previous animal's sound or name must not run on into the next one.
     silence();
     onChange(target);
@@ -160,10 +158,7 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
   };
 
   /** Tapping the photo: a visual answer only, the sound comes from its button. */
-  const poke = () => {
-    boing();
-    setBubble((n) => n + 1);
-  };
+  const poke = boing;
 
   const playSoundAgain = () => {
     poke();
@@ -283,7 +278,6 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
 
   const background = photo.sizes[0]?.src;
   const src = bigSrc(photo, stage);
-  const word = animal.voice.kind === "sound" ? animal.voice.text : "🤫";
   const leavingSrc = leaving ? bigSrc(leaving, stage) : undefined;
   const transform = drag
     ? `translate(${drag.x}px, ${drag.y}px)`
@@ -345,9 +339,6 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
               draggable={false}
             />
           )}
-        </div>
-        <div key={`bubble-${bubble}`} className="bubble" aria-hidden="true">
-          {word}
         </div>
         <button
           ref={closeRef}

@@ -29,7 +29,9 @@ describe("Viewer", () => {
     );
     expect(screen.getByRole("dialog", { name: "Kuh" })).toBeInTheDocument();
     expect(screen.getByRole("img", { name: "Kuh" })).toHaveClass("photo-fg");
-    expect(container.querySelector(".bubble")?.textContent).toBe("Muuuh!");
+    // No sound word on screen (spec 3.3).
+    expect(container.querySelector(".bubble")).toBeNull();
+    expect(screen.queryByText(cow.voice.text)).toBeNull();
     // No photo indicator: the photos change on their own (spec 3.3).
     expect(container.querySelector(".dots, .dot")).toBeNull();
   });
@@ -127,20 +129,6 @@ describe("Viewer", () => {
     );
     fireEvent.click(screen.getByRole("button", { name: "Zurück" }));
     expect(onClose).toHaveBeenCalled();
-  });
-
-  it("shows a 🤫 for quiet animals", () => {
-    const quiet = { ...farm[0]!, voice: { kind: "quiet" as const, text: "Psst." } };
-    const { container } = render(
-      <Viewer
-        animals={[quiet]}
-        index={0}
-        settings={DEFAULT_SETTINGS}
-        onClose={() => {}}
-        onChange={() => {}}
-      />,
-    );
-    expect(container.querySelector(".bubble")?.textContent).toBe("🤫");
   });
 
   describe("sound", () => {

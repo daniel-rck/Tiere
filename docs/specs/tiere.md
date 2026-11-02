@@ -39,11 +39,11 @@ Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechsel
 ### 3.3 Vollbild (Kern der App)
 - Foto füllt den Bildschirm mit `object-fit: contain`, **nie beschnitten**. Dahinter dasselbe Foto in
   640 px, stark weichgezeichnet und abgedunkelt, damit keine Balken entstehen.
-- Beim Öffnen und bei jedem Tierwechsel: Sprechblase mit dem Lautwort zeigen (stille Tiere: 🤫).
-  Abgespielt oder gesprochen wird dabei nichts; ein laufender Laut oder Name verstummt.
-- Tippen: kleine „Boing“-Animation und Sprechblase, kein Ton.
-- Laut-Knopf unten in der Mitte (≥ 64 px, Noten-Symbol): spielt den Tierlaut, mit Boing und
-  Sprechblase. Nur so spielt die App einen Tierlaut. Tiere ohne Aufnahme haben keinen Laut-Knopf.
+- Beim Öffnen und bei jedem Tierwechsel wird nichts abgespielt oder gesprochen; ein laufender Laut
+  oder Name verstummt. Ein Lautwort („Muuuh!“) erscheint nicht.
+- Tippen: kleine „Boing“-Animation, kein Ton.
+- Laut-Knopf unten in der Mitte (≥ 64 px, Noten-Symbol): spielt den Tierlaut, mit Boing. Nur so
+  spielt die App einen Tierlaut. Tiere ohne Aufnahme haben keinen Laut-Knopf.
 - Lautsprecher-Knopf oben rechts (≥ 64 px): sagt den Namen mit Artikel, nie das Lautwort. Nur so
   spricht die App einen Namen.
 - Wischen links/rechts oder kleine Pfeil-Knöpfe ganz am Rand (Trefferfläche ≥ 64 px): nächstes/
@@ -401,6 +401,9 @@ Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
 - _2026-11-02_ — Start immer 2×2 statt 1×4 im breiten Querformat (Wunsch von Daniel). Der Start
   ist genau einen Bildschirm hoch; Emoji und Name hängen per Container-Query an der Kachel
   (Emoji `min(65cqw, 40cqh)`, Name `12cqmin`), nicht an `vw`. Die alten `vw`-Werte bleiben als Fallback davor stehen.
+- _2026-11-02_ — Keine Sprechblase mit dem Lautwort mehr (Wunsch von Daniel): Im Vollbild steht
+  weder „Muuuh!“ noch 🤫. `voice` bleibt in `animals.json`, weil die Inhaltsprüfung daran stille
+  Tiere (ohne Laut) erkennt.
 
 ## 11. Offene Punkte
 - Akzentfarbe: Das Farbrad der Flotte ist voll (web-base `04-layout-system.md`). Tiere nutzt
