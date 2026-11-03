@@ -123,6 +123,10 @@
       ],
       "sound": {
         "src": "/sounds/kuh.m4a"
+      },
+      "speech": {
+        "name": "/speech/kuh-name.m4a",
+        "facts": "/speech/kuh-facts.m4a"
       }
     },
     {
@@ -218,6 +222,10 @@
       ],
       "sound": {
         "src": "/sounds/schwein.m4a"
+      },
+      "speech": {
+        "name": "/speech/schwein-name.m4a",
+        "facts": "/speech/schwein-facts.m4a"
       }
     },
     {
@@ -313,6 +321,10 @@
       ],
       "sound": {
         "src": "/sounds/schaf.m4a"
+      },
+      "speech": {
+        "name": "/speech/schaf-name.m4a",
+        "facts": "/speech/schaf-facts.m4a"
       }
     },
     {
@@ -408,6 +420,10 @@
       ],
       "sound": {
         "src": "/sounds/huhn.m4a"
+      },
+      "speech": {
+        "name": "/speech/huhn-name.m4a",
+        "facts": "/speech/huhn-facts.m4a"
       }
     },
     {
@@ -499,6 +515,10 @@
       ],
       "sound": {
         "src": "/sounds/pferd.m4a"
+      },
+      "speech": {
+        "name": "/speech/pferd-name.m4a",
+        "facts": "/speech/pferd-facts.m4a"
       }
     },
     {
@@ -586,6 +606,10 @@
       ],
       "sound": {
         "src": "/sounds/ziege.m4a"
+      },
+      "speech": {
+        "name": "/speech/ziege-name.m4a",
+        "facts": "/speech/ziege-facts.m4a"
       }
     },
     {
@@ -681,6 +705,10 @@
       ],
       "sound": {
         "src": "/sounds/ente.m4a"
+      },
+      "speech": {
+        "name": "/speech/ente-name.m4a",
+        "facts": "/speech/ente-facts.m4a"
       }
     },
     {
@@ -772,6 +800,10 @@
       ],
       "sound": {
         "src": "/sounds/gans.m4a"
+      },
+      "speech": {
+        "name": "/speech/gans-name.m4a",
+        "facts": "/speech/gans-facts.m4a"
       }
     },
     {
@@ -861,7 +893,11 @@
           "color": "#6b6952"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/kaninchen-name.m4a",
+        "facts": "/speech/kaninchen-facts.m4a"
+      }
     },
     {
       "id": "esel",
@@ -956,6 +992,10 @@
       ],
       "sound": {
         "src": "/sounds/esel.m4a"
+      },
+      "speech": {
+        "name": "/speech/esel-name.m4a",
+        "facts": "/speech/esel-facts.m4a"
       }
     },
     {
@@ -1047,6 +1087,10 @@
       ],
       "sound": {
         "src": "/sounds/hund.m4a"
+      },
+      "speech": {
+        "name": "/speech/hund-name.m4a",
+        "facts": "/speech/hund-facts.m4a"
       }
     },
     {
@@ -1138,6 +1182,10 @@
       ],
       "sound": {
         "src": "/sounds/katze.m4a"
+      },
+      "speech": {
+        "name": "/speech/katze-name.m4a",
+        "facts": "/speech/katze-facts.m4a"
       }
     },
     {
@@ -1233,6 +1281,10 @@
       ],
       "sound": {
         "src": "/sounds/elefant.m4a"
+      },
+      "speech": {
+        "name": "/speech/elefant-name.m4a",
+        "facts": "/speech/elefant-facts.m4a"
       }
     },
     {
@@ -1326,7 +1378,11 @@
           "color": "#768887"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/giraffe-name.m4a",
+        "facts": "/speech/giraffe-facts.m4a"
+      }
     },
     {
       "id": "loewe",
@@ -1417,6 +1473,10 @@
       ],
       "sound": {
         "src": "/sounds/loewe.m4a"
+      },
+      "speech": {
+        "name": "/speech/loewe-name.m4a",
+        "facts": "/speech/loewe-facts.m4a"
       }
     },
     {
@@ -1512,6 +1572,10 @@
       ],
       "sound": {
         "src": "/sounds/zebra.m4a"
+      },
+      "speech": {
+        "name": "/speech/zebra-name.m4a",
+        "facts": "/speech/zebra-facts.m4a"
       }
     },
     {
@@ -1601,7 +1665,11 @@
           "color": "#60702b"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/nashorn-name.m4a",
+        "facts": "/speech/nashorn-facts.m4a"
+      }
     },
     {
       "id": "nilpferd",
@@ -1694,7 +1762,11 @@
           "color": "#514b40"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/nilpferd-name.m4a",
+        "facts": "/speech/nilpferd-facts.m4a"
+      }
     },
     {
       "id": "kaenguru",
@@ -1787,7 +1859,11 @@
           "color": "#694c39"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/kaenguru-name.m4a",
+        "facts": "/speech/kaenguru-facts.m4a"
+      }
     },
     {
       "id": "eisbaer",
@@ -1876,7 +1952,11 @@
           "color": "#9d917e"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/eisbaer-name.m4a",
+        "facts": "/speech/eisbaer-facts.m4a"
+      }
     },
     {
       "id": "kamel",
@@ -1967,6 +2047,10 @@
       ],
       "sound": {
         "src": "/sounds/kamel.m4a"
+      },
+      "speech": {
+        "name": "/speech/kamel-name.m4a",
+        "facts": "/speech/kamel-facts.m4a"
       }
     },
     {
@@ -2062,6 +2146,10 @@
       ],
       "sound": {
         "src": "/sounds/flamingo.m4a"
+      },
+      "speech": {
+        "name": "/speech/flamingo-name.m4a",
+        "facts": "/speech/flamingo-facts.m4a"
       }
     },
     {
@@ -2157,6 +2245,10 @@
       ],
       "sound": {
         "src": "/sounds/erdmaennchen.m4a"
+      },
+      "speech": {
+        "name": "/speech/erdmaennchen-name.m4a",
+        "facts": "/speech/erdmaennchen-facts.m4a"
       }
     },
     {
@@ -2248,6 +2340,10 @@
       ],
       "sound": {
         "src": "/sounds/pinguin.m4a"
+      },
+      "speech": {
+        "name": "/speech/pinguin-name.m4a",
+        "facts": "/speech/pinguin-facts.m4a"
       }
     },
     {
@@ -2341,7 +2437,11 @@
           "color": "#726440"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/panda-name.m4a",
+        "facts": "/speech/panda-facts.m4a"
+      }
     },
     {
       "id": "tiger",
@@ -2432,6 +2532,10 @@
       ],
       "sound": {
         "src": "/sounds/tiger.m4a"
+      },
+      "speech": {
+        "name": "/speech/tiger-name.m4a",
+        "facts": "/speech/tiger-facts.m4a"
       }
     },
     {
@@ -2519,6 +2623,10 @@
       ],
       "sound": {
         "src": "/sounds/orang-utan.m4a"
+      },
+      "speech": {
+        "name": "/speech/orang-utan-name.m4a",
+        "facts": "/speech/orang-utan-facts.m4a"
       }
     },
     {
@@ -2614,6 +2722,10 @@
       ],
       "sound": {
         "src": "/sounds/tukan.m4a"
+      },
+      "speech": {
+        "name": "/speech/tukan-name.m4a",
+        "facts": "/speech/tukan-facts.m4a"
       }
     },
     {
@@ -2703,7 +2815,11 @@
           "color": "#573b23"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/chamaeleon-name.m4a",
+        "facts": "/speech/chamaeleon-facts.m4a"
+      }
     },
     {
       "id": "frosch",
@@ -2798,6 +2914,10 @@
       ],
       "sound": {
         "src": "/sounds/frosch.m4a"
+      },
+      "speech": {
+        "name": "/speech/frosch-name.m4a",
+        "facts": "/speech/frosch-facts.m4a"
       }
     },
     {
@@ -2891,7 +3011,11 @@
           "color": "#6a6956"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/gorilla-name.m4a",
+        "facts": "/speech/gorilla-facts.m4a"
+      }
     },
     {
       "id": "schimpanse",
@@ -2986,6 +3110,10 @@
       ],
       "sound": {
         "src": "/sounds/schimpanse.m4a"
+      },
+      "speech": {
+        "name": "/speech/schimpanse-name.m4a",
+        "facts": "/speech/schimpanse-facts.m4a"
       }
     },
     {
@@ -3077,6 +3205,10 @@
       ],
       "sound": {
         "src": "/sounds/ara.m4a"
+      },
+      "speech": {
+        "name": "/speech/ara-name.m4a",
+        "facts": "/speech/ara-facts.m4a"
       }
     },
     {
@@ -3166,7 +3298,11 @@
           "color": "#697362"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/faultier-name.m4a",
+        "facts": "/speech/faultier-facts.m4a"
+      }
     },
     {
       "id": "jaguar",
@@ -3261,6 +3397,10 @@
       ],
       "sound": {
         "src": "/sounds/jaguar.m4a"
+      },
+      "speech": {
+        "name": "/speech/jaguar-name.m4a",
+        "facts": "/speech/jaguar-facts.m4a"
       }
     },
     {
@@ -3354,7 +3494,11 @@
           "color": "#726c5f"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/krokodil-name.m4a",
+        "facts": "/speech/krokodil-facts.m4a"
+      }
     },
     {
       "id": "schlange",
@@ -3443,7 +3587,11 @@
           "color": "#69875b"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/schlange-name.m4a",
+        "facts": "/speech/schlange-facts.m4a"
+      }
     },
     {
       "id": "clownfisch",
@@ -3536,7 +3684,11 @@
           "color": "#8f715c"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/clownfisch-name.m4a",
+        "facts": "/speech/clownfisch-facts.m4a"
+      }
     },
     {
       "id": "delfin",
@@ -3631,6 +3783,10 @@
       ],
       "sound": {
         "src": "/sounds/delfin.m4a"
+      },
+      "speech": {
+        "name": "/speech/delfin-name.m4a",
+        "facts": "/speech/delfin-facts.m4a"
       }
     },
     {
@@ -3720,7 +3876,11 @@
           "color": "#9b9587"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/meeresschildkroete-name.m4a",
+        "facts": "/speech/meeresschildkroete-facts.m4a"
+      }
     },
     {
       "id": "krake",
@@ -3813,7 +3973,11 @@
           "color": "#48846c"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/krake-name.m4a",
+        "facts": "/speech/krake-facts.m4a"
+      }
     },
     {
       "id": "buckelwal",
@@ -3908,6 +4072,10 @@
       ],
       "sound": {
         "src": "/sounds/buckelwal.m4a"
+      },
+      "speech": {
+        "name": "/speech/buckelwal-name.m4a",
+        "facts": "/speech/buckelwal-facts.m4a"
       }
     },
     {
@@ -3997,7 +4165,11 @@
           "color": "#0180b1"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/walhai-name.m4a",
+        "facts": "/speech/walhai-facts.m4a"
+      }
     },
     {
       "id": "seehund",
@@ -4088,6 +4260,10 @@
       ],
       "sound": {
         "src": "/sounds/seehund.m4a"
+      },
+      "speech": {
+        "name": "/speech/seehund-name.m4a",
+        "facts": "/speech/seehund-facts.m4a"
       }
     },
     {
@@ -4179,6 +4355,10 @@
       ],
       "sound": {
         "src": "/sounds/orca.m4a"
+      },
+      "speech": {
+        "name": "/speech/orca-name.m4a",
+        "facts": "/speech/orca-facts.m4a"
       }
     },
     {
@@ -4268,7 +4448,11 @@
           "color": "#5e604d"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/seepferdchen-name.m4a",
+        "facts": "/speech/seepferdchen-facts.m4a"
+      }
     },
     {
       "id": "qualle",
@@ -4357,7 +4541,11 @@
           "color": "#0c78fc"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/qualle-name.m4a",
+        "facts": "/speech/qualle-facts.m4a"
+      }
     },
     {
       "id": "seestern",
@@ -4446,7 +4634,11 @@
           "color": "#a68b63"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/seestern-name.m4a",
+        "facts": "/speech/seestern-facts.m4a"
+      }
     },
     {
       "id": "krabbe",
@@ -4539,7 +4731,11 @@
           "color": "#706d67"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/krabbe-name.m4a",
+        "facts": "/speech/krabbe-facts.m4a"
+      }
     },
     {
       "id": "mantarochen",
@@ -4632,7 +4828,11 @@
           "color": "#195685"
         }
       ],
-      "sound": null
+      "sound": null,
+      "speech": {
+        "name": "/speech/mantarochen-name.m4a",
+        "facts": "/speech/mantarochen-facts.m4a"
+      }
     }
   ]
 }
