@@ -44,8 +44,8 @@ Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechsel
 - Tippen: kleine „Boing“-Animation, kein Ton.
 - Laut-Knopf unten in der Mitte (≥ 64 px, Noten-Symbol): spielt den Tierlaut, mit Boing. Nur so
   spielt die App einen Tierlaut. Tiere ohne Aufnahme haben keinen Laut-Knopf.
-- Lautsprecher-Knopf oben rechts (≥ 64 px): sagt den Namen mit Artikel, nie das Lautwort. Nur so
-  spricht die App einen Namen.
+- Lautsprecher-Knopf oben rechts (≥ 64 px): spielt den gebauten Namens-Clip („Die Kuh!“, §5.6), nie
+  das Lautwort. Nur so spricht die App einen Namen.
 - Wischen links/rechts oder kleine Pfeil-Knöpfe ganz am Rand (Trefferfläche ≥ 64 px): nächstes/
   vorheriges Tier der Welt, zyklisch.
 - Mehrere Fotos pro Tier blenden von selbst langsam ineinander (alle 6 s, 1,5 s Überblenden), ohne
@@ -161,11 +161,22 @@ und wandelt mit `ffmpeg` nach AAC (`.m4a`, 96 kbit/s) in `public/sounds/<animalI
 passende Aufnahme oder mit `voice.kind = "quiet"` bekommen keinen Laut.
 
 ### 5.6 Sprache
-Version 1 spricht Namen und Fakten mit der Web Speech API (`de-DE`, bevorzugt eine deutsche
-Systemstimme, Rate 0.9, Pitch 1.1), aber nur auf Knopfdruck: Lautsprecher-Knopf im Vollbild
-(Name) und „Vorlesen“ im Entdecker-Panel. Kein deutsches Voice verfügbar → der Knopf bleibt stumm.
-Jeder Knopf bricht die laufende Ausgabe ab, bevor er seine startet. Jede Ausgabe startet aus
-einer Nutzergeste (iOS).
+Namen und Fakten sind Audiodateien aus dem Build (`bun run speech:build`), gesprochen von einer
+neuronalen Stimme: Qwen3-TTS (Apache 2.0), Stimme „Fröhliche Erzählerin“. Sie ist aus einer
+Beschreibung entworfen, keine reale Person (`content/speech/voice.flac`, Konfiguration in
+`content/speech.json`).
+- Pro Tier zwei Clips: der Name kurz mit Artikel („Die Kuh!“) und die Fakten („Die Kuh. <Fakt 1>
+  <Fakt 2>“), als `public/speech/<id>-name.m4a` und `<id>-facts.m4a` (AAC 64 kbit/s, −16 LUFS).
+- Jeder Clip wird bis zu viermal erzeugt und mit Spracherkennung (faster-whisper) gegengeprüft;
+  der erste gut verstandene Versuch gewinnt. Clips, bei denen die Erkennung unsicher bleibt, listet
+  der Build als „bitte anhören“; vor dem Commit hört Daniel sie an (Mensch-Gate).
+- `content/speech.lock.json` hält fest, welcher Text mit welcher Stimme gebaut ist und wie er
+  verstanden wurde; ein unveränderter Text wird nie neu gesprochen.
+- Abgespielt wird nur auf Knopfdruck (Lautsprecher-Knopf: Name, „Vorlesen“: Fakten), über dasselbe
+  `<audio>`-Element wie die Tierlaute: Jeder Knopf bricht die laufende Ausgabe ab. Jede Ausgabe
+  startet aus einer Nutzergeste (iOS).
+- Fehlt ein Clip, spricht die Web Speech API als Ersatz (`de-DE`, Rate 0.9, Pitch 1.1); ohne
+  deutsche Stimme bleibt der Knopf stumm. `content:check --strict` verlangt alle Clips.
 
 ## 6. Architektur
 
@@ -179,6 +190,7 @@ scripts/
   photos-candidates.ts          Kandidaten + Kontaktabzug
   photos-build.ts               Download, sharp, Credits, Katalog
   sounds-candidates.ts / sounds-build.ts
+  speech-build.ts, tts/         Namen und Fakten sprechen (Qwen3-TTS, Python), prüfen, wandeln
   validate-content.ts           Schema- und Regelprüfung (--strict)
 src/
   main.tsx, App.tsx             Einstieg; App ist ein nacktes <Outlet />, darin der Ebenen-Stack
@@ -193,7 +205,8 @@ src/
   lib/ui/theme.css              Seam: App-Tokens (Hell/Dunkel, Weltfarben)
   sw/index.ts                   Service Worker (Seam): Precache-Regeln aus §7
 worker/                         Cloudflare Worker (web-base), liefert nur die Assets aus
-public/photos/, public/sounds/  generierte Medien (committet)
+public/photos/, public/sounds/, public/speech/
+                                generierte Medien (committet)
 ```
 
 - React 19 + Vite 8 + TypeScript 7 + Tailwind 4, Bun; oxlint + oxfmt, Vitest (jsdom).
@@ -209,7 +222,7 @@ public/photos/, public/sounds/  generierte Medien (committet)
   Funktion in `engine/gestures.ts`.
 
 ## 7. PWA und Offline
-- Precache: App-Shell, alle 640er und 1280er Fotos, alle Laute. 1920er per Runtime-Cache
+- Precache: App-Shell, alle 640er und 1280er Fotos, alle Laute und Sprachclips. 1920er per Runtime-Cache
   (CacheFirst). Precache-Budget ≤ 40 MB.
 - Manifest: `display: "fullscreen"` mit Fallback `standalone`, Hoch- und Querformat, Icon ohne
   bekannte Figuren.
@@ -404,6 +417,16 @@ Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
 - _2026-11-02_ — Keine Sprechblase mit dem Lautwort mehr (Wunsch von Daniel): Im Vollbild steht
   weder „Muuuh!“ noch 🤫. `voice` bleibt in `animals.json`, weil die Inhaltsprüfung daran stille
   Tiere (ohne Laut) erkennt.
+- _2026-11-03_ — Namen und Fakten als gebaute Audiodateien statt Systemstimme (Wunsch von Daniel:
+  „lieblos“). Zwei Runden Hörproben: Piper (CC0-Stimmen) klang zu synthetisch; Chatterbox
+  Multilingual (MIT) war lebhafter, aber bei kurzen Namen öfter undeutlich („Erdmenschen“);
+  Qwen3-TTS (Apache 2.0) war in der Spracherkennungs-Gegenprobe am deutlichsten. Daniel wählte die
+  entworfene Stimme „Fröhliche Erzählerin“ und den kurzen Namen („Die Kuh!“). Die Stimme ist einmal
+  mit Qwen3-TTS-VoiceDesign entworfen und wird für jeden Clip mit dem Base-Modell daraus geklont,
+  damit alle Clips gleich klingen. Apache 2.0 gilt für das Modell, nicht für ein Medium: Der Stimm-
+  Credit steht deshalb neben der Medien-Allowlist (`credits.voice`, eigene Prüfung). Python
+  (`scripts/tts/`, `TIERE_TTS_PYTHON`) ist wie ffmpeg eine lokale Build-Abhängigkeit; auf der CPU
+  dauert ein voller Lauf gut eine Stunde.
 
 ## 11. Offene Punkte
 - Akzentfarbe: Das Farbrad der Flotte ist voll (web-base `04-layout-system.md`). Tiere nutzt
@@ -412,7 +435,7 @@ Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
 - `[previews]` gehört ins `wrangler.toml`-Template von web-base, damit neue Apps Preview-Builds
   ohne Nacharbeit bekommen.
 - Tiere in web-base `08-app-migrations.md` eintragen (Flotte, Abweichungen wie beim Malbuch).
-- Namen selbst aufnehmen statt Systemstimme.
+- Optional eigene Aufnahmen der Namen statt der Qwen-Stimme.
 - Quiz im Entdecker-Modus („Wo ist der Elefant?“).
 - Weitere Welten (Wald, Haustiere, Arktis).
 - Eigene Fotos (z. B. vom Zoobesuch) im Eltern-Bereich hinzufügen.

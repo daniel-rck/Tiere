@@ -218,10 +218,18 @@ async function main(): Promise<void> {
     }
     const { latin: _latin, photos: _photos, soundFile: _soundFile, ...rest } = animal;
     // Sounds belong to sounds:build; keep what it wrote.
-    const sound = previous?.animals.find((entry) => entry.id === animal.id)?.sound ?? null;
+    const before = previous?.animals.find((entry) => entry.id === animal.id);
+    const sound = before?.sound ?? null;
+    // Speech belongs to speech:build.
+    const speech = before?.speech ?? null;
     const soundCredit =
       previousCredits?.animals.find((entry) => entry.id === animal.id)?.sound ?? null;
-    animals.push({ ...(rest as Omit<CatalogAnimal, "photos" | "sound">), photos, sound });
+    animals.push({
+      ...(rest as Omit<CatalogAnimal, "photos" | "sound" | "speech">),
+      photos,
+      sound,
+      speech,
+    });
     credits.push({ id: animal.id, photos: photoCredits, sound: sound ? soundCredit : null });
   }
   const ids = new Set(content.animals.map((animal) => animal.id));
@@ -231,7 +239,7 @@ async function main(): Promise<void> {
 
   const catalog: Catalog = { worlds: content.worlds, animals };
   await writeFile(CATALOG, `${JSON.stringify(catalog, null, 2)}\n`);
-  const creditsFile: CreditsFile = { animals: credits };
+  const creditsFile: CreditsFile = { animals: credits, voice: previousCredits?.voice };
   await writeFile(CREDITS, `${JSON.stringify(creditsFile, null, 2)}\n`);
   if (failed.length > 0) {
     throw new Error(

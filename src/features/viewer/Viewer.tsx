@@ -1,7 +1,6 @@
 import "./viewer.css";
 import "./panel.css";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { withArticle } from "../../content/catalog.ts";
 import type { CatalogAnimal, CatalogPhoto } from "../../content/types.ts";
 import { classify, cycle, dragAxis, isDoubleTap, type Point } from "../../engine/gestures.ts";
 import { containSize, pickSize } from "../../engine/sizes.ts";
@@ -18,7 +17,7 @@ import {
 } from "../../engine/zoom.ts";
 import type { Settings } from "../../platform/storage.ts";
 import { BackIcon, NextIcon, NoteIcon, PrevIcon, SpeakerIcon } from "../shared/icons.tsx";
-import { playAnimalSound, readAloud, sayName, silence } from "./announce.ts";
+import { playAnimalSound, readFacts, sayName, silence } from "./announce.ts";
 import { useSlideshow } from "./useSlideshow.ts";
 
 type Props = {
@@ -401,11 +400,7 @@ export function Viewer({ animals, index, settings, onClose, onChange }: Props) {
               <li key={fact}>{fact}</li>
             ))}
           </ul>
-          <button
-            type="button"
-            className="read"
-            onClick={() => readAloud(`${withArticle(animal)}. ${animal.facts.join(" ")}`)}
-          >
+          <button type="button" className="read" onClick={() => readFacts(animal)}>
             <SpeakerIcon />
             Vorlesen
           </button>

@@ -59,10 +59,14 @@ export type CatalogPhoto = {
 
 export type CatalogSound = { src: string };
 
+/** Built speech clips (spec 5.6): the name ("Die Kuh!") and the facts read aloud. */
+export type CatalogSpeech = { name: string; facts: string };
+
 /** An animal as the app sees it: photos in the order of `Animal.photos`. */
 export type CatalogAnimal = Omit<Animal, "latin" | "photos" | "soundFile"> & {
   photos: CatalogPhoto[];
   sound: CatalogSound | null;
+  speech: CatalogSpeech | null;
 };
 
 export type Catalog = { worlds: World[]; animals: CatalogAnimal[] };
@@ -70,4 +74,5 @@ export type Catalog = { worlds: World[]; animals: CatalogAnimal[] };
 /** Credits per animal, photos in the same order as in the catalog. */
 export type AnimalCredits = { id: string; photos: Credit[]; sound: Credit | null };
 
-export type CreditsFile = { animals: AnimalCredits[] };
+/** `voice`: the synthetic voice of the speech clips (spec 5.6), one for all animals. */
+export type CreditsFile = { animals: AnimalCredits[]; voice?: Credit };
