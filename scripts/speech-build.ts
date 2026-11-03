@@ -30,7 +30,15 @@ const CREDITS = "src/content/credits.generated.json";
 
 type Kind = "name" | "facts";
 type Job = { key: string; id: string; kind: Kind; text: string; hash: string };
-type LockEntry = { hash: string; text: string; heard: string; score: number; take: number };
+type LockEntry = {
+  hash: string;
+  text: string;
+  heard: string;
+  score: number;
+  take: number;
+  /** Daniel listened and approved the clip despite a low score; lost when the clip is spoken anew. */
+  approved?: boolean;
+};
 type Reply = { ready?: boolean; out?: string; heard?: string };
 
 const sha1 = (value: string | Buffer) => createHash("sha1").update(value).digest("hex");
@@ -161,8 +169,12 @@ async function main(): Promise<void> {
   await writeFile(CATALOG, `${JSON.stringify(catalog, null, 2)}\n`);
   await writeFile(CREDITS, `${JSON.stringify(credits, null, 2)}\n`);
 
-  const unsure = jobs.filter((job) => (lock[job.key]?.score ?? 0) < SCORE_NEEDED[job.kind]);
-  console.log(`✓ ${jobs.length - unsure.length} von ${jobs.length} Sprachclips sicher verstanden`);
+  const unsure = jobs.filter(
+    (job) => !lock[job.key]?.approved && (lock[job.key]?.score ?? 0) < SCORE_NEEDED[job.kind],
+  );
+  console.log(
+    `✓ ${jobs.length - unsure.length} von ${jobs.length} Sprachclips verstanden oder freigegeben`,
+  );
   if (unsure.length > 0) {
     console.log("Bitte anhören (die Spracherkennung war unsicher):");
     for (const job of unsure) {

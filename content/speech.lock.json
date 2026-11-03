@@ -396,7 +396,8 @@
     "text": "Das Chamäleon!",
     "heard": "Das Kameleon",
     "score": 0.769,
-    "take": 1
+    "take": 1,
+    "approved": true
   },
   "chamaeleon-facts": {
     "hash": "ee28aa78b9d54b3091d22d175923d1b2baf35246",

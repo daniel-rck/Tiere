@@ -169,7 +169,8 @@ Beschreibung entworfen, keine reale Person (`content/speech/voice.flac`, Konfigu
   <Fakt 2>“), als `public/speech/<id>-name.m4a` und `<id>-facts.m4a` (AAC 64 kbit/s, −16 LUFS).
 - Jeder Clip wird bis zu viermal erzeugt und mit Spracherkennung (faster-whisper) gegengeprüft;
   der erste gut verstandene Versuch gewinnt. Clips, bei denen die Erkennung unsicher bleibt, listet
-  der Build als „bitte anhören“; vor dem Commit hört Daniel sie an (Mensch-Gate).
+  der Build als „bitte anhören“; vor dem Commit hört Daniel sie an (Mensch-Gate). Freigegebene
+  Clips stehen mit `approved: true` im Lock und gelten als geprüft, bis sich Text oder Stimme ändern.
 - `content/speech.lock.json` hält fest, welcher Text mit welcher Stimme gebaut ist und wie er
   verstanden wurde; ein unveränderter Text wird nie neu gesprochen.
 - Abgespielt wird nur auf Knopfdruck (Lautsprecher-Knopf: Name, „Vorlesen“: Fakten), über dasselbe
@@ -427,6 +428,8 @@ Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
   Credit steht deshalb neben der Medien-Allowlist (`credits.voice`, eigene Prüfung). Python
   (`scripts/tts/`, `TIERE_TTS_PYTHON`) ist wie ffmpeg eine lokale Build-Abhängigkeit; auf der CPU
   dauert ein voller Lauf gut eine Stunde.
+- _2026-11-03_ — „Das Chamäleon!“: Die Spracherkennung hörte in allen vier Versuchen „Kameleon“;
+  Daniel hat den 2. Versuch angehört und freigegeben (`approved: true` in `content/speech.lock.json`).
 
 ## 11. Offene Punkte
 - Akzentfarbe: Das Farbrad der Flotte ist voll (web-base `04-layout-system.md`). Tiere nutzt
