@@ -1,0 +1,37 @@
+{
+  "kuh-name": {
+    "hash": "093f77508d729a82ac1ab75ea9cc7eb3f9d54951",
+    "text": "Die Kuh!",
+    "heard": "Die Kuh.",
+    "score": 1,
+    "take": 0
+  },
+  "kuh-facts": {
+    "hash": "b7ba97bec14ef60a221a3c8a0207961ca46a249c",
+    "text": "Die Kuh. Eine Kuh frisst am Tag bis zu 70 Kilo Gras. Ihr Magen hat vier Teile.",
+    "heard": "Die Kuh. Eine Kuh frisst am Tag bis zu 70 Kilo Gras. Ihr Magen hat vier Teile.",
+    "score": 1,
+    "take": 0
+  },
+  "schwein-name": {
+    "hash": "cc78a24d31b089fff5e7757578eab36fe50ffaf0",
+    "text": "Das Schwein!",
+    "heard": "Das Schwein.",
+    "score": 1,
+    "take": 0
+  },
+  "schwein-facts": {
+    "hash": "87f883d47d8588b8d1e75d58aafe962aef308d2a",
+    "text": "Das Schwein. Schweine haben eine super Nase. Sie finden damit sogar Trüffel unter der Erde. Sie wälzen sich im Schlamm, weil sie nicht schwitzen können.",
+    "heard": "Das Schwein. Schweine haben eine Supernase. Sie finden damit sogar Trüffel unter der Erde. Sie wälzen sich im Schlamm, weil sie nicht schwitzen können.",
+    "score": 0.993,
+    "take": 0
+  },
+  "schaf-name": {
+    "hash": "56657da6d350d121cdccba3c67f5cfdb4ad579ca",
+    "text": "Das Schaf!",
+    "heard": "Das Schaf",
+    "score": 1,
+    "take": 0
+  }
+}
