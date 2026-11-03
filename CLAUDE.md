@@ -44,6 +44,8 @@ bun run photos:candidates <id> --add   # + Openverse und iNaturalist anhängen
 bun run photos:build            # ausgewählte Fotos laden, skalieren, Credits erzeugen
 bun run sounds:candidates <id>  # Commons-Tierlaute suchen
 bun run sounds:build            # ausgewählte Laute laden, schneiden, nach .m4a wandeln
+TIERE_TTS_PYTHON=.venv-tts/bin/python bun run speech:build
+                                # Namen und Fakten mit Qwen3-TTS sprechen (scripts/tts/requirements.txt)
 ```
 
 ## Harte Regeln

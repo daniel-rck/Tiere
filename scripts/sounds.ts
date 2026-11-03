@@ -47,3 +47,47 @@ export function processSound(input: string, output: string, offset = 0): void {
     { stdio: ["ignore", "ignore", "pipe"] },
   );
 }
+
+/**
+ * Speech clips (spec 5.6): trim silence at both ends, normalise to about
+ * −16 LUFS, 200 ms lead-in (some players clip the start) and 300 ms tail,
+ * AAC 64 kbit/s in .m4a.
+ */
+export function processSpeech(input: string, output: string): void {
+  mkdirSync(dirname(output), { recursive: true });
+  const trim = "silenceremove=start_periods=1:start_threshold=-50dB";
+  const filters = [
+    trim,
+    "areverse",
+    trim,
+    "areverse",
+    "loudnorm=I=-16:TP=-1.5:LRA=11",
+    "adelay=200:all=1",
+    "apad=pad_dur=0.3",
+    "aresample=44100",
+  ].join(",");
+  execFileSync(
+    "ffmpeg",
+    [
+      "-v",
+      "error",
+      "-y",
+      "-i",
+      input,
+      "-ac",
+      "1",
+      "-af",
+      filters,
+      "-c:a",
+      "aac",
+      "-b:a",
+      "64k",
+      "-map_metadata",
+      "-1",
+      "-movflags",
+      "+faststart",
+      output,
+    ],
+    { stdio: ["ignore", "ignore", "pipe"] },
+  );
+}

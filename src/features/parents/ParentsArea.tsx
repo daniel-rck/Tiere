@@ -2,6 +2,8 @@ import "./parents.css";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { isCorrect, makeQuestion, type Question } from "../../engine/gate.ts";
 import { type Settings, writeSettings } from "../../platform/storage.ts";
+import { InstallChoice } from "./InstallChoice.tsx";
+import { ModeChoice } from "./ModeChoice.tsx";
 
 type Props = { settings: Settings; onClose: () => void };
 
@@ -77,24 +79,7 @@ export function ParentsArea({ settings, onClose }: Props) {
           <>
             <h2 id="parents-title">Einstellungen</h2>
             <p>Für welches Alter soll die App sein?</p>
-            <div className="choices">
-              <button
-                type="button"
-                aria-pressed={settings.mode === "kid"}
-                onClick={() => writeSettings({ mode: "kid" })}
-              >
-                <b>Kleinkind (ab 2)</b>
-                <span>Große Fotos, Tiername und Tierlaut. Kein Text.</span>
-              </button>
-              <button
-                type="button"
-                aria-pressed={settings.mode === "explorer"}
-                onClick={() => writeSettings({ mode: "explorer" })}
-              >
-                <b>Entdecker (ab 5)</b>
-                <span>Namen zum Lesen, Fakten zum Vorlesen, Zoom mit zwei Fingern.</span>
-              </button>
-            </div>
+            <ModeChoice mode={settings.mode} />
             <div className="choices">
               <button
                 type="button"
@@ -115,6 +100,7 @@ export function ParentsArea({ settings, onClose }: Props) {
                 <span>Spielt beim Öffnen und Antippen den Laut des Tiers.</span>
               </button>
             </div>
+            <InstallChoice />
             <button type="button" className="ghost" onClick={() => setStep("credits")}>
               Bildnachweise
             </button>

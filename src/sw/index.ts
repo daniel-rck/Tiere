@@ -7,7 +7,7 @@ declare const self: ServiceWorkerGlobalScope;
 
 // Precache, offline navigation and prompt-based updates (owned: base.ts).
 // What is precached is set in vite.config.ts (spec 7): the app, every 640 px
-// photo, the 1280 px file of each animal's first photo and all sounds.
+// photo, the 1280 px file of each animal's first photo, all sounds and speech clips.
 registerAppShell();
 
 const PHOTO_CACHE = "tiere-photos";

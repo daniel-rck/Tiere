@@ -3,13 +3,16 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   DEFAULT_SETTINGS,
   parseSettings,
+  readOnboarded,
   readSettings,
   useSettings,
+  writeOnboarded,
   writeSettings,
 } from "./storage.ts";
 
 afterEach(() => {
   localStorage.clear();
+  sessionStorage.clear();
   vi.restoreAllMocks();
 });
 
@@ -56,5 +59,22 @@ describe("settings storage", () => {
     expect(result.current.sounds).toBe(true);
     act(() => writeSettings({ sounds: false }));
     expect(result.current.sounds).toBe(false);
+  });
+});
+
+describe("onboarded", () => {
+  it("is remembered for the session", () => {
+    expect(readOnboarded()).toBe(false);
+    writeOnboarded();
+    expect(readOnboarded()).toBe(true);
+    expect(sessionStorage.getItem("tiere.onboarded")).toBe("1");
+  });
+
+  it("keeps working when storage throws", () => {
+    vi.spyOn(Storage.prototype, "setItem").mockImplementation(() => {
+      throw new Error("blocked");
+    });
+    expect(() => writeOnboarded()).not.toThrow();
+    expect(readOnboarded()).toBe(true);
   });
 });

@@ -1,9 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { animalsOf, findWorld } from "../../content/catalog.ts";
 import { useAppUpdate } from "../../lib/pwa/useAppUpdate.ts";
+import { isInstalled } from "../../platform/display.ts";
 import { useLayers } from "../../platform/history.ts";
-import { useSettings } from "../../platform/storage.ts";
+import { readOnboarded, useSettings, writeOnboarded } from "../../platform/storage.ts";
 import { GearButton } from "../parents/GearButton.tsx";
+import { Onboarding } from "../parents/Onboarding.tsx";
 import { ParentsArea } from "../parents/ParentsArea.tsx";
 import { RefreshIcon } from "../shared/icons.tsx";
 import { silence } from "../viewer/announce.ts";
@@ -19,6 +21,8 @@ export function HomePage() {
   const { layers, top, open, replaceTop, back } = useLayers();
   const settings = useSettings();
   const update = useAppUpdate();
+  // Spec 3.5: in a browser tab a parent is in front of the screen.
+  const [onboarding, setOnboarding] = useState(() => !isInstalled() && !readOnboarded());
   const worldLayer = layers.find((layer) => layer.kind === "world");
   const world = worldLayer ? findWorld(worldLayer.world) : undefined;
   const animals = world ? animalsOf(world.id) : [];
@@ -38,12 +42,14 @@ export function HomePage() {
 
   // Escape closes the top layer, like the device's back button (spec 3.3).
   useEffect(() => {
+    // The onboarding is no layer: only its own button closes it.
+    if (onboarding) return;
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") back();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [back]);
+  }, [back, onboarding]);
 
   // Leaving the viewer (back button, Escape) stops speech and sound.
   const viewerOpen = viewer !== undefined;
@@ -96,6 +102,15 @@ export function HomePage() {
         />
       )}
       {parents && <ParentsArea settings={settings} onClose={back} />}
+      {onboarding && (
+        <Onboarding
+          settings={settings}
+          onDone={() => {
+            writeOnboarded();
+            setOnboarding(false);
+          }}
+        />
+      )}
     </div>
   );
 }

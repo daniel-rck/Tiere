@@ -244,7 +244,8 @@ function byId(list: unknown): Map<string, Json> {
 
 /**
  * Strict mode: catalog and credits match the content, every photo and sound
- * has a complete credit with an allowlisted license.
+ * has a complete credit with an allowlisted license, every animal has its
+ * speech clips and the voice is credited (spec 5.6).
  */
 function validateCatalog(
   content: ContentFile,
@@ -284,6 +285,33 @@ function validateCatalog(
     if (typeof animal.soundFile === "string") {
       if (!isObject(entry.sound)) report(`catalog.${id}.sound`, "Laut fehlt im Katalog");
       validateCredit(creditEntry.sound, `credits.${id}.sound`, report);
+    }
+    const speech = entry.speech;
+    if (!isObject(speech) || !isText(speech.name) || !isText(speech.facts)) {
+      report(
+        `catalog.${id}.speech`,
+        "Sprachclips fehlen, erst `bun run speech:build` laufen lassen",
+      );
+    }
+  }
+  validateVoiceCredit(credits.voice, report);
+}
+
+/**
+ * The synthetic voice (spec 5.6). Its license covers the model, not a medium,
+ * so it is not checked against the media allowlist.
+ */
+function validateVoiceCredit(credit: unknown, report: Report): void {
+  if (!isObject(credit)) {
+    report("credits.voice", "Credit der Stimme fehlt, erst `bun run speech:build` laufen lassen");
+    return;
+  }
+  if (!isText(credit.author)) report("credits.voice.author", "Autor fehlt");
+  if (!isText(credit.license)) report("credits.voice.license", "Lizenz fehlt");
+  for (const key of ["licenseUrl", "sourceUrl"] as const) {
+    const value = credit[key];
+    if (typeof value !== "string" || !value.startsWith("https://")) {
+      report(`credits.voice.${key}`, "erwartet eine https-URL");
     }
   }
 }

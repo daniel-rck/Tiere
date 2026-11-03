@@ -1,6 +1,7 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { act, fireEvent, render, screen } from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { animalsOf } from "../../content/catalog.ts";
+import { SLIDE_MS } from "../../engine/slideshow.ts";
 import { DEFAULT_SETTINGS } from "../../platform/storage.ts";
 import { Viewer } from "./Viewer.tsx";
 
@@ -13,6 +14,7 @@ vi.mock("../../platform/audio.ts", () => audio);
 
 const farm = animalsOf("bauernhof");
 const cow = farm[0]!;
+const photo = () => screen.getByRole("img", { name: cow.name }).getAttribute("src");
 
 describe("Viewer", () => {
   it("shows the animal's photo uncropped with its sound word", () => {
@@ -27,8 +29,72 @@ describe("Viewer", () => {
     );
     expect(screen.getByRole("dialog", { name: "Kuh" })).toBeInTheDocument();
     expect(screen.getByRole("img", { name: "Kuh" })).toHaveClass("photo-fg");
-    expect(container.querySelector(".bubble")?.textContent).toBe("Muuuh!");
-    expect(container.querySelectorAll(".dot")).toHaveLength(farm[0]!.photos.length);
+    // No sound word on screen (spec 3.3).
+    expect(container.querySelector(".bubble")).toBeNull();
+    expect(screen.queryByText(cow.voice.text)).toBeNull();
+    // No photo indicator: the photos change on their own (spec 3.3).
+    expect(container.querySelector(".dots, .dot")).toBeNull();
+  });
+
+  describe("slideshow", () => {
+    beforeEach(() => vi.useFakeTimers());
+    afterEach(() => vi.useRealTimers());
+
+    it("fades to the animal's next photo on its own", () => {
+      expect(cow.photos.length).toBeGreaterThan(1);
+      const { container } = render(
+        <Viewer
+          animals={farm}
+          index={0}
+          settings={DEFAULT_SETTINGS}
+          onClose={() => {}}
+          onChange={() => {}}
+        />,
+      );
+      const first = photo();
+      act(() => vi.advanceTimersByTime(SLIDE_MS - 1));
+      expect(photo()).toBe(first);
+      act(() => vi.advanceTimersByTime(1));
+      expect(photo()).not.toBe(first);
+      expect(container.querySelector(".photo-fg.in-fade")).not.toBeNull();
+      // The last photo fades out underneath.
+      expect(container.querySelector(".photo-fg.is-leaving")?.getAttribute("src")).toBe(first);
+    });
+
+    it("starts again at the first photo for another animal", () => {
+      const props = { settings: DEFAULT_SETTINGS, onClose: () => {}, onChange: () => {} };
+      const { container, rerender } = render(<Viewer animals={farm} index={0} {...props} />);
+      const first = photo();
+      act(() => vi.advanceTimersByTime(SLIDE_MS));
+      expect(photo()).not.toBe(first);
+      rerender(<Viewer animals={farm} index={1} {...props} />);
+      expect(container.querySelector(".photo-fg.is-leaving")).toBeNull();
+      rerender(<Viewer animals={farm} index={0} {...props} />);
+      expect(photo()).toBe(first);
+    });
+
+    it("does not change the photo by swiping or keys up and down", () => {
+      const onChange = vi.fn<(index: number) => void>();
+      const { container } = render(
+        <Viewer
+          animals={farm}
+          index={0}
+          settings={DEFAULT_SETTINGS}
+          onClose={() => {}}
+          onChange={onChange}
+        />,
+      );
+      const first = photo();
+      const stage = container.querySelector<HTMLElement>(".stage")!;
+      stage.setPointerCapture = () => {}; // jsdom has no pointer capture
+      fireEvent.pointerDown(stage, { pointerId: 1, clientX: 200, clientY: 400 });
+      fireEvent.pointerMove(stage, { pointerId: 1, clientX: 200, clientY: 250 });
+      fireEvent.pointerUp(stage, { pointerId: 1, clientX: 200, clientY: 100 });
+      fireEvent.keyDown(screen.getByRole("dialog"), { key: "ArrowDown" });
+      fireEvent.keyDown(screen.getByRole("dialog"), { key: "ArrowUp" });
+      expect(photo()).toBe(first);
+      expect(onChange).not.toHaveBeenCalled();
+    });
   });
 
   it("switches animals cyclically with the arrows and keys", () => {
@@ -63,20 +129,6 @@ describe("Viewer", () => {
     );
     fireEvent.click(screen.getByRole("button", { name: "Zurück" }));
     expect(onClose).toHaveBeenCalled();
-  });
-
-  it("shows a 🤫 for quiet animals", () => {
-    const quiet = { ...farm[0]!, voice: { kind: "quiet" as const, text: "Psst." } };
-    const { container } = render(
-      <Viewer
-        animals={[quiet]}
-        index={0}
-        settings={DEFAULT_SETTINGS}
-        onClose={() => {}}
-        onChange={() => {}}
-      />,
-    );
-    expect(container.querySelector(".bubble")?.textContent).toBe("🤫");
   });
 
   describe("sound", () => {

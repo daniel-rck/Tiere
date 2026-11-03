@@ -1645,5 +1645,11 @@
       ],
       "sound": null
     }
-  ]
+  ],
+  "voice": {
+    "author": "Qwen3-TTS (Qwen-Team, Alibaba Cloud), entworfene Stimme",
+    "license": "Apache 2.0",
+    "licenseUrl": "https://www.apache.org/licenses/LICENSE-2.0",
+    "sourceUrl": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+  }
 }

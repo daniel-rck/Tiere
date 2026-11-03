@@ -1,0 +1,703 @@
+{
+  "kuh-name": {
+    "hash": "093f77508d729a82ac1ab75ea9cc7eb3f9d54951",
+    "text": "Die Kuh!",
+    "heard": "Die Kuh.",
+    "score": 1,
+    "take": 0
+  },
+  "kuh-facts": {
+    "hash": "b7ba97bec14ef60a221a3c8a0207961ca46a249c",
+    "text": "Die Kuh. Eine Kuh frisst am Tag bis zu 70 Kilo Gras. Ihr Magen hat vier Teile.",
+    "heard": "Die Kuh. Eine Kuh frisst am Tag bis zu 70 Kilo Gras. Ihr Magen hat vier Teile.",
+    "score": 1,
+    "take": 0
+  },
+  "schwein-name": {
+    "hash": "cc78a24d31b089fff5e7757578eab36fe50ffaf0",
+    "text": "Das Schwein!",
+    "heard": "Das Schwein.",
+    "score": 1,
+    "take": 0
+  },
+  "schwein-facts": {
+    "hash": "87f883d47d8588b8d1e75d58aafe962aef308d2a",
+    "text": "Das Schwein. Schweine haben eine super Nase. Sie finden damit sogar Trüffel unter der Erde. Sie wälzen sich im Schlamm, weil sie nicht schwitzen können.",
+    "heard": "Das Schwein. Schweine haben eine Supernase. Sie finden damit sogar Trüffel unter der Erde. Sie wälzen sich im Schlamm, weil sie nicht schwitzen können.",
+    "score": 0.993,
+    "take": 0
+  },
+  "schaf-name": {
+    "hash": "56657da6d350d121cdccba3c67f5cfdb4ad579ca",
+    "text": "Das Schaf!",
+    "heard": "Das Schaf",
+    "score": 1,
+    "take": 0
+  },
+  "schaf-facts": {
+    "hash": "6288b8975668d355f2863990d467020b786db3da",
+    "text": "Das Schaf. Schafe haben dicke Wolle. Die wird einmal im Jahr geschoren. Schafe können sich viele Gesichter merken.",
+    "heard": "Das Schaf. Schafe haben dicke Wolle. Die wird einmal im Jahr geschoren. Schafe können sich viele Gesichter merken.",
+    "score": 1,
+    "take": 0
+  },
+  "huhn-name": {
+    "hash": "daecffccb28198d1ea373277f2cfdfce93d42c40",
+    "text": "Das Huhn!",
+    "heard": "Das Huhn.",
+    "score": 1,
+    "take": 0
+  },
+  "huhn-facts": {
+    "hash": "f082d19e6a6422b0d8404c1981fbb767fbf01d98",
+    "text": "Das Huhn. Ein Huhn kann fast jeden Tag ein Ei legen. Hühner baden gern im Sand, um sauber zu bleiben.",
+    "heard": "Das Huhn, ein Huhn kann fast jeden Tag ein Ei legen, Hühner baden gern im Sand, um sauber zu bleiben.",
+    "score": 1,
+    "take": 0
+  },
+  "pferd-name": {
+    "hash": "2a31070543be8cd3f12d9349e8d1d4e18de86234",
+    "text": "Das Pferd!",
+    "heard": "Das Pferd.",
+    "score": 1,
+    "take": 0
+  },
+  "pferd-facts": {
+    "hash": "11b33fb8752d7f3043dbe9d53764aa93f3a63b36",
+    "text": "Das Pferd. Pferde können im Stehen schlafen. Ein Fohlen kann schon kurz nach der Geburt laufen.",
+    "heard": "Das Pferd. Pferde können im Stehen schlafen. Ein Fohlen kann schon kurz nach der Geburt laufen.",
+    "score": 1,
+    "take": 0
+  },
+  "ziege-name": {
+    "hash": "bdd2d6ff70ce3e0e24e8b2d104b2e5a5b498ab45",
+    "text": "Die Ziege!",
+    "heard": "Die Ziege.",
+    "score": 1,
+    "take": 0
+  },
+  "ziege-facts": {
+    "hash": "777677d0047c1143f7ae2834656c5947b2bd3e52",
+    "text": "Die Ziege. Ziegen sind tolle Kletterer. Ihre Pupillen sehen aus wie kleine Rechtecke.",
+    "heard": "Die Ziege. Ziegen sind tolle Kletterer. Ihre Popillen sehen aus wie kleine Rechtecke.",
+    "score": 0.988,
+    "take": 0
+  },
+  "ente-name": {
+    "hash": "d6372e0b84d5a4341330bfc85c06bc558ce5e722",
+    "text": "Die Ente!",
+    "heard": "Die Ente",
+    "score": 1,
+    "take": 0
+  },
+  "ente-facts": {
+    "hash": "6f0d9f96ca8c6d975e4bb5dd57368f880db61673",
+    "text": "Die Ente. Enten fetten ihre Federn ein, damit kein Wasser durchkommt. Entenküken laufen ihrer Mutter in einer Reihe hinterher.",
+    "heard": "Die Ente, Enten fetten ihre Federn ein, damit kein Wasser durchkommt. Enten Küken laufen ihrer Mutter in einer Reihe hinterher.",
+    "score": 0.992,
+    "take": 0
+  },
+  "gans-name": {
+    "hash": "6c444471d452f775abb56c67f4034b917120ecb8",
+    "text": "Die Gans!",
+    "heard": "Die Gans.",
+    "score": 1,
+    "take": 0
+  },
+  "gans-facts": {
+    "hash": "746b537492bba81e67cb00e63f195e46f6ee12e8",
+    "text": "Die Gans. Gänse passen gut auf und schnattern laut, wenn Fremde kommen. Junge Gänse heißen Gössel.",
+    "heard": "Die Gans. Gänse passen gut auf und schnattern laut, wenn Fremde kommen. Junge Gänse heißen Gössel.",
+    "score": 1,
+    "take": 0
+  },
+  "kaninchen-name": {
+    "hash": "6e3b64e3017c2da4e94e4ee5fe5f6bbf7f4d5bfd",
+    "text": "Das Kaninchen!",
+    "heard": "Das Kaninchen",
+    "score": 1,
+    "take": 0
+  },
+  "kaninchen-facts": {
+    "hash": "c975428f521b969e44348574f5c10a0f639eb6f5",
+    "text": "Das Kaninchen. Kaninchen können ihre langen Ohren in verschiedene Richtungen drehen. Ihre Zähne wachsen ihr ganzes Leben lang.",
+    "heard": "Das Kaninchen? Kaninchen können ihre langen Ohren in verschiedene Richtungen drehen. Ihre Zähne wachsen ihr ganzes Leben lang.",
+    "score": 1,
+    "take": 0
+  },
+  "esel-name": {
+    "hash": "3a7f8bda8d849e05aca5c8cd25ec537b27cfb36e",
+    "text": "Der Esel!",
+    "heard": "Der Esel.",
+    "score": 1,
+    "take": 0
+  },
+  "esel-facts": {
+    "hash": "9fe782822f7f981c38519c0b332a8b995978c5cd",
+    "text": "Der Esel. Esel sind sehr trittsicher und können schwere Lasten tragen. Mit ihren langen Ohren hören sie sehr gut.",
+    "heard": "Der Esel. Esel sind sehr trittsicher und können schwere Lasten tragen. Mit ihren langen Ohren hören sie sehr gut.",
+    "score": 1,
+    "take": 0
+  },
+  "hund-name": {
+    "hash": "1577abbc1789d0977957a9435399c331991afb91",
+    "text": "Der Hund!",
+    "heard": "Der Hund",
+    "score": 1,
+    "take": 0
+  },
+  "hund-facts": {
+    "hash": "b9f436d4308ebc2393fbdd9c7e9c5ee4560a4399",
+    "text": "Der Hund. Hunde riechen viel, viel besser als Menschen. Wenn ein Hund mit dem Schwanz wedelt, ist er oft aufgeregt oder freut sich.",
+    "heard": "Der Hund! Hunde riechen viel, viel besser als Menschen. Wenn ein Hund mit dem Schwanz wedelt, ist er oft aufgeregt oder freut sich.",
+    "score": 1,
+    "take": 0
+  },
+  "katze-name": {
+    "hash": "3337409e93d5698b509d47fb63c938e8069b647e",
+    "text": "Die Katze!",
+    "heard": "Die Katze.",
+    "score": 1,
+    "take": 0
+  },
+  "katze-facts": {
+    "hash": "91db19cc895f50a765c25e4106fdfc9be95fc8a5",
+    "text": "Die Katze. Katzen schnurren oft, wenn sie sich wohlfühlen. Mit ihren Schnurrhaaren ertasten sie Dinge auch im Dunkeln.",
+    "heard": "Die Katze. Katzen schnurren oft, wenn sie sich wohlfühlen. Mit ihren Schnurrhaaren ertasten sie Dinge auch im Dunkeln.",
+    "score": 1,
+    "take": 0
+  },
+  "elefant-name": {
+    "hash": "4a8ada006c8e37e1e84be92e2195555725420a8f",
+    "text": "Der Elefant!",
+    "heard": "Der Elefant",
+    "score": 1,
+    "take": 0
+  },
+  "elefant-facts": {
+    "hash": "8432105a4b545be654f33735e716b70280124282",
+    "text": "Der Elefant. Der Afrikanische Elefant ist das größte Tier an Land. Mit dem Rüssel kann er riechen, trinken und Dinge greifen.",
+    "heard": "Der Elefant. Der afrikanische Elefant ist das größte Tier an Land. Mit dem Rüssel kann er riechen, trinken und Dinge greifen.",
+    "score": 1,
+    "take": 0
+  },
+  "giraffe-name": {
+    "hash": "e0088fe2d53d4fee91d5f766ff5aa51558015adc",
+    "text": "Die Giraffe!",
+    "heard": "Die Giraffe.",
+    "score": 1,
+    "take": 0
+  },
+  "giraffe-facts": {
+    "hash": "44f0b862fce2d21786366ac81f5c2159051bce33",
+    "text": "Die Giraffe. Giraffen sind die höchsten Tiere der Welt. Ihre Zunge ist ungefähr 45 Zentimeter lang.",
+    "heard": "Die Giraffe. Giraffen sind die höchsten Tiere der Welt. Ihre Zunge ist ungefähr 45 Zentimeter lang.",
+    "score": 1,
+    "take": 0
+  },
+  "loewe-name": {
+    "hash": "2e434a9191ff35d6c9a4303a922fb27860945f48",
+    "text": "Der Löwe!",
+    "heard": "Der Löwe",
+    "score": 1,
+    "take": 0
+  },
+  "loewe-facts": {
+    "hash": "b9a250e247938e038ed792228a1fc7618aaf18da",
+    "text": "Der Löwe. Löwen leben in Familiengruppen, die man Rudel nennt. Löwen schlafen bis zu 20 Stunden am Tag.",
+    "heard": "Der Löwe. Löwen leben in Familiengruppen, die man Rudel nennt. Löwen schlafen bis zu 20 Stunden am Tag.",
+    "score": 1,
+    "take": 0
+  },
+  "zebra-name": {
+    "hash": "b323f53cfc6cc8c21f7b5f404ca8416fc96d0bb1",
+    "text": "Das Zebra!",
+    "heard": "Das Zebra.",
+    "score": 1,
+    "take": 0
+  },
+  "zebra-facts": {
+    "hash": "7a85d6692e5331127bfdf248bf81b7228740c312",
+    "text": "Das Zebra. Jedes Zebra hat sein eigenes Streifenmuster. Zebras leben in großen Herden in Afrika.",
+    "heard": "Das Zebra. Jedes Zebra hat sein eigenes Streifenmuster. Zebras leben in großen Herden in Afrika.",
+    "score": 1,
+    "take": 0
+  },
+  "nashorn-name": {
+    "hash": "1a0fea911f7f3f044c3d296903e6593a13956399",
+    "text": "Das Nashorn!",
+    "heard": "Das Nashorn.",
+    "score": 1,
+    "take": 0
+  },
+  "nashorn-facts": {
+    "hash": "166a8cb344f445a78097dca087e443ec3f5ba52e",
+    "text": "Das Nashorn. Das Breitmaulnashorn frisst fast den ganzen Tag Gras. Sein Horn ist aus demselben Stoff wie unsere Fingernägel.",
+    "heard": "Das Nashorn. Das Breitmoll Nashorn frisst fast den ganzen Tag Gras. Sein Horn ist aus demselben Stoff wie unsere Fingernägel.",
+    "score": 0.975,
+    "take": 0
+  },
+  "nilpferd-name": {
+    "hash": "c6f30e471b86ff4492d86bf200b288e404fc5c9c",
+    "text": "Das Nilpferd!",
+    "heard": "Das Nilpferd.",
+    "score": 1,
+    "take": 0
+  },
+  "nilpferd-facts": {
+    "hash": "5709481888093cb07b0727caa2479f154f22d5ce",
+    "text": "Das Nilpferd. Nilpferde liegen tagsüber im Wasser und fressen nachts an Land Gras. Unter Wasser können sie Nase und Ohren verschließen.",
+    "heard": "Das Nilpferd. Nilpferde liegen tagsüber im Wasser und fressen nachts an Landgras. Unter Wasser können sie Nase und Ohren verschließen.",
+    "score": 0.992,
+    "take": 0
+  },
+  "kaenguru-name": {
+    "hash": "2ddd783e18f3ef895cb7f42d54a217db294c1d36",
+    "text": "Das Känguru!",
+    "heard": "Das Känguru.",
+    "score": 1,
+    "take": 0
+  },
+  "kaenguru-facts": {
+    "hash": "c9410244456670da1e5a975f0f59b746f83c6392",
+    "text": "Das Känguru. Kängurus hüpfen mit ihren starken Hinterbeinen. Das Junge wächst im Beutel der Mutter auf.",
+    "heard": "Das Känguru. Kängurus hüpfen mit ihren starken Hinterbeinen, das Junge wächst im Beutel der Mutter auf.",
+    "score": 1,
+    "take": 0
+  },
+  "eisbaer-name": {
+    "hash": "03cd77bb73f01225f746cb96967cb22c210ff14f",
+    "text": "Der Eisbär!",
+    "heard": "Der Eisbär",
+    "score": 1,
+    "take": 0
+  },
+  "eisbaer-facts": {
+    "hash": "549836046ce91045333dc9525145230037b08ac8",
+    "text": "Der Eisbär. Unter seinem weißen Fell hat der Eisbär schwarze Haut. Eisbären sind sehr gute Schwimmer.",
+    "heard": "Der Eisbär. Unter seinem weißen Fell hat der Eisbär schwarze Haut. Eisbären sind sehr gute Schwimmer.",
+    "score": 1,
+    "take": 0
+  },
+  "kamel-name": {
+    "hash": "5736203bd906e08e038baddd75b39528f7260846",
+    "text": "Das Kamel!",
+    "heard": "Das Kamel.",
+    "score": 1,
+    "take": 0
+  },
+  "kamel-facts": {
+    "hash": "2b62fed3a7e32b2de7806ff34fd5b147068a95a5",
+    "text": "Das Kamel. Dieses Kamel heißt Trampeltier und hat zwei Höcker. In den Höckern speichert es Fett, kein Wasser.",
+    "heard": "Das Kameel. Dieses Kameel heißt Trampeltier und hat zwei Höcker. In den Höckern speichert es Fett, kein Wasser.",
+    "score": 0.981,
+    "take": 0
+  },
+  "flamingo-name": {
+    "hash": "c5db71f74c8041c48a9877ae47ec3a0e2d323343",
+    "text": "Der Flamingo!",
+    "heard": "Der Flamingo",
+    "score": 1,
+    "take": 0
+  },
+  "flamingo-facts": {
+    "hash": "9ac1da9117cfec089dd972fd75961362df79dd48",
+    "text": "Der Flamingo. Flamingos sind rosa, weil ihr Futter rosa Farbstoffe enthält. Sie stehen oft lange auf nur einem Bein.",
+    "heard": "Der Flamingo. Flamingos sind Rosa, weil ihr Futter-Rosa Farbstoffe enthält. Sie stehen oft lange auf nur einem Bein.",
+    "score": 1,
+    "take": 0
+  },
+  "erdmaennchen-name": {
+    "hash": "50d56afe5900fb748a3c4efa249e0f3c0ea21baa",
+    "text": "Das Erdmännchen!",
+    "heard": "Das Erdmännchen",
+    "score": 1,
+    "take": 0
+  },
+  "erdmaennchen-facts": {
+    "hash": "e0421caf4694c58e9fc72dd7efddb7063394375b",
+    "text": "Das Erdmännchen. Ein Erdmännchen hält Wache und warnt die anderen mit einem Ruf. Erdmännchen leben in großen Familien in Höhlen unter der Erde.",
+    "heard": "Das Erdmännchen. Ein Erdmännchen hält Wache und wandt die anderen mit einem Ruf. Erdmännchen leben in großen Familien in Höhlen unter der Erde.",
+    "score": 0.986,
+    "take": 0
+  },
+  "pinguin-name": {
+    "hash": "84b86147c01f687d78c13dc7d385dbbad52780a6",
+    "text": "Der Pinguin!",
+    "heard": "Der Pinguin.",
+    "score": 1,
+    "take": 0
+  },
+  "pinguin-facts": {
+    "hash": "1fe61e4890be9904fe2a32a0c3c593a4ff15299b",
+    "text": "Der Pinguin. Pinguine können nicht fliegen, aber sehr schnell schwimmen. Humboldtpinguine leben an der Küste von Südamerika.",
+    "heard": "Der Pinguin. Pinguine können nicht fliegen, aber sehr schnell schwimmen. Humboldt-Pinguine leben an der Küste von Südamerika.",
+    "score": 0.992,
+    "take": 0
+  },
+  "panda-name": {
+    "hash": "c5e7acb4d9dfa0611846e16f1293cb28410c4556",
+    "text": "Der Panda!",
+    "heard": "Der Panda",
+    "score": 1,
+    "take": 0
+  },
+  "panda-facts": {
+    "hash": "bd13c7703e6f5614993de8a20404da7c110686bb",
+    "text": "Der Panda. Pandas fressen fast nur Bambus, viele Stunden am Tag. Ein Panda-Baby ist bei der Geburt ungefähr so schwer wie ein Apfel.",
+    "heard": "Der Panda. Pandas fressen fast nur Bambus, viele Stunden am Tag. Ein Panda-Baby ist bei der Geburt ungefähr so schwer wie ein Apfel.",
+    "score": 1,
+    "take": 0
+  },
+  "tiger-name": {
+    "hash": "75cfddb734090935dd0659e5d0f13d791a877571",
+    "text": "Der Tiger!",
+    "heard": "Der Tiger",
+    "score": 1,
+    "take": 0
+  },
+  "tiger-facts": {
+    "hash": "2745ce98b5c51da616db32a3eab465185f4a6fcd",
+    "text": "Der Tiger. Tiger sind die größten Raubkatzen der Welt. Anders als die meisten Katzen schwimmen Tiger sehr gern.",
+    "heard": "Der Tiger. Tiger sind die größten Raubkatzen der Welt. Anders als die meisten Katzen schwimmen Tiger sehr gern.",
+    "score": 1,
+    "take": 0
+  },
+  "orang-utan-name": {
+    "hash": "136f66c5e908caee7041c8f56ff8d17776816a5f",
+    "text": "Der Orang-Utan!",
+    "heard": "Der Orang-Utan",
+    "score": 1,
+    "take": 0
+  },
+  "orang-utan-facts": {
+    "hash": "c3ad823e20bacc87579cb5978ab1cdb16fc7aeee",
+    "text": "Der Orang-Utan. Orang-Utan bedeutet „Waldmensch“. Jeden Abend bauen sie sich ein neues Schlafnest hoch oben im Baum.",
+    "heard": "Der Orang-Utan. Orang-Utan bedeutet Waldmensch. Jeden Abend bauen sie sich ein neues Schlafnest hoch oben im Baum.",
+    "score": 1,
+    "take": 0
+  },
+  "tukan-name": {
+    "hash": "7c74e8847f14f39635f3b0b8e527c9632974f15a",
+    "text": "Der Tukan!",
+    "heard": "Der Tukan",
+    "score": 1,
+    "take": 0
+  },
+  "tukan-facts": {
+    "hash": "bd7e3c9d2e7fa7aff3ca3c8f7dc4ec878fc3071d",
+    "text": "Der Tukan. Sein Schnabel ist riesig, aber ganz leicht. Innen ist er fast hohl wie ein Schwamm. Tukane leben in Südamerika.",
+    "heard": "Der Tukan. Sein Schnabel ist riesig, aber ganz leicht. Innen ist er fast hohl wie ein Schwamm. Tukane leben in Südamerika.",
+    "score": 1,
+    "take": 0
+  },
+  "chamaeleon-name": {
+    "hash": "7bc92c9cc92f2811d798b7a5a837dcff8655d877",
+    "text": "Das Chamäleon!",
+    "heard": "Das Kameleon",
+    "score": 0.769,
+    "take": 1,
+    "approved": true
+  },
+  "chamaeleon-facts": {
+    "hash": "ee28aa78b9d54b3091d22d175923d1b2baf35246",
+    "text": "Das Chamäleon. Ein Chamäleon kann seine Farbe ändern. Seine Augen kann es in verschiedene Richtungen drehen.",
+    "heard": "Das Chamäleon. Ein Chamäleon kann seine Farbe ändern, seine Augen kann es in verschiedene Richtungen drehen.",
+    "score": 1,
+    "take": 0
+  },
+  "frosch-name": {
+    "hash": "8e5ef9ed736e91a2f83d57acf005f28fc7e7d6d3",
+    "text": "Der Frosch!",
+    "heard": "Der Frosch.",
+    "score": 1,
+    "take": 0
+  },
+  "frosch-facts": {
+    "hash": "21486065b827bb6a85afea9a4e50dd73f6abc7fc",
+    "text": "Der Frosch. Der Rotaugenlaubfrosch hat leuchtend rote Augen. Damit erschreckt er Feinde. Tagsüber schläft er unter einem Blatt.",
+    "heard": "Der Frosch, der Rot-Augenlaub-Frosch hat leuchtend rote Augen, damit erschreckt er Feinde, tagsüber schläft er unter einem Blatt.",
+    "score": 0.984,
+    "take": 0
+  },
+  "gorilla-name": {
+    "hash": "49a1fad49eb97cfd0ec48599dd65268a2464b659",
+    "text": "Der Gorilla!",
+    "heard": "Der Gorilla",
+    "score": 1,
+    "take": 0
+  },
+  "gorilla-facts": {
+    "hash": "869727d9be34b764f4d1907dcf457b5edc06e9a6",
+    "text": "Der Gorilla. Gorillas trommeln sich auf die Brust, um zu zeigen, wie stark sie sind. Sie fressen vor allem Blätter, Stängel und Früchte.",
+    "heard": "Der Gorilla. Gorillas trommeln sich auf die Brust, um zu zeigen, wie stark sie sind. Sie fressen vor allem Blätter, Stängel und Früchte.",
+    "score": 1,
+    "take": 0
+  },
+  "schimpanse-name": {
+    "hash": "825605102d728b614a84cbad075d9e77ec78412a",
+    "text": "Der Schimpanse!",
+    "heard": "Der Schimpanse.",
+    "score": 1,
+    "take": 0
+  },
+  "schimpanse-facts": {
+    "hash": "7f145c11df43743bed681c93eea6a5fc2946bdb0",
+    "text": "Der Schimpanse. Schimpansen angeln mit Stöckchen nach Termiten. Sie leben in Gruppen und umarmen sich, um sich zu trösten.",
+    "heard": "Der Schimpanse. Schimpanzen angeln mit Stöckchen nach Termiten. Sie leben in Gruppen und umahmen sich, um sich zu trösten.",
+    "score": 0.983,
+    "take": 0
+  },
+  "ara-name": {
+    "hash": "65fc3be5dffed4561c9305b9bd28ccd7aab7bd43",
+    "text": "Der Ara!",
+    "heard": "Der Ara",
+    "score": 1,
+    "take": 0
+  },
+  "ara-facts": {
+    "hash": "3de3f0e42caeceaa110fe3abcce3d4a60d454854",
+    "text": "Der Ara. Mit seinem kräftigen Schnabel knackt der Ara harte Nüsse. Aras bleiben oft ein Leben lang mit demselben Partner zusammen.",
+    "heard": "Der Ara. Mit seinem kräftigen Schnabel knackt der Ara harte Nüsse. Aras bleiben oft ein Leben lang mit demselben Partner zusammen.",
+    "score": 1,
+    "take": 0
+  },
+  "faultier-name": {
+    "hash": "959851340d891e235147bb849564fdc1684fa26f",
+    "text": "Das Faultier!",
+    "heard": "Das Faultier",
+    "score": 1,
+    "take": 0
+  },
+  "faultier-facts": {
+    "hash": "7de156ff31282dee260ddae38fd6b449186abe97",
+    "text": "Das Faultier. Faultiere bewegen sich ganz langsam und hängen kopfüber in den Bäumen. In ihrem Fell wachsen manchmal winzige grüne Algen.",
+    "heard": "Das Faultier. Faultiere bewegen sich ganz langsam und hängen kopfüber in den Bäumen. In ihrem Fell wachsen manchmal winzige grüne Algen.",
+    "score": 1,
+    "take": 0
+  },
+  "jaguar-name": {
+    "hash": "9dc77315c493c81ab3214efcf1a6ca4177a5bf63",
+    "text": "Der Jaguar!",
+    "heard": "Der Jaguar",
+    "score": 1,
+    "take": 0
+  },
+  "jaguar-facts": {
+    "hash": "59c771e2aba3897e0cd7e5d2fea980790718c730",
+    "text": "Der Jaguar. Der Jaguar ist die größte Katze in Amerika. Jaguare schwimmen gern und gut.",
+    "heard": "Der Jaguar. Der Jaguar ist die größte Katze in Amerika. Jaguare schwimmen gern und gut.",
+    "score": 1,
+    "take": 0
+  },
+  "krokodil-name": {
+    "hash": "5e4ce5506669adfab5401c5bbcdb040187b40704",
+    "text": "Das Krokodil!",
+    "heard": "Das Krokodil.",
+    "score": 1,
+    "take": 0
+  },
+  "krokodil-facts": {
+    "hash": "38f37187b48e9a0078f2e6fa6798de33f5b84547",
+    "text": "Das Krokodil. Im Wasser schauen oft nur seine Augen und die Nase heraus. Krokodilmütter tragen ihre Babys vorsichtig im Maul.",
+    "heard": "Das Krokodil. Im Wasser schauen oft nur seine Augen und die Nase heraus. Krokodil-Mütter tragen ihre Babys vorsichtig im Maul.",
+    "score": 0.992,
+    "take": 0
+  },
+  "schlange-name": {
+    "hash": "bef97d0a7dad08a25fa90ae4b3f4c508b09c92da",
+    "text": "Die Schlange!",
+    "heard": "Die Schlange.",
+    "score": 1,
+    "take": 0
+  },
+  "schlange-facts": {
+    "hash": "89e146ea36b67745aaa2c6d12235b63485be18db",
+    "text": "Die Schlange. Der Grüne Baumpython wickelt sich zum Ausruhen um einen Ast. Schlangen riechen mit ihrer Zunge.",
+    "heard": "Die Schlange, der grüne Baumpeton, wickelt sich zum Ausruhen um einen Ast. Schlangen riechen mit ihrer Zunge.",
+    "score": 0.981,
+    "take": 0
+  },
+  "clownfisch-name": {
+    "hash": "a080cfc8477184d6cd04bf4369ad825a61b4f163",
+    "text": "Der Clownfisch!",
+    "heard": "Der Clownfisch",
+    "score": 1,
+    "take": 0
+  },
+  "clownfisch-facts": {
+    "hash": "dde3453a786b8f60219b62867ded61bf8221f09d",
+    "text": "Der Clownfisch. Clownfische wohnen in Seeanemonen. Die Nesseln der Anemone schützen sie vor Feinden.",
+    "heard": "Der Clownfisch. Clownfische wohnen in See-Anemonen. Die Nesseln der Anemone schützen sie vor Feinden.",
+    "score": 0.99,
+    "take": 0
+  },
+  "delfin-name": {
+    "hash": "e43e8ef1a070a87066a3daed77b1bc0d845b8499",
+    "text": "Der Delfin!",
+    "heard": "Der Delfin.",
+    "score": 1,
+    "take": 0
+  },
+  "delfin-facts": {
+    "hash": "87bacd29bd053bd3522e4cb51aac6cd808acd9d3",
+    "text": "Der Delfin. Delfine atmen Luft und schwimmen dafür nach oben. Sie rufen sich mit Pfiffen gegenseitig beim Namen.",
+    "heard": "Der Delfin. Delfine atmen Luft und schwimmen dafür nach oben. Sie rufen sich mit Pfiffen gegenseitig beim Namen.",
+    "score": 1,
+    "take": 0
+  },
+  "meeresschildkroete-name": {
+    "hash": "8bc6f13897f02d7f4eb135c4128852528e0edf6b",
+    "text": "Die Meeresschildkröte!",
+    "heard": "Die Meeresschildkröte.",
+    "score": 1,
+    "take": 0
+  },
+  "meeresschildkroete-facts": {
+    "hash": "0671d352fed9151fe5bea0124fca15e306411e5f",
+    "text": "Die Meeresschildkröte. Sie legen ihre Eier am Strand in den Sand. Beim Schlafen können sie stundenlang unter Wasser bleiben.",
+    "heard": "Die Meeresschildkröte, sie legen ihre Eier am Strand in den Sand. Beim Schlafen können sie stundenlang unter Wasser bleiben.",
+    "score": 1,
+    "take": 0
+  },
+  "krake-name": {
+    "hash": "97359ba48c8372fd30b8fe78305f5b2c9e514ebb",
+    "text": "Der Krake!",
+    "heard": "Der Krake",
+    "score": 1,
+    "take": 0
+  },
+  "krake-facts": {
+    "hash": "a3ad63f3477f57287a54d6e42d94d0d2209a4ed6",
+    "text": "Der Krake. Ein Krake hat acht Arme. Er hat drei Herzen und blaues Blut.",
+    "heard": "Der Krake. Ein Krake hat acht Arme. Er hat drei Herzen und blaues Blut.",
+    "score": 1,
+    "take": 0
+  },
+  "buckelwal-name": {
+    "hash": "43ea0c965c62e04ad844da8c7022c42fe12f140d",
+    "text": "Der Buckelwal!",
+    "heard": "Der Buckelwal",
+    "score": 1,
+    "take": 0
+  },
+  "buckelwal-facts": {
+    "hash": "020c375ee19142ca3123db838b3ed073c075f3ab",
+    "text": "Der Buckelwal. Buckelwale singen lange Lieder unter Wasser. Ein Buckelwal ist ungefähr so lang wie ein Bus.",
+    "heard": "Der Buckelwal. Buckelwale singen lange Lieder unter Wasser. Ein Buckelwal ist ungefähr so lang wie ein Bus.",
+    "score": 1,
+    "take": 0
+  },
+  "walhai-name": {
+    "hash": "97264a131d1c56419a6b6cbd049da2d43283ad9f",
+    "text": "Der Walhai!",
+    "heard": "Der Walhai.",
+    "score": 1,
+    "take": 0
+  },
+  "walhai-facts": {
+    "hash": "43b66b58854c3cb1fbdabffaee3e1f4134a5769e",
+    "text": "Der Walhai. Der Walhai ist der größte Fisch der Welt. Er frisst winzig kleine Tierchen, das Plankton.",
+    "heard": "Der Walhai. Der Walhai ist der größte Fisch der Welt. Er frisst winzig kleine Tierchen das Plankton.",
+    "score": 1,
+    "take": 0
+  },
+  "seehund-name": {
+    "hash": "05db856596e4d980ae686771bd1b1172dbaf5866",
+    "text": "Der Seehund!",
+    "heard": "Der Seehund",
+    "score": 1,
+    "take": 0
+  },
+  "seehund-facts": {
+    "hash": "4076765578b0bbe3bddc462c6c6a8a47880d8513",
+    "text": "Der Seehund. Junge Seehunde heißen Heuler, weil sie nach ihrer Mutter rufen. Beim Tauchen verschließen Seehunde ihre Nasenlöcher.",
+    "heard": "Der Seehund. Junge Seehunde heißen Heuler, weil sie nach ihrer Mutter rufen. Beim Tauchen verschließen Seehunde ihre Nasenlöcher.",
+    "score": 1,
+    "take": 0
+  },
+  "orca-name": {
+    "hash": "d2c6c7e91e9e98e95010cbaafba710993b825685",
+    "text": "Der Orca!",
+    "heard": "Der Orca.",
+    "score": 1,
+    "take": 0
+  },
+  "orca-facts": {
+    "hash": "14b0777a7b7ad1c0fa9a0c6fa1e4ba4c785f3e04",
+    "text": "Der Orca. Orcas leben in Familien und rufen sich mit Pfiffen und Klicks. Ein Orca ist eigentlich ein sehr großer Delfin.",
+    "heard": "Der Orca. Orcas leben in Familien und rufen sich mit Pfiffen und Klicks. Ein Orca ist eigentlich ein sehr großer Delfin.",
+    "score": 1,
+    "take": 0
+  },
+  "seepferdchen-name": {
+    "hash": "d1d37519a04e8c7d5c4ba1f247bb13473c26edd3",
+    "text": "Das Seepferdchen!",
+    "heard": "Das Seepferdchen",
+    "score": 1,
+    "take": 0
+  },
+  "seepferdchen-facts": {
+    "hash": "828494ad28da96a1aab6d298e1c02624c60f2d15",
+    "text": "Das Seepferdchen. Beim Seepferdchen bekommt der Vater die Babys. Mit seinem Schwanz hält es sich an Pflanzen fest.",
+    "heard": "Das Seepferdchen. Beim Seepferdchen bekommt der Vater die Babys. Mit seinem Schwanz hält es sich an Pflanzen fest.",
+    "score": 1,
+    "take": 0
+  },
+  "qualle-name": {
+    "hash": "856792875165e80868f1590cb9413ff9e0a1f653",
+    "text": "Die Qualle!",
+    "heard": "Die Qualle.",
+    "score": 1,
+    "take": 0
+  },
+  "qualle-facts": {
+    "hash": "8dc63c9a287df2c406450825976088011a61c0f0",
+    "text": "Die Qualle. Quallen haben kein Gehirn und kein Herz. Sie bestehen fast ganz aus Wasser.",
+    "heard": "Die Qualle. Quallen haben kein Gehirn und kein Herz. Sie bestehen fast ganz aus Wasser.",
+    "score": 1,
+    "take": 0
+  },
+  "seestern-name": {
+    "hash": "23445a3acccc05c9e7d0c9c5dcb832ddef6c7072",
+    "text": "Der Seestern!",
+    "heard": "Der See-Stern",
+    "score": 0.923,
+    "take": 0
+  },
+  "seestern-facts": {
+    "hash": "4b7031e958831debdbfbdbcbfd3ceda1a3d7f0e4",
+    "text": "Der Seestern. Ein Seestern hat meistens fünf Arme. Verliert er einen Arm, wächst er wieder nach.",
+    "heard": "Der See-Stern, ein See-Stern hat meistens fünf Arme, verliert er einen Arm, wächst er wieder nach.",
+    "score": 0.979,
+    "take": 0
+  },
+  "krabbe-name": {
+    "hash": "5c54184f7f450422e0fb2a7d7df5a9456305dd64",
+    "text": "Die Krabbe!",
+    "heard": "Die Krabbe.",
+    "score": 1,
+    "take": 0
+  },
+  "krabbe-facts": {
+    "hash": "8eb85cd12365b41be64440c54fbeedeb51172a16",
+    "text": "Die Krabbe. Krabben laufen am liebsten seitwärts. Ihr harter Panzer schützt sie wie eine Rüstung.",
+    "heard": "Die Krabbe. Krabben laufen am liebsten seitwärts. Ihr harter Panzer schützt sie wie eine Rüstung.",
+    "score": 1,
+    "take": 0
+  },
+  "mantarochen-name": {
+    "hash": "f08ee69bea277fdaa4075a6cdd2b4632f2ba9117",
+    "text": "Der Mantarochen!",
+    "heard": "Der Mantarochen.",
+    "score": 1,
+    "take": 0
+  },
+  "mantarochen-facts": {
+    "hash": "1ecf3cd4843b2822a8d4fc15f4b2e93d5977c3b6",
+    "text": "Der Mantarochen. Mantarochen gleiten durchs Wasser, als würden sie fliegen. Sie können bis zu sieben Meter breit werden.",
+    "heard": "Der Mantarochen. Mantarochen gleiten durchs Wasser, als würden sie fliegen. Sie können bis zu sieben Meter breit werden.",
+    "score": 1,
+    "take": 0
+  }
+}

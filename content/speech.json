@@ -1,0 +1,18 @@
+{
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+  "modelUrl": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+  "license": "Apache 2.0",
+  "licenseUrl": "https://www.apache.org/licenses/LICENSE-2.0",
+  "language": "German",
+  "reference": {
+    "file": "content/speech/voice.flac",
+    "text": "Hallo! Schau mal, das ist die Kuh. Die Kuh macht Muh und frisst ganz viel Gras auf der Wiese.",
+    "design": "A cheerful, lively female storyteller speaking German, bright and playful with a smile in her voice, enthusiastic but not shouting, clear and friendly for small children. Designed with Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign; no real person."
+  },
+  "templates": {
+    "name": "{Artikel} {name}!",
+    "facts": "{Artikel} {name}. {fakten}"
+  },
+  "takes": 4,
+  "seed": 7
+}

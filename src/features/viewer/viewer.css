@@ -46,11 +46,16 @@
 .photo-fg.in-right {
   animation: in-right 0.28s ease;
 }
-.photo-fg.in-up {
-  animation: in-up 0.28s ease;
+/* The slideshow (spec 3.3): the next photo of the animal fades in over the
+   last one, which fades out (both contain, so both must fade). 1.5 s = FADE_MS. */
+.photo-fg.in-fade,
+.stage-bg.is-entering {
+  animation: fade-in 1.5s ease-in-out;
 }
-.photo-fg.in-down {
-  animation: in-down 0.28s ease;
+.photo-fg.is-leaving,
+.stage-bg.is-leaving {
+  animation: fade-out 1.5s ease-in-out forwards;
+  pointer-events: none;
 }
 @keyframes in-left {
   from {
@@ -64,15 +69,13 @@
     opacity: 0;
   }
 }
-@keyframes in-up {
+@keyframes fade-in {
   from {
-    transform: translateY(25%);
     opacity: 0;
   }
 }
-@keyframes in-down {
-  from {
-    transform: translateY(-25%);
+@keyframes fade-out {
+  to {
     opacity: 0;
   }
 }
@@ -124,80 +127,40 @@
   width: 42px;
   height: 42px;
 }
+/* Prev/next: small at the very edge, the photo stays free for swiping. The hit
+   area is still 64 px (touch targets ≥ 64 px), only the dot inside is small. */
 .viewer-prev,
 .viewer-next {
   top: 50%;
-  margin-top: -34px;
+  width: 64px;
+  height: 64px;
+  margin-top: -32px;
+  border-radius: 0;
+  background: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 .viewer-prev {
-  left: 10px;
+  left: env(safe-area-inset-left, 0px);
+  justify-items: start;
+  padding-left: 4px;
 }
 .viewer-next {
-  right: 10px;
+  right: env(safe-area-inset-right, 0px);
+  justify-items: end;
+  padding-right: 4px;
 }
-.bubble {
-  position: absolute;
-  z-index: 3;
-  top: calc(env(safe-area-inset-top, 0px) + 18px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fff;
-  color: #17324a;
-  font-weight: 800;
-  font-size: clamp(30px, 8vw, 52px);
-  line-height: 1.2;
-  padding: 4px 26px;
-  border-radius: 999px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  animation: pop 1.8s ease forwards;
-}
-@keyframes pop {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 10px) scale(0.8);
-  }
-  12% {
-    opacity: 1;
-    transform: translate(-50%, 0) scale(1.05);
-  }
-  20% {
-    transform: translate(-50%, 0) scale(1);
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-.dots {
-  position: absolute;
-  z-index: 3;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 60px;
-  pointer-events: none;
-}
-.dot {
-  width: 12px;
-  height: 12px;
+.edge-dot {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgb(255 255 255 / 0.45);
+  background: rgb(0 0 0 / 0.35);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  display: grid;
+  place-items: center;
 }
-.dot.is-on {
-  background: #fff;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  /* Without its animation the bubble would stay invisible. */
-  .bubble {
-    animation: none;
-    opacity: 1;
-  }
+.viewer-button .edge-dot svg {
+  width: 22px;
+  height: 22px;
 }

@@ -1,0 +1,9 @@
+# Python side of `bun run speech:build` (spec 5.6). CPU is enough:
+#   python3 -m venv .venv-tts
+#   .venv-tts/bin/pip install torch --index-url https://download.pytorch.org/whl/cpu
+#   .venv-tts/bin/pip install -r scripts/tts/requirements.txt
+#   TIERE_TTS_PYTHON=.venv-tts/bin/python bun run speech:build
+qwen-tts
+faster-whisper
+soundfile
+numpy

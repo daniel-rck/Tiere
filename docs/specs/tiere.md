@@ -23,8 +23,9 @@ Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechsel
 ## 3. Bildschirme
 
 ### 3.1 Start
-- 4 Welt-Kacheln im 2×2-Raster, im Querformat ab 16:10 als 1×4. Kachel = Weltfarbe, großes Emoji,
-  Weltname. Tippen öffnet die Welt, gesprochen wird nichts.
+- 4 Welt-Kacheln immer im 2×2-Raster wie die vier Quadranten eines Koordinatensystems, auch im
+  Querformat. Die Kacheln füllen den Bildschirm ohne Scrollen. Kachel = Weltfarbe, großes Emoji,
+  Weltname; Emoji und Name wachsen mit der Kachel. Tippen öffnet die Welt, gesprochen wird nichts.
 - Zahnrad oben rechts öffnet den Eltern-Bereich nur per **1,5 s langem Drücken** mit sichtbarem
   Fortschrittsring. Kurzes Tippen zeigt den Hinweis „Für die Eltern-Einstellungen das Zahnrad lange
   drücken“.
@@ -38,26 +39,36 @@ Der Modus wird in `localStorage` gespeichert und nur im Eltern-Bereich gewechsel
 ### 3.3 Vollbild (Kern der App)
 - Foto füllt den Bildschirm mit `object-fit: contain`, **nie beschnitten**. Dahinter dasselbe Foto in
   640 px, stark weichgezeichnet und abgedunkelt, damit keine Balken entstehen.
-- Beim Öffnen und bei jedem Tierwechsel: Sprechblase mit dem Lautwort zeigen (stille Tiere: 🤫).
-  Abgespielt oder gesprochen wird dabei nichts; ein laufender Laut oder Name verstummt.
-- Tippen: kleine „Boing“-Animation und Sprechblase, kein Ton.
-- Laut-Knopf unten in der Mitte (≥ 64 px, Noten-Symbol): spielt den Tierlaut, mit Boing und
-  Sprechblase. Nur so spielt die App einen Tierlaut. Tiere ohne Aufnahme haben keinen Laut-Knopf.
-- Lautsprecher-Knopf oben rechts (≥ 64 px): sagt den Namen mit Artikel, nie das Lautwort. Nur so
-  spricht die App einen Namen.
-- Wischen links/rechts oder große Pfeil-Buttons: nächstes/vorheriges Tier der Welt, zyklisch.
-- Mehrere Fotos pro Tier: Wischen nach oben/unten wechselt das Foto desselben Tiers (Punkte-Indikator
-  am rechten Rand). Links/rechts bleibt immer „anderes Tier“.
+- Beim Öffnen und bei jedem Tierwechsel wird nichts abgespielt oder gesprochen; ein laufender Laut
+  oder Name verstummt. Ein Lautwort („Muuuh!“) erscheint nicht.
+- Tippen: kleine „Boing“-Animation, kein Ton.
+- Laut-Knopf unten in der Mitte (≥ 64 px, Noten-Symbol): spielt den Tierlaut, mit Boing. Nur so
+  spielt die App einen Tierlaut. Tiere ohne Aufnahme haben keinen Laut-Knopf.
+- Lautsprecher-Knopf oben rechts (≥ 64 px): spielt den gebauten Namens-Clip („Die Kuh!“, §5.6), nie
+  das Lautwort. Nur so spricht die App einen Namen.
+- Wischen links/rechts oder kleine Pfeil-Knöpfe ganz am Rand (Trefferfläche ≥ 64 px): nächstes/
+  vorheriges Tier der Welt, zyklisch.
+- Mehrere Fotos pro Tier blenden von selbst langsam ineinander (alle 6 s, 1,5 s Überblenden), ohne
+  Indikator. Gezoomt oder beim Ziehen hält die Diashow an, ein Tierwechsel beginnt beim ersten Foto.
+  Hoch/runter wischen tut nichts: Kinder wischen nur links/rechts und spielen den Laut.
 - Entdecker-Modus: Unter dem Foto (nicht darüber) ein Panel mit Name + Artikel, 2 Fakten und
   „Vorlesen“. Pinch-Zoom 1–4× mit Verschieben, Doppeltipp schaltet 1× ↔ 2,5× an der Tippstelle.
   Solange gezoomt ist, wechselt Wischen nicht das Tier.
 - Gerät-Zurück-Taste und Escape schließen die oberste Ebene (Vollbild → Welt → Start).
-- Nachbarbilder (links, rechts, nächstes Foto) werden vorgeladen.
+- Nachbarbilder (links, rechts, nächstes Foto der Diashow) werden vorgeladen.
 
 ### 3.4 Eltern-Bereich
 - Sperre: Additionsaufgabe zweistellig + zweistellig, 4 Antwort-Buttons. Falsch → neue Aufgabe.
 - Einstellungen: Modus (Kleinkind ab 2 / Entdecker ab 5), Namen-Knopf an/aus, Laut-Knopf an/aus.
 - Credits: alle Fotos und Laute mit Autor, Lizenz und Quelle. Nur hier sind Links nach außen erlaubt.
+- Installieren: Knopf in den Einstellungen, wenn der Browser die Installation anbietet; auf iOS
+  klappt er eine kurze Anleitung auf. Läuft die App installiert, fehlt er.
+
+### 3.5 Onboarding im Browser
+- Läuft die App nicht installiert (Browser-Tab), sitzt ein Elternteil davor. Beim Start erscheint
+  einmal pro Sitzung ein Willkommen: kurze Erklärung, Modus wählen, Installieren (wie 3.4), Hinweis
+  auf das Zahnrad und die Eltern-Sperre. Nur „Los geht's“ schließt es; im selben Tab kommt es auch
+  nach dem Neuladen nicht wieder.
 
 ## 4. Inhalte
 
@@ -150,11 +161,23 @@ und wandelt mit `ffmpeg` nach AAC (`.m4a`, 96 kbit/s) in `public/sounds/<animalI
 passende Aufnahme oder mit `voice.kind = "quiet"` bekommen keinen Laut.
 
 ### 5.6 Sprache
-Version 1 spricht Namen und Fakten mit der Web Speech API (`de-DE`, bevorzugt eine deutsche
-Systemstimme, Rate 0.9, Pitch 1.1), aber nur auf Knopfdruck: Lautsprecher-Knopf im Vollbild
-(Name) und „Vorlesen“ im Entdecker-Panel. Kein deutsches Voice verfügbar → der Knopf bleibt stumm.
-Jeder Knopf bricht die laufende Ausgabe ab, bevor er seine startet. Jede Ausgabe startet aus
-einer Nutzergeste (iOS).
+Namen und Fakten sind Audiodateien aus dem Build (`bun run speech:build`), gesprochen von einer
+neuronalen Stimme: Qwen3-TTS (Apache 2.0), Stimme „Fröhliche Erzählerin“. Sie ist aus einer
+Beschreibung entworfen, keine reale Person (`content/speech/voice.flac`, Konfiguration in
+`content/speech.json`).
+- Pro Tier zwei Clips: der Name kurz mit Artikel („Die Kuh!“) und die Fakten („Die Kuh. <Fakt 1>
+  <Fakt 2>“), als `public/speech/<id>-name.m4a` und `<id>-facts.m4a` (AAC 64 kbit/s, −16 LUFS).
+- Jeder Clip wird bis zu viermal erzeugt und mit Spracherkennung (faster-whisper) gegengeprüft;
+  der erste gut verstandene Versuch gewinnt. Clips, bei denen die Erkennung unsicher bleibt, listet
+  der Build als „bitte anhören“; vor dem Commit hört Daniel sie an (Mensch-Gate). Freigegebene
+  Clips stehen mit `approved: true` im Lock und gelten als geprüft, bis sich Text oder Stimme ändern.
+- `content/speech.lock.json` hält fest, welcher Text mit welcher Stimme gebaut ist und wie er
+  verstanden wurde; ein unveränderter Text wird nie neu gesprochen.
+- Abgespielt wird nur auf Knopfdruck (Lautsprecher-Knopf: Name, „Vorlesen“: Fakten), über dasselbe
+  `<audio>`-Element wie die Tierlaute: Jeder Knopf bricht die laufende Ausgabe ab. Jede Ausgabe
+  startet aus einer Nutzergeste (iOS).
+- Fehlt ein Clip, spricht die Web Speech API als Ersatz (`de-DE`, Rate 0.9, Pitch 1.1); ohne
+  deutsche Stimme bleibt der Knopf stumm. `content:check --strict` verlangt alle Clips.
 
 ## 6. Architektur
 
@@ -168,6 +191,7 @@ scripts/
   photos-candidates.ts          Kandidaten + Kontaktabzug
   photos-build.ts               Download, sharp, Credits, Katalog
   sounds-candidates.ts / sounds-build.ts
+  speech-build.ts, tts/         Namen und Fakten sprechen (Qwen3-TTS, Python), prüfen, wandeln
   validate-content.ts           Schema- und Regelprüfung (--strict)
 src/
   main.tsx, App.tsx             Einstieg; App ist ein nacktes <Outlet />, darin der Ebenen-Stack
@@ -182,7 +206,8 @@ src/
   lib/ui/theme.css              Seam: App-Tokens (Hell/Dunkel, Weltfarben)
   sw/index.ts                   Service Worker (Seam): Precache-Regeln aus §7
 worker/                         Cloudflare Worker (web-base), liefert nur die Assets aus
-public/photos/, public/sounds/  generierte Medien (committet)
+public/photos/, public/sounds/, public/speech/
+                                generierte Medien (committet)
 ```
 
 - React 19 + Vite 8 + TypeScript 7 + Tailwind 4, Bun; oxlint + oxfmt, Vitest (jsdom).
@@ -198,7 +223,7 @@ public/photos/, public/sounds/  generierte Medien (committet)
   Funktion in `engine/gestures.ts`.
 
 ## 7. PWA und Offline
-- Precache: App-Shell, alle 640er und 1280er Fotos, alle Laute. 1920er per Runtime-Cache
+- Precache: App-Shell, alle 640er und 1280er Fotos, alle Laute und Sprachclips. 1920er per Runtime-Cache
   (CacheFirst). Precache-Budget ≤ 40 MB.
 - Manifest: `display: "fullscreen"` mit Fallback `standalone`, Hoch- und Querformat, Icon ohne
   bekannte Figuren.
@@ -217,7 +242,7 @@ public/photos/, public/sounds/  generierte Medien (committet)
 2. Im Vollbild ist kein Foto beschnitten, auf Hoch- und Querformat, Handy und Tablet.
 3. Der Laut-Knopf spielt den Laut, der Lautsprecher-Knopf sagt den Namen; sonst gibt die App
    keinen Ton aus. Schnelles Mehrfachtippen überlagert keine Ausgaben.
-4. Wischen links/rechts wechselt zyklisch das Tier, hoch/runter das Foto desselben Tiers.
+4. Wischen links/rechts wechselt zyklisch das Tier; die Fotos eines Tiers wechseln von selbst.
 5. Im Kleinkind-Modus gibt es keinen sichtbaren Text außer Weltnamen auf dem Start-Bildschirm.
 6. Der Modus lässt sich nur über langes Drücken plus richtige Aufgabe wechseln und bleibt nach
    Neustart erhalten.
@@ -240,7 +265,7 @@ prüft Daniel.
 | 1 | ✓ Start → Welt → Vollbild → zurück nur über Kacheln, Pfeile und Zurück-Knopf. |
 | 2 | ✓ `object-fit: contain` auf Hoch- und Querformat, Unschärfe-Hintergrund statt Balken. |
 | 3 | ✓ Jede Ausgabe bricht die laufende ab (eine Sprachausgabe, ein `<audio>`), getestet; Hören am Gerät offen. |
-| 4 | ✓ Wischen links/rechts zyklisch, hoch/runter wechselt das Foto. |
+| 4 | ✓ Wischen links/rechts zyklisch. Diashow statt Hoch/Runter (2026-11-02): Vitest grün, im Browser neu zu prüfen. |
 | 5 | ✓ Sichtbarer Text im Kleinkind-Modus nur Weltnamen; der Zahnrad-Hinweis (3.1) ist die gewollte Ausnahme. |
 | 6 | ✓ Kurzer Tipp → Hinweis, 1,5 s → Aufgabe; falsche Antwort → neue Aufgabe; Modus übersteht Neuladen. |
 | 7 | ✓ Panel unter dem Foto, Doppeltipp-Zoom und Verschieben; gezoomt wechselt Wischen kein Tier. Pinch nur per Unit-Test. |
@@ -372,6 +397,39 @@ Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
   Vorschaubilder der Foto-Auswahlseite (330 px) taugen nicht als Ersatz für die Originale.
   Nach Phase 7 wieder entfernt (Daniel): Die Medien liegen im Repo; eine neue Auswahl baut
   `photos:build`/`sounds:build` lokal.
+- _2026-11-02_ — Onboarding im Browser (Wunsch von Daniel): Ein Start im Browser-Tab gilt als
+  „Elternteil vor dem Gerät“, deshalb zeigt das Onboarding Text, als Ausnahme zu Kriterium 5 (das
+  für die Kinder-Oberfläche gilt). Es ist keine History-Ebene (Zurück und Escape schließen es nicht),
+  der Merker liegt unter `tiere.onboarded` im `sessionStorage`. Installiert heißt
+  `display-mode: standalone` oder `fullscreen` (das Manifest fordert `fullscreen`, der web-base-Hook
+  prüft nur `standalone`) oder `navigator.standalone`.
+- _2026-11-02_ — Installieren über `useInstallPrompt` aus web-base, nicht über dessen
+  `InstallButton` (kleiner als 64 px, Tailwind, eigener Dialog im Dialog). `main.tsx` importiert das
+  Modul vorab, weil die Route lazy lädt und ein verpasstes `beforeinstallprompt` nicht wiederkommt.
+- _2026-11-02_ — Diashow im Vollbild statt Hoch/Runter-Wischen und Punkten (Wunsch von Daniel):
+  6 s pro Foto, 1,5 s Überblenden (`engine/slideshow.ts`). Altes und neues Foto blenden beide,
+  samt unscharfem Hintergrund, weil `contain` sonst das alte Foto am Rand stehen lässt. Pause
+  gezoomt, beim Ziehen und bei verborgenem Tab. Mit `prefers-reduced-motion` wechselt das Foto im
+  selben Takt hart statt gar nicht. Pfeile: sichtbar ein Kreis von 40 px am Rand, die Trefferfläche
+  bleibt 64 × 64 px (harte Regel).
+- _2026-11-02_ — Start immer 2×2 statt 1×4 im breiten Querformat (Wunsch von Daniel). Der Start
+  ist genau einen Bildschirm hoch; Emoji und Name hängen per Container-Query an der Kachel
+  (Emoji `min(65cqw, 40cqh)`, Name `12cqmin`), nicht an `vw`. Die alten `vw`-Werte bleiben als Fallback davor stehen.
+- _2026-11-02_ — Keine Sprechblase mit dem Lautwort mehr (Wunsch von Daniel): Im Vollbild steht
+  weder „Muuuh!“ noch 🤫. `voice` bleibt in `animals.json`, weil die Inhaltsprüfung daran stille
+  Tiere (ohne Laut) erkennt.
+- _2026-11-03_ — Namen und Fakten als gebaute Audiodateien statt Systemstimme (Wunsch von Daniel:
+  „lieblos“). Zwei Runden Hörproben: Piper (CC0-Stimmen) klang zu synthetisch; Chatterbox
+  Multilingual (MIT) war lebhafter, aber bei kurzen Namen öfter undeutlich („Erdmenschen“);
+  Qwen3-TTS (Apache 2.0) war in der Spracherkennungs-Gegenprobe am deutlichsten. Daniel wählte die
+  entworfene Stimme „Fröhliche Erzählerin“ und den kurzen Namen („Die Kuh!“). Die Stimme ist einmal
+  mit Qwen3-TTS-VoiceDesign entworfen und wird für jeden Clip mit dem Base-Modell daraus geklont,
+  damit alle Clips gleich klingen. Apache 2.0 gilt für das Modell, nicht für ein Medium: Der Stimm-
+  Credit steht deshalb neben der Medien-Allowlist (`credits.voice`, eigene Prüfung). Python
+  (`scripts/tts/`, `TIERE_TTS_PYTHON`) ist wie ffmpeg eine lokale Build-Abhängigkeit; auf der CPU
+  dauert ein voller Lauf gut eine Stunde.
+- _2026-11-03_ — „Das Chamäleon!“: Die Spracherkennung hörte in allen vier Versuchen „Kameleon“;
+  Daniel hat den 2. Versuch angehört und freigegeben (`approved: true` in `content/speech.lock.json`).
 
 ## 11. Offene Punkte
 - Akzentfarbe: Das Farbrad der Flotte ist voll (web-base `04-layout-system.md`). Tiere nutzt
@@ -380,7 +438,7 @@ Wechselzeit auf einem Mittelklasse-Handy misst Daniel.
 - `[previews]` gehört ins `wrangler.toml`-Template von web-base, damit neue Apps Preview-Builds
   ohne Nacharbeit bekommen.
 - Tiere in web-base `08-app-migrations.md` eintragen (Flotte, Abweichungen wie beim Malbuch).
-- Namen selbst aufnehmen statt Systemstimme.
+- Optional eigene Aufnahmen der Namen statt der Qwen-Stimme.
 - Quiz im Entdecker-Modus („Wo ist der Elefant?“).
 - Weitere Welten (Wald, Haustiere, Arktis).
 - Eigene Fotos (z. B. vom Zoobesuch) im Eltern-Bereich hinzufügen.

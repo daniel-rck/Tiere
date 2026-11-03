@@ -3,7 +3,8 @@ import data from "../../content/credits.generated.json" with { type: "json" };
 import type { Credit, CreditsFile } from "../../content/types.ts";
 
 // Loaded with the parents' area only (lazy chunk): keeps the start bundle small.
-const credits = new Map((data as CreditsFile).animals.map((entry) => [entry.id, entry]));
+const file = data as CreditsFile;
+const credits = new Map(file.animals.map((entry) => [entry.id, entry]));
 
 function CreditLine({ label, credit }: { label: string; credit: Credit }) {
   return (
@@ -31,6 +32,11 @@ export function Credits() {
         Alle Fotos und Laute stehen unter freien Lizenzen. Danke an alle Fotografinnen und
         Fotografen!
       </p>
+      {file.voice && (
+        <ul>
+          <CreditLine label="Stimme (Namen und Fakten)" credit={file.voice} />
+        </ul>
+      )}
       {catalog.worlds.map((world) => (
         <section key={world.id}>
           <h3>{world.name}</h3>

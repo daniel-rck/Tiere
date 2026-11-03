@@ -17,12 +17,14 @@ export default defineConfig({
       injectRegister: "auto",
       injectManifest: {
         // Spec 7: the app, every 640 px photo, the 1280 px file of each animal's
-        // first photo and all sounds. Other sizes: runtime cache (src/sw/index.ts).
+        // first photo, all sounds and speech clips. Other sizes: runtime cache
+        // (src/sw/index.ts).
         globPatterns: [
           "**/*.{js,css,html,svg,png,ico,woff2}",
           "photos/*/*-640.webp",
           "photos/*/1-1280.webp",
           "sounds/*.m4a",
+          "speech/*.m4a",
         ],
       },
       devOptions: { enabled: false, type: "module" },

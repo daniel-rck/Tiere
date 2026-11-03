@@ -47,6 +47,7 @@ function catalogFor(data: ContentFile): Catalog {
         color: "#808080",
       })),
       sound: null,
+      speech: { name: `/speech/${rest.id}-name.m4a`, facts: `/speech/${rest.id}-facts.m4a` },
     })),
   };
 }
@@ -58,6 +59,12 @@ function creditsFor(data: ContentFile, photoCredit = credit()): CreditsFile {
       photos: a.photos.map(() => photoCredit),
       sound: null,
     })),
+    voice: credit({
+      author: "Qwen3-TTS",
+      license: "Apache 2.0",
+      licenseUrl: "https://www.apache.org/licenses/LICENSE-2.0",
+      sourceUrl: "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+    }),
   };
 }
 
@@ -203,6 +210,17 @@ describe("validateContent --strict", () => {
     expect(messages(data, built(data))).toEqual([
       "catalog.kuh.sound: Laut fehlt im Katalog",
       "credits.kuh.sound: Credit fehlt",
+    ]);
+  });
+
+  it("requires the speech clips and the voice credit", () => {
+    const data = file();
+    const options = built(data);
+    for (const entry of options.catalog.animals) entry.speech = null;
+    delete options.credits.voice;
+    expect(messages(data, options)).toEqual([
+      "catalog.kuh.speech: Sprachclips fehlen, erst `bun run speech:build` laufen lassen",
+      "credits.voice: Credit der Stimme fehlt, erst `bun run speech:build` laufen lassen",
     ]);
   });
 });
